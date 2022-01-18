@@ -97,8 +97,8 @@ PYTHONPATH=. python scripts/score_corpus.py zh
 We start by retrieving EN and ZH text in the merged corpus.
 
 ```shell
-python scripts/download_corpus.py en
-python scripts/download_corpus.py zh
+PYTHONPATH=. python scripts/download_corpus.py en
+PYTHONPATH=. python scripts/download_corpus.py zh
 ```
 
 We learned EN and ZH FastText and tf-idf vectors from these corpora. Documentation for this is
@@ -155,22 +155,22 @@ over these cosine similarities yielding field scores.
 Embedding:
 
 ```shell
-python scripts/embed_corpus.py en
-python scripts/embed_corpus.py zh
+PYTHONPATH=. python scripts/embed_corpus.py en
+PYTHONPATH=. python scripts/embed_corpus.py zh
 ```
 
 Then scoring:
 
 ```shell
-python scripts/score_embeddings.py en
-python scripts/score_embeddings.py zh
+PYTHONPATH=. python scripts/score_embeddings.py en
+PYTHONPATH=. python scripts/score_embeddings.py zh
 ```
 
 Or embedding + scoring together:
 
 ```shell
-python scripts/score_corpus.py en
-python scripts/score_corpus.py zh
+PYTHONPATH=. python scripts/score_corpus.py en
+PYTHONPATH=. python scripts/score_corpus.py zh
 ```
 
 Outputs (~weekly):
