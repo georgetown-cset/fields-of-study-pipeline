@@ -53,6 +53,16 @@ dvc pull
 cd assets/scientific-lit-embeddings/ && dvc pull && cd ../..
 ```
 
+## GCP
+
+We have an [instance](https://console.cloud.google.com/compute/instancesDetail/zones/us-east1-c/instances/fields?project=gcp-cset-projects)
+named `fields` in us-east1-c. It's set up as above.
+
+DVC is backed by storage in the `gs://fields-of-study-model` bucket. 
+When retrieving the merged corpus (`fos/corpus.py`) we use the 
+[`field_model_replication`](https://console.cloud.google.com/bigquery?project=gcp-cset-projects&p=gcp-cset-projects&d=field_model_replication&page=dataset)
+BQ dataset and the `gs://fields-of-study` bucket.
+
 ## Pipeline
 
 Retrieve EN and ZH text in the merged corpus:
