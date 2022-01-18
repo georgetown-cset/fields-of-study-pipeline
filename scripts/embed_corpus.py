@@ -16,6 +16,7 @@ For each field L0-L1 + candidate fields:
 
 Output: ~300 field scores for each doc.
 """
+import argparse
 import gzip
 import json
 import timeit
@@ -36,7 +37,7 @@ def iter_extract(lang='en', corpus_dir=CORPUS_DIR):
                 yield json.loads(line)
 
 
-def main(lang="en", limit=1000):
+def main(lang="en", limit=0):
     fields = FieldModel(lang)
     start_time = timeit.default_timer()
     i = 0
@@ -51,4 +52,8 @@ def main(lang="en", limit=1000):
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description='Embed merged corpus text')
+    parser.add_argument('lang', choices=('en', 'zh'), help='Language')
+    parser.add_argument('--limit', type=int, default=0, help='Record limit')
+    args = parser.parse_args()
+    main(lang=args.lang, limit=args.limit)
