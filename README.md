@@ -50,6 +50,7 @@ Retrieve them with `dvc pull`.
 
 ```shell
 dvc pull
+cd assets/scientific-lit-embeddings/ && dvc pull && cd ../..
 ```
 
 ## Pipeline
@@ -58,8 +59,8 @@ Retrieve EN and ZH text in the merged corpus:
 
 ```shell
 # writes 'assets/corpus/{lang}_corpus-*.jsonl.gz'
-python scripts/download_corpus.py en
-python scripts/download_corpus.py zh
+PYTHONPATH=. python scripts/download_corpus.py en
+PYTHONPATH=. python scripts/download_corpus.py zh
 ```
 
 Embed the publication text:
@@ -67,8 +68,8 @@ Embed the publication text:
 ```shell
 # reads 'assets/corpus/{lang}_corpus-*.jsonl.gz'
 # writes 'assets/corpus/{lang}_embeddings.jsonl'
-python scripts/embed_corpus.py en
-python scripts/embed_corpus.py zh
+PYTHONPATH=. python scripts/embed_corpus.py en
+PYTHONPATH=. python scripts/embed_corpus.py zh
 ```
 
 Calculate field scores from the publication embeddings:
@@ -76,8 +77,8 @@ Calculate field scores from the publication embeddings:
 ```shell
 # reads 'assets/corpus/{lang}_embeddings.jsonl'
 # writes 'assets/corpus/{lang}_scores.tsv'
-python scripts/score_embeddings.py en
-python scripts/score_embeddings.py zh
+PYTHONPATH=. python scripts/score_embeddings.py en
+PYTHONPATH=. python scripts/score_embeddings.py zh
 ```
 
 Alternatively, embed + score without writing the publication embeddings to the disk:
@@ -85,8 +86,8 @@ Alternatively, embed + score without writing the publication embeddings to the d
 ```shell
 # reads 'assets/corpus/{lang}_corpus-*.jsonl.gz'
 # writes 'assets/corpus/{lang}_scores.jsonl'
-python scripts/score_corpus.py en
-python scripts/score_corpus.py zh
+PYTHONPATH=. python scripts/score_corpus.py en
+PYTHONPATH=. python scripts/score_corpus.py zh
 ```
 
 ## Project workflow
