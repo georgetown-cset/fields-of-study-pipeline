@@ -27,27 +27,29 @@ This repo contains materials for a replication of MAG's fields of study. This in
 
 ## Setup
 
-To clone this repo with its submodule, use
+Clone:
 
 ```shell
-git clone --recurse-submodules https://github.com/georgetown-cset/field-of-study-pipelines.git
+git clone --recurse-submodules https://github.com/georgetown-cset/fields-of-study-pipeline.git
 ```
 
-Embedding assets are in the [scientific-lit-embeddings](https://github.com/georgetown-cset/scientific-lit-embeddings)
-submodule (`assets/scientific-lit-embeddings`). They're large, so we're using [dvc](https://dvc.org/doc/start). GitHub
-is responsible for tracking the asset metadata in `.dvc` files and DVC stores the assets themselves in GCS.
-
-Ensure ~15 GB of disk is available, then retrieve the assets with
+On Linux with Python 3.8.10 via Miniconda, pip-install the requirements file:
 
 ```shell
-cd assets/scientific-lit-embeddings
-dvc pull
-```
+cd fields-of-study-pipeline
+~/miniconda3/bin/python3 -m venv venv
+source venv/bin/activate
 
-On Linux with Python 3.8 via Miniconda, pip-installing the requirements file just works.
-
-```shell
+sudo apt-get install build-essential -y
 pip install -r requirements.txt
+```
+
+Some assets are large, so we're using [dvc](https://dvc.org/doc/start). 
+GitHub is responsible for tracking the asset metadata in `.dvc` files and DVC stores the assets themselves in GCS.
+Retrieve them with `dvc pull`.
+
+```shell
+dvc pull
 ```
 
 ## Pipeline
