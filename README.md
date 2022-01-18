@@ -9,13 +9,13 @@ This repo contains materials for a replication of MAG's fields of study. This in
    "computer science" and more granular subfields like "machine learning". We derived this taxonomy from MAG. For
    current purposes it's static. We call this the _field taxonomy_.
 
-3. For each field in the taxonomy, we have various associated text extracted from Wikipedia (pages and their references)
-   . Using this _field content_ and the word vectors learned from the merged corpus, we create embeddings for each
-   field. We refer to these as _FastText_ and _tf-idf field embeddings_.
+3. For each field in the taxonomy, we have various associated text extracted from Wikipedia (pages and their references).
+   Using this _field content_ and the word vectors learned from the merged corpus, we create embeddings for each
+   field. We refer to these as FastText and tf-idf _field embeddings_.
 
 4. We then identify in the field content every mention of another field. (For instance, the "computer science" content
-   mentions "artificial intelligence," "machine learning," and many other fields.) The averages of the field embeddings
-   for these mentioned fields are the _FastText_ and _tf-idf mention embeddings_ for each field.
+   mentions "artificial intelligence," "machine learning," and many other fields.) The averages of the FastText field 
+   embeddings for these mentioned fields are the _entity embeddings_ for each field.
 
 5. Next, for each EN and ZH publication in the merged corpus we create _publication embeddings_. Specifically, for each
    publication a _FastText embedding_, _tf-idf embedding_, and _FastText field mention embedding_ (as immediately above,
@@ -144,46 +144,40 @@ Outputs (annually):
 - FastText field embeddings: `assets/{en,zh}_field_fasttext.bin`
 - tf-idf field embeddings: `assets/{en,zh}_field_tfidf.bin`
 
-### 3. Field mention embeddings
+### 4. Entity embeddings
 
-We identify in the field content every mention of another field. For instance, the "computer science" content mentions "
-artificial intelligence," "machine learning," etc. We average over the FastText embeddings for mentioned fields to
-generate FastText _mention embeddings_ for each field. This is documented in the `wiki-field-text` repo.
+We identify in the field content every mention of another field. For instance, the "computer science" content mentions 
+"artificial intelligence," "machine learning," etc. We average over the FastText embeddings for mentioned fields to
+generate FastText _entity embeddings_. This is documented in the `wiki-field-text` repo.
 
 Outputs (annually):
 
-- FastText field mention embeddings: `assets/{en,zh}_field_mention_fasttext.bin`
+- FastText entity embeddings: `assets/{en,zh}_field_mention_fasttext.bin`
 
-### 4. Publication embedding and scoring
+### 5. Publication embedding
 
 We embed each EN and ZH publication in the preprocessed corpora (1) using the FastText and tf-idf vectors (2), and by
-averaging the field mention embeddings (3) for each field mentioned in the publication text.
-
-For publication-field pairs, we take the cosine similarity of the publication and field embeddings, and then average
-over these cosine similarities yielding field scores.
-
-Embedding:
+averaging the entity embeddings (3) for each field mentioned in the publication text.
 
 ```shell
 PYTHONPATH=. python scripts/embed_corpus.py en
 PYTHONPATH=. python scripts/embed_corpus.py zh
 ```
 
-Then scoring:
+Outputs (~weekly):
+
+- Publication embeddings: `assets/corpus/{lang}_embeddings.jsonl`
+
+### 6. Field scoring
+
+For publication-field pairs, we take the cosine similarity of the publication and field embeddings, and then average
+over these cosine similarities yielding field scores.
 
 ```shell
 PYTHONPATH=. python scripts/score_embeddings.py en
 PYTHONPATH=. python scripts/score_embeddings.py zh
 ```
 
-Or embedding + scoring together:
-
-```shell
-PYTHONPATH=. python scripts/score_corpus.py en
-PYTHONPATH=. python scripts/score_corpus.py zh
-```
-
 Outputs (~weekly):
 
-- Publication embeddings: `assets/corpus/{lang}_embeddings.jsonl`
-- Publication field scores: `assets/corpus/{lang}_scores.tsv`
+- Publication field scores: `assets/corpus/{lang}_scores.jsonl`
