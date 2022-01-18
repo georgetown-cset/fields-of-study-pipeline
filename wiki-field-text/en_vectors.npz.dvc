@@ -1,0 +1,4 @@
+outs:
+- md5: bb56e9c1577e7453f065d5471945f850
+  size: 1197
+  path: en_vectors.npz
