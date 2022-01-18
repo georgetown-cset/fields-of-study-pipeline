@@ -1,0 +1,4 @@
+outs:
+- md5: 2ce5427a133b632a2522ae56c40bbd18
+  size: 1891012
+  path: en_field_tfidf_similarity.pkl
