@@ -17,24 +17,11 @@ For each field L0-L1 + candidate fields:
 Output: ~300 field scores for each doc.
 """
 import argparse
-import gzip
-import json
 import timeit
-from pathlib import Path
 
 from fos.model import FieldModel
 from fos.settings import CORPUS_DIR
-
-
-def iter_extract(lang='en', corpus_dir=CORPUS_DIR):
-    files = list(Path(corpus_dir).glob(f'{lang}_*.jsonl.gz'))
-    assert files
-    for file in files:
-        with gzip.open(file, 'rb') as infile:
-            for line in infile:
-                if not line:
-                    continue
-                yield json.loads(line)
+from fos.util import iter_bq_extract
 
 
 def main(lang="en", limit=0):
@@ -42,7 +29,7 @@ def main(lang="en", limit=0):
     start_time = timeit.default_timer()
     i = 0
     with open(CORPUS_DIR / 'en_embeddings.jsonl', 'wt') as f:
-        for record in iter_extract(lang):
+        for record in iter_bq_extract(f'{lang}_'):
             embedding = fields.embed(record['text'])
             embedding.dump_jsonl(f, merged_id=record['merged_id'])
             i += 1

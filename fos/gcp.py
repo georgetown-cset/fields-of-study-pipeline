@@ -98,7 +98,7 @@ def extract_table(table: str, destination: str):
     :param destination: GCS path starting with ``gs://`` and ending with ``-*.jsonl.gz``.
     :return:
     """
-    assert destination.endswith('-*.jsonl.gz')
+    assert destination.endswith('*.jsonl.gz')
     client = create_bq_client()
     dataset_id, table_id = table.split('.')
     dataset_ref = bigquery.DatasetReference(PROJECT_ID, dataset_id)
@@ -145,6 +145,45 @@ def delete_blobs(bucket: str, prefix: str) -> None:
         print(f'Deleted {blob.name}')
 
 
+def download_table(table: str, bucket: str, prefix: str, output_dir: Path):
+    """
+
+    :param table: Table to extract as '{dataset}.{table}'
+    :param bucket: Bucket for extraction.
+    :param prefix: Prefix for extracted and downloaded files (without '-*.jsonl.gz' suffix).
+    :param output_dir: Output directory on the disk.
+    :return:
+    """
+    # Check the output_dir first so we fail early
+    output_dir = Path(output_dir)
+    assert output_dir.exists() and output_dir.is_dir()
+    if not prefix:
+        raise ValueError(f'Empty prefix will delete all blobs in the {bucket} bucket')
+    # Delete any prior extracts with the same prefix
+    delete_blobs(bucket, prefix)
+    extract_table(table, f'gs://{bucket}/{prefix}-*.jsonl.gz')
+    download(bucket, prefix, output_dir)
+
+
+def download_query(sql: Union[str, Path],
+                   table: str,
+                   bucket: str,
+                   prefix: str,
+                   output_dir: Path,
+                   clobber=False):
+    """
+
+    :param sql: Query to write to table.
+    :param table: Table as '{dataset}.{table}'
+    :param bucket: Bucket name.
+    :param prefix: (without '*.jsonl.gz' suffix)
+    :param output_dir: Output directory on the disk.
+    :param clobber: If True, overwrite any existing table contents.
+    """
+    write_query(sql, table, clobber=clobber)
+    download_table(table, bucket, prefix, output_dir)
+
+
 def get_schema(dataset: str, table: str) -> List[SchemaField]:
     _client = create_bq_client()
     table_ref = _client.get_table(f'{dataset}.{table}')
@@ -166,3 +205,27 @@ def update_schema(dataset: str, table: str, schema: List[SchemaField]) -> Table:
     table_ref = _client.update_table(table_ref, ['schema'])
     print(f"Updated schema for {table}")
     return table_ref
+
+
+def file_to_table(source, destination, clobber=False, **kw):
+    """Upload JSONL data to a BQ table.
+
+    :param source: Path to source file.
+    :param destination: Destination table as '{dataset}.{table}'.
+    :param clobber: If True, overwrite existing data.
+    :param kw: Additional keywords passed to LoadJobConfig.
+    """
+    _client = create_bq_client()
+    destination = f'{PROJECT_ID}.{destination}'
+    print(f'Uploading to {destination}')
+    job_config = bigquery.LoadJobConfig(
+        source_format=bigquery.SourceFormat.NEWLINE_DELIMITED_JSON,
+        autodetect=True,
+        write_disposition='WRITE_TRUNCATE' if clobber else 'WRITE_EMPTY',
+        **kw,
+    )
+    with open(source, "rb") as f:
+        job = _client.load_table_from_file(f, destination, job_config=job_config)
+    job.result()
+    table = _client.get_table(destination)
+    print(f"Loaded {table.num_rows:,} rows and {len(table.schema):,} columns to {destination}")

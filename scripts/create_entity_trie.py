@@ -9,8 +9,7 @@ import numpy as np
 from ahocorasick import Automaton
 
 from fos.keywords import read_trie
-
-ASSETS_DIR = (Path(__file__).parent.parent / 'assets').absolute()
+from fos.settings import ASSETS_DIR
 
 
 def main(entity_path, output_path):

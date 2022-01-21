@@ -1,0 +1,4 @@
+outs:
+- md5: 768916bd5fd02de29ff034e562605c41
+  size: 27651281
+  path: zh_field_fasttext.npz
