@@ -1,7 +1,8 @@
 /en_field_entity_similarity.pkl
 /en_field_fasttext_similarity.pkl
 /en_field_tfidf_similarity.pkl
-/wiki.db
+/data/wiki.db-shm
+/data/wiki.db-wal
 /en_field_fasttext.npz
 /en_field_tfidf.npz
 /en_vectors.npz

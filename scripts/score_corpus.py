@@ -31,7 +31,7 @@ def main(lang="en", limit=1000, digits=6):
         for record in iter_extract(lang):
             embedding = fields.embed(record['text'])
             sim = fields.score(embedding)
-            avg_sim = {k: round(v, digits) for k, v in zip_longest(fields.index, sim.average().astype(float))}
+            avg_sim = {k: v for k, v in zip_longest(fields.index, sim.average().astype(float))}
             f.write(json.dumps({'merged_id': record['merged_id'], **avg_sim}) + '\n')
             i += 1
             if i == limit:
@@ -42,7 +42,7 @@ def main(lang="en", limit=1000, digits=6):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Score merged corpus text')
     parser.add_argument('lang', choices=('en', 'zh'), help='Language')
-    parser.add_argument('--limit', type=int, default=0, help='Record limit')
+    parser.add_argument('--limit', type=int, default=10000, help='Record limit')
     parser.add_argument('--digits', type=int, default=6, help='Float precision when serializing')
     args = parser.parse_args()
     main(lang=args.lang, limit=args.limit, digits=args.digits)

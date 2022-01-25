@@ -4,7 +4,7 @@ from typing import List, Tuple, Optional
 
 import numpy as np
 
-from fos.keywords import load_entities, embed_entities
+from fos.entity import load_entities, embed_entities
 from fos.util import convert_vector
 from fos.vectors import load_tfidf, load_fasttext, load_field_fasttext, load_field_tfidf, load_field_keys, \
     embed_fasttext, embed_tfidf, load_field_entities

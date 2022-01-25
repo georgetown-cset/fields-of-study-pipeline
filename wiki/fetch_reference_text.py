@@ -16,16 +16,18 @@ ref_table = db['refs']
 
 client = create_bq_client()
 
+
 def main(update=False):
     """
     doi pmid s2 ads issn pmc oclc arxiv
     """
     # upload_references(clobber=True)
-    fetch_doi('en', clobber=True)
-    for record in iter_bq_extract('en_ref', 'data/corpus'):
-        ref_table.update()
-    fetch_doi('zh', clobber=True)
-    fetch_s2_references(update=update)
+    for lang in ['en', 'zh']:
+        fetch_doi(lang, clobber=True)
+        for record in iter_bq_extract(f'{lang}_ref', 'data/corpus'):
+            update = {'id': record['id'], 'db_id': record['merged_id'], f'{lang}_text': record['text']}
+            ref_table.update(update, ['id'])
+    # fetch_s2_references(update=update)
 
 
 def upload_references(clobber=False):
@@ -38,9 +40,13 @@ def upload_references(clobber=False):
         file_to_table(f.name, 'field_model_replication.wiki_references', clobber=clobber)
 
 
-
 def fetch_doi(lang='en', clobber=False):
     sql = Path('sql/doi.sql').read_text()
+    if lang != 'en':
+        # Hacky but in the line from doi.sql pasted below, we just need to use the en_corpus table for EN and zh_corpus
+        # for ZH
+        #   inner join field_model_replication.en_corpus using(merged_id)
+        sql = sql.replace('en_corpus', f'{lang}_corpus')
     table = f'field_model_replication.{lang}_ref_text'
     bucket = 'fields-of-study'
     prefix = f'model-replication/{lang}_ref'

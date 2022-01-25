@@ -1,74 +1,101 @@
-import csv
+"""
+Create FastText and tfidf embeddings for fields from field text.
+"""
 import pickle
 from argparse import ArgumentParser
-from pathlib import Path
+from collections import defaultdict
 
+import dataset
 import numpy as np
 from gensim.similarities import MatrixSimilarity, SparseMatrixSimilarity
 from scipy.sparse import csr_matrix
-from tqdm import tqdm
 
-from fos.keywords import load_entities, embed_entities
+from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, \
+    EN_FIELD_KEY_PATH, ZH_FIELD_KEY_PATH
+from fos.util import preprocess
 from fos.vectors import load_fasttext, load_tfidf, embed_tfidf
 
-import json
-import re
-
-import dataset
-from lxml import html
-from tqdm import tqdm
-
-CITE_BRACKETS = re.compile(r'\[\d+]')
-RE_LINEBREAK = re.compile(r"(\r\n|[\n\v])+")
-RE_NONBREAKING_SPACE = re.compile(r"[^\S\n\v]+")
-RE_ZWSP = re.compile(r"[\u200B\u2060\uFEFF]+")
+VECTOR_DIM = 250
 
 db = dataset.connect('sqlite:///data/wiki.db')
 table = db['pages']
 
 
 def main(lang='en', max_level=1):
+    # Inputs: we need the fasttext model trained on the merged corpus and similarly our tfidftransformer + dict
     ft_model = load_fasttext(lang)
     tfidf, dictionary = load_tfidf(lang)
-    entities = load_entities(lang)
 
-    fields = {row['id']: row for row in csv.DictReader(open('data/fields.tsv', 'rt'), delimiter='\t')}
-
-    print(f'Reading field text content')
-    field_paths = list(Path(lang).glob('*.txt'))
-    if not field_paths:
-        raise FileNotFoundError(f'{lang}/*.txt')
-
-    print(f'Found {len(field_paths):,} fields; applying max_level={max_level}')
+    # Outputs: FastText and tfidf field embeddings
     ft_embeddings = {}
     tfidf_embeddings = {}
-    entity_embeddings = {}
-    for path in tqdm(field_paths):
-        # fasttext expects 1 sentence per line; we get an error if there are newlines in the text
-        text = path.read_text().replace('\n', ' ').replace('\r', ' ')
-        field_id = path.stem
-        if int(fields[field_id]['level']) > max_level:
+
+    for field in table:
+        field_id = field['id']
+        text = field[f'{lang}_text']
+        if text is None:
+            # If we don't have any field text for this field, we use zeroed vectors
+            ft_embeddings[field_id] = np.zeros((VECTOR_DIM,), dtype=np.float32)
+            tfidf_embeddings[field_id] = []
             continue
-        ft_embeddings[field_id] = ft_model.get_sentence_vector(text)
-        tfidf_embeddings[field_id] = embed_tfidf(text.split(), tfidf, dictionary)
-        entity_embeddings[field_id] = embed_entities(text, entities)
+        clean_text = preprocess(text, lang)
+        ft_embeddings[field_id] = ft_model.get_sentence_vector(clean_text)
+        tfidf_embeddings[field_id] = embed_tfidf(clean_text.split(), tfidf, dictionary)
 
-    ft_index = MatrixSimilarity(ft_embeddings.values(), num_features=250, dtype=np.float32)
-    with open(f'{lang}_field_fasttext_similarity.pkl', 'wb') as f:
-        pickle.dump(ft_index, f)
+    # Write a matrix of fasttext vectors for fields (via `gensim.similarities.docsim.MatrixSimilarity`), for comparison
+    # to fasttext publication vectors in scoring
+    write_fasttext_similarity(ft_embeddings, lang)
 
-    entity_index = MatrixSimilarity(entity_embeddings.values(), num_features=100, dtype=np.float32)
-    with open(f'{lang}_field_entity_similarity.pkl', 'wb') as f:
-        pickle.dump(entity_index, f)
+    # Similarly, write a matrix of tfidf vectors for fields for comparison to tfidf publication vectors in scoring
+    write_tfidf_similarity(tfidf_embeddings, dictionary, lang)
 
+    # Lastly write out the row order of these matrices; the order comes from iterating over database rows and will be
+    # the same for both
+    assert ft_embeddings.keys() == tfidf_embeddings.keys()
+    write_field_keys(ft_embeddings.keys(), lang)
+
+
+def write_field_keys(keys, lang):
+    """Write out the row order of the field embedding matrices."""
+    if lang == 'en':
+        output_path = EN_FIELD_KEY_PATH
+    elif lang == 'zh':
+        output_path = ZH_FIELD_KEY_PATH
+    else:
+        raise ValueError(lang)
+    with open(output_path, 'wt') as f:
+        for k in keys:
+            f.write(str(k) + '\n')
+    print(f'Wrote {output_path}')
+
+
+def write_tfidf_similarity(tfidf_embeddings, dictionary, lang):
+    """"Write to disk a matrix of tfidf vectors for fields."""
+    if lang == 'en':
+        output_path = EN_FIELD_TFIDF_PATH
+    elif lang == 'zh':
+        output_path = ZH_FIELD_TFIDF_PATH
+    else:
+        raise ValueError(lang)
     tfidf_index = SparseMatrixSimilarity((to_sparse(v, len(dictionary)) for v in tfidf_embeddings.values()),
                                          num_features=len(dictionary), dtype=np.float32)
-    with open(f'{lang}_field_tfidf_similarity.pkl', 'wb') as f:
+    with open(output_path, 'wb') as f:
         pickle.dump(tfidf_index, f)
+    print(f'Wrote {output_path}')
 
-    with open(f'{lang}_field_keys.txt', 'wt') as f:
-        for k in ft_embeddings.keys():
-            f.write(k + '\n')
+
+def write_fasttext_similarity(ft_embeddings, lang):
+    """"Write to disk a matrix of fasttext vectors for fields."""
+    if lang == 'en':
+        output_path = EN_FIELD_FASTTEXT_PATH
+    elif lang == 'zh':
+        output_path = ZH_FIELD_FASTTEXT_PATH
+    else:
+        raise ValueError(lang)
+    ft_similarity = MatrixSimilarity(ft_embeddings.values(), num_features=VECTOR_DIM, dtype=np.float32)
+    with open(output_path, 'wb') as f:
+        pickle.dump(ft_similarity, f)
+    print(f'Wrote {output_path}')
 
 
 def to_sparse(tfidf_vector, ncol):

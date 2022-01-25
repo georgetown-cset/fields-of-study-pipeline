@@ -1,0 +1,4 @@
+outs:
+- md5: a42afdd08b4f7a6f7dff4657ebcd7b0b
+  size: 311285
+  path: zh_field_entity_similarity.pkl

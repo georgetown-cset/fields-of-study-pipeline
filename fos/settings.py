@@ -1,5 +1,7 @@
 from pathlib import Path
 
+LANGUAGES = ('en', 'zh')
+
 FOS_DIR = Path(__file__).parent
 PIPELINES_DIR = FOS_DIR.parent
 ASSETS_DIR = PIPELINES_DIR / 'assets'

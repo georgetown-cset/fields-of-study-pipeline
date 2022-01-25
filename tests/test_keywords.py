@@ -1,6 +1,6 @@
 import numpy as np
 
-from fos.keywords import load_entities, find_keywords, embed_entities
+from fos.entity import load_entities, find_keywords, embed_entities
 
 
 def test_embed_entities():
