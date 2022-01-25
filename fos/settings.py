@@ -1,6 +1,7 @@
 from pathlib import Path
 
 LANGUAGES = ('en', 'zh')
+FASTTEXT_DIM = 250
 
 FOS_DIR = Path(__file__).parent
 PIPELINES_DIR = FOS_DIR.parent

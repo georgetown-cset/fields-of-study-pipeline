@@ -1,9 +1,11 @@
+import ahocorasick
+import gensim.similarities
 from fasttext.FastText import _FastText
 from gensim.corpora import Dictionary
-from gensim.models import KeyedVectors
 from gensim.sklearn_api import TfIdfTransformer
 
-from fos.vectors import load_fasttext, load_tfidf, load_field_fasttext
+from fos.entity import load_entities
+from fos.vectors import load_fasttext, load_tfidf, load_field_fasttext, load_field_tfidf, load_field_entities
 
 
 def test_load_fasttext():
@@ -19,7 +21,25 @@ def test_load_tfidf():
         assert isinstance(dictionary, Dictionary)
 
 
+def test_load_entities():
+    for lang in ['en', 'zh']:
+        entities = load_entities(lang)
+        assert isinstance(entities, ahocorasick.Automaton)
+
+
 def test_load_field_fasttext():
     for lang in ['en', 'zh']:
         fields = load_field_fasttext(lang)
-        assert isinstance(fields, KeyedVectors)
+        assert isinstance(fields, gensim.similarities.MatrixSimilarity)
+
+
+def test_load_field_tfidf():
+    for lang in ['en', 'zh']:
+        fields = load_field_tfidf(lang)
+        assert isinstance(fields, gensim.similarities.SparseMatrixSimilarity)
+
+
+def test_load_field_entities():
+    for lang in ['en', 'zh']:
+        fields = load_field_entities(lang)
+        assert isinstance(fields, gensim.similarities.MatrixSimilarity)

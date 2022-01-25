@@ -18,7 +18,7 @@ from typing import Tuple, Optional
 import ahocorasick
 import numpy as np
 
-from fos.settings import ASSETS_DIR
+from fos.settings import ASSETS_DIR, FASTTEXT_DIM
 from fos.util import norm_sum
 
 
@@ -34,7 +34,7 @@ def embed_entities(text, trie) -> Optional[np.ndarray]:
     """
     vectors = [v for _, (k, v) in find_keywords(text, trie)]
     if not len(vectors):
-        return []
+        return np.zeros(FASTTEXT_DIM, dtype=np.float32)
     return norm_sum(vectors)
 
 
@@ -78,7 +78,8 @@ def _flatten_trie(node, ancestors=None):
             yield from _flatten_trie(value, ancestors + [child])
 
 
-def create_automaton(entities):
+def create_automaton(entities: dict):
+    """Create an automaton for Aho-Corasick search from a dict."""
     trie = ahocorasick.Automaton()
     for k, v in entities.items():
         if isinstance(k, str):

@@ -26,7 +26,7 @@ class Embedding:
         self.tfidf = tfidf
         self.entity = convert_vector(entity)
 
-    def json(self, digits=6, **kw) -> str:
+    def json(self, **kw) -> str:
         """Serialize as JSON.
 
         :param digits: Round to this many digits.
@@ -35,11 +35,11 @@ class Embedding:
         obj = dict(**kw)
         for attr in ['fasttext', 'entity']:
             if getattr(self, attr) is not None:
-                obj[attr] = [round(x, digits) for x in getattr(self, attr).astype(float)]
+                obj[attr] = getattr(self, attr).astype(float).tolist()
             else:
                 obj[attr] = None
         if self.tfidf is not None:
-            obj['tfidf'] = [(token_id, round(tfidf, digits)) for token_id, tfidf in self.tfidf]
+            obj['tfidf'] = [(token_id, tfidf) for token_id, tfidf in self.tfidf]
         else:
             obj['tfidf'] = None
         return json.dumps(obj, separators=(',', ': '))
