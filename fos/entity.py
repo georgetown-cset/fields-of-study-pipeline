@@ -32,7 +32,7 @@ def embed_entities(text, trie) -> Optional[np.ndarray]:
     :param trie: Entity vector trie.
     :return: A vector if any entity mentions are in the input text; otherwise None.
     """
-    vectors = [v for _, v in find_keywords(text, trie)]
+    vectors = [v for _, (k, v) in find_keywords(text, trie)]
     if not len(vectors):
         return []
     return norm_sum(vectors)

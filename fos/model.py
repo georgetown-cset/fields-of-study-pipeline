@@ -115,7 +115,7 @@ class FieldModel(object):
             tfidf = self.field_tfidf[embedding.tfidf]
         else:
             tfidf = None
-        if embedding.entity is not None:
+        if embedding.entity is not None and len(embedding.entity):
             entity = self.field_entities[embedding.entity]
         else:
             entity = None

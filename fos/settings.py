@@ -28,6 +28,6 @@ EN_FIELD_ENTITY_PATH = ASSETS_DIR / 'en_field_entity_similarity.pkl'
 EN_FIELD_KEY_PATH = ASSETS_DIR / 'en_field_keys.txt'
 
 ZH_FIELD_FASTTEXT_PATH = ASSETS_DIR / 'zh_field_vectors.pkl'
-ZH_FIELD_TFIDF_PATH = ASSETS_DIR / 'zh_field_tfidf.npz'
+ZH_FIELD_TFIDF_PATH = ASSETS_DIR / 'zh_field_tfidf_similarity.pkl'
 ZH_FIELD_ENTITY_PATH = ASSETS_DIR / 'zh_field_entity_similarity.pkl'
 ZH_FIELD_KEY_PATH = ASSETS_DIR / 'zh_field_keys.txt'

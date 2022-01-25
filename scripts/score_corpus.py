@@ -23,7 +23,7 @@ def iter_extract(lang='en', corpus_dir=CORPUS_DIR):
                 yield json.loads(line)
 
 
-def main(lang="en", limit=1000, digits=6):
+def main(lang="en", limit=1000):
     fields = FieldModel(lang)
     start_time = timeit.default_timer()
     i = 0
@@ -43,6 +43,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Score merged corpus text')
     parser.add_argument('lang', choices=('en', 'zh'), help='Language')
     parser.add_argument('--limit', type=int, default=10000, help='Record limit')
-    parser.add_argument('--digits', type=int, default=6, help='Float precision when serializing')
     args = parser.parse_args()
-    main(lang=args.lang, limit=args.limit, digits=args.digits)
+    main(lang=args.lang, limit=args.limit)

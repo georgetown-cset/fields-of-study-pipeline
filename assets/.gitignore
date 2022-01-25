@@ -5,3 +5,4 @@
 /zh_entity_trie.pkl
 /zh_field_entity_similarity.pkl
 /zh_field_vectors.pkl
+/zh_field_tfidf_similarity.pkl
