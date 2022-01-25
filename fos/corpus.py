@@ -7,13 +7,14 @@ from fos.gcp import write_query, extract_table, delete_blobs
 from fos.settings import CORPUS_DIR, QUERY_PATH
 
 
-def download(lang='en', output_dir=CORPUS_DIR, query_path=QUERY_PATH, limit=1000):
+def download(lang='en', output_dir=CORPUS_DIR, query_path=QUERY_PATH, limit=1000, skip_prev=False):
     """Download a preprocessed corpus.
 
     :param lang: Language code, 'en' or 'zh'.
     :param output_dir: Directory for extract files.
     :param query_path: Path to SQL file.
     :param limit: Record limit.
+    :param skip_prev: If true, skips unchanged records
     """
     query_destination = f'field_model_replication.{lang}_corpus'
     extract_bucket = f'fields-of-study'
@@ -25,6 +26,11 @@ def download(lang='en', output_dir=CORPUS_DIR, query_path=QUERY_PATH, limit=1000
 
     # send the parameterized query to the API and wait for the result
     query = Path(query_path).read_text()
+    if skip_prev:
+        query += (f'\n and merged_id not in '
+                  f'(select clean_text.merged_id from clean_text '
+                  f'inner join staging_new_fields_of_study.prev_en_corpus '
+                  f'on clean_text.merged_id = prev_en_corpus.merged_id and clean_text.text = prev_en_corpus.text)')
     if limit:
         query += f'\n limit {limit}'
     write_query(query,
