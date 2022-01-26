@@ -4,15 +4,13 @@ import os
 from airflow import DAG
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator, BigQueryCheckOperator
 from airflow.providers.google.cloud.transfers.bigquery_to_bigquery import BigQueryToBigQueryOperator
-from airflow.providers.google.cloud.operators.dataflow import DataflowCreatePythonJobOperator
-from airflow.providers.google.cloud.operators.compute import ComputeEngineStartInstanceOperator, ComputeEngineStopInstanceOperator
+from airflow.providers.google.cloud.operators.compute import ComputeEngineStartInstanceOperator, \
+    ComputeEngineStopInstanceOperator
 from airflow.providers.google.cloud.operators.gcs import GCSDeleteObjectsOperator
 from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQueryOperator
 from airflow.providers.google.cloud.transfers.bigquery_to_gcs import BigQueryToGCSOperator
-from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.operators.bash import BashOperator
 from airflow.operators.dummy import DummyOperator
-from airflow.operators.python import PythonOperator
 from airflow.hooks.base_hook import BaseHook
 from airflow.providers.slack.operators.slack import SlackAPIPostOperator
 from datetime import timedelta, datetime
@@ -30,16 +28,18 @@ default_args = {
     "email_on_retry": False,
     "retries": 1,
     "retry_delay": timedelta(minutes=5),
-    "on_failure_callback": task_fail_slack_alert
+    #"on_failure_callback": task_fail_slack_alert
 }
 
 production_dataset = "new_fields_of_study"
 staging_dataset = f"staging_{production_dataset}"
 
+
 def mk_command_seq(cmds: list) -> str:
     scripts = " && ".join(cmds)
     return (f"gcloud compute ssh jm3312@{gce_resource_id} --zone {gce_zone} "
                 f"--command \"{scripts}\"")
+
 
 with DAG("new-fields-of-study",
             default_args=default_args,
@@ -83,12 +83,42 @@ with DAG("new-fields-of-study",
         bash_command=mk_command_seq([
             # clear out the pipeline dir on each run and grab whatever's latest on GCS (to be updated by
             # the push_to_airflow script)
-            f"rm -r fields-of-study-pipeline",
-            f"gsutil cp gs://{bucket}/{production_dataset}/fields-of-study-pipeline ."
+            f"rm -r fields-of-study-pipeline || true",
+            f"gsutil -m cp -r gs://{bucket}/{production_dataset}/fields-of-study-pipeline .",
+            "pip install -r fields-of-study-pipeline/requirements.txt",
+            "cd fields-of-study-pipeline/assets/scientific-lit-embeddings/",
+            "/home/jm3312/.local/bin/dvc pull"
         ])
     )
 
-    gce_instance_start >> refresh_artifacts
+    clear_outputs_dir >> gce_instance_start >> refresh_artifacts
+
+    prev_op = refresh_artifacts
+
+    for lang in ["en", "zh"]:
+        download = BashOperator(
+            task_id=f"download_{lang}",
+            bash_command = mk_command_seq([
+                # make sure the corpus dir is clean
+                f"rm -r fields-of-study-pipeline/assets/corpus/* || true",
+                "cd fields-of-study-pipeline",
+                f"PYTHONPATH=. python3 scripts/download_corpus.py {lang} --limit 100 --skip_prev --keyless_client"
+            ])
+        )
+
+        score_corpus = BashOperator(
+            task_id=f"score_corpus_{lang}",
+            bash_command=mk_command_seq([
+                "cd fields-of-study-pipeline",
+                f"PYTHONPATH=. python3 scripts/score_corpus.py {lang}",
+                # make sure this gcs folder is empty before upload so this task can be retried without worrying about
+                # old outputs hanging around
+                f"gsutil rm -r gs://{bucket}/{outputs_dir}/*",
+                f"gsutil cp assets/corpus/{lang}_scores.jsonl gs://{bucket}/{outputs_dir}/"
+            ])
+        )
+        prev_op >> download >> score_corpus
+        prev_op = score_corpus
 
     # stop the instance
     gce_instance_stop = ComputeEngineStopInstanceOperator(
@@ -98,34 +128,13 @@ with DAG("new-fields-of-study",
         task_id="stop-"+gce_resource_id
     )
 
-    for lang in ["en", "zh"]:
-        download = BashOperator(
-            task_id=f"download_{lang}",
-            bash_command = mk_command_seq([
-                # make sure the corpus dir is clean
-                f"rm -r fields-of-study-pipeline/assets/corpus/* || true",
-                "cd fields-of-study-pipeline",
-                f"python3 scripts/download_corpus.py {lang}"
-            ])
-        )
-
-        score_corpus = BashOperator(
-            task_id=f"score_corpus_{lang}",
-            bash_command=mk_command_seq([
-                "cd fields-of-study-pipeline",
-                f"python3 scripts/score_corpus.py {lang}"
-                # make sure this gcs folder is empty before upload so this task can be retried without worrying about
-                # old outputs hanging around
-                f"gsutil rm -r gs://{bucket}/{outputs_dir}/*",
-                f"gsutil cp assets/corpus/{lang}_scores.jsonl gs://{bucket}/{outputs_dir}/"
-            ])
-        )
-
-        refresh_artifacts >> download >> score_corpus >> gce_instance_stop
+    prev_op >> gce_instance_stop
 
     # gcs to bq staging
 
     # checks
+    # - before we do a write append, check there's no overlap in ids. there shouldn't be because of the way we selected
+    # the data
 
     # copy to production
 
