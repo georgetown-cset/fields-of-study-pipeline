@@ -85,8 +85,10 @@ with DAG("new-fields-of-study",
             # the push_to_airflow script)
             f"rm -r fields-of-study-pipeline || true",
             f"gsutil -m cp -r gs://{bucket}/{production_dataset}/fields-of-study-pipeline .",
-            "pip install -r fields-of-study-pipeline/requirements.txt",
-            "cd fields-of-study-pipeline/assets/scientific-lit-embeddings/",
+            "cd fields-of-study-pipeline",
+            "pip install -r requirements.txt",
+            "/home/jm3312/.local/bin/dvc pull",
+            "cd assets/scientific-lit-embeddings/",
             "/home/jm3312/.local/bin/dvc pull"
         ])
     )
