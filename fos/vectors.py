@@ -11,7 +11,7 @@ from gensim.sklearn_api import TfIdfTransformer
 
 from fos.settings import EN_TFIDF_PATH, ZH_TFIDF_PATH, EN_FASTTEXT_PATH, ZH_FASTTEXT_PATH, EN_FIELD_FASTTEXT_PATH, \
     ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, EN_DICT_PATH, ZH_DICT_PATH, EN_FIELD_KEY_PATH, \
-    EN_FIELD_ENTITY_PATH, ZH_FIELD_ENTITY_PATH
+    EN_FIELD_ENTITY_PATH, ZH_FIELD_ENTITY_PATH, ZH_FIELD_KEY_PATH
 
 ASSETS_DIR = Path(__file__).parent.parent / 'assets'
 
@@ -19,14 +19,14 @@ ASSETS_DIR = Path(__file__).parent.parent / 'assets'
 def embed_fasttext(text, model):
     vector = model.get_sentence_vector(text)
     if not len(vector):
-        return None
+        return []
     return vector
 
 
 def embed_tfidf(text: List, tfidf: TfIdfTransformer, dictionary):
     bow = dictionary.doc2bow(text)
     if not len(bow):
-        return None
+        return []
     return tfidf.gensim_model[bow]
 
 
@@ -82,7 +82,7 @@ def load_field_keys(lang="en") -> List[str]:
     if lang == "en":
         path = EN_FIELD_KEY_PATH
     elif lang == "zh":
-        raise NotImplementedError
+        path = ZH_FIELD_KEY_PATH
     else:
         raise ValueError(lang)
     with open(path, 'rt') as f:
@@ -94,17 +94,6 @@ def load_field_tfidf(lang="en"):
         path = EN_FIELD_TFIDF_PATH
     elif lang == "zh":
         path = ZH_FIELD_TFIDF_PATH
-    else:
-        raise ValueError(lang)
-    with open(path, 'rb') as f:
-        return pickle.load(f)
-
-
-def load_field_entity(lang="en"):
-    if lang == "en":
-        path = EN_FIELD_ENTITY_PATH
-    elif lang == "zh":
-        path = ZH_FIELD_ENTITY_PATH
     else:
         raise ValueError(lang)
     with open(path, 'rb') as f:

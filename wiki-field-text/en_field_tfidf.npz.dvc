@@ -1,4 +1,0 @@
-outs:
-- md5: 5b479f0173896877a98eb866eb0c825b
-  size: 4310435
-  path: en_field_tfidf.npz

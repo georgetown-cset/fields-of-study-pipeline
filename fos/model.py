@@ -4,7 +4,7 @@ from typing import List, Tuple, Optional
 
 import numpy as np
 
-from fos.keywords import load_entities, embed_entities
+from fos.entity import load_entities, embed_entities
 from fos.util import convert_vector
 from fos.vectors import load_tfidf, load_fasttext, load_field_fasttext, load_field_tfidf, load_field_keys, \
     embed_fasttext, embed_tfidf, load_field_entities
@@ -26,7 +26,7 @@ class Embedding:
         self.tfidf = tfidf
         self.entity = convert_vector(entity)
 
-    def json(self, digits=6, **kw) -> str:
+    def json(self, **kw) -> str:
         """Serialize as JSON.
 
         :param digits: Round to this many digits.
@@ -35,11 +35,11 @@ class Embedding:
         obj = dict(**kw)
         for attr in ['fasttext', 'entity']:
             if getattr(self, attr) is not None:
-                obj[attr] = [round(x, digits) for x in getattr(self, attr).astype(float)]
+                obj[attr] = getattr(self, attr).astype(float).tolist()
             else:
                 obj[attr] = None
         if self.tfidf is not None:
-            obj['tfidf'] = [(token_id, round(tfidf, digits)) for token_id, tfidf in self.tfidf]
+            obj['tfidf'] = [(token_id, tfidf) for token_id, tfidf in self.tfidf]
         else:
             obj['tfidf'] = None
         return json.dumps(obj, separators=(',', ': '))
@@ -115,7 +115,7 @@ class FieldModel(object):
             tfidf = self.field_tfidf[embedding.tfidf]
         else:
             tfidf = None
-        if embedding.entity is not None:
+        if embedding.entity is not None and len(embedding.entity):
             entity = self.field_entities[embedding.entity]
         else:
             entity = None
