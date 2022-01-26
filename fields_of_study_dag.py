@@ -104,7 +104,7 @@ with DAG("new-fields-of-study",
                 # make sure the corpus dir is clean
                 f"rm -r fields-of-study-pipeline/assets/corpus/* || true",
                 "cd fields-of-study-pipeline",
-                f"PYTHONPATH=. python3 scripts/download_corpus.py {lang} --limit 100 --skip_prev --keyless_client"
+                f"PYTHONPATH=. python3 scripts/download_corpus.py {lang} --limit 100 --skip_prev --use_default_clients"
             ])
         )
 
@@ -115,7 +115,7 @@ with DAG("new-fields-of-study",
                 f"PYTHONPATH=. python3 scripts/score_corpus.py {lang}",
                 # make sure this gcs folder is empty before upload so this task can be retried without worrying about
                 # old outputs hanging around
-                f"gsutil rm -r gs://{bucket}/{outputs_dir}/*",
+                f"gsutil rm -r gs://{bucket}/{outputs_dir}/* || true",
                 f"gsutil cp assets/corpus/{lang}_scores.jsonl gs://{bucket}/{outputs_dir}/"
             ])
         )
