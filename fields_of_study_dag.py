@@ -50,10 +50,9 @@ with DAG("new-fields-of-study",
          ) as dag:
     slack_webhook = BaseHook.get_connection("slack")
     bucket = "airflow-data-exchange"
-    gcs_folder = "new-fields-of-study"
-    outputs_dir = f"{gcs_folder}/outputs"
-    schema_dir = f"{gcs_folder}/schemas"
-    sql_dir = f"sql/{gcs_folder}"
+    outputs_dir = f"{production_dataset}/outputs"
+    schema_dir = f"{production_dataset}/schemas"
+    sql_dir = f"sql/{production_dataset}"
     backup_dataset = f"{production_dataset}_backups"
     project_id = "gcp-cset-projects"
     gce_zone = "us-east1-c"
