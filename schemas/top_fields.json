@@ -1,0 +1,40 @@
+[
+  {
+    "mode": "REQUIRED",
+    "name": "merged_id",
+    "type": "STRING",
+    "description": "Merged-corpus publication ID (as in gcp_cset_links_v2)"
+  },
+    {
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "id",
+        "type": "INTEGER",
+        "description": "Field of study ID"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "name",
+        "type": "STRING",
+        "description": "Field of study name"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "level",
+        "type": "INTEGER",
+        "description": "Level of field in the six-level field taxonomy. Ranges from 0-5, in which level 0 is the highest level of aggregation (comprising 19 disciplines) and level 5 is the lowest (basically keywords)."
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "score",
+        "type": "FLOAT",
+        "description": "Publication field score. Ranges from 0-1. Interpret this score as the proximity between the publication and the field."
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "fields",
+    "type": "RECORD",
+    "description": "Array giving the top-scoring fields by level"
+  }
+]
