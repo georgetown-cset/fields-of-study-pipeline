@@ -14,7 +14,7 @@ with neighbors as (
   from gcp_cset_links_v2.paper_references_merged
 ),
 neighbor_scores as (
-  -- The papers without scores are non-EN or don't have title/abstract.
+  -- The papers without scores are non-EN/ZH or don't have title/abstract.
   -- Our approach is to find any neighbors of theirs in the citation
   -- graph that do have scores
   select
@@ -28,20 +28,20 @@ neighbor_scores as (
   inner join neighbors using(merged_id)
   -- And get any scores associated (at this point any pubs
   -- whose neighbors don't have scores drop out)
-  inner join staging_fields_of_study.en_scores neighbor_scores
+  inner join {{staging_dataset}}.en_zh_scores neighbor_scores
     on neighbor_scores.merged_id = neighbors.neighbor_id
   -- We exclude papers that already have scores
-  left join staging_fields_of_study.en_scores
-    on en_scores.merged_id = article_links_nested.merged_id
+  left join {{staging_dataset}}.en_zh_scores
+    on en_zh_scores.merged_id = article_links_nested.merged_id
   -- The more readable 'where not in (subquery)' approach gives an OOM
   -- error, so we do left join + where
   where
     -- As explained immediately above exclude paprers that already
     -- have scores
-    en_scores.merged_id is null
+    en_zh_scores.merged_id is null
     -- A small number of papers that go through the field model don't
     -- receive any non-negative scores, and these may appear in the
-    -- en_scores table, so exclude them here
+    -- en_zh_scores table, so exclude them here
     and neighbor_scores.fields is not null
 ),
 n_neighbors as (
@@ -91,7 +91,7 @@ unnested_imputations as (
   from observed_fields
   inner join n_neighbors using (merged_id)
 )
--- Reshape for consistency with en_scores
+-- Reshape for consistency with en_zh_scores
 select
   merged_id,
   neighbors_count,

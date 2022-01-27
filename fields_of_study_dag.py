@@ -11,6 +11,7 @@ from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQue
 from airflow.providers.google.cloud.transfers.bigquery_to_gcs import BigQueryToGCSOperator
 from airflow.operators.bash import BashOperator
 from airflow.operators.dummy import DummyOperator
+from airflow.operators.python import PythonOperator
 from airflow.hooks.base_hook import BaseHook
 from airflow.providers.slack.operators.slack import SlackAPIPostOperator
 from datetime import timedelta, datetime
@@ -50,21 +51,22 @@ with DAG("new-fields-of-study",
          ) as dag:
     slack_webhook = BaseHook.get_connection("slack")
     bucket = "airflow-data-exchange"
-    outputs_dir = f"{production_dataset}/outputs"
+    tmp_dir = f"{production_dataset}/tmp"
+    outputs_dir = f"{tmp_dir}/outputs"
     schema_dir = f"{production_dataset}/schemas"
     sql_dir = f"sql/{production_dataset}"
-    backup_dataset = f"{production_dataset}_backups"
+    backups_dataset = f"{production_dataset}_backups"
     project_id = "gcp-cset-projects"
     gce_zone = "us-east1-c"
     gce_resource_id = "fos-pipeline-test"
     dags_dir = os.environ.get("DAGS_FOLDER")
 
-    # We keep script outputs in a tmp dir on gcs, so clean it out at the start of each run. We clean at
+    # We keep script inputs and outputs in a tmp dir on gcs, so clean it out at the start of each run. We clean at
     # the start of the run so if the run fails we can examine the failed data
-    clear_outputs_dir = GCSDeleteObjectsOperator(
-        task_id="clear_outputs_gcs_dir",
+    clear_tmp_dir = GCSDeleteObjectsOperator(
+        task_id="clear_tmp_gcs_dir",
         bucket_name=bucket,
-        prefix=outputs_dir + "/"
+        prefix=tmp_dir + "/"
     )
 
     # start the instance
@@ -92,18 +94,21 @@ with DAG("new-fields-of-study",
         ])
     )
 
-    clear_outputs_dir >> gce_instance_start >> refresh_artifacts
+    clear_tmp_dir >> gce_instance_start >> refresh_artifacts
 
     prev_op = refresh_artifacts
 
-    for lang in ["en", "zh"]:
+    languages = ["en", "zh"]
+    for lang in languages:
         download = BashOperator(
             task_id=f"download_{lang}",
             bash_command = mk_command_seq([
                 # make sure the corpus dir is clean
                 f"rm -r fields-of-study-pipeline/assets/corpus/* || true",
                 "cd fields-of-study-pipeline",
-                f"PYTHONPATH=. python3 scripts/download_corpus.py {lang} --limit 100 --skip_prev --use_default_clients"
+                (f"PYTHONPATH=. python3 scripts/download_corpus.py {lang} --limit 100 --skip_prev "
+                    f"--use_default_clients --bq_dest {staging_dataset} --extract_bucket {bucket} "
+                    f"--extract_prefix {tmp_dir}/inputs/{lang}_corpus-")
             ])
         )
 
@@ -120,11 +125,11 @@ with DAG("new-fields-of-study",
             task_id=f"import_{lang}",
             bucket=bucket,
             source_objects=[f"{outputs_dir}/{lang}_scores.jsonl"],
-            schema_object=f"{schema_dir}/all_metadata_norm.json",
             destination_project_dataset_table=f"{staging_dataset}.new_{lang}",
             source_format="NEWLINE_DELIMITED_JSON",
             create_disposition="CREATE_IF_NEEDED",
-            write_disposition="WRITE_TRUNCATE"
+            write_disposition="WRITE_TRUNCATE",
+            autodetect=True
         )
 
         prev_op >> download >> score_corpus >> load_to_gcs
@@ -139,14 +144,93 @@ with DAG("new-fields-of-study",
     )
 
     prev_op >> gce_instance_stop
+    prev_op = gce_instance_stop
 
+    with open(f"{dags_dir}/sequences/{production_dataset}/query_sequence.txt") as f:
+        for table_name in f:
+            query = BigQueryInsertJobOperator(
+                task_id=table_name,
+                configuration={
+                    "query": {
+                        "query": "{% include '" + f"{sql_dir}/{table_name}.sql" + "' %}",
+                        "useLegacySql": False,
+                        "destinationTable": {
+                            "projectId": project_id,
+                            "datasetId": staging_dataset,
+                            "tableId": table_name
+                        },
+                        "allowLargeResults": True,
+                        "createDisposition": "CREATE_IF_NEEDED",
+                        "writeDisposition": "WRITE_TRUNCATE"
+                    }
+                }
+            )
+            prev_op >> query
+            prev_op = query
 
-    # checks
-    # - before we do a write append, check there's no overlap in ids. there shouldn't be because of the way we selected
-    # the data
+    wait_for_checks = DummyOperator(task_id="wait_for_checks")
 
-    # copy to production
+    for query in os.listdir(f"{os.environ.get('DAGS_FOLDER')}/{sql_dir}"):
+        if not query.startswith("check_"):
+            continue
+        check = BigQueryCheckOperator(
+            task_id=query.replace(".sql", ""),
+            sql=f"{sql_dir}/{query}",
+            params={
+                "dataset": staging_dataset
+            },
+            use_legacy_sql=False
+        )
+        prev_op >> check >> wait_for_checks
 
-    # populate documentation
+    wait_for_backup = DummyOperator(task_id="wait_for_backup")
 
-    # backup
+    curr_date = datetime.now().strftime('%Y%m%d')
+    with open(f"{os.environ.get('DAGS_FOLDER')}/schemas/{production_dataset}/tables.json") as f:
+        table_desc = json.loads(f.read())
+    for table in ["field_scores", "field_meta", "field_children", "top_fields"]:
+        prod_table_name = f"{production_dataset}.{table}"
+        table_copy = BigQueryToBigQueryOperator(
+            task_id=f"copy_{table}_to_production",
+            source_project_dataset_tables=[f"{staging_dataset}.{table}"],
+            destination_project_dataset_table=prod_table_name,
+            create_disposition="CREATE_IF_NEEDED",
+            write_disposition="WRITE_TRUNCATE"
+        )
+        pop_descriptions = PythonOperator(
+            task_id="populate_column_documentation_for_" + table,
+            op_kwargs={
+                "input_schema": f"{os.environ.get('DAGS_FOLDER')}/schemas/{production_dataset}/{table}.json",
+                "table_name": prod_table_name,
+                "table_description": table_desc[prod_table_name]
+            },
+            python_callable=update_table_descriptions
+        )
+        table_backup = BigQueryToBigQueryOperator(
+            task_id=f"back_up_{table}",
+            source_project_dataset_tables=[f"{staging_dataset}.{table}"],
+            destination_project_dataset_table=f"{backups_dataset}.{table}_{curr_date}",
+            create_disposition="CREATE_IF_NEEDED",
+            write_disposition="WRITE_TRUNCATE"
+        )
+
+        wait_for_checks >> table_copy >> pop_descriptions >> table_backup >> wait_for_backup
+
+    success_alert = SlackAPIPostOperator(
+        task_id="post_success",
+        token=slack_webhook.password,
+        text="(new!) fields of study update succeeded!",
+        channel=slack_webhook.login,
+        username="airflow"
+    )
+
+    for lang in languages:
+        copy_corpus = BigQueryToBigQueryOperator(
+            task_id=f"copy_{lang}_corpus",
+            source_project_dataset_tables=[f"{staging_dataset}.{lang}_corpus"],
+            destination_project_dataset_table=f"{staging_dataset}.prev_{lang}_corpus",
+            create_disposition="CREATE_IF_NEEDED",
+            write_disposition="WRITE_TRUNCATE"
+        )
+
+        wait_for_backup >> copy_corpus >> success_alert

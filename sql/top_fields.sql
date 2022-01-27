@@ -3,7 +3,7 @@ with unnested as (
     merged_id,
     field.id as field_id,
     field.score as field_score
-  from staging_fields_of_study.field_scores, unnest(fields) as field
+  from {{staging_dataset}}.field_scores, unnest(fields) as field
 ),
 field_ranks as (
   select
@@ -14,7 +14,7 @@ field_ranks as (
     field_score,
     row_number() over (partition by merged_id, level order by field_score desc) as field_rank
   from unnested
-  inner join staging_fields_of_study.field_meta using(field_id)
+  inner join {{staging_dataset}}.field_meta using(field_id)
 )
 select
   merged_id,

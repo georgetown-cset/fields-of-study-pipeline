@@ -11,28 +11,18 @@ with old_scores as (
       select
         id
       from
-        {{staging_dataset}}.new_en_scores
+        {{staging_dataset}}.new_en_zh_scores
     ) and merged_id in (
       select
         merged_id
       from
-        {{staging_dataset}}.en_corpus
+        {{staging_dataset}}.corpus
     )
-),
-new_scores as (
-  select
-    new_en_scores.id as merged_id,
-    -- Unnest and nest in this order to avoid mismatched struct error
-    array_agg(struct(field.id, field.score)) as fields
-  from {{staging_dataset}}.new_en_scores,
-    unnest(fields) as field
-  group by
-    new_en_scores.id
 )
 select
   merged_id,
   fields
-from new_scores
+from {{staging_dataset}}.new_en_zh_scores
 union all
 select
   merged_id,
