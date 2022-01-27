@@ -23,7 +23,7 @@ def iter_extract(lang='en', corpus_dir=CORPUS_DIR):
                 yield json.loads(line)
 
 
-def main(lang="en", limit=1000):
+def main(lang="en", limit=1000, bq_format=False):
     fields = FieldModel(lang)
     start_time = timeit.default_timer()
     i = 0
@@ -31,8 +31,13 @@ def main(lang="en", limit=1000):
         for record in iter_extract(lang):
             embedding = fields.embed(record['text'])
             sim = fields.score(embedding)
-            avg_sim = {k: v for k, v in zip_longest(fields.index, sim.average().astype(float))}
-            f.write(json.dumps({'merged_id': record['merged_id'], **avg_sim}) + '\n')
+            avg_sim_values = zip_longest(fields.index, sim.average().astype(float))
+            if bq_format:
+                f.write(json.dumps({'merged_id': record['merged_id'],
+                                    'fields': [{'id': k, 'score': v} for k, v in avg_sim_values]}) + '\n')
+            else:
+                avg_sim = {k: v for k, v in avg_sim_values}
+                f.write(json.dumps({'merged_id': record['merged_id'], **avg_sim}) + '\n')
             i += 1
             if i == limit:
                 break
@@ -43,5 +48,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Score merged corpus text')
     parser.add_argument('lang', choices=('en', 'zh'), help='Language')
     parser.add_argument('--limit', type=int, default=10000, help='Record limit')
+    parser.add_argument('--bq_format', action='store_true', help='If specified, will output nested field scores')
     args = parser.parse_args()
-    main(lang=args.lang, limit=args.limit)
+    main(lang=args.lang, limit=args.limit, bq_format=args.bq_format)

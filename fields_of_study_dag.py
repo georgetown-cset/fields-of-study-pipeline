@@ -111,15 +111,24 @@ with DAG("new-fields-of-study",
             task_id=f"score_corpus_{lang}",
             bash_command=mk_command_seq([
                 "cd fields-of-study-pipeline",
-                f"PYTHONPATH=. python3 scripts/score_corpus.py {lang}",
-                # make sure this gcs folder is empty before upload so this task can be retried without worrying about
-                # old outputs hanging around
-                f"gsutil rm -r gs://{bucket}/{outputs_dir}/* || true",
+                f"PYTHONPATH=. python3 scripts/score_corpus.py {lang} --bq_format",
                 f"gsutil cp assets/corpus/{lang}_scores.jsonl gs://{bucket}/{outputs_dir}/"
             ])
         )
-        prev_op >> download >> score_corpus
-        prev_op = score_corpus
+
+        load_to_gcs = GCSToBigQueryOperator(
+            task_id=f"import_{lang}",
+            bucket=bucket,
+            source_objects=[f"{outputs_dir}/{lang}_scores.jsonl"],
+            schema_object=f"{schema_dir}/all_metadata_norm.json",
+            destination_project_dataset_table=f"{staging_dataset}.new_{lang}",
+            source_format="NEWLINE_DELIMITED_JSON",
+            create_disposition="CREATE_IF_NEEDED",
+            write_disposition="WRITE_TRUNCATE"
+        )
+
+        prev_op >> download >> score_corpus >> load_to_gcs
+        prev_op = load_to_gcs
 
     # stop the instance
     gce_instance_stop = ComputeEngineStopInstanceOperator(
@@ -131,7 +140,6 @@ with DAG("new-fields-of-study",
 
     prev_op >> gce_instance_stop
 
-    # gcs to bq staging
 
     # checks
     # - before we do a write append, check there's no overlap in ids. there shouldn't be because of the way we selected
