@@ -1,7 +1,7 @@
 """
 Updates the fields of study predictions. To only run on new records or records with title/abstract text that has
 changed since the last run, trigger this dag with no parameters. To force the dag to rerun on everything,
-trigger the dag with the configuration {"rerun": True}
+trigger the dag with the configuration {"rerun": true}
 """
 
 import json

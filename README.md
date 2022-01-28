@@ -196,4 +196,4 @@ To update the artifacts used by airflow, run `bash push_to_airflow.sh`.
 
 To view the dag, visit [this link](https://sc8c690a9f43753bep-tp.appspot.com/graph?dag_id=new_fields_of_study). To
 trigger a run on only new or modified data, trigger the dag without configuration parameters. To rerun on all data, 
-trigger the dag with the configuration `{"rerun": True}`.
+trigger the dag with the configuration `{"rerun": true}`.
