@@ -41,7 +41,7 @@ old_scores as (
 select
   merged_id,
   array_agg(struct(field.id, field.score)) as fields
-from staging_new_fields_of_study.new_en_zh_scores,
+from {{staging_dataset}}.new_en_zh_scores,
 unnest(fields) as field
 group by merged_id
 union all
