@@ -247,7 +247,7 @@ with DAG("new_fields_of_study",
                                   f"(select * from {staging_dataset}.prev_{lang}_corpus "
                                   f"where (merged_id not in (select merged_id from {staging_dataset}.{lang}_corpus)) "
                                   "and "
-                                  f"(merged_id not in (select merged_id from {production_dataset}.field_scores)))"),
+                                  f"(merged_id in (select merged_id from {production_dataset}.field_scores)))"),
                         "useLegacySql": False,
                         "destinationTable": {
                             "projectId": project_id,
