@@ -39,7 +39,7 @@ def main(lang="en", limit=1000, bq_format=False):
                 avg_sim = {k: v for k, v in avg_sim_values}
                 f.write(json.dumps({'merged_id': record['merged_id'], **avg_sim}) + '\n')
             i += 1
-            if i == limit:
+            if limit and (i == limit):
                 break
     print(round(timeit.default_timer() - start_time))
 

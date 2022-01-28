@@ -122,7 +122,7 @@ with DAG("new_fields_of_study",
             task_id=f"score_corpus_{lang}",
             bash_command=mk_command_seq([
                 "cd fields-of-study-pipeline",
-                f"PYTHONPATH=. python3 scripts/score_corpus.py {lang} --bq_format",
+                f"PYTHONPATH=. python3 scripts/score_corpus.py {lang} --bq_format --limit 0",
                 f"gsutil cp assets/corpus/{lang}_scores.jsonl gs://{bucket}/{outputs_dir}/"
             ])
         )
