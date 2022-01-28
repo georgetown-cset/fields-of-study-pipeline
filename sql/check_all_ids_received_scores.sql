@@ -5,7 +5,7 @@ from
 where
   merged_id not in (
     select
-      id
+      merged_id
     from
       {{staging_dataset}}.new_en_zh_scores
   )
@@ -16,7 +16,7 @@ from
 where
   merged_id not in (
     select
-      id
+      merged_id
     from
       {{staging_dataset}}.new_en_zh_scores
   )

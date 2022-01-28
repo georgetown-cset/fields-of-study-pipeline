@@ -1,3 +1,9 @@
+"""
+Updates the fields of study predictions. To only run on new records or records with title/abstract text that has
+changed since the last run, trigger this dag with no parameters. To force the dag to rerun on everything,
+trigger the dag with the configuration {"rerun": True}
+"""
+
 import json
 import os
 
@@ -8,7 +14,6 @@ from airflow.providers.google.cloud.operators.compute import ComputeEngineStartI
     ComputeEngineStopInstanceOperator
 from airflow.providers.google.cloud.operators.gcs import GCSDeleteObjectsOperator
 from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQueryOperator
-from airflow.providers.google.cloud.transfers.bigquery_to_gcs import BigQueryToGCSOperator
 from airflow.operators.bash import BashOperator
 from airflow.operators.dummy import DummyOperator
 from airflow.operators.python import PythonOperator
@@ -23,13 +28,13 @@ from dataloader.scripts.populate_documentation import update_table_descriptions
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
-    "start_date": datetime(2020, 12, 12),
+    "start_date": datetime(2022, 1, 27),
     "email": [],
     "email_on_failure": False,
     "email_on_retry": False,
     "retries": 1,
     "retry_delay": timedelta(minutes=5),
-    #"on_failure_callback": task_fail_slack_alert
+    "on_failure_callback": task_fail_slack_alert
 }
 
 production_dataset = "new_fields_of_study"
@@ -42,7 +47,7 @@ def mk_command_seq(cmds: list) -> str:
                 f"--command \"{scripts}\"")
 
 
-with DAG("new-fields-of-study",
+with DAG("new_fields_of_study",
             default_args=default_args,
             description="Labels our scholarly literature with fields of study",
             schedule_interval=None,
@@ -69,7 +74,7 @@ with DAG("new-fields-of-study",
         prefix=tmp_dir + "/"
     )
 
-    # start the instance
+    # start the instance where we'll run the download and scoring scripts
     gce_instance_start = ComputeEngineStartInstanceOperator(
         project_id=project_id,
         zone=gce_zone,
@@ -77,13 +82,11 @@ with DAG("new-fields-of-study",
         task_id="start-"+gce_resource_id
     )
 
-    # run the download script, with a new param to filter to only rows that are different from the
-    # previous en/zh_corpus
+    # clear out the directory of code and dvc artifacts on each run and grab whatever's
+    # latest on GCS (to be updated by the push_to_airflow script)
     refresh_artifacts = BashOperator(
         task_id=f"refresh_artifacts",
         bash_command=mk_command_seq([
-            # clear out the pipeline dir on each run and grab whatever's latest on GCS (to be updated by
-            # the push_to_airflow script)
             f"rm -r fields-of-study-pipeline || true",
             f"gsutil -m cp -r gs://{bucket}/{production_dataset}/fields-of-study-pipeline .",
             "cd fields-of-study-pipeline",
@@ -100,13 +103,16 @@ with DAG("new-fields-of-study",
 
     languages = ["en", "zh"]
     for lang in languages:
+        # run the download script; filter inputs to only "changed" rows if the user did not pass the "rerun" param
+        # through the dagrun config
         download = BashOperator(
             task_id=f"download_{lang}",
             bash_command = mk_command_seq([
                 # make sure the corpus dir is clean
                 f"rm -r fields-of-study-pipeline/assets/corpus/* || true",
                 "cd fields-of-study-pipeline",
-                (f"PYTHONPATH=. python3 scripts/download_corpus.py {lang} --limit 100 --skip_prev "
+                (f"PYTHONPATH=. python3 scripts/download_corpus.py {lang} "
+                 "{{'' if dag_run and dag_run.conf.get('rerun', False) else '--skip_prev'}} "
                     f"--use_default_clients --bq_dest {staging_dataset} --extract_bucket {bucket} "
                     f"--extract_prefix {tmp_dir}/inputs/{lang}_corpus-")
             ])
@@ -146,10 +152,14 @@ with DAG("new-fields-of-study",
     prev_op >> gce_instance_stop
     prev_op = gce_instance_stop
 
+    # Run the downstream queries in the order they appear in query_sequence.txt
     with open(f"{dags_dir}/sequences/{production_dataset}/query_sequence.txt") as f:
         for table_name in f:
+            table_name = table_name.strip()
+            if not table_name:
+                continue
             query = BigQueryInsertJobOperator(
-                task_id=table_name,
+                task_id=f"run_{table_name}",
                 configuration={
                     "query": {
                         "query": "{% include '" + f"{sql_dir}/{table_name}.sql" + "' %}",
@@ -186,6 +196,7 @@ with DAG("new-fields-of-study",
     wait_for_backup = DummyOperator(task_id="wait_for_backup")
 
     curr_date = datetime.now().strftime('%Y%m%d')
+    # copy to production, populate table descriptions, backup tables
     with open(f"{os.environ.get('DAGS_FOLDER')}/schemas/{production_dataset}/tables.json") as f:
         table_desc = json.loads(f.read())
     for table in ["field_scores", "field_meta", "field_children", "top_fields"]:
@@ -224,13 +235,30 @@ with DAG("new-fields-of-study",
         username="airflow"
     )
 
+    # as a final step before posting success, update the prev_{en,zh}_corpus tables so we'll know what text we used
+    # on previous runs
     for lang in languages:
-        copy_corpus = BigQueryToBigQueryOperator(
-            task_id=f"copy_{lang}_corpus",
-            source_project_dataset_tables=[f"{staging_dataset}.{lang}_corpus"],
-            destination_project_dataset_table=f"{staging_dataset}.prev_{lang}_corpus",
-            create_disposition="CREATE_IF_NEEDED",
-            write_disposition="WRITE_TRUNCATE"
-        )
+        copy_corpus = BigQueryInsertJobOperator(
+                task_id=f"copy_{lang}_corpus",
+                configuration={
+                    "query": {
+                        "query": (f"select * from {staging_dataset}.{lang}_corpus "
+                                  f"union all "
+                                  f"(select * from {staging_dataset}.prev_{lang}_corpus "
+                                  f"where (merged_id not in (select merged_id from {staging_dataset}.{lang}_corpus)) "
+                                  "and "
+                                  f"(merged_id not in (select merged_id from {production_dataset}.field_scores)))"),
+                        "useLegacySql": False,
+                        "destinationTable": {
+                            "projectId": project_id,
+                            "datasetId": staging_dataset,
+                            "tableId": table_name
+                        },
+                        "allowLargeResults": True,
+                        "createDisposition": "CREATE_IF_NEEDED",
+                        "writeDisposition": "WRITE_TRUNCATE"
+                    }
+                }
+            )
 
         wait_for_backup >> copy_corpus >> success_alert
