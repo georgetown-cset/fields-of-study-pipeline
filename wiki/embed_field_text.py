@@ -3,7 +3,6 @@ Create FastText and tfidf embeddings for fields from field text.
 """
 import pickle
 from argparse import ArgumentParser
-from collections import defaultdict
 
 import dataset
 import numpy as np
@@ -21,7 +20,7 @@ db = dataset.connect('sqlite:///data/wiki.db')
 table = db['pages']
 
 
-def main(lang='en', max_level=1):
+def main(lang='en'):
     # Inputs: we need the fasttext model trained on the merged corpus and similarly our tfidftransformer + dict
     ft_model = load_fasttext(lang)
     tfidf, dictionary = load_tfidf(lang)
