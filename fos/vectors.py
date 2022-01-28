@@ -7,6 +7,7 @@ from typing import Tuple, List
 
 from fasttext.FastText import _FastText
 from gensim.corpora import Dictionary
+from gensim.similarities import MatrixSimilarity, SparseMatrixSimilarity
 from gensim.sklearn_api import TfIdfTransformer
 
 from fos.settings import EN_TFIDF_PATH, ZH_TFIDF_PATH, EN_FASTTEXT_PATH, ZH_FASTTEXT_PATH, EN_FIELD_FASTTEXT_PATH, \
@@ -56,7 +57,7 @@ def load_fasttext(lang="en") -> _FastText:
     return _FastText(model_path=str(path))
 
 
-def load_field_fasttext(lang="en"):
+def load_field_fasttext(lang="en") -> MatrixSimilarity:
     if lang == "en":
         path = EN_FIELD_FASTTEXT_PATH
     elif lang == "zh":
@@ -67,7 +68,7 @@ def load_field_fasttext(lang="en"):
         return pickle.load(f)
 
 
-def load_field_entities(lang="en"):
+def load_field_entities(lang="en") -> MatrixSimilarity:
     if lang == "en":
         path = EN_FIELD_ENTITY_PATH
     elif lang == "zh":
@@ -89,7 +90,7 @@ def load_field_keys(lang="en") -> List[str]:
         return [x.strip() for x in f if x.strip()]
 
 
-def load_field_tfidf(lang="en"):
+def load_field_tfidf(lang="en") -> SparseMatrixSimilarity:
     if lang == "en":
         path = EN_FIELD_TFIDF_PATH
     elif lang == "zh":
