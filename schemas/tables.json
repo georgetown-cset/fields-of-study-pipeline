@@ -1,0 +1,6 @@
+{
+    "new_fields_of_study.field_children": "Field relations as (parent id, child id) pairs. Fields form a taxonomy; under CS we can find NLP, CV, etc. There are six levels numbered from '0' (19 broad disciplines) to '5' (finely disaggregated concepts). For details, see 'Project Summary: Field of Study Prediction' on Drive.",
+    "new_fields_of_study.field_meta": "Field metadata (names, levels)",
+    "new_fields_of_study.field_scores": "Field scores for publications in the merged corpus. Publications are in some proximity to fields. We call the measure of this a field score. We observe the top field scores for each publication. For details, see 'Project Summary: Field of Study Prediction' on Drive.",
+    "new_fields_of_study.top_fields": "Top-scoring fields by level for publications in the merged corpus"
+}

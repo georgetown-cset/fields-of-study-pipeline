@@ -1,0 +1,8 @@
+gsutil cp new_fields_of_study_dag.py gs://us-east1-production-41653310-bucket/dags/
+gsutil rm -r gs://airflow-data-exchange/new_fields_of_study/*
+gsutil -m cp -r ../fields-of-study-pipeline/{assets,.dvc,.git,fos,scripts,sql,requirements.txt} gs://airflow-data-exchange/new_fields_of_study/fields-of-study-pipeline/
+gsutil rm gs://us-east1-production-41653310-bucket/dags/sql/new_fields_of_study/*
+gsutil cp sql/* gs://us-east1-production-41653310-bucket/dags/sql/new_fields_of_study/
+gsutil cp schemas/* gs://airflow-data-exchange/new_fields_of_study/schemas/
+gsutil cp schemas/* gs://us-east1-production-41653310-bucket/dags/schemas/new_fields_of_study/
+gsutil cp query_sequence.txt gs://us-east1-production-41653310-bucket/dags/sequences/new_fields_of_study/

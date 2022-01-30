@@ -31,21 +31,30 @@ _storage_client = None
 _credentials = None
 
 
+def set_default_clients():
+    global _bq_client
+    _bq_client = bigquery.Client(project=PROJECT_ID)
+    global _storage_client
+    _storage_client = storage.Client(project=PROJECT_ID)
+
+
 def create_bq_client(key_path: Optional[str] = KEY_PATH) -> bigquery.Client:
     """Create BQ API Client."""
     global _bq_client
+    if _bq_client:
+        return _bq_client
     credentials = create_credentials(key_path)
-    if _bq_client is None:
-        _bq_client = bigquery.Client(project=PROJECT_ID, credentials=credentials)  # noqa
+    _bq_client = bigquery.Client(project=PROJECT_ID, credentials=credentials)  # noqa
     return _bq_client
 
 
 def create_storage_client(key_path: Optional[str] = KEY_PATH) -> storage.Client:
     """Create GCS API Client."""
     global _storage_client
+    if _storage_client:
+        return _storage_client
     credentials = create_credentials(key_path)
-    if _storage_client is None:
-        _storage_client = storage.Client(project=PROJECT_ID, credentials=credentials)
+    _storage_client = storage.Client(project=PROJECT_ID, credentials=credentials)
     return _storage_client
 
 

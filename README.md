@@ -181,3 +181,19 @@ PYTHONPATH=. python scripts/score_embeddings.py zh
 Outputs (~weekly):
 
 - Publication field scores: `assets/corpus/{lang}_scores.jsonl`
+
+---
+
+### Airflow deployment
+
+To add new queries to the sequence that is run after scores are ingested into BQ, add the query to the `sql` directory
+and put the filename in `query_sequence.txt` in the position the query should be run. You can reference the
+staging and production datasets in your query using `{{staging_dataset}}` and `{{production_dataset}}`. Because
+the production dataset contains old data until the sequence of queries finishes running, you normally want to
+reference the staging dataset.
+
+To update the artifacts used by airflow, run `bash push_to_airflow.sh`.
+
+To view the dag, visit [this link](https://sc8c690a9f43753bep-tp.appspot.com/graph?dag_id=new_fields_of_study). To
+trigger a run on only new or modified data, trigger the dag without configuration parameters. To rerun on all data, 
+trigger the dag with the configuration `{"rerun": true}`.
