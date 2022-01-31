@@ -1,0 +1,34 @@
+[
+  {
+    "mode": "REQUIRED",
+    "name": "merged_id",
+    "type": "STRING",
+    "description": "Merged-corpus publication ID (as in gcp_cset_links_v2)"
+  },
+    {
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "id",
+        "type": "INTEGER",
+        "description": "Field ID. For field names and other metadata, see the field_meta table."
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "score",
+        "type": "FLOAT",
+        "description": "Publication field score. Ranges from 0-1. Interpret this score as the proximity between the publication and the field."
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "fields",
+    "type": "RECORD",
+    "description": "Array of (field, score) pairs"
+  },
+  {
+    "mode": "REQUIRED",
+    "name": "is_imputed",
+    "type": "BOOLEAN",
+    "description": "Indicator for whether we imputed publication field scores instead of estimating them directly from title and abstract text. Generally false for English-language publications and true for others. Where imputed, field scores are a weighted average over the field scores estimated for citation-graph neighbors. For details, see 'Project Summary: Field of Study Prediction' on Drive."
+  }
+]

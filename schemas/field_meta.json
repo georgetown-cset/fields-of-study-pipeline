@@ -1,0 +1,26 @@
+[
+  {
+    "mode": "REQUIRED",
+    "name": "field_id",
+    "type": "INTEGER",
+    "description": "Field of study ID"
+  },
+  {
+    "mode": "REQUIRED",
+    "name": "name",
+    "type": "STRING",
+    "description": "Field of study name"
+  },
+  {
+    "mode": "REQUIRED",
+    "name": "level",
+    "type": "INTEGER",
+    "description": "Level of field in the six-level field taxonomy. Ranges from 0-5, in which level 0 is the highest level of aggregation (comprising 19 disciplines) and level 5 is the lowest (basically keywords)."
+  },
+  {
+    "mode": "REQUIRED",
+    "name": "created_date",
+    "type": "DATE",
+    "description": "Date of field's creation in the field taxonomy"
+  }
+]
