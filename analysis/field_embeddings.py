@@ -25,7 +25,6 @@ L0_FIELDS = {
 FONT_PATH = 'fonts/NunitoSans-Black.ttf'
 FONT_NAME = 'Nunito Sans'
 
-
 def main(lang='en'):
     # Load the matrix of field FastText vectors
     # The field vectors form a matrix with {field count} rows and {FastText dimensionality} columns.
@@ -64,6 +63,9 @@ def main(lang='en'):
     plot_l0_scatter(tsne_df, lang)
     # For each L0, plot the 2d coords of its L1 children
     plot_l1_scatter(tsne_df, parents, lang)
+    
+    # For each L0, plot the 2d coords of its L1 children WITH THE PARENT        
+    plot_l1_scatter(tsne_df, parents, lang, plot_parent=True)
 
     # Plot the cosine similarities of the L0 embeddings as a heatmap
     plot_l0_heatmap(vectors, attrs, lang)
@@ -108,14 +110,37 @@ def load_fonts():
     return font_props
 
 
-def plot_tsne(tsne_df):
+def plot_tsne(tsne_df, point_color='blue', text_color='black', parent_tsne=None):
+    """
+    PARAMETERS
+    parent_tsne = parent df values or None if there's no parent point
+
+    Modify the input tsne_df
+    """
+
+    PARENT_COLOR = 'orange'
+
     sns.set_theme('notebook', 'white')
 
     plt.figure(figsize=(10, 10))
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = FONT_NAME
 
-    scatter = sns.scatterplot(x='x', y='y', data=tsne_df, s=25, legend=False)
+
+    relationship = ['Child' for _ in range(tsne_df.shape[0])]
+    text_color=['blue' for _ in range(tsne_df.shape[0])]
+    tsne_df['relationship'] = relationship
+    tsne_df['text_color']=text_color
+    
+    #plot parent point 
+    if parent_tsne is not None:
+        parent_tsne['relationship']=['Parent']
+        parent_tsne['text_color']=['orange']
+        tsne_df = pd.concat([tsne_df, parent_tsne])
+
+
+    scatter = sns.scatterplot(x='x', y='y', data=tsne_df, s=25, hue='relationship', legend=False)
+
     scatter.set_xlabel('t-SNE x')
     scatter.set_ylabel('t-SNE y')
     texts = []
@@ -124,8 +149,9 @@ def plot_tsne(tsne_df):
                             tsne_df.y[i],
                             tsne_df['display_name'][i],
                             horizontalalignment='left',
-                            color='black')
+                            color=tsne_df['text_color'][i])
         texts.append(text)
+
     adjust_text(texts, arrowprops=dict(arrowstyle="-", color='gray', lw=1))
     return scatter
 
@@ -138,15 +164,22 @@ def plot_l0_scatter(tsne_df, lang: str):
     save(f'{lang}-scatter-level-0.pdf')
 
 
-def plot_l1_scatter(tsne_df, parents, lang):
+def plot_l1_scatter(tsne_df, parents, lang, plot_parent=False):
     # Plot level 1 child fields of each parent
+    # set plot_parent = True to plot the parent point on the graph
     set_scale(1)
     for parent_name, children in parents.groupby('parent_name'):
         child_tsne = tsne_df.loc[children['child_id']]
-        plot_tsne(child_tsne)
         set_title(f'{parent_name}: Level-1 Field Embeddings ({lang.upper()})')
-        save(f'{lang}-scatter-level-1-{parent_name}.pdf')
-
+        
+        if plot_parent:
+            parent_tsne = tsne_df.query(f'level == 0 & display_name == "{parent_name}"')
+            outfilename = f'{lang}-scatter-parent-level-1-{parent_name}.pdf'        
+        else:
+            parent_tsne=None
+            outfilename = f'{lang}-scatter-level-1-{parent_name}.pdf'
+        plot_tsne(child_tsne, parent_tsne=parent_tsne)
+        save(outfilename)
 
 def sim_table(vectors, attrs, mask):
     # Calculate + shape similarities for heatmap
