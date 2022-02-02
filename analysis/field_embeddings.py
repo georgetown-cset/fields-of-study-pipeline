@@ -4,6 +4,7 @@ Visualize field embeddings.
 import os
 from pathlib import Path
 
+import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
@@ -25,13 +26,13 @@ FONT_PATH = 'fonts/NunitoSans-Black.ttf'
 FONT_NAME = 'Nunito Sans'
 
 
-def main():
+def main(lang='en'):
     # Load the matrix of field FastText vectors
     # The field vectors form a matrix with {field count} rows and {FastText dimensionality} columns.
-    vectors = load_field_fasttext('en').index
+    vectors = load_field_fasttext(lang).index
 
     # Load the row order as indicated by field IDs
-    keys = load_field_keys('en')
+    keys = load_field_keys(lang)
 
     # Sort the field attributes table in the field matrix's row order
     # Our dataframe of field attributes gives the field names for humans, along with the field levels
@@ -42,6 +43,17 @@ def main():
     # Child-parent table for e.g. plotting the L1 children of L0 'Computer science'
     parents = create_parent_table(attrs)
 
+
+    # Zeroed rows are fields without embeddings
+    is_zeroed = np.array([(row == 0).all() for row in vectors])
+    # if lang == 'zh':
+    #     is_zeroed = np.array((attrs.level == 1).values)
+    if is_zeroed.any():
+        vectors = np.delete(vectors, is_zeroed, axis=0)
+        keys = list(np.array(keys)[~is_zeroed])
+        attrs = attrs.loc[keys]
+    parents = parents.loc[parents.child_id.isin(keys)]
+
     # Add Nunito Sans to matplotlib's font manager
     load_fonts()
 
@@ -49,16 +61,16 @@ def main():
     tsne_df = fit_tsne(vectors, keys, attrs)
 
     # Plot L0 embeddings in 2d
-    plot_l0_scatter(tsne_df)
+    plot_l0_scatter(tsne_df, lang)
     # For each L0, plot the 2d coords of its L1 children
-    plot_l1_scatter(tsne_df, parents)
+    plot_l1_scatter(tsne_df, parents, lang)
 
     # Plot the cosine similarities of the L0 embeddings as a heatmap
-    plot_l0_heatmap(vectors, attrs)
+    plot_l0_heatmap(vectors, attrs, lang)
     # Same, just for STEM fields
-    plot_stem_heatmap(vectors, attrs)
+    plot_stem_heatmap(vectors, attrs, lang)
     # For each L0, plot the cosine similarities of its L1 children's embeddings as a heatmap
-    plot_l1_heatmaps(vectors, parents, attrs)
+    plot_l1_heatmaps(vectors, parents, attrs, lang)
 
 
 def create_parent_table(attrs):
@@ -118,22 +130,22 @@ def plot_tsne(tsne_df):
     return scatter
 
 
-def plot_l0_scatter(tsne_df):
+def plot_l0_scatter(tsne_df, lang: str):
     # Plot level-0 fields
     set_scale(1.25)
     plot_tsne(tsne_df.query('level == 0'))
-    set_title('Level-0 Field Embeddings')
-    save(f'scatter-level-0.pdf')
+    set_title(f'Level-0 Field Embeddings ({lang.upper()})')
+    save(f'{lang}-scatter-level-0.pdf')
 
 
-def plot_l1_scatter(tsne_df, parents):
+def plot_l1_scatter(tsne_df, parents, lang):
     # Plot level 1 child fields of each parent
     set_scale(1)
     for parent_name, children in parents.groupby('parent_name'):
         child_tsne = tsne_df.loc[children['child_id']]
         plot_tsne(child_tsne)
-        set_title(f'{parent_name}: Level-1 Field Embeddings')
-        save(f'scatter-level-1-{parent_name}.pdf')
+        set_title(f'{parent_name}: Level-1 Field Embeddings ({lang.upper()})')
+        save(f'{lang}-scatter-level-1-{parent_name}.pdf')
 
 
 def sim_table(vectors, attrs, mask):
@@ -165,27 +177,29 @@ def plot_heatmap(sim_df, annot=True):
     return ax
 
 
-def plot_l0_heatmap(vectors, attrs):
+def plot_l0_heatmap(vectors, attrs, lang):
     # L0 heatmap
     l0_sim = sim_table(vectors, attrs, attrs.level == 0)
     plot_heatmap(l0_sim, annot=False)
-    set_title('Level-0 Field Similarities')
+    set_title(f'Level-0 Field Similarities ({lang.upper()})')
     plt.subplots_adjust(left=.22, bottom=.20)
-    save(f'heatmap-level-0.pdf')
+    save(f'{lang}-heatmap-level-0.pdf')
+    plt.close()
 
 
-def plot_stem_heatmap(vectors, attrs):
+def plot_stem_heatmap(vectors, attrs, lang):
     # STEM heatmap
     stem_mask = attrs.display_name.isin(L0_FIELDS['stem'])
     assert stem_mask.sum() == len(L0_FIELDS['stem'])
     stem_sim = sim_table(vectors, attrs, stem_mask)
     plot_heatmap(stem_sim, annot=False)
-    set_title('STEM: Level-0 Field Similarities')
+    set_title(f'STEM: Level-0 Field Similarities ({lang.upper()})')
     plt.subplots_adjust(left=.22, bottom=.20)
-    save(f'heatmap-level-0-stem.pdf')
+    save(f'{lang}-heatmap-level-0-stem.pdf')
+    plt.close()
 
 
-def plot_l1_heatmaps(vectors, parents, attrs):
+def plot_l1_heatmaps(vectors, parents, attrs, lang):
     # Level 1 heatmaps by L0 parent
     for parent_name, children in parents.groupby('parent_name'):
         scale = min([1.5, max([.75, 15 / children.shape[0]])])
@@ -195,9 +209,10 @@ def plot_l1_heatmaps(vectors, parents, attrs):
         child_mask = attrs.index.isin(children.child_id)
         child_sim = sim_table(vectors, attrs, child_mask)
         plot_heatmap(child_sim, annot=False)
-        set_title(f'{parent_name}: Level-1 Field Similarities')
+        set_title(f'{parent_name}: Level-1 Field Similarities ({lang.upper()})')
         plt.subplots_adjust(left=.22, bottom=.20)
-        save(f'heatmap-level-1-{parent_name}.pdf')
+        save(f'{lang}-heatmap-level-1-{parent_name}.pdf')
+        plt.close()
 
 
 def set_title(title):
@@ -213,4 +228,6 @@ def save(name):
 
 
 if __name__ == '__main__':
-    main()
+    for lang in ['zh']:
+    # for lang in ['zh', 'en']:
+        main(lang)

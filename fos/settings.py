@@ -16,7 +16,9 @@ EN_FASTTEXT_PATH = EMBED_DIR / 'english/fasttext/en_merged_model_120221.bin'
 EN_TFIDF_PATH = EMBED_DIR / 'english/tfidfs/tfidf_model_en_merged_sample.pkl'
 EN_DICT_PATH = EMBED_DIR / 'english/tfidfs/id2word_dict_en_merged_sample.txt'
 
-ZH_FASTTEXT_PATH = EMBED_DIR / 'chinese/fasttext/zh_merged_model_011322.bin'
+ZH_FASTTEXT_PATH = EMBED_DIR / 'chinese/fasttext/cc.zh.300.bin'
+# ZH_FASTTEXT_PATH = EMBED_DIR / 'chinese/fasttext/zh_merged_model_011322.bin'
+# ZH_FASTTEXT_PATH = EMBED_DIR / 'zh_merged_model_122021.bin'
 ZH_TFIDF_PATH = EMBED_DIR / 'chinese/tfidfs/tfidf_model_zh_sample_011222.pkl'
 ZH_DICT_PATH = EMBED_DIR / 'chinese/tfidfs/id2word_dict_zh_sample_011222.txt'
 

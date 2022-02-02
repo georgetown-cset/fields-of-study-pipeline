@@ -5,6 +5,7 @@ import pickle
 from argparse import ArgumentParser
 
 import dataset
+import jieba
 import numpy as np
 from gensim.similarities import MatrixSimilarity, SparseMatrixSimilarity
 from scipy.sparse import csr_matrix
@@ -14,7 +15,8 @@ from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH, EN_FIEL
 from fos.util import preprocess
 from fos.vectors import load_fasttext, load_tfidf, embed_tfidf
 
-VECTOR_DIM = 250
+# TODO check this at runtime instead
+VECTOR_DIM = 300
 
 db = dataset.connect('sqlite:///data/wiki.db')
 table = db['pages']
@@ -31,15 +33,26 @@ def main(lang='en'):
 
     for field in table:
         field_id = field['id']
-        text = field[f'{lang}_text']
+        text = field.get(f'{lang}_text', '')
         if text is None:
-            # If we don't have any field text for this field, we use zeroed vectors
-            ft_embeddings[field_id] = np.zeros((VECTOR_DIM,), dtype=np.float32)
-            tfidf_embeddings[field_id] = []
+            text = ''
+        if lang == 'zh' and field[f'en_text_mt'] is not None and len(field[f'en_text_mt']) > 0:
+            text += ' ' + field['en_text_mt']
+        name = field["display_name"]
+        if not len(text):
+            print(f'No {lang} text for {name}')
             continue
         clean_text = preprocess(text, lang)
-        ft_embeddings[field_id] = ft_model.get_sentence_vector(clean_text)
-        tfidf_embeddings[field_id] = embed_tfidf(clean_text.split(), tfidf, dictionary)
+        if not len(clean_text):
+            print(f'No {lang} text for {name}')
+            continue
+        print(f'{name}: len {len(clean_text)}')
+        if lang == 'zh':
+            ft_embeddings[field_id] = ft_model.get_sentence_vector('\t'.join(jieba.cut(clean_text)))
+            tfidf_embeddings[field_id] = embed_tfidf(jieba.cut(clean_text), tfidf, dictionary)
+        else:
+            ft_embeddings[field_id] = ft_model.get_sentence_vector(clean_text)
+            tfidf_embeddings[field_id] = embed_tfidf(clean_text.split(), tfidf, dictionary)
 
     # Write a matrix of fasttext vectors for fields (via `gensim.similarities.docsim.MatrixSimilarity`), for comparison
     # to fasttext publication vectors in scoring
