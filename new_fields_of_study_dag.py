@@ -37,7 +37,7 @@ default_args = {
     "on_failure_callback": task_fail_slack_alert
 }
 
-production_dataset = "new_fields_of_study"
+production_dataset = "fields_of_study_v2"
 staging_dataset = f"staging_{production_dataset}"
 
 
