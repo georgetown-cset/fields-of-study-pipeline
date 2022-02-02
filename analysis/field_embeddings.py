@@ -228,6 +228,5 @@ def save(name):
 
 
 if __name__ == '__main__':
-    for lang in ['zh']:
-    # for lang in ['zh', 'en']:
+    for lang in ['zh', 'en']:
         main(lang)
