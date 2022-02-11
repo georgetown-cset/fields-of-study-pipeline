@@ -24,7 +24,7 @@ L0_FIELDS = {
 }
 FONT_PATH = 'fonts/NunitoSans-Black.ttf'
 FONT_NAME = 'Nunito Sans'
-
+FILE_TYPE = 'png'
 
 def main(lang='en'):
     # Load the matrix of field FastText vectors
@@ -42,7 +42,6 @@ def main(lang='en'):
 
     # Child-parent table for e.g. plotting the L1 children of L0 'Computer science'
     parents = create_parent_table(attrs)
-
 
     # Zeroed rows are fields without embeddings
     is_zeroed = np.array([(row == 0).all() for row in vectors])
@@ -109,9 +108,9 @@ def load_fonts():
 
 
 def plot_tsne(tsne_df):
-    sns.set_theme('notebook', 'white')
+    sns.set_theme('notebook', 'white', rc={"figure.figsize": (4, 4)})
 
-    plt.figure(figsize=(10, 10))
+    plt.figure(figsize=(8, 8))
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = FONT_NAME
 
@@ -135,7 +134,7 @@ def plot_l0_scatter(tsne_df, lang: str):
     set_scale(1.25)
     plot_tsne(tsne_df.query('level == 0'))
     set_title(f'Level-0 Field Embeddings ({lang.upper()})')
-    save(f'{lang}-scatter-level-0.pdf')
+    save(f'{lang}-scatter-level-0.{FILE_TYPE}')
 
 
 def plot_l1_scatter(tsne_df, parents, lang):
@@ -145,7 +144,7 @@ def plot_l1_scatter(tsne_df, parents, lang):
         child_tsne = tsne_df.loc[children['child_id']]
         plot_tsne(child_tsne)
         set_title(f'{parent_name}: Level-1 Field Embeddings ({lang.upper()})')
-        save(f'{lang}-scatter-level-1-{parent_name}.pdf')
+        save(f'{lang}-scatter-level-1-{parent_name}.{FILE_TYPE}')
 
 
 def sim_table(vectors, attrs, mask):
@@ -183,7 +182,7 @@ def plot_l0_heatmap(vectors, attrs, lang):
     plot_heatmap(l0_sim, annot=False)
     set_title(f'Level-0 Field Similarities ({lang.upper()})')
     plt.subplots_adjust(left=.22, bottom=.20)
-    save(f'{lang}-heatmap-level-0.pdf')
+    save(f'{lang}-heatmap-level-0.{FILE_TYPE}')
     plt.close()
 
 
@@ -195,7 +194,7 @@ def plot_stem_heatmap(vectors, attrs, lang):
     plot_heatmap(stem_sim, annot=False)
     set_title(f'STEM: Level-0 Field Similarities ({lang.upper()})')
     plt.subplots_adjust(left=.22, bottom=.20)
-    save(f'{lang}-heatmap-level-0-stem.pdf')
+    save(f'{lang}-heatmap-level-0-stem.{FILE_TYPE}')
     plt.close()
 
 
@@ -211,7 +210,7 @@ def plot_l1_heatmaps(vectors, parents, attrs, lang):
         plot_heatmap(child_sim, annot=False)
         set_title(f'{parent_name}: Level-1 Field Similarities ({lang.upper()})')
         plt.subplots_adjust(left=.22, bottom=.20)
-        save(f'{lang}-heatmap-level-1-{parent_name}.pdf')
+        save(f'{lang}-heatmap-level-1-{parent_name}.{FILE_TYPE}')
         plt.close()
 
 
@@ -224,7 +223,7 @@ def set_scale(scale):
 
 
 def save(name):
-    plt.savefig(os.path.join(FIG_DIR, name))
+    plt.savefig(os.path.join(FIG_DIR, name), bbox_inches='tight')
 
 
 if __name__ == '__main__':
