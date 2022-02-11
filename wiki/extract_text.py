@@ -36,13 +36,13 @@ WWW = re.compile(r'^www\.')
 
 
 def main():
+    # It's simpler to rebuild the refs table than
     ref_table.drop()
     for record in tqdm(page_table):
         # Record has e.g.
         en_html = record.get('en_html')
         if en_html:
             en_text = html_to_text(en_html)
-            # TODO: add ref content to content
             urls = extract_reference_urls(en_html)
             add_references(record['id'], record['en_title'], urls)
             record['en_text'] = en_text
@@ -51,6 +51,8 @@ def main():
         if zh_html:
             zh_text = html_to_text(zh_html)
             record['zh_text'] = zh_text
+            urls = extract_reference_urls(en_html)
+            add_references(record['id'], record['en_title'], urls)
             page_table.update(record, ['id'])
 
 
