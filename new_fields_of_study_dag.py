@@ -252,7 +252,7 @@ with DAG("new_fields_of_study",
                         "destinationTable": {
                             "projectId": project_id,
                             "datasetId": staging_dataset,
-                            "tableId": table_name
+                            "tableId": f"prev_{lang}_corpus"
                         },
                         "allowLargeResults": True,
                         "createDisposition": "CREATE_IF_NEEDED",
