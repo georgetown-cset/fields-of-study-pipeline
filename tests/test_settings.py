@@ -1,3 +1,6 @@
+"""
+Test that expected assets exist.
+"""
 from fos import settings
 
 

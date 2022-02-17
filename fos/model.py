@@ -7,7 +7,7 @@ import numpy as np
 from fos.entity import load_entities, embed_entities
 from fos.util import convert_vector
 from fos.vectors import load_tfidf, load_fasttext, load_field_fasttext, load_field_tfidf, load_field_keys, \
-    embed_fasttext, embed_tfidf, load_field_entities
+    embed_fasttext, embed_tfidf, load_field_entities, sparse_similarity
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -112,7 +112,7 @@ class FieldModel(object):
         else:
             fasttext = None
         if embedding.tfidf is not None:
-            tfidf = self.field_tfidf[embedding.tfidf]
+            tfidf = sparse_similarity(embedding.tfidf, self.field_tfidf.index)
         else:
             tfidf = None
         if embedding.entity is not None and len(embedding.entity):
