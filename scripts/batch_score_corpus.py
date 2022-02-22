@@ -1,3 +1,4 @@
+import argparse
 import json
 import timeit
 from itertools import zip_longest
@@ -51,11 +52,9 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
             avg_sim = np.apply_along_axis(lambda x: np.average(x[x > 0.0], axis=0), 0, sims)
 
             for record, row in zip_longest(batch, avg_sim):
-                f.write(json.dumps({
-                    'merged_id': record['merged_id'],
-                    'fields': [{'id': k, 'score': float(v)} for k, v in zip_longest(index, row)]
-                }) + '\n')
-
+                f.write(json.dumps({'merged_id': record['merged_id'],
+                                    'fields': [
+                                        {'id': k, 'score': float(v)} for k, v in zip_longest(index, row)]}) + '\n')
             i += len(batch)
             if i >= limit:
                 break
@@ -66,4 +65,8 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description='Score merged corpus text')
+    parser.add_argument('lang', choices=('en', 'zh'), help='Language')
+    parser.add_argument('--limit', type=int, default=10000, help='Record limit')
+    args = parser.parse_args()
+    main(lang=args.lang, limit=args.limit)
