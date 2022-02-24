@@ -63,7 +63,7 @@ with DAG("new_fields_of_study",
     backups_dataset = f"{production_dataset}_backups"
     project_id = "gcp-cset-projects"
     gce_zone = "us-east1-c"
-    gce_resource_id = "fos-pipeline-test"
+    gce_resource_id = "fos-runner"
     dags_dir = os.environ.get("DAGS_FOLDER")
 
     # We keep script inputs and outputs in a tmp dir on gcs, so clean it out at the start of each run. We clean at
@@ -87,6 +87,7 @@ with DAG("new_fields_of_study",
     refresh_artifacts = BashOperator(
         task_id=f"refresh_artifacts",
         bash_command=mk_command_seq([
+            "cd /mnt/disks/data",
             f"rm -r fields-of-study-pipeline || true",
             f"gsutil -m cp -r gs://{bucket}/{production_dataset}/fields-of-study-pipeline .",
             "cd fields-of-study-pipeline",
@@ -108,6 +109,7 @@ with DAG("new_fields_of_study",
         download = BashOperator(
             task_id=f"download_{lang}",
             bash_command = mk_command_seq([
+                "cd /mnt/disks/data",
                 # make sure the corpus dir is clean
                 f"rm -r fields-of-study-pipeline/assets/corpus/* || true",
                 "cd fields-of-study-pipeline",
@@ -121,8 +123,8 @@ with DAG("new_fields_of_study",
         score_corpus = BashOperator(
             task_id=f"score_corpus_{lang}",
             bash_command=mk_command_seq([
-                "cd fields-of-study-pipeline",
-                f"PYTHONPATH=. python3 scripts/score_corpus.py {lang} --bq_format --limit 0",
+                "cd /mnt/disks/data/fields-of-study-pipeline",
+                f"PYTHONPATH=. python3 scripts/batch_score_corpus.py {lang} --limit 0",
                 f"gsutil cp assets/corpus/{lang}_scores.jsonl gs://{bucket}/{outputs_dir}/"
             ])
         )
