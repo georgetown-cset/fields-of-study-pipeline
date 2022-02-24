@@ -7,6 +7,7 @@ import numpy as np
 from more_itertools import grouper
 
 from fos.entity import load_entities, embed_entities
+from fos.settings import CORPUS_DIR
 from fos.util import iter_bq_extract
 from fos.vectors import load_fasttext, load_tfidf, load_field_fasttext, load_field_tfidf, load_field_entities, \
     load_field_keys, batch_sparse_similarity
@@ -34,8 +35,8 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
     i = 0
     start_time = timeit.default_timer()
 
-    with open('batch.json', 'wt') as f:
-        for batch in grouper(iter_bq_extract(f'{lang}_'), chunk_size):
+    with open(CORPUS_DIR / f'{lang}_scores.jsonl', 'wt') as f:
+        for batch in grouper(chunk_size, iter_bq_extract(f'{lang}_')):
             ft = [fasttext.get_sentence_vector(record['text']) for record in batch]
             ft = row_norm(ft)
             ft_sim = np.dot(field_fasttext.index, ft.T).T
@@ -56,7 +57,7 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
                                     'fields': [
                                         {'id': k, 'score': float(v)} for k, v in zip_longest(index, row)]}) + '\n')
             i += len(batch)
-            if i >= limit:
+            if limit and (i >= limit):
                 break
 
     stop_time = timeit.default_timer()
