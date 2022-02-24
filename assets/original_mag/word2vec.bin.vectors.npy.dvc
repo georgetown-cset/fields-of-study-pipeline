@@ -1,0 +1,4 @@
+outs:
+- md5: fe5c1e7f43289d97618191d01263c441
+  size: 900055128
+  path: word2vec.bin.vectors.npy
