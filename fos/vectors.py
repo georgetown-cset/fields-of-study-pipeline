@@ -11,6 +11,7 @@ from gensim import matutils
 from gensim.corpora import Dictionary
 from gensim.similarities import MatrixSimilarity, SparseMatrixSimilarity
 from gensim.sklearn_api import TfIdfTransformer
+from numba import njit
 
 from fos.settings import EN_TFIDF_PATH, ZH_TFIDF_PATH, EN_FASTTEXT_PATH, ZH_FASTTEXT_PATH, EN_FIELD_FASTTEXT_PATH, \
     ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, EN_DICT_PATH, ZH_DICT_PATH, EN_FIELD_KEY_PATH, \
@@ -130,3 +131,26 @@ def sparse_norm(vector):
         return [(term_id, x / length) for term_id, x in vector]
     else:
         return list(vector)
+
+
+@njit(cache=True)
+def vectorize(text, vocab, eps=1e-12):
+    bow = vocab.to_bow(text)
+    vector = []
+    sum_of_squares = 0.0
+    # bow is a dict mapping ids to term frequencies
+    for term_id, term_freq in bow.items():
+        # for each observed term we look up the idf
+        idf = vocab.id_to_idf[term_id]
+        # if the idf is positive ...
+        if abs(idf) > eps:
+            # calculate the tfidf
+            tfidf = float(term_freq) * idf
+            vector.append((term_id, tfidf))
+            # for the l2 norm, we're also calculating the sum of squared idfs
+            sum_of_squares += tfidf ** 2
+    # calculate the norm
+    norm = 1.0 * math.sqrt(sum_of_squares)
+    if norm > 0.0:
+        vector = [(termid, val / norm) for termid, val in vector]
+    return vector

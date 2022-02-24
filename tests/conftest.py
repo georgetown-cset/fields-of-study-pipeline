@@ -8,9 +8,33 @@ import fasttext.util
 import gensim
 import pytest
 
+from fos.bow import load_vocab
+from fos.settings import EN_DICT_PATH, ZH_DICT_PATH
 from fos.util import preprocess
+from fos.vectors import load_tfidf
 
 ASSETS_DIR = Path(__file__).parent / 'assets'
+
+
+@pytest.fixture
+def en_vocab():
+    return load_vocab(EN_DICT_PATH)
+
+@pytest.fixture
+def en_tfidf():
+    return load_tfidf('en')
+
+@pytest.fixture
+def en_dict():
+    tfidf, dictionary = load_tfidf('en')
+    return dictionary
+
+
+
+
+@pytest.fixture
+def zh_vocab():
+    return load_vocab(ZH_DICT_PATH)
 
 
 @pytest.fixture
