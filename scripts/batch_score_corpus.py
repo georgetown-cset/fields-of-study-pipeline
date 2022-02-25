@@ -4,7 +4,7 @@ import timeit
 from itertools import zip_longest
 
 import numpy as np
-from more_itertools import grouper
+from more_itertools import chunked
 
 from fos.entity import load_entities, embed_entities
 from fos.settings import CORPUS_DIR
@@ -36,7 +36,9 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
     start_time = timeit.default_timer()
 
     with open(CORPUS_DIR / f'{lang}_scores.jsonl', 'wt') as f:
-        for batch in grouper(chunk_size, iter_bq_extract(f'{lang}_')):
+        # Break iterable into sub-iterables with chunk_size elements. The last sub-iterable will (probably) have length
+        # less than chunk_size.
+        for batch in chunked(iter_bq_extract(f'{lang}_'), chunk_size):
             ft = [fasttext.get_sentence_vector(record['text']) for record in batch]
             ft = row_norm(ft)
             ft_sim = np.dot(field_fasttext.index, ft.T).T
