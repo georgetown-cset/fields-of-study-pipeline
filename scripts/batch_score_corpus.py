@@ -1,5 +1,6 @@
 import argparse
 import json
+import math
 import timeit
 from itertools import zip_longest
 
@@ -57,7 +58,8 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
             for record, row in zip_longest(batch, avg_sim):
                 f.write(json.dumps({'merged_id': record['merged_id'],
                                     'fields': [
-                                        {'id': k, 'score': float(v)} for k, v in zip_longest(index, row)]}) + '\n')
+                                        {'id': k, 'score': None if math.isnan(float(v)) else float(v)}
+                                        for k, v in zip_longest(index, row)]}) + '\n')
             i += len(batch)
             if limit and (i >= limit):
                 break
