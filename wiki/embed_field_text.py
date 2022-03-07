@@ -1,6 +1,8 @@
 """
 Create FastText and tfidf embeddings for fields from field text.
 """
+import csv
+import json
 import pickle
 from argparse import ArgumentParser
 
@@ -11,12 +13,10 @@ from gensim.similarities import MatrixSimilarity, SparseMatrixSimilarity
 from scipy.sparse import csr_matrix
 
 from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, \
-    EN_FIELD_KEY_PATH, ZH_FIELD_KEY_PATH
+    EN_FIELD_KEY_PATH, ZH_FIELD_KEY_PATH, EN_FIELD_FASTTEXT_CSV, ZH_FIELD_FASTTEXT_CSV, EN_FIELD_TFIDF_JSON, \
+    ZH_FIELD_TFIDF_JSON
 from fos.util import preprocess
 from fos.vectors import load_fasttext, load_tfidf, embed_tfidf
-
-# TODO check this at runtime instead
-VECTOR_DIM = 300
 
 db = dataset.connect('sqlite:///data/wiki.db')
 table = db['pages']
@@ -57,9 +57,11 @@ def main(lang='en'):
     # Write a matrix of fasttext vectors for fields (via `gensim.similarities.docsim.MatrixSimilarity`), for comparison
     # to fasttext publication vectors in scoring
     write_fasttext_similarity(ft_embeddings, lang)
+    write_fasttext_csv(ft_embeddings, lang)
 
     # Similarly, write a matrix of tfidf vectors for fields for comparison to tfidf publication vectors in scoring
     write_tfidf_similarity(tfidf_embeddings, dictionary, lang)
+    write_tfidf_csv(tfidf_embeddings, lang)
 
     # Lastly write out the row order of these matrices; the order comes from iterating over database rows and will be
     # the same for both
@@ -96,6 +98,23 @@ def write_tfidf_similarity(tfidf_embeddings, dictionary, lang):
     print(f'Wrote {output_path}')
 
 
+def write_tfidf_csv(tfidf_embeddings, lang):
+    """"Write to disk a CSV of tfidf vectors for fields in Go."""
+    if lang == 'en':
+        output_path = EN_FIELD_TFIDF_JSON
+    elif lang == 'zh':
+        output_path = ZH_FIELD_TFIDF_JSON
+    else:
+        raise ValueError(lang)
+    with open(output_path, 'wt') as f:
+        for field_id, vector in tfidf_embeddings.items():
+            f.write(json.dumps({
+                'id': field_id,
+                'vector': [{"id": k, "value": v} for k, v in vector]
+            }) + '\n')
+    print(f'Wrote {output_path}')
+
+
 def write_fasttext_similarity(ft_embeddings, lang):
     """"Write to disk a matrix of fasttext vectors for fields."""
     if lang == 'en':
@@ -104,9 +123,25 @@ def write_fasttext_similarity(ft_embeddings, lang):
         output_path = ZH_FIELD_FASTTEXT_PATH
     else:
         raise ValueError(lang)
-    ft_similarity = MatrixSimilarity(ft_embeddings.values(), num_features=VECTOR_DIM, dtype=np.float32)
+    vector_dim = ft_embeddings[next(iter(ft_embeddings))].size
+    ft_similarity = MatrixSimilarity(ft_embeddings.values(), num_features=vector_dim, dtype=np.float32)
     with open(output_path, 'wb') as f:
         pickle.dump(ft_similarity, f)
+    print(f'Wrote {output_path}')
+
+
+def write_fasttext_csv(ft_embeddings, lang):
+    """"Write to disk a CSV of fasttext vectors for fields in Go."""
+    if lang == 'en':
+        output_path = EN_FIELD_FASTTEXT_CSV
+    elif lang == 'zh':
+        output_path = ZH_FIELD_FASTTEXT_CSV
+    else:
+        raise ValueError(lang)
+    with open(output_path, 'wt') as f:
+        writer = csv.writer(f, delimiter='\t')
+        for field_id, vector in ft_embeddings.items():
+            writer.writerow([field_id, *vector.tolist()])
     print(f'Wrote {output_path}')
 
 

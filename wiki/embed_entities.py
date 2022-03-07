@@ -6,6 +6,7 @@ the corresponding entity vectors, for creation of an entity-based publication em
 vectors for fields (via `gensim.similarities.docsim.MatrixSimilarity`), for scoring purposes: comparison of
 entity-based publication embeddings against entity-based field embeddings
 """
+import csv
 import pickle
 from argparse import ArgumentParser
 from collections import Counter
@@ -15,7 +16,8 @@ import numpy as np
 from gensim.similarities import MatrixSimilarity
 
 from fos.entity import create_automaton, find_keywords
-from fos.settings import ASSETS_DIR, EN_ENTITY_PATH, ZH_ENTITY_PATH, ZH_FIELD_ENTITY_PATH, EN_FIELD_ENTITY_PATH
+from fos.settings import ASSETS_DIR, EN_ENTITY_PATH, ZH_ENTITY_PATH, ZH_FIELD_ENTITY_PATH, EN_FIELD_ENTITY_PATH, \
+    EN_FIELD_ENTITY_CSV, ZH_FIELD_ENTITY_CSV
 from fos.vectors import load_field_fasttext, load_field_keys
 
 VECTOR_DIM = 250
@@ -90,6 +92,9 @@ def main(lang='en', exclude_self_mentions=False):
     # for scoring purposes: comparison of entity-based publication embeddings against entity-based field embeddings
     write_entity_similarity(entity_vectors, field_index, lang)
 
+    # We repeat this writing to CSV for the Go implementation
+    write_entity_vector_csv(entity_vectors, field_index, lang)
+
 
 def create_field_matcher(lang='en'):
     """Create an automaton for Aho-Corasick search of field names in field text.
@@ -120,6 +125,23 @@ def write_entity_matcher(entity_vectors, id_to_title, lang):
     with open(output_path, 'wb') as f:
         pickle.dump(entity_matcher, f)
     print(f'Wrote {lang} matcher to {output_path}')
+
+
+def write_entity_vector_csv(entity_vectors, field_index, lang):
+    """For our Go implementation, we need the entity vectors in a different format.
+    """
+    indexed_vectors = [entity_vectors[field_id] for field_id in field_index]
+    if lang == 'en':
+        output_path = EN_FIELD_ENTITY_CSV
+    elif lang == 'zh':
+        output_path = ZH_FIELD_ENTITY_CSV
+    else:
+        raise ValueError(lang)
+    with open(output_path, 'wt') as f:
+        writer = csv.writer(f, delimiter='\t')
+        for field_id, field_vector in zip(field_index, indexed_vectors):
+            writer.writerow([field_id, *field_vector.tolist()])
+    print(f'Wrote {lang} entity vectors to {output_path}')
 
 
 def write_entity_similarity(entity_vectors, field_index, lang):
