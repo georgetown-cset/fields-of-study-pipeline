@@ -15,6 +15,7 @@ from gensim.sklearn_api import TfIdfTransformer
 from fos.settings import EN_TFIDF_PATH, ZH_TFIDF_PATH, EN_FASTTEXT_PATH, ZH_FASTTEXT_PATH, EN_FIELD_FASTTEXT_PATH, \
     ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, EN_DICT_PATH, ZH_DICT_PATH, EN_FIELD_KEY_PATH, \
     EN_FIELD_ENTITY_PATH, ZH_FIELD_ENTITY_PATH, ZH_FIELD_KEY_PATH
+from fos.util import norm
 
 ASSETS_DIR = Path(__file__).parent.parent / 'assets'
 
@@ -23,7 +24,7 @@ def embed_fasttext(text, model):
     vector = model.get_sentence_vector(text)
     if not len(vector):
         return []
-    return vector
+    return norm(vector)
 
 
 def embed_tfidf(text: List, tfidf: TfIdfTransformer, dictionary):
