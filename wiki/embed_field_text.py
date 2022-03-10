@@ -15,8 +15,8 @@ from scipy.sparse import csr_matrix
 from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, \
     EN_FIELD_KEY_PATH, ZH_FIELD_KEY_PATH, EN_FIELD_FASTTEXT_CSV, ZH_FIELD_FASTTEXT_CSV, EN_FIELD_TFIDF_JSON, \
     ZH_FIELD_TFIDF_JSON
-from fos.util import preprocess
-from fos.vectors import load_fasttext, load_tfidf, embed_tfidf
+from fos.util import preprocess, norm
+from fos.vectors import load_fasttext, load_tfidf, embed_tfidf, sparse_norm
 
 db = dataset.connect('sqlite:///data/wiki.db')
 table = db['pages']
@@ -48,11 +48,11 @@ def main(lang='en'):
             continue
         print(f'{name}: len {len(clean_text)}')
         if lang == 'zh':
-            ft_embeddings[field_id] = ft_model.get_sentence_vector('\t'.join(jieba.cut(clean_text)))
-            tfidf_embeddings[field_id] = embed_tfidf(jieba.cut(clean_text), tfidf, dictionary)
+            ft_embeddings[field_id] = norm(ft_model.get_sentence_vector('\t'.join(jieba.cut(clean_text))))
+            tfidf_embeddings[field_id] = sparse_norm(embed_tfidf(jieba.cut(clean_text), tfidf, dictionary))
         else:
-            ft_embeddings[field_id] = ft_model.get_sentence_vector(clean_text)
-            tfidf_embeddings[field_id] = embed_tfidf(clean_text.split(), tfidf, dictionary)
+            ft_embeddings[field_id] = norm(ft_model.get_sentence_vector(clean_text))
+            tfidf_embeddings[field_id] = sparse_norm(embed_tfidf(clean_text.split(), tfidf, dictionary))
 
     # Write a matrix of fasttext vectors for fields (via `gensim.similarities.docsim.MatrixSimilarity`), for comparison
     # to fasttext publication vectors in scoring
@@ -125,6 +125,8 @@ def write_fasttext_similarity(ft_embeddings, lang):
         raise ValueError(lang)
     vector_dim = ft_embeddings[next(iter(ft_embeddings))].size
     ft_similarity = MatrixSimilarity(ft_embeddings.values(), num_features=vector_dim, dtype=np.float32)
+    for i, (k, v) in enumerate(ft_embeddings.items()):
+        assert (v == ft_similarity.index[i,]).all()
     with open(output_path, 'wb') as f:
         pickle.dump(ft_similarity, f)
     print(f'Wrote {output_path}')
