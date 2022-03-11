@@ -31,7 +31,13 @@ def main(lang='en'):
     ft_embeddings = {}
     tfidf_embeddings = {}
 
-    for field in table:
+    # Iterate over field IDs in stable order
+    field_ids = sorted([field['id'] for field in table])
+    # Make sure we're doing an integer sort
+    assert isinstance(field_ids[0], int)
+
+    for field_id in field_ids:
+        field = table.find_one(id=field_id)
         field_id = field['id']
         text = field.get(f'{lang}_text', '')
         if text is None:
@@ -63,10 +69,9 @@ def main(lang='en'):
     write_tfidf_similarity(tfidf_embeddings, dictionary, lang)
     write_tfidf_csv(tfidf_embeddings, lang)
 
-    # Lastly write out the row order of these matrices; the order comes from iterating over database rows and will be
-    # the same for both
-    assert ft_embeddings.keys() == tfidf_embeddings.keys()
-    write_field_keys(ft_embeddings.keys(), lang)
+    # Lastly write out the row order of these matrices ...
+    assert list(ft_embeddings.keys()) == list(tfidf_embeddings.keys()) == field_ids
+    write_field_keys(field_ids, lang)
 
 
 def write_field_keys(keys, lang):
@@ -92,7 +97,7 @@ def write_tfidf_similarity(tfidf_embeddings, dictionary, lang):
     else:
         raise ValueError(lang)
     tfidf_index = SparseMatrixSimilarity((to_sparse(v, len(dictionary)) for v in tfidf_embeddings.values()),
-                                         num_features=len(dictionary), dtype=np.float32)
+                                         num_features=len(dictionary), dtype=np.float64)
     with open(output_path, 'wb') as f:
         pickle.dump(tfidf_index, f)
     print(f'Wrote {output_path}')
@@ -124,7 +129,7 @@ def write_fasttext_similarity(ft_embeddings, lang):
     else:
         raise ValueError(lang)
     vector_dim = ft_embeddings[next(iter(ft_embeddings))].size
-    ft_similarity = MatrixSimilarity(ft_embeddings.values(), num_features=vector_dim, dtype=np.float32)
+    ft_similarity = MatrixSimilarity(ft_embeddings.values(), num_features=vector_dim, dtype=np.float64)
     for i, (k, v) in enumerate(ft_embeddings.items()):
         assert (v == ft_similarity.index[i,]).all()
     with open(output_path, 'wb') as f:
@@ -157,6 +162,10 @@ def to_sparse(tfidf_vector, ncol):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--lang', default='en', choices=('en', 'zh'), help='Language')
+    parser.add_argument('--lang', default='en', choices=('en', 'zh', 'all'), help='Language')
     args = parser.parse_args()
-    main(lang=args.lang)
+    if args.lang == 'all':
+        for lang in ['en', 'zh']:
+            main(lang=lang)
+    else:
+        main(lang=args.lang)

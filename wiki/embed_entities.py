@@ -17,7 +17,7 @@ from gensim.similarities import MatrixSimilarity
 
 from fos.entity import create_automaton, find_keywords
 from fos.settings import ASSETS_DIR, EN_ENTITY_PATH, ZH_ENTITY_PATH, ZH_FIELD_ENTITY_PATH, EN_FIELD_ENTITY_PATH, \
-    EN_FIELD_ENTITY_CSV, ZH_FIELD_ENTITY_CSV
+    EN_FIELD_ENTITY_CSV, ZH_FIELD_ENTITY_CSV, EN_ENTITY_CSV, ZH_ENTITY_CSV
 from fos.vectors import load_field_fasttext, load_field_keys
 
 VECTOR_DIM = 250
@@ -42,12 +42,15 @@ def main(lang='en', exclude_self_mentions=False):
     # up entity names by ID
     id_to_title = {}
 
+    # Iterate over field IDs in stable order
+    field_ids = sorted([field['id'] for field in table])
+
     # Iterate over each field ...
-    for field in table:
-        field_id = field['id']
+    for field_id in field_ids:
+        field = table.find_one(id=field_id)
         text = field[f'{lang}_text']
         title = field[f'{lang}_title']
-        entity_vector = np.zeros((VECTOR_DIM,), dtype=np.float32)
+        entity_vector = np.zeros((VECTOR_DIM,), dtype=np.float64)
 
         # In English at L2+ and in Chinese starting with some fields in L1, we don't always have field text; these
         # entity embeddings will be zeroed
@@ -94,6 +97,21 @@ def main(lang='en', exclude_self_mentions=False):
 
     # We repeat this writing to CSV for the Go implementation
     write_entity_vector_csv(entity_vectors, field_index, lang)
+    write_id_to_search_terms(id_to_title, lang)
+
+
+def write_id_to_search_terms(id_to_title, lang):
+    if lang == 'en':
+        output = EN_ENTITY_CSV
+    elif lang == 'zh':
+        output = ZH_ENTITY_CSV
+    else:
+        raise ValueError(lang)
+    with open(output, 'wt') as f:
+        writer = csv.writer(f, delimiter='\t')
+        for k, v in id_to_title.items():
+            writer.writerow([k, v])
+    print(f'Wrote needles to {output}')
 
 
 def create_field_matcher(lang='en'):
@@ -111,11 +129,13 @@ def write_entity_matcher(entity_vectors, id_to_title, lang):
     """Create and write an entity matcher based on an entity => vector trie to disk.
     """
     # Transform the entity vector dict we just created into a trie usable in fast search over document text
-    entity_matcher = create_automaton({
+    needles = {
         id_to_title[field_id].lower(): (id_to_title[field_id], vector)
         for field_id, vector in entity_vectors.items()
-        if field_id in id_to_title
-    })
+        if field_id in id_to_title  # not true for all ZH fields
+    }
+    print(f'{len(needles)} needles')
+    entity_matcher = create_automaton(needles)
     if lang == 'en':
         output_path = EN_ENTITY_PATH
     elif lang == 'zh':
@@ -149,7 +169,7 @@ def write_entity_similarity(entity_vectors, field_index, lang):
     """
     # Rows need to be in the correct index order
     indexed_vectors = [entity_vectors[field_id] for field_id in field_index]
-    entity_similarity = MatrixSimilarity(indexed_vectors, num_features=VECTOR_DIM, dtype=np.float32)
+    entity_similarity = MatrixSimilarity(indexed_vectors, num_features=VECTOR_DIM, dtype=np.float64)
     if lang == 'en':
         output_path = EN_FIELD_ENTITY_PATH
     elif lang == 'zh':
@@ -163,7 +183,11 @@ def write_entity_similarity(entity_vectors, field_index, lang):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--lang', default='en', choices=('en', 'zh'), help='Language')
+    parser.add_argument('--lang', default='en', choices=('en', 'zh', 'all'), help='Language')
     parser.add_argument('--exclude_self_mentions', action='store_true', help='See comments')
     args = parser.parse_args()
-    main(lang=args.lang, exclude_self_mentions=args.exclude_self_mentions)
+    if args.lang == 'all':
+        for lang in ['en', 'zh']:
+            main(lang=lang, exclude_self_mentions=args.exclude_self_mentions)
+    else:
+        main(lang=args.lang, exclude_self_mentions=args.exclude_self_mentions)
