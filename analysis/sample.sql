@@ -7,12 +7,12 @@ with sample as (
 ),
 
 --get level 0 and level 1 field ids
-level0_1 AS(SELECT field_id FROM `fields_of_study.field_meta`
-                WHERE level = 0 or level = 1),
+level0_1 as(select field_id from `fields_of_study.field_meta`
+                where level = 0 or level = 1),
 
 --{for the merged_ids above, get the fields we want, like title + abstract text + labels, from the staging_ dataset}
 
-select_mag_fields AS(select merged_id, f.id, field_names.name, f.score FROM fields_of_study.field_scores
+select_mag_fields as(select merged_id, f.id, field_names.name, f.score from fields_of_study.field_scores
 cross join unnest(fields) as f
 inner join sample using(merged_id)
 inner join level0_1 on field_id = f.id
