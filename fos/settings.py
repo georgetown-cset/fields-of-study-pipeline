@@ -44,3 +44,7 @@ ZH_ENTITY_CSV = ASSETS_DIR / 'zh_entity_trie.csv'
 ZH_FIELD_FASTTEXT_CSV = ASSETS_DIR / 'zh_field_vectors.csv'
 ZH_FIELD_TFIDF_JSON = ASSETS_DIR / 'zh_field_tfidf_vectors.json'
 ZH_FIELD_ENTITY_CSV = ASSETS_DIR / 'zh_field_entity_vectors.csv'
+
+# For debugging, field content ...
+EN_FIELD_TEXT = ASSETS_DIR / 'en_field_text.json'
+ZH_FIELD_TEXT = ASSETS_DIR / 'zh_field_text.json'

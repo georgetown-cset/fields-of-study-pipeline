@@ -14,7 +14,7 @@ from scipy.sparse import csr_matrix
 
 from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, \
     EN_FIELD_KEY_PATH, ZH_FIELD_KEY_PATH, EN_FIELD_FASTTEXT_CSV, ZH_FIELD_FASTTEXT_CSV, EN_FIELD_TFIDF_JSON, \
-    ZH_FIELD_TFIDF_JSON
+    ZH_FIELD_TFIDF_JSON, EN_FIELD_TEXT, ZH_FIELD_TEXT
 from fos.util import preprocess, norm
 from fos.vectors import load_fasttext, load_tfidf, embed_tfidf, sparse_norm
 
@@ -30,6 +30,9 @@ def main(lang='en'):
     # Outputs: FastText and tfidf field embeddings
     ft_embeddings = {}
     tfidf_embeddings = {}
+
+    # Also: field content for debugging
+    field_text = {}
 
     # Iterate over field IDs in stable order
     field_ids = sorted([field['id'] for field in table])
@@ -59,6 +62,7 @@ def main(lang='en'):
         else:
             ft_embeddings[field_id] = norm(ft_model.get_sentence_vector(clean_text))
             tfidf_embeddings[field_id] = sparse_norm(embed_tfidf(clean_text.split(), tfidf, dictionary))
+        field_text[field_id] = clean_text
 
     # Write a matrix of fasttext vectors for fields (via `gensim.similarities.docsim.MatrixSimilarity`), for comparison
     # to fasttext publication vectors in scoring
@@ -69,9 +73,25 @@ def main(lang='en'):
     write_tfidf_similarity(tfidf_embeddings, dictionary, lang)
     write_tfidf_csv(tfidf_embeddings, lang)
 
+    # Write out field text for debugging ...
+    write_field_text(field_text, lang)
+
     # Lastly write out the row order of these matrices ...
     assert list(ft_embeddings.keys()) == list(tfidf_embeddings.keys()) == field_ids
     write_field_keys(field_ids, lang)
+
+
+def write_field_text(text, lang):
+    """Write out the text used for field embeddings, for debugging."""
+    if lang == 'en':
+        output_path = EN_FIELD_TEXT
+    elif lang == 'zh':
+        output_path = ZH_FIELD_TEXT
+    else:
+        raise ValueError(lang)
+    with open(output_path, 'wt') as f:
+        json.dump(text, f, indent=2)
+    print(f'Wrote {output_path}')
 
 
 def write_field_keys(keys, lang):
