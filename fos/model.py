@@ -5,9 +5,8 @@ from typing import List, Tuple, Optional
 import numpy as np
 
 from fos.entity import load_entities, embed_entities
-from fos.util import convert_vector
 from fos.vectors import load_tfidf, load_fasttext, load_field_fasttext, load_field_tfidf, load_field_keys, \
-    embed_fasttext, embed_tfidf, load_field_entities, sparse_similarity
+    embed_fasttext, embed_tfidf, load_field_entities, sparse_similarity, convert_vector
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)

@@ -15,8 +15,8 @@ from scipy.sparse import csr_matrix
 from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, \
     EN_FIELD_KEY_PATH, ZH_FIELD_KEY_PATH, EN_FIELD_FASTTEXT_CSV, ZH_FIELD_FASTTEXT_CSV, EN_FIELD_TFIDF_JSON, \
     ZH_FIELD_TFIDF_JSON, EN_FIELD_TEXT, ZH_FIELD_TEXT
-from fos.util import preprocess, norm
-from fos.vectors import load_fasttext, load_tfidf, embed_tfidf, sparse_norm
+from fos.util import preprocess
+from fos.vectors import load_fasttext, load_tfidf, embed_tfidf, sparse_norm, norm
 
 db = dataset.connect('sqlite:///data/wiki.db')
 table = db['pages']

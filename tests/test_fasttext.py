@@ -5,8 +5,7 @@ from fasttext.FastText import _FastText, load_model
 
 from fos.model import FieldModel
 from fos.settings import EN_FASTTEXT_PATH, EN_FIELD_TEXT
-from fos.util import norm
-from fos.vectors import load_fasttext
+from fos.vectors import load_fasttext, norm
 
 
 def test_load_model():

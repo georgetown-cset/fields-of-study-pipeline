@@ -4,9 +4,6 @@ import re
 import string
 import unicodedata
 from pathlib import Path
-from typing import Iterable
-
-import numpy as np
 
 from fos.settings import CORPUS_DIR
 
@@ -39,24 +36,6 @@ def preprocess(text, lang='en'):
     # normalizing whitespace ('   ' -> ' ') doesn't make a difference after tokenization but it's tidier when reviewing
     text = NONBREAKING_SPACE.sub(' ', text)
     return text.strip()
-
-
-def norm_sum(vectors: Iterable[np.ndarray]) -> np.ndarray:
-    vector = np.sum(vectors, axis=0)
-    return norm(vector)
-
-
-def norm(vector: np.ndarray) -> np.ndarray:
-    l2_norm = np.linalg.norm(vector, 2)
-    if l2_norm == 0:
-        return vector
-    return vector / l2_norm
-
-
-def convert_vector(v):
-    if v is None:
-        return None
-    return np.array(v, dtype=np.float32)
 
 
 def iter_bq_extract(prefix, corpus_dir=CORPUS_DIR):

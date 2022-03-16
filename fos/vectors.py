@@ -4,8 +4,9 @@
 import math
 import pickle
 from pathlib import Path
-from typing import Tuple, List
+from typing import Tuple, List, Iterable
 
+import numpy as np
 from fasttext.FastText import _FastText
 from gensim import matutils
 from gensim.corpora import Dictionary
@@ -15,7 +16,6 @@ from gensim.sklearn_api import TfIdfTransformer
 from fos.settings import EN_TFIDF_PATH, ZH_TFIDF_PATH, EN_FASTTEXT_PATH, ZH_FASTTEXT_PATH, EN_FIELD_FASTTEXT_PATH, \
     ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, EN_DICT_PATH, ZH_DICT_PATH, EN_FIELD_KEY_PATH, \
     EN_FIELD_ENTITY_PATH, ZH_FIELD_ENTITY_PATH, ZH_FIELD_KEY_PATH
-from fos.util import norm
 
 ASSETS_DIR = Path(__file__).parent.parent / 'assets'
 
@@ -131,3 +131,21 @@ def sparse_norm(vector):
         return [(term_id, x / length) for term_id, x in vector]
     else:
         return list(vector)
+
+
+def norm_sum(vectors: Iterable[np.ndarray]) -> np.ndarray:
+    vector = np.sum(vectors, axis=0)
+    return norm(vector)
+
+
+def norm(vector: np.ndarray) -> np.ndarray:
+    l2_norm = np.linalg.norm(vector, 2)
+    if l2_norm == 0:
+        return vector
+    return vector / l2_norm
+
+
+def convert_vector(v):
+    if v is None:
+        return None
+    return np.array(v, dtype=np.float32)
