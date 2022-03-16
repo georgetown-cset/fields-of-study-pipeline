@@ -62,7 +62,7 @@ def main(lang='en'):
         else:
             ft_embeddings[field_id] = norm(ft_model.get_sentence_vector(clean_text))
             tfidf_embeddings[field_id] = sparse_norm(embed_tfidf(clean_text.split(), tfidf, dictionary))
-        field_text[field_id] = clean_text
+        field_text[name] = clean_text
 
     # Write a matrix of fasttext vectors for fields (via `gensim.similarities.docsim.MatrixSimilarity`), for comparison
     # to fasttext publication vectors in scoring
