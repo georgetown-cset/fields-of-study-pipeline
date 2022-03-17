@@ -4,8 +4,8 @@ import numpy as np
 from fasttext.FastText import _FastText, load_model
 
 from fos.model import FieldModel
-from fos.settings import EN_FASTTEXT_PATH, EN_FIELD_TEXT
-from fos.vectors import load_fasttext, norm
+from fos.settings import EN_FASTTEXT_PATH, EN_FIELD_TEXT, ZH_FASTTEXT_PATH
+from fos.vectors import load_fasttext, norm, embed_fasttext
 
 
 def test_load_model():
@@ -40,3 +40,28 @@ def test_field_embeddings(meta):
     # And by iterating over all the field text, we iterated over all the rows of the field matrix
     assert len(rows) == len(field_text) == field_model.field_fasttext.index.shape[0]
     assert len(field_index) == field_model.field_fasttext.index.shape[0]
+
+
+def test_fasttext_similarity(texts):
+    """Similarities for FT vectors from the FieldModel via gensim's MatrixSimilarity should be the same as via numpy."""
+    # We don't get *exactly* the same similarities, I think because
+    eps = 1e-6
+    for lang in ['en', 'zh']:
+        if lang == 'en':
+            ft = load_model(str(EN_FASTTEXT_PATH))
+        else:
+            ft = load_model(str(ZH_FASTTEXT_PATH))
+        fields = FieldModel(lang)
+        for text in texts.values():
+            # Embed via the fasttext model that the FieldModel loaded
+            model_vector = embed_fasttext(text, fields.fasttext)
+            # Also via the fasttext model we loaded directly
+            ft_vector = ft.get_sentence_vector(text)
+            # This uses gensim's MatrixSimilarity method
+            gensim_scores = fields.field_fasttext[model_vector]
+            # It should be equivalent to this
+            numpy_scores = np.dot(fields.field_fasttext.index, model_vector)
+            # Or this, using the fasttext model loaded directly
+            ft_numpy_scores = np.dot(fields.field_fasttext.index, norm(ft_vector))
+            assert (np.abs(gensim_scores - numpy_scores) < eps).all()
+            assert (np.abs(gensim_scores - ft_numpy_scores) < eps).all()
