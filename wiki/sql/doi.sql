@@ -16,7 +16,6 @@ from matches
 -- Walk orig_id -> merged_id
 inner join gcp_cset_links_v2.article_links using(orig_id)
 -- Given merged_id, get best EN title and abstract
--- We could use corpus_merged, but we already have language-specific results in the 'en_corpus' and 'zh_corpus' tables
--- ... on the other hand, many refs from ZH wikipedia may be to EN papers. We can drop those or translate them I suppose
--- inner join gcp_cset_links_v2.corpus_merged using(merged_id)
-inner join field_model_replication.en_corpus using(merged_id)
+-- We already have language-specific results in the 'en_corpus' and 'zh_corpus' tables, but many refs from ZH wikipedia
+-- are to EN papers.
+inner join gcp_cset_links_v2.corpus_merged using(merged_id)

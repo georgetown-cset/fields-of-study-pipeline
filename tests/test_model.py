@@ -1,3 +1,6 @@
+"""
+Test that instantiating a FieldModel loads the expected assets and can embed text.
+"""
 import json
 
 import numpy as np

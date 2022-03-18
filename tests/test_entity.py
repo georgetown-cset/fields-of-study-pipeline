@@ -1,3 +1,6 @@
+"""
+Test that entity embeddings and the underlying entity trie work as expected.
+"""
 import numpy as np
 
 from fos.entity import load_entities, find_keywords, embed_entities, create_automaton
