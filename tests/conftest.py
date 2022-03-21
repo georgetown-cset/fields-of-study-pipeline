@@ -18,6 +18,12 @@ TEST_ASSETS_DIR = Path(__file__).parent / 'assets'
 
 
 @pytest.fixture
+def mag_texts() -> pd.DataFrame:
+    """Load texts from MAG meant to be L0 field exemplars."""
+    return pd.read_pickle(ASSETS_DIR / 'fields/example_text.pkl.gz')
+
+
+@pytest.fixture
 def texts():
     """Load example texts."""
     with open(TEST_ASSETS_DIR / 'texts.json', 'rt') as f:

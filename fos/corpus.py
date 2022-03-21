@@ -1,10 +1,14 @@
 from pathlib import Path
 
 from google.cloud import bigquery
+from google.cloud import translate
+from more_itertools import chunked
 
 from fos import gcp
 from fos.gcp import write_query, extract_table, delete_blobs, set_default_clients
 from fos.settings import CORPUS_DIR, QUERY_PATH
+
+translation_client = None
 
 
 def download(lang='en', output_dir=CORPUS_DIR, query_path=QUERY_PATH, limit=1000, skip_prev=False,
@@ -48,3 +52,45 @@ def download(lang='en', output_dir=CORPUS_DIR, query_path=QUERY_PATH, limit=1000
     delete_blobs(extract_bucket, extract_prefix)
     extract_table(query_destination, f'gs://{extract_bucket}/{extract_prefix}*.jsonl.gz')
     gcp.download(extract_bucket, extract_prefix, output_dir)
+
+
+def batch_translate(texts, translator, batch_size=100, sleep=0):
+    for batch in chunked(texts, batch_size):
+        result = translator(batch)
+
+
+class Translator:
+
+    def __init__(self, source_lang='zh-CN', target_lang='en-US'):
+        self.client = translate.TranslationServiceClient()
+        self.parent = f"projects/gcp-cset-projects/locations/global"
+        self.source_lang = source_lang
+        self.target_lang = target_lang
+
+    def translate(self, text):
+        return self._make_request([text])[0]
+
+    def translate_batch(self, texts, batch_size=100):
+        for batch in chunked(texts, batch_size):
+            yield self._make_request(batch)
+
+    def translate_long(self, text):
+        """Translate a long document by splitting it into chunks."""
+        translation = ''
+        for chars in chunked(text, 10_000):
+            chunk = ''.join(chars)
+            # https://cloud.google.com/translate/docs/supported-formats
+            translation += ''.join(self._make_request([chunk]))
+        return translation
+
+    def _make_request(self, contents):
+        response = self.client.translate_text(
+            request={
+                "parent": self.parent,
+                "contents": contents,
+                "mime_type": "text/plain",
+                "source_language_code": self.source_lang,
+                "target_language_code": self.target_lang,
+            }
+        )
+        return [translation.translated_text for translation in response.translations]
