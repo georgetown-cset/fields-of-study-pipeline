@@ -2,7 +2,7 @@ with sample as (
   -- Take e.g. records where the (unsigned) remainder of the hash / 100 is less than 10
   -- to get a ~10% sample because ~10% of the hashes should be divisible by 100
   select merged_id
-  from field_model_replication.zh_annotation_sampling_frame_2022_03_20
+  from field_model_replication.sampling_frame
   where mod(abs(id_hash), 10000) < 1
 ),
 meta as (
