@@ -11,16 +11,20 @@ def main():
     print(timeit.timeit('embed(fields)', setup='fields = FieldModel("en")', globals=globals(), number=10))
 
 
-def embed(fields, lang='en', limit=1000):
+def embed(fields, lang='en', limit=10_000, write_similarity=False):
     i = 0
     start_time = timeit.default_timer()
     with open('stream.json', 'wt') as f:
         for record in iter_bq_extract(f'{lang}_'):
             embedding = fields.embed(record['text'])
             similarity = fields.score(embedding)
-            avg_sim_values = zip_longest(fields.index, similarity.average().astype(float))
-            f.write(json.dumps({'merged_id': record['merged_id'],
-                                'fields': [{'id': k, 'score': v} for k, v in avg_sim_values]}) + '\n')
+            output = {'merged_id': record['merged_id']}
+            if write_similarity:
+                for method in ['fasttext', 'tfidf', 'entity']:
+                    scores = {k: v for k, v in zip_longest(fields.index, getattr(similarity, method))}
+                    output[method] = scores
+            output['fields'] = zip_longest(fields.index, similarity.average().astype(float))
+            f.write(json.dumps(output) + '\n')
             i += 1
             if i == limit:
                 break
@@ -32,6 +36,7 @@ def embed(fields, lang='en', limit=1000):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--profile', action='store_true')
+    parser.add_argument('--verbose', action='store_true')
     args = parser.parse_args()
     if args.profile:
         fields = FieldModel("en")
