@@ -27,8 +27,9 @@ In any case, we want manual labeling to provide not only which fields are releva
 """
 import json
 
+import numpy as np
 import pandas as pd
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, label_ranking_average_precision_score, dcg_score
 
 from fos.settings import ASSETS_DIR
 
@@ -37,11 +38,10 @@ STEM = ("Biology", "Chemistry", "Computer science", "Engineering", "Environmenta
 
 
 def main():
-    top_field_report, top_k_report = summarize()
-    print()
+    top_field_report, top_k_report, dcg, lrap = summarize()
     print(top_field_report.to_string(float_format='%.2f', index=False))
-    print()
-    print(top_k_report.to_string(float_format='%.2f', index=False))
+    print(dcg.to_string(float_format='%.2f', index=False))
+    print(lrap.to_string(float_format='%.2f', index=False))
 
 
 def summarize(keep_fields=STEM):
@@ -85,7 +85,30 @@ def summarize(keep_fields=STEM):
         f'v2_top_f1': [x['f1-score'] for x in v2_report.values()],
         'support': [x['support'] for x in v2_report.values()],
     })
-    return top_field_report, top_k_report
+
+    # https://scikit-learn.org/stable/modules/model_evaluation.html#multilabel-ranking-metrics
+    v1_array = pred_to_array(v1_pred)
+    v2_array = pred_to_array(v2_pred)
+    true_array = true_to_array(true)
+    v1_rank_array = pred_to_array(v1_pred, ranks=True)
+    v2_rank_array = pred_to_array(v2_pred, ranks=True)
+
+    dcg = []
+    for k in range(1, 6):
+        dcg.append({
+            'k': k,
+            'v1': dcg_score(true_array, v1_array, k=k),
+            'v2': dcg_score(true_array, v2_array, k=k)
+        })
+    dcg = pd.DataFrame(dcg)
+
+    lrap = {
+        'v1': [label_ranking_average_precision_score(true_array, v1_array)],
+        'v2': [label_ranking_average_precision_score(true_array, v2_array)],
+    }
+    lrap = pd.DataFrame(lrap)
+
+    return top_field_report, top_k_report, dcg, lrap
 
 
 def top_k_accuracy(true_values, pred_values, top_k=5, proportion=True):
@@ -157,6 +180,26 @@ def dichotomize(scores, top_k=1):
     for i, (label, score) in enumerate(ordered_scores, 1):
         output[label] = i <= top_k
     return output
+
+
+def true_to_array(true):
+    arrays = []
+    for row in true.values():
+        sorted_row = dict(sorted(row.items()))
+        arrays.append(np.array(list(sorted_row.values())).astype(int))
+    return np.array(arrays)
+
+
+def pred_to_array(pred, ranks=False):
+    arrays = []
+    for row in pred.values():
+        sorted_row = dict(sorted(row.items()))
+        row_array = np.array(list(sorted_row.values()))
+        if ranks:
+            arrays.append(np.array(list(reversed(row_array.argsort()))) + 1)
+        else:
+            arrays.append(row_array)
+    return np.array(arrays)
 
 
 if __name__ == '__main__':
