@@ -1,22 +1,24 @@
-import json
+"""
+Get text for top-venue papers.
+"""
 from pathlib import Path
 
-from fos.gcp import write_query, download_table
-from fos.util import iter_bq_extract, preprocess_text
+import pandas as pd
+
+from fos.gcp import write_query
 
 
 def main():
-    # write_query(Path("corpus.sql"), destination="field_model_replication.top_venue_papers", clobber=True)
-    # ~5 GB compressed in ~29 chunks
-    # download_table("field_model_replication.top_venue_papers", "fields-of-study-model",
-    #                "top-venues/top-venues-2022-03-21", Path("."))
-    with open("venue_text.jsonl", "wt") as f:
-        for doc in iter_bq_extract("top-venues-", Path(".")):
-            output = {
-                "id": doc["paper_id"],
-                "text": preprocess_text(doc),
-            }
-            f.write(json.dumps(output) + "\n")
+    table = "field_model_replication.top_venue_papers"
+    write_query(Path("corpus.sql"), destination="field_model_replication.top_venue_papers", clobber=True)
+    print(pd.read_gbq(f"select count(*) from {table}", project_id='gcp-cset-projects'), "rows")
+
+    df = pd.read_gbq(f"select * from {table} where year >= 2010", project_id='gcp-cset-projects')
+    df.rename(columns={"paper_id": "id"}, inplace=True)
+
+    print(df.year.value_counts())
+    print(df.journal_name.value_counts())
+    df.to_json("ai_venue_text.jsonl", orient="records", lines=True)
 
 
 if __name__ == '__main__':
