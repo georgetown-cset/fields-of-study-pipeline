@@ -5,6 +5,8 @@ import string
 import unicodedata
 from pathlib import Path
 
+import pandas as pd
+
 from fos.settings import CORPUS_DIR
 
 # We want to replace these whitespace characters with spaces
@@ -47,3 +49,13 @@ def iter_bq_extract(prefix, corpus_dir=CORPUS_DIR):
                 if not line:
                     continue
                 yield json.loads(line)
+
+
+def preprocess_text(record, lang="en"):
+    text = ""
+    if "title" in record and not pd.isnull(record["title"]):
+        text += record["title"] + " "
+    if "abstract" in record and not pd.isnull(record["abstract"]):
+        text += record["abstract"]
+    return preprocess(text, lang)
+
