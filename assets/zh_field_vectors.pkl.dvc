@@ -1,4 +1,4 @@
 outs:
-- md5: 55ad900425ac892a8df887273278f8bb
-  size: 311285
+- md5: 84bb6c013ce3f88f883db8afa989c94f
+  size: 592285
   path: zh_field_vectors.pkl

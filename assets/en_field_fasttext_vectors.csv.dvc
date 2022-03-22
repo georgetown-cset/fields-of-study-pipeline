@@ -1,4 +1,4 @@
 outs:
-- md5: 4fbd59c6c1b9a2587c80eac8f28c4299
-  size: 1619903
+- md5: 3e6b2b8d589a259ae4bcba081ff5df7f
+  size: 1619876
   path: en_field_fasttext_vectors.csv
