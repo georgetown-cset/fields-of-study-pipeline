@@ -1,0 +1,4 @@
+outs:
+- md5: a726ca582b390963954cfcaaf26c5abb
+  size: 6832
+  path: zh_entity_trie.csv

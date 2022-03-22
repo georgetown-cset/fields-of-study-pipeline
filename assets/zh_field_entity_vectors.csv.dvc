@@ -1,0 +1,4 @@
+outs:
+- md5: 3f2ca2c1b27e31b22707dc55f99faf14
+  size: 1537693
+  path: zh_field_entity_vectors.csv
