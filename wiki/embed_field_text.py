@@ -9,12 +9,13 @@ from argparse import ArgumentParser
 import dataset
 import jieba
 import numpy as np
+import pandas as pd
 from gensim.similarities import MatrixSimilarity, SparseMatrixSimilarity
 from scipy.sparse import csr_matrix
 
 from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, \
     EN_FIELD_KEY_PATH, ZH_FIELD_KEY_PATH, EN_FIELD_FASTTEXT_CSV, ZH_FIELD_FASTTEXT_CSV, EN_FIELD_TFIDF_JSON, \
-    ZH_FIELD_TFIDF_JSON, EN_FIELD_TEXT, ZH_FIELD_TEXT
+    ZH_FIELD_TFIDF_JSON, EN_FIELD_TEXT, ZH_FIELD_TEXT, ASSETS_DIR
 from fos.util import preprocess
 from fos.vectors import load_fasttext, load_tfidf, embed_tfidf, sparse_norm, norm
 
@@ -26,6 +27,10 @@ def main(lang='en'):
     # Inputs: we need the fasttext model trained on the merged corpus and similarly our tfidftransformer + dict
     ft_model = load_fasttext(lang)
     tfidf, dictionary = load_tfidf(lang)
+
+    children = pd.read_pickle(ASSETS_DIR / 'fields/fos_children.pkl.gz')
+    children.index = children.index.astype(int)
+    children['child_id'] = children['child_id'].astype(int)
 
     # Outputs: FastText and tfidf field embeddings
     ft_embeddings = {}
@@ -39,23 +44,27 @@ def main(lang='en'):
     # Make sure we're doing an integer sort
     assert isinstance(field_ids[0], int)
 
+    omitted_fields = set()
     for field_id in field_ids:
         field = table.find_one(id=field_id)
         field_id = field['id']
-        text = field.get(f'{lang}_text', '')
-        if text is None:
-            text = ''
-        if lang == 'zh' and field[f'en_text_mt'] is not None and len(field[f'en_text_mt']) > 0:
-            text += ' ' + field['en_text_mt']
+        text = extract_field_text(field_id, children, lang)
+
         name = field["display_name"]
         if not len(text):
             print(f'No {lang} text for {name}')
+            omitted_fields.add(field_id)
             continue
+
+        text = expand_text(field, text)
+
         clean_text = preprocess(text, lang)
         if not len(clean_text):
             print(f'No {lang} text for {name}')
+            omitted_fields.add(field_id)
             continue
         print(f'{name}: len {len(clean_text)}')
+
         if lang == 'zh':
             ft_embeddings[field_id] = norm(ft_model.get_sentence_vector('\t'.join(jieba.cut(clean_text))))
             tfidf_embeddings[field_id] = sparse_norm(embed_tfidf(jieba.cut(clean_text), tfidf, dictionary))
@@ -77,8 +86,35 @@ def main(lang='en'):
     write_field_text(field_text, lang)
 
     # Lastly write out the row order of these matrices ...
+    field_ids = [x for x in field_ids if x not in omitted_fields]
     assert list(ft_embeddings.keys()) == list(tfidf_embeddings.keys()) == field_ids
     write_field_keys(field_ids, lang)
+
+
+def extract_field_text(field_id, children, lang):
+    field = table.find_one(id=field_id)
+    text = field.get(f'{lang}_text', '')
+    if text is None:
+        text = ''
+    name = field["display_name"]
+    if not len(text):
+        print(f'No {lang} text for {name}')
+    # The level-0 text is fairly high-level, so try adding the text for its child fields
+    if int(field['level']) == 0:
+        child_texts = []
+        for child_id in children.loc[field['id'], 'child_id']:
+            child_texts.append(extract_field_text(child_id, children, lang))
+        if child_texts:
+            print(f'Added {len(child_texts)} child texts to {name}')
+        text += ' '.join(child_texts)
+    return text
+
+
+def expand_text(field, text):
+    # The ZH Wiki text is short, so if we have MT text, add it
+    if lang == 'zh' and field[f'en_text_mt'] is not None and len(field[f'en_text_mt']) > 0:
+        text += ' ' + field['en_text_mt']
+    return text
 
 
 def write_field_text(text, lang):
