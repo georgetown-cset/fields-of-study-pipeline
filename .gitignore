@@ -214,3 +214,4 @@ fabric.properties
 
 .idea
 key.json
+/assets/corpus/mag-output.jsonl
