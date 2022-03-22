@@ -42,11 +42,9 @@ def main(lang='en', exclude_self_mentions=False):
     # up entity names by ID
     id_to_title = {}
 
-    # Iterate over field IDs in stable order
-    field_ids = sorted([field['id'] for field in table])
-
     # Iterate over each field ...
-    for field_id in field_ids:
+    for field_id in field_index:
+        field_id = int(field_id)
         field = table.find_one(id=field_id)
         text = field[f'{lang}_text']
         title = field[f'{lang}_title']
