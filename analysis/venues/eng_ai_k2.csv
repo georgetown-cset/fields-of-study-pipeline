@@ -1,0 +1,143 @@
+scholar_cat,top_field_1,top_field_2,n_mag,n_cset
+eng_artificialintelligence,Computer science,Mathematics,0.7162,0.4298
+eng_artificialintelligence,Computer science,Engineering,0.0521,0.1308
+eng_artificialintelligence,Computer science,Business,0.044,0.0063
+eng_artificialintelligence,Mathematics,Computer science,0.0399,0.1863
+eng_artificialintelligence,Computer science,Psychology,0.0386,0.0137
+eng_artificialintelligence,Engineering,Environmental science,0.0226,0.0002
+eng_artificialintelligence,Engineering,Physics,0.0101,0.0002
+eng_artificialintelligence,Computer science,Environmental science,0.0083,0.0008
+eng_artificialintelligence,Computer science,Physics,0.0044,0.0136
+eng_artificialintelligence,Computer science,Economics,0.0043,0.0095
+eng_artificialintelligence,Business,Computer science,0.004,0.0038
+eng_artificialintelligence,Computer science,Medicine,0.004,0.007
+eng_artificialintelligence,Computer science,Geology,0.0037,0.0037
+eng_artificialintelligence,Business,Economics,0.0031,0.0041
+eng_artificialintelligence,Mathematics,Physics,0.0027,0.022
+eng_artificialintelligence,Psychology,Computer science,0.0025,0.0018
+eng_artificialintelligence,Computer science,Sociology,0.0025,0.0066
+eng_artificialintelligence,Medicine,Computer science,0.0018,0.0037
+eng_artificialintelligence,Materials science,Physics,0.0018,0.0005
+eng_artificialintelligence,Physics,Materials science,0.0015,0.0002
+eng_artificialintelligence,Computer science,Biology,0.0015,0.0276
+eng_artificialintelligence,Medicine,Psychology,0.0014,0.0007
+eng_artificialintelligence,Physics,Mathematics,0.0012,0.004
+eng_artificialintelligence,Engineering,Computer science,0.0012,0.0199
+eng_artificialintelligence,Mathematics,Environmental science,0.0012,0.0001
+eng_artificialintelligence,Environmental science,Computer science,0.0011,0.0006
+eng_artificialintelligence,Materials science,Mathematics,0.001,0.0004
+eng_artificialintelligence,Psychology,Sociology,0.001,0.0005
+eng_artificialintelligence,Physics,Computer science,0.001,0.0038
+eng_artificialintelligence,Computer science,Geography,0.0009,0.0228
+eng_artificialintelligence,Economics,Business,0.0009,0.0046
+eng_artificialintelligence,Computer science,Materials science,0.0009,0.0009
+eng_artificialintelligence,Philosophy,Art,0.0008,0.0002
+eng_artificialintelligence,Environmental science,Mathematics,0.0008,0.0001
+eng_artificialintelligence,Medicine,Biology,0.0007,0.0012
+eng_artificialintelligence,Art,Philosophy,0.0006,0.0006
+eng_artificialintelligence,Environmental science,Geology,0.0006,0.0003
+eng_artificialintelligence,Materials science,Computer science,0.0006,0.0007
+eng_artificialintelligence,Psychology,Medicine,0.0005,0.0004
+eng_artificialintelligence,Economics,Computer science,0.0005,0.005
+eng_artificialintelligence,Mathematics,Materials science,0.0005,0.0006
+eng_artificialintelligence,Geology,Environmental science,0.0005,0.0002
+eng_artificialintelligence,Biology,Computer science,0.0005,0.0073
+eng_artificialintelligence,Materials science,Chemistry,0.0005,0.0005
+eng_artificialintelligence,Computer science,History,0.0004,0.0002
+eng_artificialintelligence,Business,Political science,0.0004,0.0001
+eng_artificialintelligence,Physics,Chemistry,0.0004,0.0006
+eng_artificialintelligence,Biology,Chemistry,0.0004,0.0016
+eng_artificialintelligence,Physics,Philosophy,0.0004,0.0
+eng_artificialintelligence,Political science,Sociology,0.0004,0.0002
+eng_artificialintelligence,Biology,Medicine,0.0004,0.0012
+eng_artificialintelligence,Chemistry,Biology,0.0004,0.0004
+eng_artificialintelligence,Psychology,Business,0.0003,0.0
+eng_artificialintelligence,Sociology,Political science,0.0003,0.0004
+eng_artificialintelligence,Chemistry,Physics,0.0003,0.0004
+eng_artificialintelligence,Engineering,Political science,0.0003,0.0
+eng_artificialintelligence,Mathematics,Geology,0.0003,0.0004
+eng_artificialintelligence,Geology,Computer science,0.0003,0.0009
+eng_artificialintelligence,Business,Psychology,0.0003,0.0001
+eng_artificialintelligence,Geology,Mathematics,0.0003,0.0004
+eng_artificialintelligence,Sociology,Psychology,0.0003,0.001
+eng_artificialintelligence,Economics,Mathematics,0.0002,0.0021
+eng_artificialintelligence,Mathematics,Economics,0.0002,0.002
+eng_artificialintelligence,Physics,Biology,0.0002,0.0008
+eng_artificialintelligence,Art,History,0.0002,0.0003
+eng_artificialintelligence,Political science,Business,0.0002,0.0002
+eng_artificialintelligence,Philosophy,Sociology,0.0001,0.0001
+eng_artificialintelligence,Environmental science,Geography,0.0001,0.0011
+eng_artificialintelligence,Political science,Philosophy,0.0001,0.0
+eng_artificialintelligence,Political science,Engineering,0.0001,0.0001
+eng_artificialintelligence,Biology,Psychology,0.0001,0.0005
+eng_artificialintelligence,Computer science,Political science,0.0001,0.0008
+eng_artificialintelligence,Business,Sociology,0.0001,0.0001
+eng_artificialintelligence,Physics,Psychology,0.0001,0.0
+eng_artificialintelligence,Geography,Business,0.0001,0.0
+eng_artificialintelligence,Materials science,Geology,0.0001,0.0006
+eng_artificialintelligence,Biology,Geography,0.0001,0.0001
+eng_artificialintelligence,Sociology,History,0.0001,0.0
+eng_artificialintelligence,History,Sociology,0.0001,0.0
+eng_artificialintelligence,Sociology,Art,0.0001,0.0009
+eng_artificialintelligence,Biology,Mathematics,0.0001,0.0015
+eng_artificialintelligence,Chemistry,Materials science,0.0001,0.0002
+eng_artificialintelligence,Medicine,Philosophy,0.0001,0.0
+eng_artificialintelligence,Art,Sociology,0.0001,0.001
+eng_artificialintelligence,Geography,History,0.0001,0.0001
+eng_artificialintelligence,Geography,Computer science,0.0001,0.0033
+eng_artificialintelligence,Geology,Materials science,0.0001,0.0001
+eng_artificialintelligence,Business,Engineering,0.0001,0.0002
+eng_artificialintelligence,Sociology,Computer science,0.0001,0.0026
+eng_artificialintelligence,Physics,Art,0.0001,0.0
+eng_artificialintelligence,Biology,Physics,0.0001,0.0015
+eng_artificialintelligence,Environmental science,Economics,0.0001,0.0005
+eng_artificialintelligence,Business,Geography,0.0001,0.0001
+eng_artificialintelligence,Political science,Economics,0.0001,0.0001
+eng_artificialintelligence,Mathematics,Biology,0.0001,0.0021
+eng_artificialintelligence,Mathematics,Chemistry,0.0001,0.0006
+eng_artificialintelligence,Psychology,Biology,0.0001,0.0004
+eng_artificialintelligence,Mathematics,Medicine,0.0001,0.0001
+eng_artificialintelligence,Engineering,Geography,0.0001,0.0003
+eng_artificialintelligence,Geography,Environmental science,0.0001,0.0003
+eng_artificialintelligence,Physics,Engineering,0.0001,0.0004
+eng_artificialintelligence,Medicine,Chemistry,0.0001,0.0
+eng_artificialintelligence,Art,Geography,0.0,0.0001
+eng_artificialintelligence,Engineering,Business,0.0,0.0003
+eng_artificialintelligence,History,Geography,0.0,0.0001
+eng_artificialintelligence,History,Art,0.0,0.0002
+eng_artificialintelligence,Geography,Psychology,0.0,0.0001
+eng_artificialintelligence,Medicine,Mathematics,0.0,0.0001
+eng_artificialintelligence,Geography,Biology,0.0,0.0002
+eng_artificialintelligence,Mathematics,Geography,0.0,0.0008
+eng_artificialintelligence,Biology,Environmental science,0.0,0.0002
+eng_artificialintelligence,Environmental science,Business,0.0,0.0001
+eng_artificialintelligence,Psychology,Economics,0.0,0.0001
+eng_artificialintelligence,Physics,Geography,0.0,0.0002
+eng_artificialintelligence,Psychology,Philosophy,0.0,0.0
+eng_artificialintelligence,Physics,Geology,0.0,0.0016
+eng_artificialintelligence,Sociology,Philosophy,0.0,0.0006
+eng_artificialintelligence,Political science,Computer science,0.0,0.0004
+eng_artificialintelligence,Mathematics,Philosophy,0.0,0.0007
+eng_artificialintelligence,Political science,Geography,0.0,0.0
+eng_artificialintelligence,Medicine,Business,0.0,0.0
+eng_artificialintelligence,Chemistry,Computer science,0.0,0.0003
+eng_artificialintelligence,Computer science,Philosophy,0.0,0.0065
+eng_artificialintelligence,Computer science,Art,0.0,0.001
+eng_artificialintelligence,Computer science,Chemistry,0.0,0.0008
+eng_artificialintelligence,Philosophy,Psychology,0.0,0.0002
+eng_artificialintelligence,Economics,Environmental science,0.0,0.0003
+eng_artificialintelligence,Philosophy,Mathematics,0.0,0.0003
+eng_artificialintelligence,Medicine,Geography,0.0,0.0001
+eng_artificialintelligence,Philosophy,Computer science,0.0,0.0015
+eng_artificialintelligence,Engineering,Geology,0.0,0.0006
+eng_artificialintelligence,Environmental science,Biology,0.0,0.0003
+eng_artificialintelligence,Philosophy,Economics,0.0,0.0
+eng_artificialintelligence,Geography,Economics,0.0,0.0002
+eng_artificialintelligence,Psychology,Political science,0.0,0.0002
+eng_artificialintelligence,Geography,Medicine,0.0,0.0
+eng_artificialintelligence,Psychology,Mathematics,0.0,0.0001
+eng_artificialintelligence,Geography,Sociology,0.0,0.0002
+eng_artificialintelligence,Geology,Engineering,0.0,0.0006
+eng_artificialintelligence,Geology,Physics,0.0,0.0007
+eng_artificialintelligence,Business,Environmental science,0.0,0.0
+eng_artificialintelligence,Business,Philosophy,0.0,0.0

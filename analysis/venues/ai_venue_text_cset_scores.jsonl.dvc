@@ -1,0 +1,4 @@
+outs:
+- md5: d4d6e273bb127b2c9b4df360f260551f
+  size: 799208408
+  path: ai_venue_text_cset_scores.jsonl
