@@ -24,7 +24,7 @@ select
   -- The row_number() within publication year provides an integer ID for sampling. Hashing these with
   --     FarmHash yields an INT64 (a signed 64-bit int). Keep in mind this isn't deterministic because
   --     row order isn't stable in BQ
-  farm_fingerprint(cast(row_number() over (partition by year) as string)) as id_hash,
+  farm_fingerprint(cast(row_number() as string)) as id_hash,
   lang,
   year,
 from frame

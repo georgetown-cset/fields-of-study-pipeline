@@ -15,7 +15,7 @@ def main():
     sample = pd.concat([cs_sample, not_cs_sample]).sample(frac=1)
     sample["text"] = sample.apply(lambda row: preprocess_text(row, lang="en"), axis=1)
     sample.reset_index(inplace=True)
-    with open('cs_sample.json', 'wt') as f:
+    with open('top_cs_sample.json', 'wt') as f:
         json.dump(sample.to_dict(orient='records'), f, indent=2)
 
 

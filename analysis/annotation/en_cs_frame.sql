@@ -11,7 +11,7 @@ cs as (
   select
     merged_id,
   from top_fields
-  where rank <= 2
+  where rank = 1
     and field_id = 41008148 -- CS
 )
 select
