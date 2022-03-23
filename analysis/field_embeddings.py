@@ -63,7 +63,7 @@ def main(lang='en'):
     # Plot L0 embeddings in 2d
     plot_l0_scatter(tsne_df, lang)
     # For each L0, plot the 2d coords of its L1 children
-    plot_l1_scatter(tsne_df, parents, lang)
+    # plot_l1_scatter(tsne_df, parents, lang)
 
     # For each L0, plot the 2d coords of its L1 children WITH THE PARENT        
     plot_l1_scatter(tsne_df, parents, lang, plot_parent=True)
