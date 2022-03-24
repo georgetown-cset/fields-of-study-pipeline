@@ -1,0 +1,828 @@
+scholar_cat,l1_k1,n,prop
+med_virology,Virology,157,0.36511627906976746
+med_virology,Immunology,62,0.14418604651162792
+med_virology,Cell biology,52,0.12093023255813953
+med_virology,Genetics,13,0.030232558139534883
+med_virology,Pediatrics,13,0.030232558139534883
+med_virology,Gerontology,11,0.02558139534883721
+med_virology,Molecular biology,11,0.02558139534883721
+med_virology,Biochemistry,9,0.020930232558139535
+med_virology,Demography,5,0.011627906976744186
+med_virology,Developmental psychology,5,0.011627906976744186
+med_virology,Intensive care medicine,5,0.011627906976744186
+med_virology,Cancer research,4,0.009302325581395349
+med_virology,Medical education,4,0.009302325581395349
+med_virology,Obstetrics,4,0.009302325581395349
+med_virology,Pathology,4,0.009302325581395349
+med_virology,Bioinformatics,3,0.0069767441860465115
+med_virology,Development economics,3,0.0069767441860465115
+med_virology,Pharmacology,3,0.0069767441860465115
+med_virology,Public administration,3,0.0069767441860465115
+med_virology,Risk analysis (engineering),3,0.0069767441860465115
+med_virology,Surgery,3,0.0069767441860465115
+med_virology,Communication,2,0.004651162790697674
+med_virology,Ecology,2,0.004651162790697674
+med_virology,Economic growth,2,0.004651162790697674
+med_virology,Family medicine,2,0.004651162790697674
+med_virology,Nuclear physics,2,0.004651162790697674
+med_virology,Real-time computing,2,0.004651162790697674
+med_virology,Statistics,2,0.004651162790697674
+med_virology,Anatomy,1,0.002325581395348837
+med_virology,Animal science,1,0.002325581395348837
+med_virology,Biophysics,1,0.002325581395348837
+med_virology,Cardiology,1,0.002325581395348837
+med_virology,Cartography,1,0.002325581395348837
+med_virology,Chromatography,1,0.002325581395348837
+med_virology,Clinical psychology,1,0.002325581395348837
+med_virology,Combinatorial chemistry,1,0.002325581395348837
+med_virology,Control theory,1,0.002325581395348837
+med_virology,Data mining,1,0.002325581395348837
+med_virology,Dentistry,1,0.002325581395348837
+med_virology,Economic policy,1,0.002325581395348837
+med_virology,Economic system,1,0.002325581395348837
+med_virology,Emergency medicine,1,0.002325581395348837
+med_virology,Environmental health,1,0.002325581395348837
+med_virology,Environmental planning,1,0.002325581395348837
+med_virology,Environmental resource management,1,0.002325581395348837
+med_virology,Gender studies,1,0.002325581395348837
+med_virology,Geometry,1,0.002325581395348837
+med_virology,International economics,1,0.002325581395348837
+med_virology,International trade,1,0.002325581395348837
+med_virology,Knowledge management,1,0.002325581395348837
+med_virology,Literature,1,0.002325581395348837
+med_virology,Medicinal chemistry,1,0.002325581395348837
+med_virology,Microeconomics,1,0.002325581395348837
+med_virology,Molecular physics,1,0.002325581395348837
+med_virology,Nuclear chemistry,1,0.002325581395348837
+med_virology,Nuclear engineering,1,0.002325581395348837
+med_virology,Operations management,1,0.002325581395348837
+med_virology,Operations research,1,0.002325581395348837
+med_virology,Ophthalmology,1,0.002325581395348837
+med_virology,Pattern recognition,1,0.002325581395348837
+med_virology,Public relations,1,0.002325581395348837
+med_virology,Religious studies,1,0.002325581395348837
+med_virology,Simulation,1,0.002325581395348837
+med_virology,Social psychology,1,0.002325581395348837
+med_virology,Topology,1,0.002325581395348837
+med_virology,Traditional medicine,1,0.002325581395348837
+med_virology,Veterinary medicine,1,0.002325581395348837
+eng_libraryinformationscience,Social science,34,0.11333333333333333
+eng_libraryinformationscience,Library science,18,0.06
+eng_libraryinformationscience,Linguistics,13,0.043333333333333335
+eng_libraryinformationscience,Literature,11,0.03666666666666667
+eng_libraryinformationscience,Data science,9,0.03
+eng_libraryinformationscience,Knowledge management,9,0.03
+eng_libraryinformationscience,International economics,8,0.02666666666666667
+eng_libraryinformationscience,Traditional medicine,8,0.02666666666666667
+eng_libraryinformationscience,Computer network,7,0.023333333333333334
+eng_libraryinformationscience,Media studies,7,0.023333333333333334
+eng_libraryinformationscience,World Wide Web,7,0.023333333333333334
+eng_libraryinformationscience,Development economics,6,0.02
+eng_libraryinformationscience,Statistics,6,0.02
+eng_libraryinformationscience,Developmental psychology,5,0.016666666666666666
+eng_libraryinformationscience,Mathematical economics,5,0.016666666666666666
+eng_libraryinformationscience,Art history,4,0.013333333333333334
+eng_libraryinformationscience,Artificial intelligence,4,0.013333333333333334
+eng_libraryinformationscience,Humanities,4,0.013333333333333334
+eng_libraryinformationscience,Nanotechnology,4,0.013333333333333334
+eng_libraryinformationscience,Operations research,4,0.013333333333333334
+eng_libraryinformationscience,Aesthetics,3,0.01
+eng_libraryinformationscience,Ancient history,3,0.01
+eng_libraryinformationscience,Communication,3,0.01
+eng_libraryinformationscience,Database,3,0.01
+eng_libraryinformationscience,Economic history,3,0.01
+eng_libraryinformationscience,Gender studies,3,0.01
+eng_libraryinformationscience,Machine learning,3,0.01
+eng_libraryinformationscience,Mathematical analysis,3,0.01
+eng_libraryinformationscience,Multimedia,3,0.01
+eng_libraryinformationscience,Pedagogy,3,0.01
+eng_libraryinformationscience,Regional science,3,0.01
+eng_libraryinformationscience,Social psychology,3,0.01
+eng_libraryinformationscience,Systems engineering,3,0.01
+eng_libraryinformationscience,Biomedical engineering,2,0.006666666666666667
+eng_libraryinformationscience,Cancer research,2,0.006666666666666667
+eng_libraryinformationscience,Classics,2,0.006666666666666667
+eng_libraryinformationscience,Commerce,2,0.006666666666666667
+eng_libraryinformationscience,Data mining,2,0.006666666666666667
+eng_libraryinformationscience,Economic growth,2,0.006666666666666667
+eng_libraryinformationscience,Economic policy,2,0.006666666666666667
+eng_libraryinformationscience,Environmental health,2,0.006666666666666667
+eng_libraryinformationscience,Environmental planning,2,0.006666666666666667
+eng_libraryinformationscience,Epistemology,2,0.006666666666666667
+eng_libraryinformationscience,Human–computer interaction,2,0.006666666666666667
+eng_libraryinformationscience,Management,2,0.006666666666666667
+eng_libraryinformationscience,Oceanography,2,0.006666666666666667
+eng_libraryinformationscience,Operations management,2,0.006666666666666667
+eng_libraryinformationscience,Optics,2,0.006666666666666667
+eng_libraryinformationscience,Psychoanalysis,2,0.006666666666666667
+eng_libraryinformationscience,Public administration,2,0.006666666666666667
+eng_libraryinformationscience,Theoretical physics,2,0.006666666666666667
+eng_libraryinformationscience,Water resource management,2,0.006666666666666667
+eng_libraryinformationscience,Zoology,2,0.006666666666666667
+eng_libraryinformationscience,Acoustics,1,0.0033333333333333335
+eng_libraryinformationscience,Agricultural economics,1,0.0033333333333333335
+eng_libraryinformationscience,Algorithm,1,0.0033333333333333335
+eng_libraryinformationscience,Andrology,1,0.0033333333333333335
+eng_libraryinformationscience,Applied psychology,1,0.0033333333333333335
+eng_libraryinformationscience,Arithmetic,1,0.0033333333333333335
+eng_libraryinformationscience,Astrobiology,1,0.0033333333333333335
+eng_libraryinformationscience,Bioinformatics,1,0.0033333333333333335
+eng_libraryinformationscience,Biophysics,1,0.0033333333333333335
+eng_libraryinformationscience,Botany,1,0.0033333333333333335
+eng_libraryinformationscience,Business administration,1,0.0033333333333333335
+eng_libraryinformationscience,Chemical engineering,1,0.0033333333333333335
+eng_libraryinformationscience,Cognitive science,1,0.0033333333333333335
+eng_libraryinformationscience,Computational science,1,0.0033333333333333335
+eng_libraryinformationscience,Computer engineering,1,0.0033333333333333335
+eng_libraryinformationscience,Computer security,1,0.0033333333333333335
+eng_libraryinformationscience,Condensed matter physics,1,0.0033333333333333335
+eng_libraryinformationscience,Dentistry,1,0.0033333333333333335
+eng_libraryinformationscience,Economy,1,0.0033333333333333335
+eng_libraryinformationscience,Engineering ethics,1,0.0033333333333333335
+eng_libraryinformationscience,Environmental ethics,1,0.0033333333333333335
+eng_libraryinformationscience,Environmental protection,1,0.0033333333333333335
+eng_libraryinformationscience,Family medicine,1,0.0033333333333333335
+eng_libraryinformationscience,Finance,1,0.0033333333333333335
+eng_libraryinformationscience,Financial economics,1,0.0033333333333333335
+eng_libraryinformationscience,Genealogy,1,0.0033333333333333335
+eng_libraryinformationscience,Gerontology,1,0.0033333333333333335
+eng_libraryinformationscience,Information retrieval,1,0.0033333333333333335
+eng_libraryinformationscience,Internet privacy,1,0.0033333333333333335
+eng_libraryinformationscience,Management science,1,0.0033333333333333335
+eng_libraryinformationscience,Mathematical physics,1,0.0033333333333333335
+eng_libraryinformationscience,Medical education,1,0.0033333333333333335
+eng_libraryinformationscience,Microeconomics,1,0.0033333333333333335
+eng_libraryinformationscience,Monetary economics,1,0.0033333333333333335
+eng_libraryinformationscience,Natural resource economics,1,0.0033333333333333335
+eng_libraryinformationscience,Neuroscience,1,0.0033333333333333335
+eng_libraryinformationscience,Parallel computing,1,0.0033333333333333335
+eng_libraryinformationscience,Pattern recognition,1,0.0033333333333333335
+eng_libraryinformationscience,Physical geography,1,0.0033333333333333335
+eng_libraryinformationscience,Polymer science,1,0.0033333333333333335
+eng_libraryinformationscience,Programming language,1,0.0033333333333333335
+eng_libraryinformationscience,Quantum mechanics,1,0.0033333333333333335
+eng_libraryinformationscience,Religious studies,1,0.0033333333333333335
+eng_libraryinformationscience,Risk analysis (engineering),1,0.0033333333333333335
+eng_libraryinformationscience,Telecommunications,1,0.0033333333333333335
+eng_libraryinformationscience,Theology,1,0.0033333333333333335
+eng_libraryinformationscience,Topology,1,0.0033333333333333335
+eng_libraryinformationscience,Transport engineering,1,0.0033333333333333335
+eng_datamininganalysis,Machine learning,124,0.19405320813771518
+eng_datamininganalysis,Pattern recognition,63,0.09859154929577464
+eng_datamininganalysis,Data mining,53,0.08294209702660407
+eng_datamininganalysis,Algorithm,49,0.07668231611893583
+eng_datamininganalysis,Information retrieval,39,0.06103286384976526
+eng_datamininganalysis,Computer network,34,0.053208137715179966
+eng_datamininganalysis,Database,24,0.03755868544600939
+eng_datamininganalysis,Internet privacy,19,0.0297339593114241
+eng_datamininganalysis,Operations management,19,0.0297339593114241
+eng_datamininganalysis,Distributed computing,18,0.028169014084507043
+eng_datamininganalysis,Mathematical optimization,15,0.023474178403755867
+eng_datamininganalysis,Social psychology,12,0.018779342723004695
+eng_datamininganalysis,Statistics,11,0.017214397496087636
+eng_datamininganalysis,World Wide Web,11,0.017214397496087636
+eng_datamininganalysis,Human–computer interaction,10,0.01564945226917058
+eng_datamininganalysis,Theoretical computer science,8,0.012519561815336464
+eng_datamininganalysis,Artificial intelligence,7,0.010954616588419406
+eng_datamininganalysis,Embedded system,7,0.010954616588419406
+eng_datamininganalysis,Natural language processing,6,0.009389671361502348
+eng_datamininganalysis,Linguistics,5,0.00782472613458529
+eng_datamininganalysis,Simulation,5,0.00782472613458529
+eng_datamininganalysis,Computational science,4,0.006259780907668232
+eng_datamininganalysis,Computer vision,4,0.006259780907668232
+eng_datamininganalysis,Knowledge management,4,0.006259780907668232
+eng_datamininganalysis,Media studies,4,0.006259780907668232
+eng_datamininganalysis,Microeconomics,4,0.006259780907668232
+eng_datamininganalysis,Parallel computing,4,0.006259780907668232
+eng_datamininganalysis,Programming language,4,0.006259780907668232
+eng_datamininganalysis,Real-time computing,4,0.006259780907668232
+eng_datamininganalysis,Speech recognition,4,0.006259780907668232
+eng_datamininganalysis,Advertising,3,0.004694835680751174
+eng_datamininganalysis,Financial economics,3,0.004694835680751174
+eng_datamininganalysis,Bioinformatics,2,0.003129890453834116
+eng_datamininganalysis,Biomedical engineering,2,0.003129890453834116
+eng_datamininganalysis,Cognitive science,2,0.003129890453834116
+eng_datamininganalysis,Communication,2,0.003129890453834116
+eng_datamininganalysis,Computational chemistry,2,0.003129890453834116
+eng_datamininganalysis,Control theory,2,0.003129890453834116
+eng_datamininganalysis,Data science,2,0.003129890453834116
+eng_datamininganalysis,Engineering management,2,0.003129890453834116
+eng_datamininganalysis,Evolutionary biology,2,0.003129890453834116
+eng_datamininganalysis,Management,2,0.003129890453834116
+eng_datamininganalysis,Multimedia,2,0.003129890453834116
+eng_datamininganalysis,Reliability engineering,2,0.003129890453834116
+eng_datamininganalysis,Social science,2,0.003129890453834116
+eng_datamininganalysis,Software engineering,2,0.003129890453834116
+eng_datamininganalysis,Systems engineering,2,0.003129890453834116
+eng_datamininganalysis,Business administration,1,0.001564945226917058
+eng_datamininganalysis,Cognitive psychology,1,0.001564945226917058
+eng_datamininganalysis,Combinatorics,1,0.001564945226917058
+eng_datamininganalysis,Computer architecture,1,0.001564945226917058
+eng_datamininganalysis,Computer security,1,0.001564945226917058
+eng_datamininganalysis,Discrete mathematics,1,0.001564945226917058
+eng_datamininganalysis,Econometrics,1,0.001564945226917058
+eng_datamininganalysis,Economy,1,0.001564945226917058
+eng_datamininganalysis,Electrical engineering,1,0.001564945226917058
+eng_datamininganalysis,Finance,1,0.001564945226917058
+eng_datamininganalysis,Forestry,1,0.001564945226917058
+eng_datamininganalysis,Hydrology,1,0.001564945226917058
+eng_datamininganalysis,Labour economics,1,0.001564945226917058
+eng_datamininganalysis,Manufacturing engineering,1,0.001564945226917058
+eng_datamininganalysis,Market economy,1,0.001564945226917058
+eng_datamininganalysis,Marketing,1,0.001564945226917058
+eng_datamininganalysis,Neuroscience,1,0.001564945226917058
+eng_datamininganalysis,Operating system,1,0.001564945226917058
+eng_datamininganalysis,Operations research,1,0.001564945226917058
+eng_datamininganalysis,Pedagogy,1,0.001564945226917058
+eng_datamininganalysis,Political economy,1,0.001564945226917058
+eng_datamininganalysis,Public relations,1,0.001564945226917058
+eng_datamininganalysis,Quantum electrodynamics,1,0.001564945226917058
+eng_datamininganalysis,Remote sensing,1,0.001564945226917058
+eng_datamininganalysis,Telecommunications,1,0.001564945226917058
+eng_datamininganalysis,Topology,1,0.001564945226917058
+eng_datamininganalysis,Transport engineering,1,0.001564945226917058
+eng_datamininganalysis,Welfare economics,1,0.001564945226917058
+eng_computervisionpatternrecognition,Pattern recognition,173,0.20400943396226415
+eng_computervisionpatternrecognition,Computer vision,147,0.1733490566037736
+eng_computervisionpatternrecognition,Machine learning,143,0.16863207547169812
+eng_computervisionpatternrecognition,Algorithm,39,0.045990566037735846
+eng_computervisionpatternrecognition,Mathematical optimization,38,0.04481132075471698
+eng_computervisionpatternrecognition,Speech recognition,28,0.0330188679245283
+eng_computervisionpatternrecognition,Information retrieval,21,0.024764150943396228
+eng_computervisionpatternrecognition,Computer network,17,0.020047169811320754
+eng_computervisionpatternrecognition,Industrial organization,14,0.01650943396226415
+eng_computervisionpatternrecognition,Regional science,10,0.01179245283018868
+eng_computervisionpatternrecognition,Statistics,10,0.01179245283018868
+eng_computervisionpatternrecognition,Theology,10,0.01179245283018868
+eng_computervisionpatternrecognition,Cartography,9,0.01061320754716981
+eng_computervisionpatternrecognition,Multimedia,9,0.01061320754716981
+eng_computervisionpatternrecognition,Database,8,0.009433962264150943
+eng_computervisionpatternrecognition,Optics,8,0.009433962264150943
+eng_computervisionpatternrecognition,Geometry,7,0.008254716981132075
+eng_computervisionpatternrecognition,Theoretical computer science,7,0.008254716981132075
+eng_computervisionpatternrecognition,Art history,5,0.00589622641509434
+eng_computervisionpatternrecognition,Computer graphics (images),5,0.00589622641509434
+eng_computervisionpatternrecognition,Embedded system,5,0.00589622641509434
+eng_computervisionpatternrecognition,Real-time computing,5,0.00589622641509434
+eng_computervisionpatternrecognition,Social psychology,5,0.00589622641509434
+eng_computervisionpatternrecognition,Topology,5,0.00589622641509434
+eng_computervisionpatternrecognition,Traditional medicine,5,0.00589622641509434
+eng_computervisionpatternrecognition,Data mining,4,0.0047169811320754715
+eng_computervisionpatternrecognition,Public relations,4,0.0047169811320754715
+eng_computervisionpatternrecognition,Simulation,4,0.0047169811320754715
+eng_computervisionpatternrecognition,Analytical chemistry,3,0.003537735849056604
+eng_computervisionpatternrecognition,Classical mechanics,3,0.003537735849056604
+eng_computervisionpatternrecognition,Data science,3,0.003537735849056604
+eng_computervisionpatternrecognition,Discrete mathematics,3,0.003537735849056604
+eng_computervisionpatternrecognition,Distributed computing,3,0.003537735849056604
+eng_computervisionpatternrecognition,Financial system,3,0.003537735849056604
+eng_computervisionpatternrecognition,Internet privacy,3,0.003537735849056604
+eng_computervisionpatternrecognition,Mathematical physics,3,0.003537735849056604
+eng_computervisionpatternrecognition,Parallel computing,3,0.003537735849056604
+eng_computervisionpatternrecognition,Remote sensing,3,0.003537735849056604
+eng_computervisionpatternrecognition,Surgery,3,0.003537735849056604
+eng_computervisionpatternrecognition,Bioinformatics,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Cell biology,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Commerce,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Computational physics,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Geodesy,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Human–computer interaction,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Linguistics,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Literature,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Oncology,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Polymer science,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Reliability engineering,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Telecommunications,2,0.0023584905660377358
+eng_computervisionpatternrecognition,Advertising,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Aesthetics,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Andrology,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Anesthesia,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Archaeology,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Architectural engineering,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Arithmetic,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Artificial intelligence,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Cancer research,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Cardiology,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Ceramic materials,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Chromatography,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Classics,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Clinical psychology,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Combinatorics,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Communication,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Computational biology,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Computational chemistry,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Computer security,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Control theory,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Crystallography,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Economic policy,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Engineering drawing,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Environmental engineering,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Environmental planning,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Finance,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Food science,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Immunology,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Knowledge management,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Library science,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Management,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Market economy,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Mathematical analysis,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Mathematical economics,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Mechanical engineering,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Media studies,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Natural language processing,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Neuroscience,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Operations management,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Physical medicine and rehabilitation,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Public administration,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Religious studies,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Risk analysis (engineering),1,0.0011792452830188679
+eng_computervisionpatternrecognition,Transport engineering,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Virology,1,0.0011792452830188679
+eng_computervisionpatternrecognition,Visual arts,1,0.0011792452830188679
+eng_computersecuritycryptography,Computer security,225,0.225
+eng_computersecuritycryptography,Computer network,105,0.105
+eng_computersecuritycryptography,Internet privacy,94,0.094
+eng_computersecuritycryptography,Algorithm,42,0.042
+eng_computersecuritycryptography,Machine learning,42,0.042
+eng_computersecuritycryptography,Pattern recognition,36,0.036
+eng_computersecuritycryptography,Telecommunications,36,0.036
+eng_computersecuritycryptography,Computer vision,25,0.025
+eng_computersecuritycryptography,Theoretical computer science,25,0.025
+eng_computersecuritycryptography,Mathematical optimization,22,0.022
+eng_computersecuritycryptography,Data mining,21,0.021
+eng_computersecuritycryptography,Mathematical analysis,18,0.018
+eng_computersecuritycryptography,Arithmetic,17,0.017
+eng_computersecuritycryptography,Algebra,16,0.016
+eng_computersecuritycryptography,World Wide Web,15,0.015
+eng_computersecuritycryptography,Software engineering,14,0.014
+eng_computersecuritycryptography,Database,12,0.012
+eng_computersecuritycryptography,Distributed computing,12,0.012
+eng_computersecuritycryptography,Operating system,11,0.011
+eng_computersecuritycryptography,Embedded system,9,0.009
+eng_computersecuritycryptography,Multimedia,9,0.009
+eng_computersecuritycryptography,Speech recognition,9,0.009
+eng_computersecuritycryptography,Statistics,9,0.009
+eng_computersecuritycryptography,Topology,9,0.009
+eng_computersecuritycryptography,Information retrieval,8,0.008
+eng_computersecuritycryptography,Communication,7,0.007
+eng_computersecuritycryptography,Quantum electrodynamics,7,0.007
+eng_computersecuritycryptography,Combinatorics,6,0.006
+eng_computersecuritycryptography,Control engineering,6,0.006
+eng_computersecuritycryptography,Control theory,6,0.006
+eng_computersecuritycryptography,Geometry,6,0.006
+eng_computersecuritycryptography,Reliability engineering,6,0.006
+eng_computersecuritycryptography,Remote sensing,5,0.005
+eng_computersecuritycryptography,Computer graphics (images),4,0.004
+eng_computersecuritycryptography,Discrete mathematics,4,0.004
+eng_computersecuritycryptography,Operations management,4,0.004
+eng_computersecuritycryptography,Quantum mechanics,4,0.004
+eng_computersecuritycryptography,Real-time computing,4,0.004
+eng_computersecuritycryptography,Risk analysis (engineering),4,0.004
+eng_computersecuritycryptography,Systems engineering,4,0.004
+eng_computersecuritycryptography,Cartography,3,0.003
+eng_computersecuritycryptography,Composite material,3,0.003
+eng_computersecuritycryptography,Developmental psychology,3,0.003
+eng_computersecuritycryptography,Electrical engineering,3,0.003
+eng_computersecuritycryptography,Human–computer interaction,3,0.003
+eng_computersecuritycryptography,Mathematical economics,3,0.003
+eng_computersecuritycryptography,Art history,2,0.002
+eng_computersecuritycryptography,Automotive engineering,2,0.002
+eng_computersecuritycryptography,Combinatorial chemistry,2,0.002
+eng_computersecuritycryptography,Computational science,2,0.002
+eng_computersecuritycryptography,Computer architecture,2,0.002
+eng_computersecuritycryptography,Data science,2,0.002
+eng_computersecuritycryptography,Economic policy,2,0.002
+eng_computersecuritycryptography,Electronic engineering,2,0.002
+eng_computersecuritycryptography,Law,2,0.002
+eng_computersecuritycryptography,Management,2,0.002
+eng_computersecuritycryptography,Parallel computing,2,0.002
+eng_computersecuritycryptography,Simulation,2,0.002
+eng_computersecuritycryptography,Social psychology,2,0.002
+eng_computersecuritycryptography,Structural engineering,2,0.002
+eng_computersecuritycryptography,Analytical chemistry,1,0.001
+eng_computersecuritycryptography,Andrology,1,0.001
+eng_computersecuritycryptography,Artificial intelligence,1,0.001
+eng_computersecuritycryptography,Business administration,1,0.001
+eng_computersecuritycryptography,Classical mechanics,1,0.001
+eng_computersecuritycryptography,Computational chemistry,1,0.001
+eng_computersecuritycryptography,Criminology,1,0.001
+eng_computersecuritycryptography,Econometrics,1,0.001
+eng_computersecuritycryptography,Economy,1,0.001
+eng_computersecuritycryptography,Engineering drawing,1,0.001
+eng_computersecuritycryptography,Environmental resource management,1,0.001
+eng_computersecuritycryptography,Evolutionary biology,1,0.001
+eng_computersecuritycryptography,Finance,1,0.001
+eng_computersecuritycryptography,Genealogy,1,0.001
+eng_computersecuritycryptography,Geodesy,1,0.001
+eng_computersecuritycryptography,Gerontology,1,0.001
+eng_computersecuritycryptography,International trade,1,0.001
+eng_computersecuritycryptography,Library science,1,0.001
+eng_computersecuritycryptography,Linguistics,1,0.001
+eng_computersecuritycryptography,Manufacturing engineering,1,0.001
+eng_computersecuritycryptography,Marketing,1,0.001
+eng_computersecuritycryptography,Media studies,1,0.001
+eng_computersecuritycryptography,Medical education,1,0.001
+eng_computersecuritycryptography,Mining engineering,1,0.001
+eng_computersecuritycryptography,Natural language processing,1,0.001
+eng_computersecuritycryptography,Natural resource economics,1,0.001
+eng_computersecuritycryptography,Neuroscience,1,0.001
+eng_computersecuritycryptography,Particle physics,1,0.001
+eng_computersecuritycryptography,Process engineering,1,0.001
+eng_computersecuritycryptography,Public administration,1,0.001
+eng_computersecuritycryptography,Public relations,1,0.001
+eng_computersecuritycryptography,Regional science,1,0.001
+eng_computersecuritycryptography,Socioeconomics,1,0.001
+eng_computersecuritycryptography,Toxicology,1,0.001
+eng_computersecuritycryptography,Transport engineering,1,0.001
+eng_computersecuritycryptography,Virology,1,0.001
+eng_computerhardwaredesign,Control theory,124,0.1269191402251791
+eng_computerhardwaredesign,Computer architecture,86,0.08802456499488229
+eng_computerhardwaredesign,Telecommunications,86,0.08802456499488229
+eng_computerhardwaredesign,Parallel computing,80,0.08188331627430911
+eng_computerhardwaredesign,Electronic engineering,53,0.05424769703172978
+eng_computerhardwaredesign,Computer network,45,0.04605936540429888
+eng_computerhardwaredesign,Embedded system,42,0.042988741044012284
+eng_computerhardwaredesign,Mathematical optimization,34,0.03480040941658137
+eng_computerhardwaredesign,Reliability engineering,33,0.033776867963152504
+eng_computerhardwaredesign,Simulation,29,0.02968270214943705
+eng_computerhardwaredesign,Machine learning,26,0.02661207778915046
+eng_computerhardwaredesign,Algorithm,25,0.0255885363357216
+eng_computerhardwaredesign,Analytical chemistry,20,0.02047082906857728
+eng_computerhardwaredesign,Arithmetic,19,0.019447287615148412
+eng_computerhardwaredesign,Electrical engineering,18,0.01842374616171955
+eng_computerhardwaredesign,Real-time computing,17,0.017400204708290685
+eng_computerhardwaredesign,Theoretical computer science,16,0.016376663254861822
+eng_computerhardwaredesign,Computer security,15,0.015353121801432957
+eng_computerhardwaredesign,Computer vision,14,0.014329580348004094
+eng_computerhardwaredesign,Pattern recognition,11,0.011258955987717503
+eng_computerhardwaredesign,Distributed computing,10,0.01023541453428864
+eng_computerhardwaredesign,Topology,9,0.009211873080859774
+eng_computerhardwaredesign,Operations management,8,0.008188331627430911
+eng_computerhardwaredesign,Statistics,8,0.008188331627430911
+eng_computerhardwaredesign,Systems engineering,8,0.008188331627430911
+eng_computerhardwaredesign,Nuclear magnetic resonance,7,0.007164790174002047
+eng_computerhardwaredesign,Operating system,7,0.007164790174002047
+eng_computerhardwaredesign,Remote sensing,7,0.007164790174002047
+eng_computerhardwaredesign,Communication,6,0.006141248720573183
+eng_computerhardwaredesign,Computational chemistry,5,0.00511770726714432
+eng_computerhardwaredesign,Discrete mathematics,5,0.00511770726714432
+eng_computerhardwaredesign,Cell biology,4,0.0040941658137154556
+eng_computerhardwaredesign,Chromatography,4,0.0040941658137154556
+eng_computerhardwaredesign,Control engineering,4,0.0040941658137154556
+eng_computerhardwaredesign,Mathematical analysis,4,0.0040941658137154556
+eng_computerhardwaredesign,Multimedia,4,0.0040941658137154556
+eng_computerhardwaredesign,Nanotechnology,4,0.0040941658137154556
+eng_computerhardwaredesign,Neuroscience,4,0.0040941658137154556
+eng_computerhardwaredesign,Pedagogy,4,0.0040941658137154556
+eng_computerhardwaredesign,Quantum mechanics,4,0.0040941658137154556
+eng_computerhardwaredesign,Programming language,3,0.0030706243602865915
+eng_computerhardwaredesign,Speech recognition,3,0.0030706243602865915
+eng_computerhardwaredesign,Structural engineering,3,0.0030706243602865915
+eng_computerhardwaredesign,Thermodynamics,3,0.0030706243602865915
+eng_computerhardwaredesign,Calculus,2,0.0020470829068577278
+eng_computerhardwaredesign,Computer graphics (images),2,0.0020470829068577278
+eng_computerhardwaredesign,Computer hardware,2,0.0020470829068577278
+eng_computerhardwaredesign,Data mining,2,0.0020470829068577278
+eng_computerhardwaredesign,Human–computer interaction,2,0.0020470829068577278
+eng_computerhardwaredesign,Photochemistry,2,0.0020470829068577278
+eng_computerhardwaredesign,Quantum electrodynamics,2,0.0020470829068577278
+eng_computerhardwaredesign,World Wide Web,2,0.0020470829068577278
+eng_computerhardwaredesign,Acoustics,1,0.0010235414534288639
+eng_computerhardwaredesign,Aeronautics,1,0.0010235414534288639
+eng_computerhardwaredesign,Algebra,1,0.0010235414534288639
+eng_computerhardwaredesign,Applied mathematics,1,0.0010235414534288639
+eng_computerhardwaredesign,Bioinformatics,1,0.0010235414534288639
+eng_computerhardwaredesign,Biomedical engineering,1,0.0010235414534288639
+eng_computerhardwaredesign,Business administration,1,0.0010235414534288639
+eng_computerhardwaredesign,Cardiology,1,0.0010235414534288639
+eng_computerhardwaredesign,Cartography,1,0.0010235414534288639
+eng_computerhardwaredesign,Ceramic materials,1,0.0010235414534288639
+eng_computerhardwaredesign,Classical mechanics,1,0.0010235414534288639
+eng_computerhardwaredesign,Combinatorial chemistry,1,0.0010235414534288639
+eng_computerhardwaredesign,Composite material,1,0.0010235414534288639
+eng_computerhardwaredesign,Computational science,1,0.0010235414534288639
+eng_computerhardwaredesign,Condensed matter physics,1,0.0010235414534288639
+eng_computerhardwaredesign,Construction engineering,1,0.0010235414534288639
+eng_computerhardwaredesign,Data science,1,0.0010235414534288639
+eng_computerhardwaredesign,Development economics,1,0.0010235414534288639
+eng_computerhardwaredesign,Economic growth,1,0.0010235414534288639
+eng_computerhardwaredesign,Family medicine,1,0.0010235414534288639
+eng_computerhardwaredesign,Information retrieval,1,0.0010235414534288639
+eng_computerhardwaredesign,Internet privacy,1,0.0010235414534288639
+eng_computerhardwaredesign,Knowledge management,1,0.0010235414534288639
+eng_computerhardwaredesign,Linguistics,1,0.0010235414534288639
+eng_computerhardwaredesign,Management,1,0.0010235414534288639
+eng_computerhardwaredesign,Mathematical economics,1,0.0010235414534288639
+eng_computerhardwaredesign,Media studies,1,0.0010235414534288639
+eng_computerhardwaredesign,Meteorology,1,0.0010235414534288639
+eng_computerhardwaredesign,Natural language processing,1,0.0010235414534288639
+eng_computerhardwaredesign,Natural resource economics,1,0.0010235414534288639
+eng_computerhardwaredesign,Obstetrics,1,0.0010235414534288639
+eng_computerhardwaredesign,Optics,1,0.0010235414534288639
+eng_computerhardwaredesign,Organic chemistry,1,0.0010235414534288639
+eng_computerhardwaredesign,Pharmacology,1,0.0010235414534288639
+eng_computerhardwaredesign,Physiology,1,0.0010235414534288639
+eng_computerhardwaredesign,Public administration,1,0.0010235414534288639
+eng_computerhardwaredesign,Seismology,1,0.0010235414534288639
+eng_computerhardwaredesign,Software engineering,1,0.0010235414534288639
+eng_computerhardwaredesign,Visual arts,1,0.0010235414534288639
+eng_computerhardwaredesign,Waste management,1,0.0010235414534288639
+eng_computationallinguistics,Speech recognition,261,0.2652439024390244
+eng_computationallinguistics,Machine learning,133,0.13516260162601626
+eng_computationallinguistics,Natural language processing,116,0.11788617886178862
+eng_computationallinguistics,Linguistics,113,0.11483739837398374
+eng_computationallinguistics,Pattern recognition,50,0.0508130081300813
+eng_computationallinguistics,Programming language,40,0.04065040650406504
+eng_computationallinguistics,Algorithm,23,0.023373983739837397
+eng_computationallinguistics,Information retrieval,22,0.022357723577235773
+eng_computationallinguistics,Algebra,12,0.012195121951219513
+eng_computationallinguistics,Media studies,11,0.011178861788617886
+eng_computationallinguistics,Human–computer interaction,10,0.01016260162601626
+eng_computationallinguistics,Knowledge management,10,0.01016260162601626
+eng_computationallinguistics,Statistics,10,0.01016260162601626
+eng_computationallinguistics,Discrete mathematics,9,0.009146341463414634
+eng_computationallinguistics,Social psychology,9,0.009146341463414634
+eng_computationallinguistics,Data mining,7,0.007113821138211382
+eng_computationallinguistics,Parallel computing,7,0.007113821138211382
+eng_computationallinguistics,Database,6,0.006097560975609756
+eng_computationallinguistics,Developmental psychology,6,0.006097560975609756
+eng_computationallinguistics,Artificial intelligence,5,0.00508130081300813
+eng_computationallinguistics,Computer network,5,0.00508130081300813
+eng_computationallinguistics,Mathematical analysis,5,0.00508130081300813
+eng_computationallinguistics,Operations management,5,0.00508130081300813
+eng_computationallinguistics,Social science,5,0.00508130081300813
+eng_computationallinguistics,Acoustics,4,0.0040650406504065045
+eng_computationallinguistics,Communication,4,0.0040650406504065045
+eng_computationallinguistics,Control theory,4,0.0040650406504065045
+eng_computationallinguistics,Epistemology,4,0.0040650406504065045
+eng_computationallinguistics,Mathematical optimization,4,0.0040650406504065045
+eng_computationallinguistics,Multimedia,4,0.0040650406504065045
+eng_computationallinguistics,Agroforestry,3,0.003048780487804878
+eng_computationallinguistics,Art history,3,0.003048780487804878
+eng_computationallinguistics,Cognitive science,3,0.003048780487804878
+eng_computationallinguistics,Computational biology,3,0.003048780487804878
+eng_computationallinguistics,Computational science,3,0.003048780487804878
+eng_computationallinguistics,Computer vision,3,0.003048780487804878
+eng_computationallinguistics,Public relations,3,0.003048780487804878
+eng_computationallinguistics,Systems engineering,3,0.003048780487804878
+eng_computationallinguistics,Theoretical computer science,3,0.003048780487804878
+eng_computationallinguistics,Topology,3,0.003048780487804878
+eng_computationallinguistics,World Wide Web,3,0.003048780487804878
+eng_computationallinguistics,Computer security,2,0.0020325203252032522
+eng_computationallinguistics,Distributed computing,2,0.0020325203252032522
+eng_computationallinguistics,Geometry,2,0.0020325203252032522
+eng_computationallinguistics,Literature,2,0.0020325203252032522
+eng_computationallinguistics,Real-time computing,2,0.0020325203252032522
+eng_computationallinguistics,Regional science,2,0.0020325203252032522
+eng_computationallinguistics,Reliability engineering,2,0.0020325203252032522
+eng_computationallinguistics,Simulation,2,0.0020325203252032522
+eng_computationallinguistics,Structural engineering,2,0.0020325203252032522
+eng_computationallinguistics,Applied mathematics,1,0.0010162601626016261
+eng_computationallinguistics,Archaeology,1,0.0010162601626016261
+eng_computationallinguistics,Arithmetic,1,0.0010162601626016261
+eng_computationallinguistics,Bioinformatics,1,0.0010162601626016261
+eng_computationallinguistics,Biological system,1,0.0010162601626016261
+eng_computationallinguistics,Calculus,1,0.0010162601626016261
+eng_computationallinguistics,Classical economics,1,0.0010162601626016261
+eng_computationallinguistics,Cognitive psychology,1,0.0010162601626016261
+eng_computationallinguistics,Commerce,1,0.0010162601626016261
+eng_computationallinguistics,Computer graphics (images),1,0.0010162601626016261
+eng_computationallinguistics,Criminology,1,0.0010162601626016261
+eng_computationallinguistics,Data science,1,0.0010162601626016261
+eng_computationallinguistics,Environmental resource management,1,0.0010162601626016261
+eng_computationallinguistics,Forensic engineering,1,0.0010162601626016261
+eng_computationallinguistics,Gender studies,1,0.0010162601626016261
+eng_computationallinguistics,Industrial organization,1,0.0010162601626016261
+eng_computationallinguistics,Management,1,0.0010162601626016261
+eng_computationallinguistics,Marketing,1,0.0010162601626016261
+eng_computationallinguistics,Mathematical economics,1,0.0010162601626016261
+eng_computationallinguistics,Mining engineering,1,0.0010162601626016261
+eng_computationallinguistics,Natural resource economics,1,0.0010162601626016261
+eng_computationallinguistics,Operating system,1,0.0010162601626016261
+eng_computationallinguistics,Organic chemistry,1,0.0010162601626016261
+eng_computationallinguistics,Pedagogy,1,0.0010162601626016261
+eng_computationallinguistics,Psychotherapist,1,0.0010162601626016261
+eng_computationallinguistics,Quantum electrodynamics,1,0.0010162601626016261
+eng_computationallinguistics,Quantum mechanics,1,0.0010162601626016261
+eng_computationallinguistics,Risk analysis (engineering),1,0.0010162601626016261
+eng_computationallinguistics,Telecommunications,1,0.0010162601626016261
+eng_artificialintelligence,Machine learning,117,0.1956521739130435
+eng_artificialintelligence,Mathematical optimization,59,0.09866220735785954
+eng_artificialintelligence,Control theory,46,0.07692307692307693
+eng_artificialintelligence,Pattern recognition,44,0.07357859531772576
+eng_artificialintelligence,Computer network,38,0.06354515050167224
+eng_artificialintelligence,Algorithm,36,0.06020066889632107
+eng_artificialintelligence,Computer vision,34,0.056856187290969896
+eng_artificialintelligence,Embedded system,17,0.028428093645484948
+eng_artificialintelligence,Operations management,12,0.020066889632107024
+eng_artificialintelligence,Knowledge management,10,0.016722408026755852
+eng_artificialintelligence,Speech recognition,10,0.016722408026755852
+eng_artificialintelligence,Information retrieval,8,0.013377926421404682
+eng_artificialintelligence,Statistics,8,0.013377926421404682
+eng_artificialintelligence,Data mining,7,0.011705685618729096
+eng_artificialintelligence,World Wide Web,7,0.011705685618729096
+eng_artificialintelligence,Artificial intelligence,6,0.010033444816053512
+eng_artificialintelligence,Simulation,6,0.010033444816053512
+eng_artificialintelligence,Database,5,0.008361204013377926
+eng_artificialintelligence,Distributed computing,5,0.008361204013377926
+eng_artificialintelligence,Financial economics,5,0.008361204013377926
+eng_artificialintelligence,Systems engineering,5,0.008361204013377926
+eng_artificialintelligence,Telecommunications,5,0.008361204013377926
+eng_artificialintelligence,Computer security,4,0.006688963210702341
+eng_artificialintelligence,Electrical engineering,4,0.006688963210702341
+eng_artificialintelligence,Reliability engineering,4,0.006688963210702341
+eng_artificialintelligence,Control engineering,3,0.005016722408026756
+eng_artificialintelligence,Internet privacy,3,0.005016722408026756
+eng_artificialintelligence,Linguistics,3,0.005016722408026756
+eng_artificialintelligence,Multimedia,3,0.005016722408026756
+eng_artificialintelligence,Neuroscience,3,0.005016722408026756
+eng_artificialintelligence,Social science,3,0.005016722408026756
+eng_artificialintelligence,Waste management,3,0.005016722408026756
+eng_artificialintelligence,Analytical chemistry,2,0.0033444816053511705
+eng_artificialintelligence,Automotive engineering,2,0.0033444816053511705
+eng_artificialintelligence,Cancer research,2,0.0033444816053511705
+eng_artificialintelligence,Computer architecture,2,0.0033444816053511705
+eng_artificialintelligence,Construction engineering,2,0.0033444816053511705
+eng_artificialintelligence,Data science,2,0.0033444816053511705
+eng_artificialintelligence,Environmental planning,2,0.0033444816053511705
+eng_artificialintelligence,Mathematical analysis,2,0.0033444816053511705
+eng_artificialintelligence,Meteorology,2,0.0033444816053511705
+eng_artificialintelligence,Microeconomics,2,0.0033444816053511705
+eng_artificialintelligence,Social psychology,2,0.0033444816053511705
+eng_artificialintelligence,Theoretical computer science,2,0.0033444816053511705
+eng_artificialintelligence,Topology,2,0.0033444816053511705
+eng_artificialintelligence,Transport engineering,2,0.0033444816053511705
+eng_artificialintelligence,Accounting,1,0.0016722408026755853
+eng_artificialintelligence,Aeronautics,1,0.0016722408026755853
+eng_artificialintelligence,Aesthetics,1,0.0016722408026755853
+eng_artificialintelligence,Andrology,1,0.0016722408026755853
+eng_artificialintelligence,Arithmetic,1,0.0016722408026755853
+eng_artificialintelligence,Astrobiology,1,0.0016722408026755853
+eng_artificialintelligence,Business administration,1,0.0016722408026755853
+eng_artificialintelligence,Calculus,1,0.0016722408026755853
+eng_artificialintelligence,Cartography,1,0.0016722408026755853
+eng_artificialintelligence,Cognitive science,1,0.0016722408026755853
+eng_artificialintelligence,Communication,1,0.0016722408026755853
+eng_artificialintelligence,Computer graphics (images),1,0.0016722408026755853
+eng_artificialintelligence,Dentistry,1,0.0016722408026755853
+eng_artificialintelligence,Discrete mathematics,1,0.0016722408026755853
+eng_artificialintelligence,Econometrics,1,0.0016722408026755853
+eng_artificialintelligence,Economic growth,1,0.0016722408026755853
+eng_artificialintelligence,Electronic engineering,1,0.0016722408026755853
+eng_artificialintelligence,Engineering drawing,1,0.0016722408026755853
+eng_artificialintelligence,Environmental health,1,0.0016722408026755853
+eng_artificialintelligence,Financial system,1,0.0016722408026755853
+eng_artificialintelligence,Fishery,1,0.0016722408026755853
+eng_artificialintelligence,Food science,1,0.0016722408026755853
+eng_artificialintelligence,Geodesy,1,0.0016722408026755853
+eng_artificialintelligence,Geotechnical engineering,1,0.0016722408026755853
+eng_artificialintelligence,Human–computer interaction,1,0.0016722408026755853
+eng_artificialintelligence,Immunology,1,0.0016722408026755853
+eng_artificialintelligence,Intensive care medicine,1,0.0016722408026755853
+eng_artificialintelligence,Management,1,0.0016722408026755853
+eng_artificialintelligence,Marine engineering,1,0.0016722408026755853
+eng_artificialintelligence,Marketing,1,0.0016722408026755853
+eng_artificialintelligence,Mathematical economics,1,0.0016722408026755853
+eng_artificialintelligence,Mining engineering,1,0.0016722408026755853
+eng_artificialintelligence,Natural language processing,1,0.0016722408026755853
+eng_artificialintelligence,Nuclear engineering,1,0.0016722408026755853
+eng_artificialintelligence,Operating system,1,0.0016722408026755853
+eng_artificialintelligence,Operations research,1,0.0016722408026755853
+eng_artificialintelligence,Ophthalmology,1,0.0016722408026755853
+eng_artificialintelligence,Parallel computing,1,0.0016722408026755853
+eng_artificialintelligence,Process engineering,1,0.0016722408026755853
+eng_artificialintelligence,Public relations,1,0.0016722408026755853
+eng_artificialintelligence,Radiology,1,0.0016722408026755853
+eng_artificialintelligence,Real-time computing,1,0.0016722408026755853
+eng_artificialintelligence,Risk analysis (engineering),1,0.0016722408026755853
+eng_artificialintelligence,Structural engineering,1,0.0016722408026755853
+eng_artificialintelligence,Thermodynamics,1,0.0016722408026755853
+eng_artificialintelligence,Virology,1,0.0016722408026755853
+eng_artificialintelligence,Welfare economics,1,0.0016722408026755853
+bio_biotechnology,Biochemistry,82,0.15413533834586465
+bio_biotechnology,Waste management,50,0.09398496240601503
+bio_biotechnology,Cell biology,30,0.05639097744360902
+bio_biotechnology,Molecular biology,26,0.04887218045112782
+bio_biotechnology,Geochemistry,25,0.046992481203007516
+bio_biotechnology,Organic chemistry,19,0.03571428571428571
+bio_biotechnology,Combinatorial chemistry,18,0.03383458646616541
+bio_biotechnology,Biotechnology,16,0.03007518796992481
+bio_biotechnology,Microbiology,16,0.03007518796992481
+bio_biotechnology,Nuclear chemistry,16,0.03007518796992481
+bio_biotechnology,Operations management,16,0.03007518796992481
+bio_biotechnology,Agronomy,15,0.02819548872180451
+bio_biotechnology,Botany,15,0.02819548872180451
+bio_biotechnology,Chromatography,15,0.02819548872180451
+bio_biotechnology,Environmental engineering,15,0.02819548872180451
+bio_biotechnology,Genetics,15,0.02819548872180451
+bio_biotechnology,Bioinformatics,13,0.02443609022556391
+bio_biotechnology,Ecology,12,0.022556390977443608
+bio_biotechnology,Economic growth,7,0.013157894736842105
+bio_biotechnology,Composite material,6,0.011278195488721804
+bio_biotechnology,Biochemical engineering,5,0.009398496240601503
+bio_biotechnology,Embedded system,5,0.009398496240601503
+bio_biotechnology,Process engineering,5,0.009398496240601503
+bio_biotechnology,Virology,5,0.009398496240601503
+bio_biotechnology,Metallurgy,4,0.007518796992481203
+bio_biotechnology,Optics,4,0.007518796992481203
+bio_biotechnology,Pharmacology,4,0.007518796992481203
+bio_biotechnology,Pulp and paper industry,4,0.007518796992481203
+bio_biotechnology,Thermodynamics,4,0.007518796992481203
+bio_biotechnology,Water resource management,4,0.007518796992481203
+bio_biotechnology,Cancer research,3,0.005639097744360902
+bio_biotechnology,Ceramic materials,3,0.005639097744360902
+bio_biotechnology,Petroleum engineering,3,0.005639097744360902
+bio_biotechnology,Polymer chemistry,3,0.005639097744360902
+bio_biotechnology,Animal science,2,0.0037593984962406013
+bio_biotechnology,Control engineering,2,0.0037593984962406013
+bio_biotechnology,Control theory,2,0.0037593984962406013
+bio_biotechnology,Mineralogy,2,0.0037593984962406013
+bio_biotechnology,Pathology,2,0.0037593984962406013
+bio_biotechnology,Radiochemistry,2,0.0037593984962406013
+bio_biotechnology,Simulation,2,0.0037593984962406013
+bio_biotechnology,Soil science,2,0.0037593984962406013
+bio_biotechnology,Agricultural engineering,1,0.0018796992481203006
+bio_biotechnology,Agroforestry,1,0.0018796992481203006
+bio_biotechnology,Anatomy,1,0.0018796992481203006
+bio_biotechnology,Ancient history,1,0.0018796992481203006
+bio_biotechnology,Chemical engineering,1,0.0018796992481203006
+bio_biotechnology,Classical mechanics,1,0.0018796992481203006
+bio_biotechnology,Climatology,1,0.0018796992481203006
+bio_biotechnology,Computational science,1,0.0018796992481203006
+bio_biotechnology,Crystallography,1,0.0018796992481203006
+bio_biotechnology,Data science,1,0.0018796992481203006
+bio_biotechnology,Developmental psychology,1,0.0018796992481203006
+bio_biotechnology,Endocrinology,1,0.0018796992481203006
+bio_biotechnology,Engineering management,1,0.0018796992481203006
+bio_biotechnology,Environmental chemistry,1,0.0018796992481203006
+bio_biotechnology,Environmental health,1,0.0018796992481203006
+bio_biotechnology,Environmental planning,1,0.0018796992481203006
+bio_biotechnology,Fishery,1,0.0018796992481203006
+bio_biotechnology,Food science,1,0.0018796992481203006
+bio_biotechnology,Hydrology,1,0.0018796992481203006
+bio_biotechnology,Immunology,1,0.0018796992481203006
+bio_biotechnology,Library science,1,0.0018796992481203006
+bio_biotechnology,Medical education,1,0.0018796992481203006
+bio_biotechnology,Medicinal chemistry,1,0.0018796992481203006
+bio_biotechnology,Microeconomics,1,0.0018796992481203006
+bio_biotechnology,Natural resource economics,1,0.0018796992481203006
+bio_biotechnology,Nuclear magnetic resonance,1,0.0018796992481203006
+bio_biotechnology,Photochemistry,1,0.0018796992481203006
+bio_biotechnology,Physical chemistry,1,0.0018796992481203006
+bio_biotechnology,Radiology,1,0.0018796992481203006
+bio_biotechnology,Software engineering,1,0.0018796992481203006
+bio_biotechnology,Systems engineering,1,0.0018796992481203006
+bio_biotechnology,Toxicology,1,0.0018796992481203006
+bio_biotechnology,Zoology,1,0.0018796992481203006
+bio_agronomycropscience,Botany,82,0.30597014925373134
+bio_agronomycropscience,Biochemistry,22,0.08208955223880597
+bio_agronomycropscience,Composite material,16,0.05970149253731343
+bio_agronomycropscience,Genetics,16,0.05970149253731343
+bio_agronomycropscience,Nuclear chemistry,14,0.05223880597014925
+bio_agronomycropscience,Organic chemistry,12,0.04477611940298507
+bio_agronomycropscience,Soil science,9,0.033582089552238806
+bio_agronomycropscience,Agroforestry,7,0.026119402985074626
+bio_agronomycropscience,Cell biology,7,0.026119402985074626
+bio_agronomycropscience,Chromatography,6,0.022388059701492536
+bio_agronomycropscience,Operations management,6,0.022388059701492536
+bio_agronomycropscience,Water resource management,6,0.022388059701492536
+bio_agronomycropscience,Biotechnology,5,0.018656716417910446
+bio_agronomycropscience,Embedded system,5,0.018656716417910446
+bio_agronomycropscience,Agronomy,3,0.011194029850746268
+bio_agronomycropscience,Combinatorial chemistry,3,0.011194029850746268
+bio_agronomycropscience,Economic growth,3,0.011194029850746268
+bio_agronomycropscience,Electrical engineering,3,0.011194029850746268
+bio_agronomycropscience,Pulp and paper industry,3,0.011194029850746268
+bio_agronomycropscience,Analytical chemistry,2,0.007462686567164179
+bio_agronomycropscience,Bioinformatics,2,0.007462686567164179
+bio_agronomycropscience,Climatology,2,0.007462686567164179
+bio_agronomycropscience,Geochemistry,2,0.007462686567164179
+bio_agronomycropscience,Molecular biology,2,0.007462686567164179
+bio_agronomycropscience,Optics,2,0.007462686567164179
+bio_agronomycropscience,Polymer chemistry,2,0.007462686567164179
+bio_agronomycropscience,Agricultural engineering,1,0.0037313432835820895
+bio_agronomycropscience,Anatomy,1,0.0037313432835820895
+bio_agronomycropscience,Ancient history,1,0.0037313432835820895
+bio_agronomycropscience,Biochemical engineering,1,0.0037313432835820895
+bio_agronomycropscience,Cartography,1,0.0037313432835820895
+bio_agronomycropscience,Ceramic materials,1,0.0037313432835820895
+bio_agronomycropscience,Chemical engineering,1,0.0037313432835820895
+bio_agronomycropscience,Computer vision,1,0.0037313432835820895
+bio_agronomycropscience,Crystallography,1,0.0037313432835820895
+bio_agronomycropscience,Developmental psychology,1,0.0037313432835820895
+bio_agronomycropscience,Ecology,1,0.0037313432835820895
+bio_agronomycropscience,Horticulture,1,0.0037313432835820895
+bio_agronomycropscience,Immunology,1,0.0037313432835820895
+bio_agronomycropscience,Inorganic chemistry,1,0.0037313432835820895
+bio_agronomycropscience,Media studies,1,0.0037313432835820895
+bio_agronomycropscience,Mineralogy,1,0.0037313432835820895
+bio_agronomycropscience,Nanotechnology,1,0.0037313432835820895
+bio_agronomycropscience,Nuclear magnetic resonance,1,0.0037313432835820895
+bio_agronomycropscience,Paleontology,1,0.0037313432835820895
+bio_agronomycropscience,Petroleum engineering,1,0.0037313432835820895
+bio_agronomycropscience,Pharmacology,1,0.0037313432835820895
+bio_agronomycropscience,Polymer science,1,0.0037313432835820895
+bio_agronomycropscience,Statistics,1,0.0037313432835820895
+bio_agronomycropscience,Transport engineering,1,0.0037313432835820895
+bio_agronomycropscience,Virology,1,0.0037313432835820895
+bio_agronomycropscience,Waste management,1,0.0037313432835820895
