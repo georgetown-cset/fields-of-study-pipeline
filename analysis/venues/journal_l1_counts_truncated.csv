@@ -1,0 +1,181 @@
+,,l1_k1,prop,total
+bio_agronomycropscience,Industrial Crops and Products,Botany,0.23,151
+bio_agronomycropscience,Industrial Crops and Products,Composite material,0.11,151
+bio_agronomycropscience,Industrial Crops and Products,Biochemistry,0.10,151
+bio_agronomycropscience,Industrial Crops and Products,Nuclear chemistry,0.09,151
+bio_agronomycropscience,Industrial Crops and Products,Organic chemistry,0.05,151
+bio_agronomycropscience,Scientia Horticulturae,Botany,0.41,117
+bio_agronomycropscience,Scientia Horticulturae,Genetics,0.12,117
+bio_agronomycropscience,Scientia Horticulturae,Biochemistry,0.06,117
+bio_agronomycropscience,Scientia Horticulturae,Agroforestry,0.05,117
+bio_agronomycropscience,Scientia Horticulturae,Organic chemistry,0.04,117
+bio_biotechnology,Applied Microbiology and Biotechnology,Biochemistry,0.27,136
+bio_biotechnology,Applied Microbiology and Biotechnology,Molecular biology,0.12,136
+bio_biotechnology,Applied Microbiology and Biotechnology,Cell biology,0.10,136
+bio_biotechnology,Applied Microbiology and Biotechnology,Microbiology,0.06,136
+bio_biotechnology,Applied Microbiology and Biotechnology,Genetics,0.05,136
+bio_biotechnology,Bioresource Technology,Waste management,0.17,287
+bio_biotechnology,Bioresource Technology,Biochemistry,0.11,287
+bio_biotechnology,Bioresource Technology,Geochemistry,0.07,287
+bio_biotechnology,Bioresource Technology,Nuclear chemistry,0.06,287
+bio_biotechnology,Bioresource Technology,Environmental engineering,0.05,287
+bio_biotechnology,Journal of Biotechnology,Biochemistry,0.12,109
+bio_biotechnology,Journal of Biotechnology,Bioinformatics,0.07,109
+bio_biotechnology,Journal of Biotechnology,Molecular biology,0.06,109
+bio_biotechnology,Journal of Biotechnology,Biotechnology,0.06,109
+bio_biotechnology,Journal of Biotechnology,Botany,0.06,109
+eng_artificialintelligence,Expert Systems With Applications,Machine learning,0.17,230
+eng_artificialintelligence,Expert Systems With Applications,Mathematical optimization,0.12,230
+eng_artificialintelligence,Expert Systems With Applications,Algorithm,0.08,230
+eng_artificialintelligence,Expert Systems With Applications,Computer network,0.05,230
+eng_artificialintelligence,Expert Systems With Applications,Knowledge management,0.04,230
+eng_artificialintelligence,Neural Computing and Applications,Machine learning,0.21,112
+eng_artificialintelligence,Neural Computing and Applications,Mathematical optimization,0.17,112
+eng_artificialintelligence,Neural Computing and Applications,Pattern recognition,0.08,112
+eng_artificialintelligence,Neural Computing and Applications,Algorithm,0.08,112
+eng_artificialintelligence,Neural Computing and Applications,Computer vision,0.06,112
+eng_artificialintelligence,Neurocomputing,Machine learning,0.21,256
+eng_artificialintelligence,Neurocomputing,Control theory,0.13,256
+eng_artificialintelligence,Neurocomputing,Pattern recognition,0.10,256
+eng_artificialintelligence,Neurocomputing,Computer network,0.08,256
+eng_artificialintelligence,Neurocomputing,Computer vision,0.07,256
+eng_computationallinguistics,Computational Linguistics,Linguistics,0.26,234
+eng_computationallinguistics,Computational Linguistics,Natural language processing,0.17,234
+eng_computationallinguistics,Computational Linguistics,Machine learning,0.12,234
+eng_computationallinguistics,Computational Linguistics,Algorithm,0.05,234
+eng_computationallinguistics,Computational Linguistics,Media studies,0.04,234
+eng_computationallinguistics,Computer Speech & Language,Speech recognition,0.53,468
+eng_computationallinguistics,Computer Speech & Language,Machine learning,0.09,468
+eng_computationallinguistics,Computer Speech & Language,Linguistics,0.07,468
+eng_computationallinguistics,Computer Speech & Language,Pattern recognition,0.06,468
+eng_computationallinguistics,Computer Speech & Language,Natural language processing,0.05,468
+eng_computationallinguistics,Transactions of the Association for Computational Linguistics,Machine learning,0.22,282
+eng_computationallinguistics,Transactions of the Association for Computational Linguistics,Natural language processing,0.18,282
+eng_computationallinguistics,Transactions of the Association for Computational Linguistics,Programming language,0.08,282
+eng_computationallinguistics,Transactions of the Association for Computational Linguistics,Linguistics,0.06,282
+eng_computationallinguistics,Transactions of the Association for Computational Linguistics,Pattern recognition,0.05,282
+eng_computerhardwaredesign,IEEE Journal of Solid-state Circuits,Telecommunications,0.29,123
+eng_computerhardwaredesign,IEEE Journal of Solid-state Circuits,Computer architecture,0.16,123
+eng_computerhardwaredesign,IEEE Journal of Solid-state Circuits,Control theory,0.13,123
+eng_computerhardwaredesign,IEEE Journal of Solid-state Circuits,Electronic engineering,0.08,123
+eng_computerhardwaredesign,IEEE Journal of Solid-state Circuits,Embedded system,0.07,123
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems I-regular Papers,Control theory,0.23,149
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems I-regular Papers,Telecommunications,0.11,149
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems I-regular Papers,Electronic engineering,0.11,149
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems I-regular Papers,Computer architecture,0.09,149
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems I-regular Papers,Analytical chemistry,0.07,149
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems Ii-express Briefs,Control theory,0.28,194
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems Ii-express Briefs,Telecommunications,0.11,194
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems Ii-express Briefs,Electronic engineering,0.06,194
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems Ii-express Briefs,Algorithm,0.06,194
+eng_computerhardwaredesign,IEEE Transactions on Circuits and Systems Ii-express Briefs,Computer architecture,0.06,194
+eng_computerhardwaredesign,IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems,Mathematical optimization,0.12,114
+eng_computerhardwaredesign,IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems,Parallel computing,0.11,114
+eng_computerhardwaredesign,IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems,Reliability engineering,0.09,114
+eng_computerhardwaredesign,IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems,Machine learning,0.09,114
+eng_computerhardwaredesign,IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems,Electronic engineering,0.06,114
+eng_computerhardwaredesign,IEEE Transactions on Computers,Parallel computing,0.13,144
+eng_computerhardwaredesign,IEEE Transactions on Computers,Computer network,0.12,144
+eng_computerhardwaredesign,IEEE Transactions on Computers,Arithmetic,0.06,144
+eng_computerhardwaredesign,IEEE Transactions on Computers,Real-time computing,0.04,144
+eng_computerhardwaredesign,IEEE Transactions on Computers,Algorithm,0.04,144
+eng_computerhardwaredesign,IEEE Transactions on Very Large Scale Integration Systems,Computer architecture,0.17,143
+eng_computerhardwaredesign,IEEE Transactions on Very Large Scale Integration Systems,Parallel computing,0.13,143
+eng_computerhardwaredesign,IEEE Transactions on Very Large Scale Integration Systems,Control theory,0.09,143
+eng_computerhardwaredesign,IEEE Transactions on Very Large Scale Integration Systems,Reliability engineering,0.08,143
+eng_computerhardwaredesign,IEEE Transactions on Very Large Scale Integration Systems,Embedded system,0.06,143
+eng_computerhardwaredesign,Microprocessors and Microsystems,Embedded system,0.10,110
+eng_computerhardwaredesign,Microprocessors and Microsystems,Computer network,0.10,110
+eng_computerhardwaredesign,Microprocessors and Microsystems,Parallel computing,0.09,110
+eng_computerhardwaredesign,Microprocessors and Microsystems,Simulation,0.06,110
+eng_computerhardwaredesign,Microprocessors and Microsystems,Machine learning,0.05,110
+eng_computersecuritycryptography,Computers & Security,Computer security,0.38,236
+eng_computersecuritycryptography,Computers & Security,Computer network,0.12,236
+eng_computersecuritycryptography,Computers & Security,Internet privacy,0.08,236
+eng_computersecuritycryptography,Computers & Security,Machine learning,0.05,236
+eng_computersecuritycryptography,Computers & Security,Algorithm,0.03,236
+eng_computersecuritycryptography,"Designs, Codes and Cryptography",Mathematical analysis,0.11,152
+eng_computersecuritycryptography,"Designs, Codes and Cryptography",Algebra,0.10,152
+eng_computersecuritycryptography,"Designs, Codes and Cryptography",Arithmetic,0.10,152
+eng_computersecuritycryptography,"Designs, Codes and Cryptography",Algorithm,0.10,152
+eng_computersecuritycryptography,"Designs, Codes and Cryptography",Computer security,0.08,152
+eng_computersecuritycryptography,IEEE Transactions on Dependable and Secure Computing,Computer security,0.26,117
+eng_computersecuritycryptography,IEEE Transactions on Dependable and Secure Computing,Internet privacy,0.18,117
+eng_computersecuritycryptography,IEEE Transactions on Dependable and Secure Computing,Computer network,0.09,117
+eng_computersecuritycryptography,IEEE Transactions on Dependable and Secure Computing,Distributed computing,0.05,117
+eng_computersecuritycryptography,IEEE Transactions on Dependable and Secure Computing,Algorithm,0.04,117
+eng_computersecuritycryptography,IEEE Transactions on Information Forensics and Security,Computer security,0.14,215
+eng_computersecuritycryptography,IEEE Transactions on Information Forensics and Security,Telecommunications,0.11,215
+eng_computersecuritycryptography,IEEE Transactions on Information Forensics and Security,Pattern recognition,0.11,215
+eng_computersecuritycryptography,IEEE Transactions on Information Forensics and Security,Internet privacy,0.09,215
+eng_computersecuritycryptography,IEEE Transactions on Information Forensics and Security,Computer network,0.08,215
+eng_computersecuritycryptography,Security and Communication Networks,Computer security,0.23,280
+eng_computersecuritycryptography,Security and Communication Networks,Computer network,0.17,280
+eng_computersecuritycryptography,Security and Communication Networks,Internet privacy,0.12,280
+eng_computersecuritycryptography,Security and Communication Networks,Machine learning,0.07,280
+eng_computersecuritycryptography,Security and Communication Networks,Telecommunications,0.04,280
+eng_computervisionpatternrecognition,IEEE Transactions on Image Processing,Computer vision,0.24,193
+eng_computervisionpatternrecognition,IEEE Transactions on Image Processing,Machine learning,0.20,193
+eng_computervisionpatternrecognition,IEEE Transactions on Image Processing,Pattern recognition,0.13,193
+eng_computervisionpatternrecognition,IEEE Transactions on Image Processing,Algorithm,0.08,193
+eng_computervisionpatternrecognition,IEEE Transactions on Image Processing,Mathematical optimization,0.06,193
+eng_computervisionpatternrecognition,IEEE Transactions on Pattern Analysis and Machine Intelligence,Computer vision,0.20,127
+eng_computervisionpatternrecognition,IEEE Transactions on Pattern Analysis and Machine Intelligence,Machine learning,0.18,127
+eng_computervisionpatternrecognition,IEEE Transactions on Pattern Analysis and Machine Intelligence,Pattern recognition,0.17,127
+eng_computervisionpatternrecognition,IEEE Transactions on Pattern Analysis and Machine Intelligence,Speech recognition,0.06,127
+eng_computervisionpatternrecognition,IEEE Transactions on Pattern Analysis and Machine Intelligence,Mathematical optimization,0.05,127
+eng_computervisionpatternrecognition,Journal of Visual Communication and Image Representation,Computer vision,0.30,102
+eng_computervisionpatternrecognition,Journal of Visual Communication and Image Representation,Pattern recognition,0.23,102
+eng_computervisionpatternrecognition,Journal of Visual Communication and Image Representation,Machine learning,0.09,102
+eng_computervisionpatternrecognition,Journal of Visual Communication and Image Representation,Multimedia,0.07,102
+eng_computervisionpatternrecognition,Journal of Visual Communication and Image Representation,Algorithm,0.05,102
+eng_computervisionpatternrecognition,Pattern Recognition,Pattern recognition,0.22,274
+eng_computervisionpatternrecognition,Pattern Recognition,Machine learning,0.17,274
+eng_computervisionpatternrecognition,Pattern Recognition,Computer vision,0.07,274
+eng_computervisionpatternrecognition,Pattern Recognition,Industrial organization,0.05,274
+eng_computervisionpatternrecognition,Pattern Recognition,Mathematical optimization,0.04,274
+eng_computervisionpatternrecognition,Pattern Recognition Letters,Pattern recognition,0.29,152
+eng_computervisionpatternrecognition,Pattern Recognition Letters,Machine learning,0.17,152
+eng_computervisionpatternrecognition,Pattern Recognition Letters,Computer vision,0.16,152
+eng_computervisionpatternrecognition,Pattern Recognition Letters,Speech recognition,0.06,152
+eng_computervisionpatternrecognition,Pattern Recognition Letters,Algorithm,0.04,152
+eng_datamininganalysis,ACM Transactions on Intelligent Systems and Technology,Machine learning,0.21,100
+eng_datamininganalysis,ACM Transactions on Intelligent Systems and Technology,Pattern recognition,0.06,100
+eng_datamininganalysis,ACM Transactions on Intelligent Systems and Technology,Computer network,0.05,100
+eng_datamininganalysis,ACM Transactions on Intelligent Systems and Technology,Operations management,0.05,100
+eng_datamininganalysis,ACM Transactions on Intelligent Systems and Technology,World Wide Web,0.04,100
+eng_datamininganalysis,IEEE Transactions on Knowledge and Data Engineering,Machine learning,0.20,377
+eng_datamininganalysis,IEEE Transactions on Knowledge and Data Engineering,Pattern recognition,0.11,377
+eng_datamininganalysis,IEEE Transactions on Knowledge and Data Engineering,Data mining,0.08,377
+eng_datamininganalysis,IEEE Transactions on Knowledge and Data Engineering,Algorithm,0.08,377
+eng_datamininganalysis,IEEE Transactions on Knowledge and Data Engineering,Information retrieval,0.06,377
+eng_datamininganalysis,Knowledge and Information Systems,Machine learning,0.16,162
+eng_datamininganalysis,Knowledge and Information Systems,Data mining,0.11,162
+eng_datamininganalysis,Knowledge and Information Systems,Pattern recognition,0.10,162
+eng_datamininganalysis,Knowledge and Information Systems,Algorithm,0.09,162
+eng_datamininganalysis,Knowledge and Information Systems,Information retrieval,0.08,162
+eng_libraryinformationscience,Scientometrics,Social science,0.19,181
+eng_libraryinformationscience,Scientometrics,Knowledge management,0.04,181
+eng_libraryinformationscience,Scientometrics,International economics,0.04,181
+eng_libraryinformationscience,Scientometrics,Development economics,0.03,181
+eng_libraryinformationscience,Scientometrics,Data science,0.03,181
+eng_libraryinformationscience,The Electronic Library,Library science,0.12,119
+eng_libraryinformationscience,The Electronic Library,Linguistics,0.11,119
+eng_libraryinformationscience,The Electronic Library,Literature,0.07,119
+eng_libraryinformationscience,The Electronic Library,Traditional medicine,0.07,119
+eng_libraryinformationscience,The Electronic Library,World Wide Web,0.03,119
+med_virology,Journal of Virology,Virology,0.65,139
+med_virology,Journal of Virology,Cell biology,0.17,139
+med_virology,Journal of Virology,Immunology,0.06,139
+med_virology,Journal of Virology,Molecular biology,0.03,139
+med_virology,Journal of Virology,Biochemistry,0.02,139
+med_virology,PLOS Pathogens,Cell biology,0.24,115
+med_virology,PLOS Pathogens,Virology,0.19,115
+med_virology,PLOS Pathogens,Immunology,0.17,115
+med_virology,PLOS Pathogens,Genetics,0.10,115
+med_virology,PLOS Pathogens,Biochemistry,0.05,115
+med_virology,Vaccine,Virology,0.26,176
+med_virology,Vaccine,Immunology,0.19,176
+med_virology,Vaccine,Pediatrics,0.07,176
+med_virology,Vaccine,Gerontology,0.06,176
+med_virology,Vaccine,Intensive care medicine,0.03,176

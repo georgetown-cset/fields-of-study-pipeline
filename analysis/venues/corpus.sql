@@ -11,7 +11,18 @@ with corpus as (
    on DisplayName = mag_name
   inner join `gcp-cset-projects.gcp_cset_mag.PapersWithAbstracts`
    using (JournalId)
-  where scholar_cat = 'eng_artificialintelligence'
+  where scholar_cat in (
+    'eng_artificialintelligence',
+    'bio_agronomycropscience', -- Agronomy; Agricultural science
+    'bio_biotechnology', -- Biotechnology
+    'eng_computationallinguistics', --Natural language processing
+    'eng_computersecuritycryptography', -- Computer security
+    'eng_computervisionpatternrecognition', -- Computer vision
+    'eng_datamininganalysis', -- Data mining	Data science
+    'eng_libraryinformationscience', -- IR & Knowledge management	Library science
+    'med_virology', -- Virology
+    'eng_computerhardwaredesign' -- Computer engineering	Computer hardware
+    )
 )
 select
   paper_id,

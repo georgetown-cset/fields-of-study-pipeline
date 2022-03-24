@@ -1,0 +1,1048 @@
+scholar_cat,l1_k1,id
+bio_agronomycropscience,Botany,223
+bio_agronomycropscience,Soil science,118
+bio_agronomycropscience,Genetics,84
+bio_agronomycropscience,Agronomy,52
+bio_agronomycropscience,Water resource management,46
+bio_agronomycropscience,Agroforestry,34
+bio_agronomycropscience,Ecology,33
+bio_agronomycropscience,Biochemistry,32
+bio_agronomycropscience,Climatology,25
+bio_agronomycropscience,Composite material,19
+bio_agronomycropscience,Biotechnology,19
+bio_agronomycropscience,Organic chemistry,18
+bio_agronomycropscience,Operations management,17
+bio_agronomycropscience,Cell biology,14
+bio_agronomycropscience,Economic growth,14
+bio_agronomycropscience,Nuclear chemistry,14
+bio_agronomycropscience,Bioinformatics,12
+bio_agronomycropscience,Chromatography,12
+bio_agronomycropscience,Molecular biology,12
+bio_agronomycropscience,Virology,10
+bio_agronomycropscience,Geochemistry,8
+bio_agronomycropscience,Agricultural engineering,8
+bio_agronomycropscience,Remote sensing,8
+bio_agronomycropscience,Optics,7
+bio_agronomycropscience,Hydrology,6
+bio_agronomycropscience,Computer vision,6
+bio_agronomycropscience,Control engineering,5
+bio_agronomycropscience,Machine learning,5
+bio_agronomycropscience,Food science,5
+bio_agronomycropscience,Analytical chemistry,5
+bio_agronomycropscience,Embedded system,5
+bio_agronomycropscience,Simulation,4
+bio_agronomycropscience,Waste management,4
+bio_agronomycropscience,Anatomy,4
+bio_agronomycropscience,Meteorology,4
+bio_agronomycropscience,Electrical engineering,4
+bio_agronomycropscience,Forestry,4
+bio_agronomycropscience,Combinatorial chemistry,4
+bio_agronomycropscience,Mineralogy,3
+bio_agronomycropscience,Medicinal chemistry,3
+bio_agronomycropscience,Polymer chemistry,3
+bio_agronomycropscience,Pulp and paper industry,3
+bio_agronomycropscience,Environmental engineering,3
+bio_agronomycropscience,Pattern recognition,3
+bio_agronomycropscience,Social psychology,3
+bio_agronomycropscience,Ancient history,3
+bio_agronomycropscience,Data mining,3
+bio_agronomycropscience,Management,2
+bio_agronomycropscience,Pharmacology,2
+bio_agronomycropscience,Petroleum engineering,2
+bio_agronomycropscience,Microbiology,2
+bio_agronomycropscience,Artificial intelligence,2
+bio_agronomycropscience,Particle physics,2
+bio_agronomycropscience,Mathematical optimization,2
+bio_agronomycropscience,Atmospheric sciences,2
+bio_agronomycropscience,Control theory,2
+bio_agronomycropscience,Cartography,2
+bio_agronomycropscience,Environmental resource management,2
+bio_agronomycropscience,Risk analysis (engineering),2
+bio_agronomycropscience,Developmental psychology,2
+bio_agronomycropscience,Condensed matter physics,2
+bio_agronomycropscience,Endocrinology,2
+bio_agronomycropscience,Reliability engineering,2
+bio_agronomycropscience,Immunology,2
+bio_agronomycropscience,Classical mechanics,2
+bio_agronomycropscience,Statistics,2
+bio_agronomycropscience,Geotechnical engineering,2
+bio_agronomycropscience,Inorganic chemistry,2
+bio_agronomycropscience,Process engineering,1
+bio_agronomycropscience,Paleontology,1
+bio_agronomycropscience,Agricultural science,1
+bio_agronomycropscience,Transport engineering,1
+bio_agronomycropscience,Polymer science,1
+bio_agronomycropscience,Radiochemistry,1
+bio_agronomycropscience,Horticulture,1
+bio_agronomycropscience,Nuclear magnetic resonance,1
+bio_agronomycropscience,Neuroscience,1
+bio_agronomycropscience,Andrology,1
+bio_agronomycropscience,Biochemical engineering,1
+bio_agronomycropscience,Ceramic materials,1
+bio_agronomycropscience,Chemical engineering,1
+bio_agronomycropscience,Computational biology,1
+bio_agronomycropscience,Computer network,1
+bio_agronomycropscience,Crystallography,1
+bio_agronomycropscience,Development economics,1
+bio_agronomycropscience,Economic system,1
+bio_agronomycropscience,Environmental health,1
+bio_agronomycropscience,Environmental protection,1
+bio_agronomycropscience,Internet privacy,1
+bio_agronomycropscience,Manufacturing engineering,1
+bio_agronomycropscience,Media studies,1
+bio_agronomycropscience,Metallurgy,1
+bio_agronomycropscience,Microeconomics,1
+bio_agronomycropscience,Nanotechnology,1
+bio_agronomycropscience,Agricultural economics,1
+bio_biotechnology,Biochemistry,130
+bio_biotechnology,Cell biology,79
+bio_biotechnology,Molecular biology,65
+bio_biotechnology,Waste management,58
+bio_biotechnology,Biotechnology,48
+bio_biotechnology,Genetics,39
+bio_biotechnology,Bioinformatics,35
+bio_biotechnology,Combinatorial chemistry,34
+bio_biotechnology,Operations management,32
+bio_biotechnology,Organic chemistry,31
+bio_biotechnology,Botany,29
+bio_biotechnology,Geochemistry,27
+bio_biotechnology,Nuclear chemistry,25
+bio_biotechnology,Chromatography,25
+bio_biotechnology,Microbiology,21
+bio_biotechnology,Environmental engineering,16
+bio_biotechnology,Agronomy,16
+bio_biotechnology,Ecology,16
+bio_biotechnology,Economic growth,15
+bio_biotechnology,Virology,14
+bio_biotechnology,Pharmacology,12
+bio_biotechnology,Systems engineering,11
+bio_biotechnology,Composite material,10
+bio_biotechnology,Cancer research,9
+bio_biotechnology,Embedded system,8
+bio_biotechnology,Water resource management,7
+bio_biotechnology,Analytical chemistry,6
+bio_biotechnology,Process engineering,6
+bio_biotechnology,Biochemical engineering,6
+bio_biotechnology,Computational biology,5
+bio_biotechnology,Polymer chemistry,5
+bio_biotechnology,Control theory,5
+bio_biotechnology,Immunology,5
+bio_biotechnology,Thermodynamics,5
+bio_biotechnology,Optics,5
+bio_biotechnology,Metallurgy,4
+bio_biotechnology,Pulp and paper industry,4
+bio_biotechnology,Industrial engineering,3
+bio_biotechnology,Law,3
+bio_biotechnology,Physical chemistry,3
+bio_biotechnology,Medicinal chemistry,3
+bio_biotechnology,Mineralogy,3
+bio_biotechnology,Petroleum engineering,3
+bio_biotechnology,Evolutionary biology,3
+bio_biotechnology,Environmental health,3
+bio_biotechnology,Zoology,3
+bio_biotechnology,Social science,3
+bio_biotechnology,Soil science,3
+bio_biotechnology,Computational science,3
+bio_biotechnology,Animal science,3
+bio_biotechnology,Ceramic materials,3
+bio_biotechnology,Toxicology,2
+bio_biotechnology,Medical education,2
+bio_biotechnology,Classical mechanics,2
+bio_biotechnology,Chemical engineering,2
+bio_biotechnology,Biomedical engineering,2
+bio_biotechnology,Marine engineering,2
+bio_biotechnology,Pathology,2
+bio_biotechnology,Parallel computing,2
+bio_biotechnology,Neuroscience,2
+bio_biotechnology,Nuclear magnetic resonance,2
+bio_biotechnology,Agricultural engineering,2
+bio_biotechnology,Mathematical economics,2
+bio_biotechnology,Environmental economics,2
+bio_biotechnology,Control engineering,2
+bio_biotechnology,Food science,2
+bio_biotechnology,Risk analysis (engineering),2
+bio_biotechnology,Simulation,2
+bio_biotechnology,Radiochemistry,2
+bio_biotechnology,Condensed matter physics,2
+bio_biotechnology,Telecommunications,1
+bio_biotechnology,Traditional medicine,1
+bio_biotechnology,Structural engineering,1
+bio_biotechnology,Photochemistry,1
+bio_biotechnology,Remote sensing,1
+bio_biotechnology,Quantum mechanics,1
+bio_biotechnology,Software engineering,1
+bio_biotechnology,Topology,1
+bio_biotechnology,Public administration,1
+bio_biotechnology,Radiology,1
+bio_biotechnology,Physical therapy,1
+bio_biotechnology,World Wide Web,1
+bio_biotechnology,Real-time computing,1
+bio_biotechnology,Programming language,1
+bio_biotechnology,Statistics,1
+bio_biotechnology,Actuarial science,1
+bio_biotechnology,Operations research,1
+bio_biotechnology,Natural resource economics,1
+bio_biotechnology,Endocrinology,1
+bio_biotechnology,Electrical engineering,1
+bio_biotechnology,Economy,1
+bio_biotechnology,Economic policy,1
+bio_biotechnology,Developmental psychology,1
+bio_biotechnology,Demography,1
+bio_biotechnology,Database,1
+bio_biotechnology,Data science,1
+bio_biotechnology,Crystallography,1
+bio_biotechnology,Computer security,1
+bio_biotechnology,Climatology,1
+bio_biotechnology,Automotive engineering,1
+bio_biotechnology,Ancient history,1
+bio_biotechnology,Anatomy,1
+bio_biotechnology,Agroforestry,1
+bio_biotechnology,Engineering management,1
+bio_biotechnology,Engineering physics,1
+bio_biotechnology,Environmental chemistry,1
+bio_biotechnology,Market economy,1
+bio_biotechnology,Natural language processing,1
+bio_biotechnology,Nanotechnology,1
+bio_biotechnology,Mining engineering,1
+bio_biotechnology,Microeconomics,1
+bio_biotechnology,Mechanical engineering,1
+bio_biotechnology,Mathematical optimization,1
+bio_biotechnology,Management,1
+bio_biotechnology,Environmental planning,1
+bio_biotechnology,Machine learning,1
+bio_biotechnology,Aeronautics,1
+bio_biotechnology,Library science,1
+bio_biotechnology,Hydrology,1
+bio_biotechnology,Fishery,1
+bio_biotechnology,Finance,1
+bio_biotechnology,Literature,1
+eng_artificialintelligence,Machine learning,208
+eng_artificialintelligence,Mathematical optimization,108
+eng_artificialintelligence,Control theory,83
+eng_artificialintelligence,Pattern recognition,73
+eng_artificialintelligence,Algorithm,54
+eng_artificialintelligence,Computer network,49
+eng_artificialintelligence,Computer vision,46
+eng_artificialintelligence,Embedded system,30
+eng_artificialintelligence,Operations management,21
+eng_artificialintelligence,Statistics,15
+eng_artificialintelligence,Knowledge management,15
+eng_artificialintelligence,Speech recognition,13
+eng_artificialintelligence,Data mining,13
+eng_artificialintelligence,Simulation,11
+eng_artificialintelligence,Distributed computing,11
+eng_artificialintelligence,Financial economics,10
+eng_artificialintelligence,Linguistics,9
+eng_artificialintelligence,World Wide Web,9
+eng_artificialintelligence,Artificial intelligence,9
+eng_artificialintelligence,Information retrieval,8
+eng_artificialintelligence,Database,8
+eng_artificialintelligence,Systems engineering,7
+eng_artificialintelligence,Mathematical analysis,7
+eng_artificialintelligence,Theoretical computer science,7
+eng_artificialintelligence,Computer security,6
+eng_artificialintelligence,Social psychology,6
+eng_artificialintelligence,Telecommunications,5
+eng_artificialintelligence,Topology,5
+eng_artificialintelligence,Neuroscience,5
+eng_artificialintelligence,Electrical engineering,5
+eng_artificialintelligence,Control engineering,4
+eng_artificialintelligence,Cartography,4
+eng_artificialintelligence,Internet privacy,4
+eng_artificialintelligence,Cognitive science,4
+eng_artificialintelligence,Reliability engineering,4
+eng_artificialintelligence,Traditional medicine,4
+eng_artificialintelligence,Waste management,4
+eng_artificialintelligence,Multimedia,4
+eng_artificialintelligence,Transport engineering,3
+eng_artificialintelligence,Social science,3
+eng_artificialintelligence,Automotive engineering,3
+eng_artificialintelligence,Real-time computing,3
+eng_artificialintelligence,Natural language processing,3
+eng_artificialintelligence,Data science,3
+eng_artificialintelligence,Cancer research,3
+eng_artificialintelligence,Econometrics,2
+eng_artificialintelligence,Microeconomics,2
+eng_artificialintelligence,Meteorology,2
+eng_artificialintelligence,Welfare economics,2
+eng_artificialintelligence,Mathematical economics,2
+eng_artificialintelligence,Composite material,2
+eng_artificialintelligence,Parallel computing,2
+eng_artificialintelligence,Analytical chemistry,2
+eng_artificialintelligence,Construction engineering,2
+eng_artificialintelligence,Library science,2
+eng_artificialintelligence,Aeronautics,2
+eng_artificialintelligence,Arithmetic,2
+eng_artificialintelligence,Computer architecture,2
+eng_artificialintelligence,Communication,2
+eng_artificialintelligence,Computational science,2
+eng_artificialintelligence,Environmental planning,2
+eng_artificialintelligence,Discrete mathematics,2
+eng_artificialintelligence,Risk analysis (engineering),2
+eng_artificialintelligence,Developmental psychology,2
+eng_artificialintelligence,Theoretical physics,1
+eng_artificialintelligence,Nuclear engineering,1
+eng_artificialintelligence,Operating system,1
+eng_artificialintelligence,Thermodynamics,1
+eng_artificialintelligence,Surgery,1
+eng_artificialintelligence,Process engineering,1
+eng_artificialintelligence,Operations research,1
+eng_artificialintelligence,Programming language,1
+eng_artificialintelligence,Optics,1
+eng_artificialintelligence,Structural engineering,1
+eng_artificialintelligence,Virology,1
+eng_artificialintelligence,Radiology,1
+eng_artificialintelligence,Software engineering,1
+eng_artificialintelligence,Public relations,1
+eng_artificialintelligence,Physical medicine and rehabilitation,1
+eng_artificialintelligence,Ophthalmology,1
+eng_artificialintelligence,Accounting,1
+eng_artificialintelligence,Mining engineering,1
+eng_artificialintelligence,Mineralogy,1
+eng_artificialintelligence,Electronic engineering,1
+eng_artificialintelligence,Economic growth,1
+eng_artificialintelligence,Dentistry,1
+eng_artificialintelligence,Condensed matter physics,1
+eng_artificialintelligence,Computer graphics (images),1
+eng_artificialintelligence,Computational physics,1
+eng_artificialintelligence,Combinatorics,1
+eng_artificialintelligence,Chemical engineering,1
+eng_artificialintelligence,Calculus,1
+eng_artificialintelligence,Business administration,1
+eng_artificialintelligence,Astrobiology,1
+eng_artificialintelligence,Anesthesia,1
+eng_artificialintelligence,Andrology,1
+eng_artificialintelligence,Agroforestry,1
+eng_artificialintelligence,Aesthetics,1
+eng_artificialintelligence,Engineering drawing,1
+eng_artificialintelligence,Environmental health,1
+eng_artificialintelligence,Evolutionary biology,1
+eng_artificialintelligence,International trade,1
+eng_artificialintelligence,Mathematical physics,1
+eng_artificialintelligence,Marketing,1
+eng_artificialintelligence,Marine engineering,1
+eng_artificialintelligence,Manufacturing engineering,1
+eng_artificialintelligence,Management science,1
+eng_artificialintelligence,Management,1
+eng_artificialintelligence,Immunology,1
+eng_artificialintelligence,Financial system,1
+eng_artificialintelligence,Human–computer interaction,1
+eng_artificialintelligence,Geotechnical engineering,1
+eng_artificialintelligence,Geodesy,1
+eng_artificialintelligence,Forestry,1
+eng_artificialintelligence,Food science,1
+eng_artificialintelligence,Fishery,1
+eng_artificialintelligence,Intensive care medicine,1
+eng_computationallinguistics,Speech recognition,261
+eng_computationallinguistics,Machine learning,133
+eng_computationallinguistics,Natural language processing,116
+eng_computationallinguistics,Linguistics,113
+eng_computationallinguistics,Pattern recognition,50
+eng_computationallinguistics,Programming language,40
+eng_computationallinguistics,Algorithm,23
+eng_computationallinguistics,Information retrieval,22
+eng_computationallinguistics,Algebra,12
+eng_computationallinguistics,Media studies,11
+eng_computationallinguistics,Knowledge management,10
+eng_computationallinguistics,Human–computer interaction,10
+eng_computationallinguistics,Statistics,10
+eng_computationallinguistics,Discrete mathematics,9
+eng_computationallinguistics,Social psychology,9
+eng_computationallinguistics,Data mining,7
+eng_computationallinguistics,Parallel computing,7
+eng_computationallinguistics,Law,7
+eng_computationallinguistics,Developmental psychology,6
+eng_computationallinguistics,Database,6
+eng_computationallinguistics,Mathematical analysis,5
+eng_computationallinguistics,Social science,5
+eng_computationallinguistics,Operations management,5
+eng_computationallinguistics,Artificial intelligence,5
+eng_computationallinguistics,Computer network,5
+eng_computationallinguistics,Acoustics,4
+eng_computationallinguistics,Control theory,4
+eng_computationallinguistics,Mathematical optimization,4
+eng_computationallinguistics,Multimedia,4
+eng_computationallinguistics,Communication,4
+eng_computationallinguistics,Epistemology,4
+eng_computationallinguistics,Systems engineering,3
+eng_computationallinguistics,Theoretical computer science,3
+eng_computationallinguistics,Topology,3
+eng_computationallinguistics,Public relations,3
+eng_computationallinguistics,World Wide Web,3
+eng_computationallinguistics,Agroforestry,3
+eng_computationallinguistics,Cognitive science,3
+eng_computationallinguistics,Computational science,3
+eng_computationallinguistics,Art history,3
+eng_computationallinguistics,Computational biology,3
+eng_computationallinguistics,Computer vision,3
+eng_computationallinguistics,Literature,2
+eng_computationallinguistics,Pedagogy,2
+eng_computationallinguistics,Regional science,2
+eng_computationallinguistics,Reliability engineering,2
+eng_computationallinguistics,Risk analysis (engineering),2
+eng_computationallinguistics,Simulation,2
+eng_computationallinguistics,Computer security,2
+eng_computationallinguistics,Real-time computing,2
+eng_computationallinguistics,Distributed computing,2
+eng_computationallinguistics,Structural engineering,2
+eng_computationallinguistics,Geometry,2
+eng_computationallinguistics,Quantum mechanics,1
+eng_computationallinguistics,Quantum electrodynamics,1
+eng_computationallinguistics,Calculus,1
+eng_computationallinguistics,Psychotherapist,1
+eng_computationallinguistics,Environmental resource management,1
+eng_computationallinguistics,Biological system,1
+eng_computationallinguistics,Bioinformatics,1
+eng_computationallinguistics,Arithmetic,1
+eng_computationallinguistics,Archaeology,1
+eng_computationallinguistics,Telecommunications,1
+eng_computationallinguistics,Applied mathematics,1
+eng_computationallinguistics,Civil engineering,1
+eng_computationallinguistics,Operating system,1
+eng_computationallinguistics,Classical economics,1
+eng_computationallinguistics,Marketing,1
+eng_computationallinguistics,Gender studies,1
+eng_computationallinguistics,Environmental ethics,1
+eng_computationallinguistics,Industrial organization,1
+eng_computationallinguistics,Economic system,1
+eng_computationallinguistics,Advertising,1
+eng_computationallinguistics,Data science,1
+eng_computationallinguistics,Criminology,1
+eng_computationallinguistics,Management,1
+eng_computationallinguistics,Mathematical economics,1
+eng_computationallinguistics,Cognitive psychology,1
+eng_computationallinguistics,Computer graphics (images),1
+eng_computationallinguistics,Medical education,1
+eng_computationallinguistics,Medical emergency,1
+eng_computationallinguistics,Mining engineering,1
+eng_computationallinguistics,Commerce,1
+eng_computationallinguistics,Natural resource economics,1
+eng_computationallinguistics,Forensic engineering,1
+eng_computationallinguistics,Organic chemistry,1
+eng_computationallinguistics,International trade,1
+eng_computerhardwaredesign,Control theory,126
+eng_computerhardwaredesign,Telecommunications,89
+eng_computerhardwaredesign,Computer architecture,86
+eng_computerhardwaredesign,Parallel computing,82
+eng_computerhardwaredesign,Electronic engineering,54
+eng_computerhardwaredesign,Computer network,46
+eng_computerhardwaredesign,Embedded system,45
+eng_computerhardwaredesign,Mathematical optimization,34
+eng_computerhardwaredesign,Reliability engineering,33
+eng_computerhardwaredesign,Simulation,29
+eng_computerhardwaredesign,Machine learning,28
+eng_computerhardwaredesign,Algorithm,25
+eng_computerhardwaredesign,Analytical chemistry,20
+eng_computerhardwaredesign,Arithmetic,19
+eng_computerhardwaredesign,Electrical engineering,18
+eng_computerhardwaredesign,Real-time computing,17
+eng_computerhardwaredesign,Theoretical computer science,16
+eng_computerhardwaredesign,Computer security,15
+eng_computerhardwaredesign,Computer vision,14
+eng_computerhardwaredesign,Pattern recognition,11
+eng_computerhardwaredesign,Distributed computing,10
+eng_computerhardwaredesign,Statistics,9
+eng_computerhardwaredesign,Topology,9
+eng_computerhardwaredesign,Remote sensing,8
+eng_computerhardwaredesign,Operations management,8
+eng_computerhardwaredesign,Systems engineering,8
+eng_computerhardwaredesign,Operating system,7
+eng_computerhardwaredesign,Nuclear magnetic resonance,7
+eng_computerhardwaredesign,Communication,6
+eng_computerhardwaredesign,Computational chemistry,5
+eng_computerhardwaredesign,Cell biology,5
+eng_computerhardwaredesign,Neuroscience,5
+eng_computerhardwaredesign,Discrete mathematics,5
+eng_computerhardwaredesign,Mathematical analysis,4
+eng_computerhardwaredesign,Quantum mechanics,4
+eng_computerhardwaredesign,Pedagogy,4
+eng_computerhardwaredesign,Multimedia,4
+eng_computerhardwaredesign,Nanotechnology,4
+eng_computerhardwaredesign,Control engineering,4
+eng_computerhardwaredesign,Speech recognition,4
+eng_computerhardwaredesign,Chromatography,4
+eng_computerhardwaredesign,Thermodynamics,3
+eng_computerhardwaredesign,Human–computer interaction,3
+eng_computerhardwaredesign,Programming language,3
+eng_computerhardwaredesign,Structural engineering,3
+eng_computerhardwaredesign,Data mining,2
+eng_computerhardwaredesign,Optics,2
+eng_computerhardwaredesign,Calculus,2
+eng_computerhardwaredesign,Cardiology,2
+eng_computerhardwaredesign,World Wide Web,2
+eng_computerhardwaredesign,Computer graphics (images),2
+eng_computerhardwaredesign,Photochemistry,2
+eng_computerhardwaredesign,Quantum electrodynamics,2
+eng_computerhardwaredesign,Computer hardware,2
+eng_computerhardwaredesign,Seismology,1
+eng_computerhardwaredesign,Pharmacology,1
+eng_computerhardwaredesign,Physiology,1
+eng_computerhardwaredesign,Public administration,1
+eng_computerhardwaredesign,Organic chemistry,1
+eng_computerhardwaredesign,Visual arts,1
+eng_computerhardwaredesign,Waste management,1
+eng_computerhardwaredesign,Software engineering,1
+eng_computerhardwaredesign,Acoustics,1
+eng_computerhardwaredesign,Obstetrics,1
+eng_computerhardwaredesign,Natural resource economics,1
+eng_computerhardwaredesign,Algebra,1
+eng_computerhardwaredesign,Applied mathematics,1
+eng_computerhardwaredesign,Artificial intelligence,1
+eng_computerhardwaredesign,Bioinformatics,1
+eng_computerhardwaredesign,Biomedical engineering,1
+eng_computerhardwaredesign,Business administration,1
+eng_computerhardwaredesign,Cartography,1
+eng_computerhardwaredesign,Ceramic materials,1
+eng_computerhardwaredesign,Classical mechanics,1
+eng_computerhardwaredesign,Combinatorial chemistry,1
+eng_computerhardwaredesign,Composite material,1
+eng_computerhardwaredesign,Computational science,1
+eng_computerhardwaredesign,Condensed matter physics,1
+eng_computerhardwaredesign,Construction engineering,1
+eng_computerhardwaredesign,Data science,1
+eng_computerhardwaredesign,Development economics,1
+eng_computerhardwaredesign,Economic growth,1
+eng_computerhardwaredesign,Family medicine,1
+eng_computerhardwaredesign,Information retrieval,1
+eng_computerhardwaredesign,Internet privacy,1
+eng_computerhardwaredesign,Aeronautics,1
+eng_computerhardwaredesign,Linguistics,1
+eng_computerhardwaredesign,Management,1
+eng_computerhardwaredesign,Mathematical economics,1
+eng_computerhardwaredesign,Media studies,1
+eng_computerhardwaredesign,Meteorology,1
+eng_computerhardwaredesign,Natural language processing,1
+eng_computerhardwaredesign,Knowledge management,1
+eng_computersecuritycryptography,Computer security,225
+eng_computersecuritycryptography,Computer network,105
+eng_computersecuritycryptography,Internet privacy,94
+eng_computersecuritycryptography,Machine learning,42
+eng_computersecuritycryptography,Algorithm,42
+eng_computersecuritycryptography,Telecommunications,36
+eng_computersecuritycryptography,Pattern recognition,36
+eng_computersecuritycryptography,Theoretical computer science,25
+eng_computersecuritycryptography,Computer vision,25
+eng_computersecuritycryptography,Mathematical optimization,22
+eng_computersecuritycryptography,Data mining,21
+eng_computersecuritycryptography,Mathematical analysis,18
+eng_computersecuritycryptography,Arithmetic,17
+eng_computersecuritycryptography,Algebra,16
+eng_computersecuritycryptography,World Wide Web,15
+eng_computersecuritycryptography,Software engineering,14
+eng_computersecuritycryptography,Distributed computing,12
+eng_computersecuritycryptography,Database,12
+eng_computersecuritycryptography,Operating system,11
+eng_computersecuritycryptography,Topology,9
+eng_computersecuritycryptography,Multimedia,9
+eng_computersecuritycryptography,Statistics,9
+eng_computersecuritycryptography,Embedded system,9
+eng_computersecuritycryptography,Speech recognition,9
+eng_computersecuritycryptography,Information retrieval,8
+eng_computersecuritycryptography,Communication,7
+eng_computersecuritycryptography,Quantum electrodynamics,7
+eng_computersecuritycryptography,Geometry,6
+eng_computersecuritycryptography,Control theory,6
+eng_computersecuritycryptography,Control engineering,6
+eng_computersecuritycryptography,Combinatorics,6
+eng_computersecuritycryptography,Reliability engineering,6
+eng_computersecuritycryptography,Remote sensing,5
+eng_computersecuritycryptography,Quantum mechanics,4
+eng_computersecuritycryptography,Real-time computing,4
+eng_computersecuritycryptography,Operations management,4
+eng_computersecuritycryptography,Discrete mathematics,4
+eng_computersecuritycryptography,Risk analysis (engineering),4
+eng_computersecuritycryptography,Computer graphics (images),4
+eng_computersecuritycryptography,Systems engineering,4
+eng_computersecuritycryptography,Mathematical economics,3
+eng_computersecuritycryptography,Cartography,3
+eng_computersecuritycryptography,Human–computer interaction,3
+eng_computersecuritycryptography,Composite material,3
+eng_computersecuritycryptography,Electrical engineering,3
+eng_computersecuritycryptography,Developmental psychology,3
+eng_computersecuritycryptography,Structural engineering,2
+eng_computersecuritycryptography,Economic policy,2
+eng_computersecuritycryptography,Parallel computing,2
+eng_computersecuritycryptography,Electronic engineering,2
+eng_computersecuritycryptography,Data science,2
+eng_computersecuritycryptography,Simulation,2
+eng_computersecuritycryptography,Social psychology,2
+eng_computersecuritycryptography,Combinatorial chemistry,2
+eng_computersecuritycryptography,Automotive engineering,2
+eng_computersecuritycryptography,Art history,2
+eng_computersecuritycryptography,Computer architecture,2
+eng_computersecuritycryptography,Management,2
+eng_computersecuritycryptography,Computational science,2
+eng_computersecuritycryptography,Law,2
+eng_computersecuritycryptography,Public relations,1
+eng_computersecuritycryptography,Classical mechanics,1
+eng_computersecuritycryptography,Socioeconomics,1
+eng_computersecuritycryptography,Andrology,1
+eng_computersecuritycryptography,Analytical chemistry,1
+eng_computersecuritycryptography,Econometrics,1
+eng_computersecuritycryptography,Regional science,1
+eng_computersecuritycryptography,Toxicology,1
+eng_computersecuritycryptography,Transport engineering,1
+eng_computersecuritycryptography,Virology,1
+eng_computersecuritycryptography,Economy,1
+eng_computersecuritycryptography,Criminology,1
+eng_computersecuritycryptography,Gerontology,1
+eng_computersecuritycryptography,Public administration,1
+eng_computersecuritycryptography,Artificial intelligence,1
+eng_computersecuritycryptography,Genealogy,1
+eng_computersecuritycryptography,International trade,1
+eng_computersecuritycryptography,Finance,1
+eng_computersecuritycryptography,Library science,1
+eng_computersecuritycryptography,Linguistics,1
+eng_computersecuritycryptography,Business administration,1
+eng_computersecuritycryptography,Manufacturing engineering,1
+eng_computersecuritycryptography,Computational chemistry,1
+eng_computersecuritycryptography,Evolutionary biology,1
+eng_computersecuritycryptography,Media studies,1
+eng_computersecuritycryptography,Process engineering,1
+eng_computersecuritycryptography,Medical education,1
+eng_computersecuritycryptography,Mining engineering,1
+eng_computersecuritycryptography,Environmental resource management,1
+eng_computersecuritycryptography,Natural language processing,1
+eng_computersecuritycryptography,Natural resource economics,1
+eng_computersecuritycryptography,Neuroscience,1
+eng_computersecuritycryptography,Engineering drawing,1
+eng_computersecuritycryptography,Particle physics,1
+eng_computersecuritycryptography,Geodesy,1
+eng_computersecuritycryptography,Marketing,1
+eng_computervisionpatternrecognition,Pattern recognition,190
+eng_computervisionpatternrecognition,Computer vision,183
+eng_computervisionpatternrecognition,Machine learning,175
+eng_computervisionpatternrecognition,Algorithm,45
+eng_computervisionpatternrecognition,Mathematical optimization,45
+eng_computervisionpatternrecognition,Speech recognition,31
+eng_computervisionpatternrecognition,Information retrieval,27
+eng_computervisionpatternrecognition,Computer network,19
+eng_computervisionpatternrecognition,Industrial organization,14
+eng_computervisionpatternrecognition,Statistics,13
+eng_computervisionpatternrecognition,Theology,10
+eng_computervisionpatternrecognition,Cartography,10
+eng_computervisionpatternrecognition,Regional science,10
+eng_computervisionpatternrecognition,Multimedia,9
+eng_computervisionpatternrecognition,Optics,9
+eng_computervisionpatternrecognition,Database,9
+eng_computervisionpatternrecognition,Geometry,8
+eng_computervisionpatternrecognition,Computer graphics (images),7
+eng_computervisionpatternrecognition,Theoretical computer science,7
+eng_computervisionpatternrecognition,Real-time computing,7
+eng_computervisionpatternrecognition,Embedded system,7
+eng_computervisionpatternrecognition,Analytical chemistry,6
+eng_computervisionpatternrecognition,Topology,6
+eng_computervisionpatternrecognition,Social psychology,5
+eng_computervisionpatternrecognition,Art history,5
+eng_computervisionpatternrecognition,Traditional medicine,5
+eng_computervisionpatternrecognition,Surgery,4
+eng_computervisionpatternrecognition,Simulation,4
+eng_computervisionpatternrecognition,Parallel computing,4
+eng_computervisionpatternrecognition,Classical mechanics,4
+eng_computervisionpatternrecognition,Neuroscience,4
+eng_computervisionpatternrecognition,Public relations,4
+eng_computervisionpatternrecognition,Data mining,4
+eng_computervisionpatternrecognition,Financial system,3
+eng_computervisionpatternrecognition,Human–computer interaction,3
+eng_computervisionpatternrecognition,Distributed computing,3
+eng_computervisionpatternrecognition,Discrete mathematics,3
+eng_computervisionpatternrecognition,Bioinformatics,3
+eng_computervisionpatternrecognition,Data science,3
+eng_computervisionpatternrecognition,Mathematical physics,3
+eng_computervisionpatternrecognition,Internet privacy,3
+eng_computervisionpatternrecognition,Remote sensing,3
+eng_computervisionpatternrecognition,Geodesy,2
+eng_computervisionpatternrecognition,Pathology,2
+eng_computervisionpatternrecognition,Aesthetics,2
+eng_computervisionpatternrecognition,Oncology,2
+eng_computervisionpatternrecognition,Cardiology,2
+eng_computervisionpatternrecognition,Linguistics,2
+eng_computervisionpatternrecognition,Artificial intelligence,2
+eng_computervisionpatternrecognition,Telecommunications,2
+eng_computervisionpatternrecognition,Polymer science,2
+eng_computervisionpatternrecognition,Radiology,2
+eng_computervisionpatternrecognition,Cell biology,2
+eng_computervisionpatternrecognition,Anatomy,2
+eng_computervisionpatternrecognition,Reliability engineering,2
+eng_computervisionpatternrecognition,Archaeology,2
+eng_computervisionpatternrecognition,Computational physics,2
+eng_computervisionpatternrecognition,Commerce,2
+eng_computervisionpatternrecognition,Literature,2
+eng_computervisionpatternrecognition,Nuclear magnetic resonance,1
+eng_computervisionpatternrecognition,Operations management,1
+eng_computervisionpatternrecognition,Natural language processing,1
+eng_computervisionpatternrecognition,Structural engineering,1
+eng_computervisionpatternrecognition,Virology,1
+eng_computervisionpatternrecognition,Transport engineering,1
+eng_computervisionpatternrecognition,Physical medicine and rehabilitation,1
+eng_computervisionpatternrecognition,Public administration,1
+eng_computervisionpatternrecognition,Medical physics,1
+eng_computervisionpatternrecognition,Religious studies,1
+eng_computervisionpatternrecognition,Risk analysis (engineering),1
+eng_computervisionpatternrecognition,Psychiatry,1
+eng_computervisionpatternrecognition,Advertising,1
+eng_computervisionpatternrecognition,Media studies,1
+eng_computervisionpatternrecognition,Mechanical engineering,1
+eng_computervisionpatternrecognition,Computer security,1
+eng_computervisionpatternrecognition,Computational chemistry,1
+eng_computervisionpatternrecognition,Computational biology,1
+eng_computervisionpatternrecognition,Communication,1
+eng_computervisionpatternrecognition,Combinatorics,1
+eng_computervisionpatternrecognition,Clinical psychology,1
+eng_computervisionpatternrecognition,Classics,1
+eng_computervisionpatternrecognition,Chromatography,1
+eng_computervisionpatternrecognition,Ceramic materials,1
+eng_computervisionpatternrecognition,Cancer research,1
+eng_computervisionpatternrecognition,Atomic physics,1
+eng_computervisionpatternrecognition,Arithmetic,1
+eng_computervisionpatternrecognition,Architectural engineering,1
+eng_computervisionpatternrecognition,Anesthesia,1
+eng_computervisionpatternrecognition,Andrology,1
+eng_computervisionpatternrecognition,Construction engineering,1
+eng_computervisionpatternrecognition,Control theory,1
+eng_computervisionpatternrecognition,Crystallography,1
+eng_computervisionpatternrecognition,Intensive care medicine,1
+eng_computervisionpatternrecognition,Mathematical economics,1
+eng_computervisionpatternrecognition,Mathematical analysis,1
+eng_computervisionpatternrecognition,Market economy,1
+eng_computervisionpatternrecognition,Management,1
+eng_computervisionpatternrecognition,Library science,1
+eng_computervisionpatternrecognition,Knowledge management,1
+eng_computervisionpatternrecognition,Immunology,1
+eng_computervisionpatternrecognition,Economic policy,1
+eng_computervisionpatternrecognition,Gerontology,1
+eng_computervisionpatternrecognition,Food science,1
+eng_computervisionpatternrecognition,Finance,1
+eng_computervisionpatternrecognition,Environmental planning,1
+eng_computervisionpatternrecognition,Environmental engineering,1
+eng_computervisionpatternrecognition,Engineering drawing,1
+eng_computervisionpatternrecognition,Visual arts,1
+eng_datamininganalysis,Machine learning,181
+eng_datamininganalysis,Data mining,102
+eng_datamininganalysis,Pattern recognition,87
+eng_datamininganalysis,Computer network,72
+eng_datamininganalysis,Algorithm,70
+eng_datamininganalysis,Information retrieval,41
+eng_datamininganalysis,Internet privacy,34
+eng_datamininganalysis,Social psychology,30
+eng_datamininganalysis,Database,28
+eng_datamininganalysis,Distributed computing,28
+eng_datamininganalysis,Mathematical optimization,26
+eng_datamininganalysis,Statistics,23
+eng_datamininganalysis,Operations management,21
+eng_datamininganalysis,World Wide Web,18
+eng_datamininganalysis,Human–computer interaction,13
+eng_datamininganalysis,Artificial intelligence,12
+eng_datamininganalysis,Theoretical computer science,11
+eng_datamininganalysis,Natural language processing,10
+eng_datamininganalysis,Media studies,9
+eng_datamininganalysis,Knowledge management,8
+eng_datamininganalysis,Embedded system,7
+eng_datamininganalysis,Programming language,6
+eng_datamininganalysis,Linguistics,6
+eng_datamininganalysis,Speech recognition,6
+eng_datamininganalysis,Social science,6
+eng_datamininganalysis,Simulation,5
+eng_datamininganalysis,Computer vision,5
+eng_datamininganalysis,Computational science,5
+eng_datamininganalysis,Data science,5
+eng_datamininganalysis,Bioinformatics,5
+eng_datamininganalysis,Microeconomics,4
+eng_datamininganalysis,Parallel computing,4
+eng_datamininganalysis,Advertising,4
+eng_datamininganalysis,Real-time computing,4
+eng_datamininganalysis,Systems engineering,4
+eng_datamininganalysis,Public relations,3
+eng_datamininganalysis,Reliability engineering,3
+eng_datamininganalysis,Financial economics,3
+eng_datamininganalysis,Software engineering,3
+eng_datamininganalysis,Computational biology,3
+eng_datamininganalysis,Forestry,3
+eng_datamininganalysis,Marketing,3
+eng_datamininganalysis,Finance,3
+eng_datamininganalysis,Computer architecture,2
+eng_datamininganalysis,Criminology,2
+eng_datamininganalysis,Business administration,2
+eng_datamininganalysis,Quantum electrodynamics,2
+eng_datamininganalysis,Econometrics,2
+eng_datamininganalysis,Multimedia,2
+eng_datamininganalysis,Engineering management,2
+eng_datamininganalysis,Computational chemistry,2
+eng_datamininganalysis,Demography,2
+eng_datamininganalysis,Computer security,2
+eng_datamininganalysis,Management,2
+eng_datamininganalysis,Biomedical engineering,2
+eng_datamininganalysis,Topology,2
+eng_datamininganalysis,Control theory,2
+eng_datamininganalysis,Telecommunications,2
+eng_datamininganalysis,Cognitive science,2
+eng_datamininganalysis,Evolutionary biology,2
+eng_datamininganalysis,Communication,2
+eng_datamininganalysis,Economic geography,1
+eng_datamininganalysis,Economy,1
+eng_datamininganalysis,Public administration,1
+eng_datamininganalysis,Economic growth,1
+eng_datamininganalysis,Welfare economics,1
+eng_datamininganalysis,Transport engineering,1
+eng_datamininganalysis,Statistical physics,1
+eng_datamininganalysis,Traditional medicine,1
+eng_datamininganalysis,Automotive engineering,1
+eng_datamininganalysis,Remote sensing,1
+eng_datamininganalysis,Discrete mathematics,1
+eng_datamininganalysis,Andrology,1
+eng_datamininganalysis,Political economy,1
+eng_datamininganalysis,Computational physics,1
+eng_datamininganalysis,Socioeconomics,1
+eng_datamininganalysis,Food science,1
+eng_datamininganalysis,Pedagogy,1
+eng_datamininganalysis,Electrical engineering,1
+eng_datamininganalysis,Gender studies,1
+eng_datamininganalysis,Geodesy,1
+eng_datamininganalysis,Hydrology,1
+eng_datamininganalysis,Combinatorics,1
+eng_datamininganalysis,Labour economics,1
+eng_datamininganalysis,Law,1
+eng_datamininganalysis,Library science,1
+eng_datamininganalysis,Environmental health,1
+eng_datamininganalysis,Literature,1
+eng_datamininganalysis,Cognitive psychology,1
+eng_datamininganalysis,Manufacturing engineering,1
+eng_datamininganalysis,Market economy,1
+eng_datamininganalysis,Mathematical analysis,1
+eng_datamininganalysis,Cell biology,1
+eng_datamininganalysis,Mathematics education,1
+eng_datamininganalysis,Cartography,1
+eng_datamininganalysis,Cardiology,1
+eng_datamininganalysis,Neuroscience,1
+eng_datamininganalysis,Operating system,1
+eng_datamininganalysis,Optoelectronics,1
+eng_datamininganalysis,Paleontology,1
+eng_datamininganalysis,Operations research,1
+eng_libraryinformationscience,Library science,224
+eng_libraryinformationscience,Social science,60
+eng_libraryinformationscience,World Wide Web,33
+eng_libraryinformationscience,Internet privacy,33
+eng_libraryinformationscience,Information retrieval,27
+eng_libraryinformationscience,Data science,27
+eng_libraryinformationscience,Knowledge management,27
+eng_libraryinformationscience,Media studies,27
+eng_libraryinformationscience,Literature,21
+eng_libraryinformationscience,Statistics,17
+eng_libraryinformationscience,Social psychology,15
+eng_libraryinformationscience,Computer network,15
+eng_libraryinformationscience,Machine learning,14
+eng_libraryinformationscience,Linguistics,14
+eng_libraryinformationscience,International economics,14
+eng_libraryinformationscience,Pedagogy,14
+eng_libraryinformationscience,Data mining,13
+eng_libraryinformationscience,Environmental health,13
+eng_libraryinformationscience,Medical education,12
+eng_libraryinformationscience,Communication,12
+eng_libraryinformationscience,Traditional medicine,12
+eng_libraryinformationscience,Management,10
+eng_libraryinformationscience,Public administration,10
+eng_libraryinformationscience,Developmental psychology,9
+eng_libraryinformationscience,Humanities,9
+eng_libraryinformationscience,Database,9
+eng_libraryinformationscience,Human–computer interaction,8
+eng_libraryinformationscience,Operations management,8
+eng_libraryinformationscience,Development economics,8
+eng_libraryinformationscience,Operations research,8
+eng_libraryinformationscience,Algorithm,7
+eng_libraryinformationscience,Gender studies,7
+eng_libraryinformationscience,Embedded system,7
+eng_libraryinformationscience,Multimedia,7
+eng_libraryinformationscience,Art history,7
+eng_libraryinformationscience,Mathematical economics,6
+eng_libraryinformationscience,Telecommunications,6
+eng_libraryinformationscience,Cancer research,6
+eng_libraryinformationscience,Economic growth,6
+eng_libraryinformationscience,Systems engineering,6
+eng_libraryinformationscience,Pattern recognition,6
+eng_libraryinformationscience,Bioinformatics,5
+eng_libraryinformationscience,Artificial intelligence,5
+eng_libraryinformationscience,Genealogy,5
+eng_libraryinformationscience,Regional science,5
+eng_libraryinformationscience,Marketing,5
+eng_libraryinformationscience,Cartography,5
+eng_libraryinformationscience,Aesthetics,5
+eng_libraryinformationscience,Mathematical physics,4
+eng_libraryinformationscience,Economic policy,4
+eng_libraryinformationscience,Computer security,4
+eng_libraryinformationscience,Andrology,4
+eng_libraryinformationscience,Mathematical analysis,4
+eng_libraryinformationscience,Commerce,4
+eng_libraryinformationscience,Environmental planning,4
+eng_libraryinformationscience,Nanotechnology,4
+eng_libraryinformationscience,Epistemology,3
+eng_libraryinformationscience,Theoretical physics,3
+eng_libraryinformationscience,Ancient history,3
+eng_libraryinformationscience,Environmental ethics,3
+eng_libraryinformationscience,Industrial organization,3
+eng_libraryinformationscience,Classics,3
+eng_libraryinformationscience,Environmental protection,3
+eng_libraryinformationscience,Cognitive science,3
+eng_libraryinformationscience,Cognitive psychology,3
+eng_libraryinformationscience,Engineering ethics,3
+eng_libraryinformationscience,Economic history,3
+eng_libraryinformationscience,Optics,3
+eng_libraryinformationscience,Business administration,3
+eng_libraryinformationscience,Environmental resource management,3
+eng_libraryinformationscience,Risk analysis (engineering),3
+eng_libraryinformationscience,Public relations,3
+eng_libraryinformationscience,Water resource management,2
+eng_libraryinformationscience,Quantum mechanics,2
+eng_libraryinformationscience,Oceanography,2
+eng_libraryinformationscience,Psychoanalysis,2
+eng_libraryinformationscience,Theoretical computer science,2
+eng_libraryinformationscience,Programming language,2
+eng_libraryinformationscience,Socioeconomics,2
+eng_libraryinformationscience,Software engineering,2
+eng_libraryinformationscience,Monetary economics,2
+eng_libraryinformationscience,Physical geography,2
+eng_libraryinformationscience,Zoology,2
+eng_libraryinformationscience,Engineering management,2
+eng_libraryinformationscience,Anatomy,2
+eng_libraryinformationscience,Computer engineering,2
+eng_libraryinformationscience,Computer vision,2
+eng_libraryinformationscience,Law,2
+eng_libraryinformationscience,Demography,2
+eng_libraryinformationscience,Biomedical engineering,2
+eng_libraryinformationscience,Financial economics,2
+eng_libraryinformationscience,Computational science,2
+eng_libraryinformationscience,Gerontology,2
+eng_libraryinformationscience,Food science,2
+eng_libraryinformationscience,Transport engineering,1
+eng_libraryinformationscience,Toxicology,1
+eng_libraryinformationscience,Advertising,1
+eng_libraryinformationscience,Agricultural economics,1
+eng_libraryinformationscience,Veterinary medicine,1
+eng_libraryinformationscience,Religious studies,1
+eng_libraryinformationscience,Climatology,1
+eng_libraryinformationscience,Chemical engineering,1
+eng_libraryinformationscience,Botany,1
+eng_libraryinformationscience,Biophysics,1
+eng_libraryinformationscience,Astrobiology,1
+eng_libraryinformationscience,Stereochemistry,1
+eng_libraryinformationscience,Surgery,1
+eng_libraryinformationscience,Arithmetic,1
+eng_libraryinformationscience,Applied psychology,1
+eng_libraryinformationscience,Clinical psychology,1
+eng_libraryinformationscience,Theology,1
+eng_libraryinformationscience,Applied mathematics,1
+eng_libraryinformationscience,Anthropology,1
+eng_libraryinformationscience,Thermodynamics,1
+eng_libraryinformationscience,Topology,1
+eng_libraryinformationscience,Management science,1
+eng_libraryinformationscience,Condensed matter physics,1
+eng_libraryinformationscience,Combinatorial chemistry,1
+eng_libraryinformationscience,Polymer science,1
+eng_libraryinformationscience,Intensive care medicine,1
+eng_libraryinformationscience,Mathematical optimization,1
+eng_libraryinformationscience,Acoustics,1
+eng_libraryinformationscience,Microeconomics,1
+eng_libraryinformationscience,Financial system,1
+eng_libraryinformationscience,Finance,1
+eng_libraryinformationscience,Natural language processing,1
+eng_libraryinformationscience,Natural resource economics,1
+eng_libraryinformationscience,Neuroscience,1
+eng_libraryinformationscience,Nursing,1
+eng_libraryinformationscience,Family medicine,1
+eng_libraryinformationscience,Economy,1
+eng_libraryinformationscience,Economic geography,1
+eng_libraryinformationscience,Optometry,1
+eng_libraryinformationscience,Organic chemistry,1
+eng_libraryinformationscience,Parallel computing,1
+eng_libraryinformationscience,Dentistry,1
+eng_libraryinformationscience,Pediatrics,1
+eng_libraryinformationscience,Pharmacology,1
+eng_libraryinformationscience,Photochemistry,1
+eng_libraryinformationscience,Crystallography,1
+eng_libraryinformationscience,Accounting,1
+med_virology,Virology,488
+med_virology,Immunology,103
+med_virology,Cell biology,84
+med_virology,Molecular biology,36
+med_virology,Genetics,24
+med_virology,Pediatrics,23
+med_virology,Cancer research,15
+med_virology,Gerontology,15
+med_virology,Intensive care medicine,15
+med_virology,Biochemistry,13
+med_virology,Cardiology,12
+med_virology,Developmental psychology,11
+med_virology,Bioinformatics,9
+med_virology,Risk analysis (engineering),7
+med_virology,Demography,7
+med_virology,Surgery,6
+med_virology,Medical education,6
+med_virology,Ecology,5
+med_virology,Obstetrics,5
+med_virology,Botany,5
+med_virology,Pathology,5
+med_virology,Pharmacology,5
+med_virology,Oncology,4
+med_virology,Clinical psychology,4
+med_virology,Environmental protection,3
+med_virology,Nuclear engineering,3
+med_virology,Operations management,3
+med_virology,Economic growth,3
+med_virology,Development economics,3
+med_virology,Public administration,3
+med_virology,Social psychology,3
+med_virology,Physical therapy,3
+med_virology,Real-time computing,3
+med_virology,Veterinary medicine,3
+med_virology,Nuclear physics,2
+med_virology,Animal science,2
+med_virology,Communication,2
+med_virology,Knowledge management,2
+med_virology,Family medicine,2
+med_virology,Statistics,2
+med_virology,Evolutionary biology,2
+med_virology,Neuroscience,2
+med_virology,Emergency medicine,2
+med_virology,International economics,2
+med_virology,Traditional medicine,1
+med_virology,Nuclear chemistry,1
+med_virology,Topology,1
+med_virology,Religious studies,1
+med_virology,Simulation,1
+med_virology,Regional science,1
+med_virology,Operations research,1
+med_virology,Ophthalmology,1
+med_virology,Organic chemistry,1
+med_virology,Public relations,1
+med_virology,Pattern recognition,1
+med_virology,Molecular physics,1
+med_virology,Anatomy,1
+med_virology,Microeconomics,1
+med_virology,Microbiology,1
+med_virology,Arithmetic,1
+med_virology,Art history,1
+med_virology,Biophysics,1
+med_virology,Cartography,1
+med_virology,Chromatography,1
+med_virology,Classics,1
+med_virology,Climatology,1
+med_virology,Cognitive psychology,1
+med_virology,Combinatorial chemistry,1
+med_virology,Control theory,1
+med_virology,Data mining,1
+med_virology,Data science,1
+med_virology,Database,1
+med_virology,Dentistry,1
+med_virology,Economic policy,1
+med_virology,Economic system,1
+med_virology,Environmental health,1
+med_virology,Environmental planning,1
+med_virology,Environmental resource management,1
+med_virology,Food science,1
+med_virology,Gender studies,1
+med_virology,Geometry,1
+med_virology,International trade,1
+med_virology,Internet privacy,1
+med_virology,Literature,1
+med_virology,Medical emergency,1
+med_virology,Medicinal chemistry,1
+med_virology,Gynecology,1

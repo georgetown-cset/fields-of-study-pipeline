@@ -10,7 +10,7 @@ from fos.gcp import write_query
 
 def main():
     table = "field_model_replication.top_venue_papers"
-    write_query(Path("corpus.sql"), destination="field_model_replication.top_venue_papers", clobber=True)
+    # write_query(Path("corpus.sql"), destination="field_model_replication.top_venue_papers", clobber=True)
     print(pd.read_gbq(f"select count(*) from {table}", project_id='gcp-cset-projects'), "rows")
 
     df = pd.read_gbq(f"select * from {table} where year >= 2010", project_id='gcp-cset-projects')
