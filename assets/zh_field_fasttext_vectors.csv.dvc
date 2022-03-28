@@ -1,4 +1,4 @@
 outs:
 - md5: 4ded5b15a70383a07b2cab5465ebc130
   size: 1543259
-  path: zh_field_vectors.csv
+  path: zh_field_fasttext_vectors.csv

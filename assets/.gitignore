@@ -17,3 +17,4 @@
 /en_entity_trie.csv
 /zh_entity_trie.csv
 /zh_field_tfidf_vectors.json
+/zh_field_fasttext_vectors.csv
