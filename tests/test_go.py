@@ -1,9 +1,9 @@
-import csv
-import json
 import os
 
 import numpy as np
 import pandas as pd
+
+from fos.util import read_go_output, read_output, run_go
 
 try:
     os.chdir('tests')
@@ -11,31 +11,41 @@ except FileNotFoundError:
     pass
 
 
-def read_go_output():
-    go_output_path = "/home/james/.go/src/corpus/output.tsv"
-    output = {}
-    with open(go_output_path, 'rt') as f:
-        reader = csv.DictReader(f, delimiter='\t')
-        for row in reader:
-            if 'score' in row:
-                output[(row['merged_id'], row['score'])] = row
+def test_go_scores_fixture(en_go_scores):
+    assert isinstance(en_go_scores, dict)
+
+
+def test_en_scores_fixture(en_scores):
+    assert isinstance(en_scores, dict)
+
+
+def test_py_vs_go_keys(en_scores, en_go_scores):
+    assert set(en_scores.keys()) == set(en_go_scores.keys())
+
+
+def test_bad_asset_path(preprocessed_text_file):
+    stdout = run_go(preprocessed_text_file, '/dev/null', "--assets ~/")
+    print(stdout)
+
+
+def test_py_vs_go(en_scores, en_go_scores, meta):
+    eps = .05
+    for k in en_scores.keys():
+        py = en_scores[k]
+        go = en_go_scores[k]
+        agreement = []
+        for field in py.keys():
+            if abs(py[field] - go[field]) > eps:
+                print(field, meta.loc[str(field), 'display_name'], round(py[field], 4), go[field])
+                agreement.append(0)
             else:
-                output[row['merged_id']] = row
-    return output
-
-
-def read_py_scores():
-    py_output_path = '../scripts/en_scores.jsonl'
-    output = {}
-    with open(py_output_path, 'rt') as f:
-        for line in f:
-            record = json.loads(line)
-            output[record['merged_id']] = record
-    return output
+                agreement.append(1)
+        print(sum(agreement), len(agreement))
+        assert sum(agreement) == len(agreement)
 
 
 def go_to_pandas(method):
-    go = read_go_output()
+    go = read_go_output("/home/james/.go/src/corpus/output.tsv")
     go_df = pd.DataFrame.from_dict(go, orient='index')
     go_df.reset_index(inplace=True)
     go_df = go_df.query(f'level_1 == "{method}"')
@@ -47,7 +57,7 @@ def go_to_pandas(method):
 
 
 def py_to_pandas(method):
-    py = read_py_scores()
+    py = read_output('../scripts/en_scores.jsonl')
     py_long = {}
     for doc, embeds in py.items():
         py_long[(doc, method)] = embeds[method]
@@ -73,6 +83,10 @@ def take_diffs(a, b):
 def test_scores():
     py_ft = py_to_pandas('fasttext')
     go_ft = go_to_pandas("fastText")
+    if len(py_ft.index) != len(go_ft.index):
+        shorter_index_length = min(len(py_ft.index), len(go_ft.index))
+        py_ft = py_ft.iloc[:shorter_index_length]
+        go_ft = go_ft.iloc[:shorter_index_length]
     diff_ft = take_diffs(go_ft, py_ft)
     diff_ft.mean().mean()
 

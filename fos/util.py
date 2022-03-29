@@ -1,11 +1,14 @@
+import csv
 import gzip
 import json
+import os
 import re
 import string
 import unicodedata
 from pathlib import Path
 
 import pandas as pd
+from invoke import Context
 
 from fos.settings import CORPUS_DIR
 
@@ -59,3 +62,46 @@ def preprocess_text(record, lang="en"):
         text += record["abstract"]
     return preprocess(text, lang)
 
+
+def read_output(path):
+    """Read scoring output from JSONL."""
+    output = {}
+    with open(path, 'rt') as f:
+        for line in f:
+            record = json.loads(line)
+            output[record['merged_id']] = record
+    return output
+
+
+def read_go_output(path):
+    """Read output from the Go implementation.
+
+    Output is a TSV with doc IDs in the first column and field scores in the rest. A header row gives the field IDs.
+    If --all was passed, a second column named `score` indicates which scores the row gives: fastText, entity, tfidf, or
+    field/average.
+    """
+    output = {}
+    with open(path, 'rt') as f:
+        reader = csv.DictReader(f, delimiter='\t')
+        for row in reader:
+            merged_id = row.pop('merged_id')
+            if 'score' in row:
+                method = row.pop('score')
+                output[(merged_id, method)] = {int(k): float(v) for k, v in row.items()}
+            else:
+                output[merged_id] = {int(k): float(v) for k, v in row.items()}
+    return output
+
+
+def run_go(input, output, args="", queue=2, workers=2, bin_path=Path(os.getenv('GOFOS', "~/.go/src/corpus/fields"))):
+    cmd = f"./fields score -i {input} -o {output} {args}"
+    if queue is not None:
+        cmd += f" --queue {queue} "
+    if workers is not None:
+        cmd += f" --workers {workers} "
+    c = Context()
+    with c.cd(bin_path.parent):
+        print('Invoking:\n', cmd)
+        result = c.run(cmd, in_stream=False)
+        assert result.ok
+    return result.stdout

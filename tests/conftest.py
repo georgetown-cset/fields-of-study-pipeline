@@ -3,6 +3,7 @@ import gzip
 import json
 import os
 import pickle
+import tempfile
 from pathlib import Path
 
 import fasttext
@@ -11,10 +12,21 @@ import gensim
 import pandas as pd
 import pytest
 
+from fos.model import FieldModel
 from fos.settings import CORPUS_DIR, ASSETS_DIR
-from fos.util import preprocess
+from fos.util import preprocess, read_go_output, run_go
 
 TEST_ASSETS_DIR = Path(__file__).parent / 'assets'
+
+
+@pytest.fixture
+def en_model() -> FieldModel:
+    return FieldModel("en")
+
+
+@pytest.fixture
+def zh_model() -> FieldModel:
+    return FieldModel("zh")
 
 
 @pytest.fixture
@@ -51,6 +63,38 @@ def preprocessed_texts():
     with open(TEST_ASSETS_DIR / 'texts.json', 'rt') as f:
         texts_ = json.load(f)
         return {k: preprocess(v) for k, v in texts_.items()}
+
+
+@pytest.fixture
+def preprocessed_text_file(preprocessed_texts):
+    """Write preprocessed example texts to a temporary file, e.g. for scoring with go."""
+    temp_texts = tempfile.NamedTemporaryFile("wt")
+    for doc_id, text in preprocessed_texts.items():
+        temp_texts.write(json.dumps({"merged_id": doc_id, "text": text}) + "\n")
+    yield temp_texts.name
+    temp_texts.close()
+
+
+@pytest.fixture
+def en_scores(preprocessed_texts, en_model):
+    output = {}
+    for doc_id, text in preprocessed_texts.items():
+        output[doc_id] = en_model.run(text, dict_output=True)
+    return output
+
+
+def _score(texts, model):
+    output = {}
+    for doc_id, text in texts.items():
+        output[doc_id] = model.run(text, dict_output=True)
+    return output
+
+
+@pytest.fixture
+def en_go_scores(preprocessed_text_file):
+    run_go(input=preprocessed_text_file, output="/tmp/fos.tsv")
+    scores = read_go_output("/tmp/fos.tsv")
+    return scores
 
 
 @pytest.fixture

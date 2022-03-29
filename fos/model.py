@@ -119,3 +119,15 @@ class FieldModel(object):
         else:
             entity = None
         return Similarity(fasttext=fasttext, tfidf=tfidf, entity=entity)
+
+    def run(self, text, dict_output=True):
+        embedding = self.embed(text)
+        similarities = self.score(embedding)
+        scores = similarities.average()
+        return self.label(scores, dict_output=dict_output)
+
+    def label(self, scores, dict_output=True):
+        assert len(scores) == len(self.index), (len(scores), len(self.index))
+        if dict_output:
+            return {int(k): x for k, x in zip(self.index, scores)}
+        return [{"id": int(k), "score": x} for k, x in zip(self.index, scores)]
