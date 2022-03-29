@@ -40,6 +40,7 @@ STEM = ("Biology", "Chemistry", "Computer science", "Engineering", "Environmenta
 def main():
     top_field_report, top_k_report, dcg, lrap = summarize()
     print(top_field_report.to_string(float_format='%.2f', index=False))
+    print(top_k_report.to_string(float_format='%.2f', index=False))
     print(dcg.to_string(float_format='%.2f', index=False))
     print(lrap.to_string(float_format='%.2f', index=False))
 
