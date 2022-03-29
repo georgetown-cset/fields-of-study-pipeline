@@ -1,0 +1,373 @@
+display_name,l1_pred,merged_id
+Operating system,Operating system,248
+Operating system,World Wide Web,51
+Operating system,Embedded system,29
+Operating system,Algorithm,21
+Operating system,Engineering drawing,21
+Operating system,Parallel computing,7
+Operating system,Speech recognition,6
+Operating system,Computer hardware,5
+Operating system,Demography,5
+Operating system,Surgery,5
+Operating system,Accounting,4
+Operating system,Genealogy,4
+Operating system,Optometry,4
+Operating system,Orthodontics,4
+Operating system,Pedagogy,4
+Operating system,Actuarial science,3
+Operating system,Ancient history,3
+Operating system,Computer network,3
+Operating system,Database,3
+Operating system,Molecular biology,3
+Operating system,Software engineering,3
+Operating system,Advertising,2
+Operating system,Literature,2
+Operating system,Macroeconomics,2
+Operating system,Ophthalmology,2
+Operating system,Physiology,2
+Operating system,Aesthetics,1
+Operating system,Algebra,1
+Operating system,Andrology,1
+Operating system,Anesthesia,1
+Operating system,Artificial intelligence,1
+Operating system,Audiology,1
+Operating system,Cardiology,1
+Operating system,Cartography,1
+Operating system,Cell biology,1
+Operating system,Computational biology,1
+Operating system,Computer architecture,1
+Operating system,Computer engineering,1
+Operating system,Computer security,1
+Operating system,Criminology,1
+Operating system,Data mining,1
+Operating system,Dermatology,1
+Operating system,Endocrinology,1
+Operating system,Engineering management,1
+Operating system,Industrial organization,1
+Operating system,Internet privacy,1
+Operating system,Law,1
+Operating system,Management,1
+Operating system,Meteorology,1
+Operating system,Nuclear medicine,1
+Operating system,Oceanography,1
+Operating system,Operations research,1
+Operating system,Optics,1
+Operating system,Pediatrics,1
+Operating system,Polymer science,1
+Operating system,Radiology,1
+Operating system,Seismology,1
+Operating system,Traditional medicine,1
+Library science,Library science,566
+Library science,World Wide Web,41
+Library science,Information retrieval,32
+Library science,Data mining,29
+Library science,Accounting,27
+Library science,Pedagogy,26
+Library science,Archaeology,25
+Library science,Optometry,24
+Library science,Algorithm,23
+Library science,Literature,22
+Library science,Engineering drawing,21
+Library science,Software engineering,18
+Library science,Surgery,18
+Library science,Meteorology,16
+Library science,Demography,15
+Library science,Law and economics,15
+Library science,Criminology,11
+Library science,Genealogy,11
+Library science,Data science,10
+Library science,Speech recognition,9
+Library science,Operations research,7
+Library science,Database,6
+Library science,Actuarial science,5
+Library science,Audiology,5
+Library science,Endocrinology,4
+Library science,Oceanography,4
+Library science,Physiology,4
+Library science,Psychoanalysis,4
+Library science,Traditional medicine,4
+Library science,Artificial intelligence,3
+Library science,Cartography,3
+Library science,Chromatography,3
+Library science,Computer network,3
+Library science,Econometrics,3
+Library science,Engineering management,3
+Library science,Multimedia,3
+Library science,Operating system,3
+Library science,Public relations,3
+Library science,Arithmetic,2
+Library science,Law,2
+Library science,Macroeconomics,2
+Library science,Medical education,2
+Library science,Molecular biology,2
+Library science,Operations management,2
+Library science,Ophthalmology,2
+Library science,Psychiatry,2
+Library science,Statistics,2
+Library science,Theology,2
+Library science,Visual arts,2
+Library science,Advertising,1
+Library science,Ancient history,1
+Library science,Anesthesia,1
+Library science,Bioinformatics,1
+Library science,Cardiology,1
+Library science,Classics,1
+Library science,Computer graphics (images),1
+Library science,Dentistry,1
+Library science,Economy,1
+Library science,Engineering ethics,1
+Library science,Geophysics,1
+Library science,Gynecology,1
+Library science,Horticulture,1
+Library science,Hydrology,1
+Library science,Immunology,1
+Library science,Internal medicine,1
+Library science,Internet privacy,1
+Library science,Management,1
+Library science,Microbiology,1
+Library science,Monetary economics,1
+Library science,Natural language processing,1
+Library science,Orthodontics,1
+Library science,Petroleum engineering,1
+Library science,Political economy,1
+Library science,Polymer science,1
+Library science,Simulation,1
+Library science,Theoretical computer science,1
+Library science,Topology,1
+Library science,Toxicology,1
+Computer network,Algorithm,592
+Computer network,World Wide Web,401
+Computer network,Accounting,366
+Computer network,Computer network,364
+Computer network,Computer security,261
+Computer network,Speech recognition,183
+Computer network,Engineering drawing,167
+Computer network,Operating system,111
+Computer network,Demography,103
+Computer network,Optometry,95
+Computer network,Software engineering,93
+Computer network,Surgery,72
+Computer network,Actuarial science,68
+Computer network,Meteorology,65
+Computer network,Archaeology,63
+Computer network,Operations research,56
+Computer network,Literature,51
+Computer network,Data mining,47
+Computer network,Advertising,46
+Computer network,Pedagogy,43
+Computer network,Criminology,38
+Computer network,Operations management,36
+Computer network,Parallel computing,34
+Computer network,Simulation,34
+Computer network,Industrial organization,33
+Computer network,Genealogy,32
+Computer network,Library science,32
+Computer network,Computer engineering,31
+Computer network,Statistics,29
+Computer network,Econometrics,28
+Computer network,Audiology,27
+Computer network,Artificial intelligence,25
+Computer network,Database,24
+Computer network,Physiology,22
+Computer network,Monetary economics,21
+Computer network,Oceanography,21
+Computer network,Information retrieval,20
+Computer network,Electrical engineering,19
+Computer network,Endocrinology,18
+Computer network,Environmental protection,18
+Computer network,Visual arts,18
+Computer network,Microbiology,17
+Computer network,Embedded system,14
+Computer network,Macroeconomics,14
+Computer network,Management,14
+Computer network,Topology,14
+Computer network,Arithmetic,13
+Computer network,Environmental engineering,13
+Computer network,Metallurgy,13
+Computer network,Public relations,13
+Computer network,Traditional medicine,12
+Computer network,Commerce,11
+Computer network,Computer hardware,11
+Computer network,Internet privacy,11
+Computer network,Molecular biology,11
+Computer network,Computer graphics (images),10
+Computer network,Multimedia,10
+Computer network,Ophthalmology,10
+Computer network,Cartography,8
+Computer network,Engineering ethics,8
+Computer network,Orthodontics,8
+Computer network,Aesthetics,7
+Computer network,Agroforestry,7
+Computer network,Immunology,7
+Computer network,Keynesian economics,7
+Computer network,Law,7
+Computer network,Real-time computing,7
+Computer network,Ancient history,6
+Computer network,Anesthesia,6
+Computer network,Cardiology,6
+Computer network,Finance,6
+Computer network,Gynecology,6
+Computer network,Data science,5
+Computer network,Distributed computing,5
+Computer network,Hydrology,5
+Computer network,Law and economics,5
+Computer network,Machine learning,5
+Computer network,Pediatrics,5
+Computer network,Psychotherapist,5
+Computer network,Radiology,5
+Computer network,Theology,5
+Computer network,Economy,4
+Computer network,Forestry,4
+Computer network,International trade,4
+Computer network,Medical education,4
+Computer network,Mineralogy,4
+Computer network,Programming language,4
+Computer network,Psychiatry,4
+Computer network,Psychoanalysis,4
+Computer network,Agronomy,3
+Computer network,Anatomy,3
+Computer network,Chromatography,3
+Computer network,Dentistry,3
+Computer network,Financial economics,3
+Computer network,Marketing,2
+Computer network,Mathematical economics,2
+Computer network,Media studies,2
+Computer network,Natural language processing,2
+Computer network,Nuclear medicine,2
+Computer network,Petroleum engineering,2
+Computer network,Process engineering,2
+Computer network,Pulp and paper industry,2
+Computer network,Analytical chemistry,1
+Computer network,Art history,1
+Computer network,Biochemistry,1
+Computer network,Biomedical engineering,1
+Computer network,Botany,1
+Computer network,Classics,1
+Computer network,Communication,1
+Computer network,Computational biology,1
+Computer network,Computational chemistry,1
+Computer network,Construction engineering,1
+Computer network,Control theory,1
+Computer network,Crystallography,1
+Computer network,Dermatology,1
+Computer network,Development economics,1
+Computer network,Developmental psychology,1
+Computer network,Economic geography,1
+Computer network,Economic growth,1
+Computer network,Epistemology,1
+Computer network,Gender studies,1
+Computer network,Geodesy,1
+Computer network,Geometry,1
+Computer network,Geomorphology,1
+Computer network,Geotechnical engineering,1
+Computer network,Gerontology,1
+Computer network,Horticulture,1
+Computer network,Internal medicine,1
+Computer network,Knowledge management,1
+Computer network,Linguistics,1
+Computer network,Mathematical physics,1
+Computer network,Nanotechnology,1
+Computer network,Neuroscience,1
+Computer network,Photochemistry,1
+Computer network,Physical therapy,1
+Computer network,Regional science,1
+Computer network,Remote sensing,1
+Computer network,Seismology,1
+Computer network,Stereochemistry,1
+Computer network,Virology,1
+Artificial intelligence,Algorithm,1142
+Artificial intelligence,Speech recognition,235
+Artificial intelligence,Artificial intelligence,225
+Artificial intelligence,Statistics,56
+Artificial intelligence,Industrial organization,52
+Artificial intelligence,Econometrics,45
+Artificial intelligence,Operations research,32
+Artificial intelligence,Meteorology,23
+Artificial intelligence,Demography,20
+Artificial intelligence,Arithmetic,18
+Artificial intelligence,Engineering drawing,18
+Artificial intelligence,Simulation,18
+Artificial intelligence,Surgery,18
+Artificial intelligence,Machine learning,17
+Artificial intelligence,Mathematical optimization,15
+Artificial intelligence,Accounting,14
+Artificial intelligence,Actuarial science,12
+Artificial intelligence,Archaeology,11
+Artificial intelligence,Oceanography,10
+Artificial intelligence,Computer security,9
+Artificial intelligence,Data mining,7
+Artificial intelligence,Optometry,6
+Artificial intelligence,Parallel computing,6
+Artificial intelligence,Algebra,5
+Artificial intelligence,Calculus,5
+Artificial intelligence,Information retrieval,5
+Artificial intelligence,Operating system,5
+Artificial intelligence,Pedagogy,5
+Artificial intelligence,Remote sensing,5
+Artificial intelligence,Anesthesia,4
+Artificial intelligence,Data science,4
+Artificial intelligence,Electrical engineering,4
+Artificial intelligence,Endocrinology,4
+Artificial intelligence,Genealogy,4
+Artificial intelligence,Hydrology,4
+Artificial intelligence,Literature,4
+Artificial intelligence,Macroeconomics,4
+Artificial intelligence,Monetary economics,4
+Artificial intelligence,Nuclear magnetic resonance,4
+Artificial intelligence,Computational chemistry,3
+Artificial intelligence,Computer engineering,3
+Artificial intelligence,Database,3
+Artificial intelligence,Environmental protection,3
+Artificial intelligence,Geotechnical engineering,3
+Artificial intelligence,Keynesian economics,3
+Artificial intelligence,Mineralogy,3
+Artificial intelligence,Natural language processing,3
+Artificial intelligence,Pattern recognition,3
+Artificial intelligence,Physiology,3
+Artificial intelligence,Software engineering,3
+Artificial intelligence,World Wide Web,3
+Artificial intelligence,Advertising,2
+Artificial intelligence,Anatomy,2
+Artificial intelligence,Cartography,2
+Artificial intelligence,Chromatography,2
+Artificial intelligence,Computational physics,2
+Artificial intelligence,Financial economics,2
+Artificial intelligence,Molecular biology,2
+Artificial intelligence,Orthodontics,2
+Artificial intelligence,Traditional medicine,2
+Artificial intelligence,Visual arts,2
+Artificial intelligence,Aerospace engineering,1
+Artificial intelligence,Agroforestry,1
+Artificial intelligence,Agronomy,1
+Artificial intelligence,Ancient history,1
+Artificial intelligence,Audiology,1
+Artificial intelligence,Classics,1
+Artificial intelligence,Composite material,1
+Artificial intelligence,Computer graphics (images),1
+Artificial intelligence,Control theory,1
+Artificial intelligence,Crystallography,1
+Artificial intelligence,Dentistry,1
+Artificial intelligence,Economic growth,1
+Artificial intelligence,Embedded system,1
+Artificial intelligence,Environmental engineering,1
+Artificial intelligence,Geometry,1
+Artificial intelligence,Human–computer interaction,1
+Artificial intelligence,Immunology,1
+Artificial intelligence,Internet privacy,1
+Artificial intelligence,Law and economics,1
+Artificial intelligence,Management,1
+Artificial intelligence,Mathematical physics,1
+Artificial intelligence,Media studies,1
+Artificial intelligence,Medical education,1
+Artificial intelligence,Metallurgy,1
+Artificial intelligence,Microbiology,1
+Artificial intelligence,Optics,1
+Artificial intelligence,Organic chemistry,1
+Artificial intelligence,Pediatrics,1
+Artificial intelligence,Psychiatry,1
+Artificial intelligence,Psychoanalysis,1
+Artificial intelligence,Radiology,1
+Artificial intelligence,Real-time computing,1
+Artificial intelligence,Structural engineering,1
+Artificial intelligence,Topology,1
+Artificial intelligence,Virology,1
