@@ -4,7 +4,6 @@ Calculate field scores for documents.
 package main
 
 import (
-	"bufio"
 	"encoding/json"
 	"github.com/cheggaaa/pb/v3"
 	"log"
@@ -13,33 +12,27 @@ import (
 )
 
 func Score() {
-	var f *os.File
+	// Open the output
+	var fout *os.File
 	var err error
 	if outputPath == "" {
-		// Write to stdout if no output path specified
-		f = os.Stdout
+		// Write output to stdout if no path specified
+		fout = os.Stdout
 	} else {
-		// Open the output file
-		f, err = os.Create(outputPath)
+		// Otherwise open the output file
+		fout, err = os.Create(outputPath)
 		if err != nil {
 			log.Fatalf("Could not %v", err)
 		}
-		defer func(f *os.File) {
-			_ = f.Close()
-		}(f)
+		defer func(fout *os.File) {
+			_ = fout.Close()
+		}(fout)
 	}
+	// Write headers to output
 	meta := NewMeta()
-	meta.WriteTSVHeader(f, outputAll)
+	meta.WriteTSVHeader(fout, outputAll)
 
-	file, err := os.Open(inputPath)
-	if err != nil {
-		log.Fatalf("Could not %v", err)
-	}
-	defer file.Close()
-	scanner := bufio.NewScanner(file)
-	const maxLineSize = 1_000_000 // Don't choke on large lines
-	buf := make([]byte, maxLineSize)
-	scanner.Buffer(buf, maxLineSize)
+	inputQueue := ReadInputs(inputPath)
 
 	// Set up the worker pool
 	dispatcher := NewDispatcher(maxWorker, outputAll)
@@ -53,15 +46,13 @@ func Score() {
 	var doc Doc
 	jobCount := 0
 	skipCount := 0
-	for scanner.Scan() {
-		// Read a line of input
-		s := scanner.Text()
-		if s == "" {
+
+	for input := range inputQueue {
+		if len(input) == 0 {
 			continue
 		}
-
 		// Unmarshal the JSON into a Doc. If this takes any non-trivial time, it could be done by the worker instead
-		err := json.Unmarshal([]byte(s), &doc)
+		err := json.Unmarshal(input, &doc)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -78,6 +69,7 @@ func Score() {
 		JobQueue <- Job{Doc: doc}
 		jobCount += 1
 	}
+
 	// No work is being done yet so this loop finishes immediately
 	if jobCount == 0 {
 		log.Fatalf("No input texts for '-i %s'", inputPath)
@@ -103,20 +95,20 @@ func Score() {
 	for i := 1; i <= jobCount; i++ {
 		scores := <-ResultQueue
 		if !outputAll {
-			_, err := f.WriteString(scores.MarshalTSV("") + "\n")
+			_, err := fout.WriteString(scores.MarshalTSV("") + "\n")
 			if err != nil {
 				log.Fatal(err)
 			}
 		} else {
-			_, err := f.WriteString(scores.MarshalVectorTSV("fastText", scores.FastTextScores) + "\n")
+			_, err := fout.WriteString(scores.MarshalVectorTSV("fastText", scores.FastTextScores) + "\n")
 			if err != nil {
 				log.Fatal(err)
 			}
-			_, err = f.WriteString(scores.MarshalVectorTSV("entity", scores.EntityScores) + "\n")
+			_, err = fout.WriteString(scores.MarshalVectorTSV("entity", scores.EntityScores) + "\n")
 			if err != nil {
 				log.Fatal(err)
 			}
-			_, err = f.WriteString(scores.MarshalVectorTSV("tfidf", scores.TfidfScores) + "\n")
+			_, err = fout.WriteString(scores.MarshalVectorTSV("tfidf", scores.TfidfScores) + "\n")
 			if err != nil {
 				log.Fatal(err)
 			}

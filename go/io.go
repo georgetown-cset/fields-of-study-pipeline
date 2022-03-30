@@ -9,12 +9,14 @@ package main
 
 import (
 	"bufio"
+	"compress/gzip"
 	"encoding/csv"
 	"encoding/json"
 	"gonum.org/v1/gonum/mat"
 	"io"
 	"log"
 	"os"
+	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
@@ -163,4 +165,60 @@ func NewTSVRow(docId string, label string) []string {
 		row = append(row, label)
 	}
 	return row
+}
+
+// ReadInputs iterates over lines in one or more input files (possibly gzipped)
+func ReadInputs(path string) <-chan []byte {
+	lines := make(chan []byte)
+	matches, err := filepath.Glob(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if len(matches) == 0 {
+		log.Fatalf("No inputs matched %s", path)
+	}
+	go func() {
+		for _, match := range matches {
+			// Open the input file
+			file, err := os.Open(match)
+			if err != nil {
+				log.Fatalf("Could not %v", err)
+			}
+
+			var scanner *bufio.Scanner
+
+			// We just check for a .gz extension rather than inspecting the file header
+			if strings.HasSuffix(match, ".gz") {
+				reader, err := gzip.NewReader(file)
+				if err != nil {
+					log.Fatal(err)
+				}
+				scanner = bufio.NewScanner(reader)
+			} else {
+				scanner = bufio.NewScanner(file)
+			}
+
+			const maxLineSize = 1_000_000 // Don't choke on large lines
+			buf := make([]byte, maxLineSize)
+			scanner.Buffer(buf, maxLineSize)
+
+			log.Printf("Reading %s", match)
+			for scanner.Scan() {
+				// Read a line of input
+				bytes := scanner.Bytes()
+				if len(bytes) == 0 {
+					continue
+				}
+				lines <- bytes
+			}
+
+			err = file.Close()
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
+		// Generator pattern: close the channel after iterating over all inputs
+		close(lines)
+	}()
+	return lines
 }
