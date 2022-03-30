@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Produce MAG field scores for the top venue papers
+# Produce original MAG field scores for the top venue papers
 
 set -euo pipefail
 

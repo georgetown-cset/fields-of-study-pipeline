@@ -95,7 +95,8 @@ def fit_tsne(vectors, keys, attrs):
     tsne_df = pd.DataFrame(tsne_coords)
     tsne_df.rename(columns={0: 'x', 1: 'y'}, inplace=True)
     tsne_df.index = keys
-    assert tsne_df.shape[0] == attrs.shape[0]
+    assert not tsne_df.index.duplicated().any()
+    assert not attrs.index.duplicated().any()
     tsne_df = tsne_df.merge(attrs, left_index=True, right_index=True, how='inner')
     return tsne_df
 

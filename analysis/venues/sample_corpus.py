@@ -1,3 +1,6 @@
+"""
+Draw a sample from papers published in top venues.
+"""
 import os
 
 import pandas as pd

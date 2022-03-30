@@ -1,5 +1,5 @@
 """
-Produce v2 field scores for the annotated sample of docs.
+Produce v2 field scores for the venue docs.
 """
 import json
 
