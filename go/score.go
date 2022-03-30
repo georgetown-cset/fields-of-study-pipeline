@@ -37,8 +37,8 @@ func Score() {
 	// Set up the worker pool
 	dispatcher := NewDispatcher(maxWorker, outputAll)
 	dispatcher.Run()
-	JobQueue = make(chan Job, maxQueue)
-	ResultQueue = make(chan DocScores, maxQueue)
+	JobQueue = make(chan Job, maxWorker)
+	ResultQueue = make(chan DocScores, maxWorker)
 
 	start := time.Now()
 	log.Printf("Reading inputs")

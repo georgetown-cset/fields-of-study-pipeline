@@ -21,7 +21,6 @@ var outputAll bool
 var showProgress = false
 
 var maxWorker = 1
-var maxQueue = 1
 
 func main() {
 	app := &cli.App{
@@ -71,13 +70,6 @@ func main() {
 						Usage:       "Output precision",
 						Value:       4,
 						Destination: &outputPrecision,
-					},
-					&cli.IntFlag{
-						Name:        "queue",
-						Aliases:     []string{"q"},
-						Usage:       "Job and result queue buffer size",
-						Value:       1,
-						Destination: &maxQueue,
 					},
 					&cli.IntFlag{
 						Name:        "workers",
