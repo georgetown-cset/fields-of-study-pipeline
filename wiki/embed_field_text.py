@@ -21,6 +21,7 @@ from fos.vectors import load_fasttext, load_tfidf, embed_tfidf, sparse_norm, nor
 
 db = dataset.connect('sqlite:///data/wiki.db')
 table = db['pages']
+refs = db['refs']
 
 
 def main(lang='en'):
@@ -56,7 +57,7 @@ def main(lang='en'):
             omitted_fields.add(field_id)
             continue
 
-        text = expand_text(field, text)
+        text = expand_text(field, text, lang)
 
         clean_text = preprocess(text, lang)
         if not len(clean_text):
@@ -91,6 +92,18 @@ def main(lang='en'):
     write_field_keys(field_ids, lang)
 
 
+def select_ref_text(field_id, lang):
+    query = db.query(f"""\
+        select group_concat({lang}_text, ' ') as text 
+        from refs 
+        where field={field_id} and en_text is not null 
+    """)
+    record = next(query)
+    if record['text'] is None:
+        return ''
+    return record['text']
+
+
 def extract_field_text(field_id, children, lang):
     field = table.find_one(id=field_id)
     text = field.get(f'{lang}_text', '')
@@ -110,7 +123,9 @@ def extract_field_text(field_id, children, lang):
     return text
 
 
-def expand_text(field, text):
+def expand_text(field, text, lang):
+    # Add reference text where available
+    text += ' ' + select_ref_text(field['id'], lang)
     # The ZH Wiki text is short, so if we have MT text, add it
     if lang == 'zh' and field[f'en_text_mt'] is not None and len(field[f'en_text_mt']) > 0:
         text += ' ' + field['en_text_mt']

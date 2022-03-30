@@ -22,11 +22,15 @@ def main(update=False):
     doi pmid s2 ads issn pmc oclc arxiv
     """
     upload_references(clobber=True)
-    for lang in ['en', 'zh']:
-        fetch_doi(lang, clobber=True)
-        for record in iter_bq_extract(f'{lang}_ref', 'data/corpus'):
-            update = {'id': record['id'], 'db_id': record['merged_id'], f'{lang}_text': record['text']}
-            ref_table.update(update, ['id'])
+    fetch_doi(clobber=True)
+    for record in iter_bq_extract(f'ref', 'data/corpus'):
+        update = {
+            'id': record['id'],
+            'db_id': record['merged_id'],
+            'en_text': record.get('en_text'),
+            'zh_text': record.get('zh_text'),
+        }
+        ref_table.update(update, ['id'])
     # fetch_s2_references(update=update)
 
 
@@ -40,11 +44,11 @@ def upload_references(clobber=False):
         file_to_table(f.name, 'field_model_replication.wiki_references', clobber=clobber)
 
 
-def fetch_doi(lang='en', clobber=False):
+def fetch_doi(clobber=False):
     sql = Path('sql/doi.sql').read_text()
-    table = f'field_model_replication.{lang}_ref_text'
+    table = f'field_model_replication.ref_text'
     bucket = 'fields-of-study'
-    prefix = f'model-replication/{lang}_ref'
+    prefix = f'model-replication/ref'
     download_query(sql, table, bucket, prefix, Path('data/corpus'), clobber)
 
 
