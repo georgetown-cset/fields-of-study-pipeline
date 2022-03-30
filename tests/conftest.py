@@ -3,7 +3,6 @@ import gzip
 import json
 import os
 import pickle
-import tempfile
 from pathlib import Path
 
 import fasttext
@@ -14,7 +13,7 @@ import pytest
 
 from fos.model import FieldModel
 from fos.settings import CORPUS_DIR, ASSETS_DIR
-from fos.util import preprocess, read_go_output, run_go
+from fos.util import read_go_output, run
 
 TEST_ASSETS_DIR = Path(__file__).parent / 'assets'
 
@@ -59,20 +58,14 @@ def mag_outputs():
 
 @pytest.fixture
 def preprocessed_texts():
-    """Load example texts and preprocess them."""
+    """Load example preprocessed EN texts."""
     with open(TEST_ASSETS_DIR / 'texts.json', 'rt') as f:
-        texts_ = json.load(f)
-        return {k: preprocess(v) for k, v in texts_.items()}
+        return json.load(f)
 
 
 @pytest.fixture
-def preprocessed_text_file(preprocessed_texts):
-    """Write preprocessed example texts to a temporary file, e.g. for scoring with go."""
-    temp_texts = tempfile.NamedTemporaryFile("wt")
-    for doc_id, text in preprocessed_texts.items():
-        temp_texts.write(json.dumps({"merged_id": doc_id, "text": text}) + "\n")
-    yield temp_texts.name
-    temp_texts.close()
+def preprocessed_jsonl_path():
+    return str(TEST_ASSETS_DIR / 'texts.jsonl')
 
 
 @pytest.fixture
@@ -91,8 +84,9 @@ def _score(texts, model):
 
 
 @pytest.fixture
-def en_go_scores(preprocessed_text_file):
-    run_go(input=preprocessed_text_file, output="/tmp/fos.tsv")
+def en_go_scores():
+    Path('/tmp/fos.tsv').unlink(missing_ok=True)
+    run(f"go/fields score -i tests/assets/texts.jsonl -o /tmp/fos.tsv", shell=True, check=True)
     scores = read_go_output("/tmp/fos.tsv")
     return scores
 

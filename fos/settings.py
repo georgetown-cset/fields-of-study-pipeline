@@ -48,3 +48,5 @@ ZH_FIELD_ENTITY_CSV = ASSETS_DIR / 'zh_field_entity_vectors.csv'
 # For debugging, field content ...
 EN_FIELD_TEXT = ASSETS_DIR / 'en_field_text.json'
 ZH_FIELD_TEXT = ASSETS_DIR / 'zh_field_text.json'
+
+BIN_PATH = PIPELINES_DIR / 'fields'

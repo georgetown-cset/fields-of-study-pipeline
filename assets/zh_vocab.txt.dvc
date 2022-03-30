@@ -1,0 +1,4 @@
+outs:
+- md5: 27c1a26ee5ed3b2bb34d7c574c3c5d2b
+  size: 37912682
+  path: zh_vocab.txt

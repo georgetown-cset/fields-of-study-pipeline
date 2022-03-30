@@ -1,0 +1,7 @@
+*.o
+*.a
+*.bin
+*.vec
+fasttext-go-wrapper
+
+.vscode/

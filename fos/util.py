@@ -1,16 +1,16 @@
 import csv
 import gzip
 import json
-import os
 import re
 import string
+import subprocess
 import unicodedata
+from functools import partial
 from pathlib import Path
 
 import pandas as pd
-from invoke import Context
 
-from fos.settings import CORPUS_DIR
+from fos.settings import CORPUS_DIR, PIPELINES_DIR
 
 # We want to replace these whitespace characters with spaces
 # fasttext expects newlines to represent document breaks, so they can't appear in the input to get_sentence_vector()
@@ -93,15 +93,4 @@ def read_go_output(path):
     return output
 
 
-def run_go(input, output, args="", queue=2, workers=2, bin_path=Path(os.getenv('GOFOS', "~/.go/src/corpus/fields"))):
-    cmd = f"./fields score -i {input} -o {output} {args}"
-    if queue is not None:
-        cmd += f" --queue {queue} "
-    if workers is not None:
-        cmd += f" --workers {workers} "
-    c = Context()
-    with c.cd(bin_path.parent):
-        print('Invoking:\n', cmd)
-        result = c.run(cmd, in_stream=False)
-        assert result.ok
-    return result.stdout
+run = partial(subprocess.run, cwd=str(PIPELINES_DIR), capture_output=True, text=True)

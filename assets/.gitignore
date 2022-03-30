@@ -17,3 +17,5 @@
 /zh_entity_trie.csv
 /zh_field_tfidf_vectors.json
 /zh_field_fasttext_vectors.csv
+/zh_fasttext.bin
+/zh_vocab.txt
