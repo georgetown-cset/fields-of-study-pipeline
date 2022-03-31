@@ -11,7 +11,7 @@ import (
 	"bufio"
 	"compress/gzip"
 	"encoding/csv"
-	"encoding/json"
+	jsoniter "github.com/json-iterator/go"
 	"gonum.org/v1/gonum/mat"
 	"io"
 	"log"
@@ -97,7 +97,7 @@ func readSparseVectorFile(path string, meta *Meta) []FieldVector {
 		// Parse a line of JSON
 		var field = FieldVector{}
 		s := scanner.Text()
-		err := json.Unmarshal([]byte(s), &field)
+		err := jsoniter.Unmarshal([]byte(s), &field)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -198,7 +198,7 @@ func ReadInputs(path string) <-chan []byte {
 				scanner = bufio.NewScanner(file)
 			}
 
-			const maxLineSize = 1_000_000 // Don't choke on large lines
+			const maxLineSize = 10_000_000 // Don't choke on large lines
 			buf := make([]byte, maxLineSize)
 			scanner.Buffer(buf, maxLineSize)
 

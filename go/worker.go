@@ -15,7 +15,7 @@ type Job struct {
 }
 
 var JobQueue chan Job
-var ResultQueue chan DocScores
+var ResultQueue chan *DocScores
 
 // Worker represents the worker that executes the job
 type Worker struct {
@@ -26,9 +26,9 @@ type Worker struct {
 	quit       chan bool
 }
 
-func NewWorker(workerPool chan chan Job, scorer *Scorer, vectors *Vectors) Worker {
+func NewWorker(workerPool *chan chan Job, scorer *Scorer, vectors *Vectors) Worker {
 	return Worker{
-		WorkerPool: workerPool,
+		WorkerPool: *workerPool,
 		JobChannel: make(chan Job),
 		Scorer:     scorer,
 		Vectors:    vectors,
@@ -49,7 +49,7 @@ func (w Worker) Start() {
 				// we have received a work request.
 				embedding := w.Vectors.Embed(&job.Doc)
 				scores := w.Scorer.Score(&embedding)
-				ResultQueue <- *scores
+				ResultQueue <- scores
 
 			case <-w.quit:
 				// we have received a signal to stop
@@ -90,7 +90,7 @@ func NewDispatcher(maxWorkers int, includeAll bool) *Dispatcher {
 func (d *Dispatcher) Run() {
 	// starting n number of workers
 	for i := 0; i < d.MaxWorkers; i++ {
-		worker := NewWorker(d.WorkerPool, d.Scorer, d.Vectors)
+		worker := NewWorker(&d.WorkerPool, d.Scorer, d.Vectors)
 		worker.Start()
 		d.Workers = append(d.Workers, &worker)
 	}
@@ -110,14 +110,12 @@ func (d *Dispatcher) dispatch() {
 	for {
 		select {
 		case job := <-JobQueue:
-			// a job request has been received
-			go func(job Job) {
-				// try to obtain a worker job channel that is available.
-				// this will block until a worker is idle
-				jobChannel := <-d.WorkerPool
-				// dispatch the job to the worker job channel
-				jobChannel <- job
-			}(job)
+			//a job request has been received
+			// try to obtain a worker job channel that is available.
+			// this will block until a worker is idle
+			jobChannel := <-d.WorkerPool
+			// dispatch the job to the worker job channel
+			jobChannel <- job
 		}
 	}
 }
