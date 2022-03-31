@@ -17,14 +17,7 @@ type Paths struct {
 
 // Vocab gives the path to tf-idf vocab for vectorizer construction
 func (p *Paths) Vocab() string {
-	switch p.Lang {
-	case "en":
-		return filepath.Join(p.Assets, "scientific-lit-embeddings/english/tfidfs/id2word_dict_en_merged_sample.txt")
-	case "zh":
-		return filepath.Join(p.Assets, "assets/scientific-lit-embeddings/chinese/tfidfs/id2word_dict_zh_sample_011222.txt")
-	default:
-		return filepath.Join(p.Assets, p.Lang+"_vocab.txt")
-	}
+	return filepath.Join(p.Assets, p.Lang+"_vocab.txt")
 }
 
 // FieldMeta gives the path to field metadata
@@ -59,14 +52,7 @@ func (p *Paths) EntityTrie() string {
 
 // FastTextModel gives the path to the FastText model binary
 func (p *Paths) FastTextModel() string {
-	switch p.Lang {
-	case "en":
-		return filepath.Join(p.Assets, "scientific-lit-embeddings/english/fasttext/en_merged_model_120221.bin")
-	case "zh":
-		return filepath.Join(p.Assets, "scientific-lit-embeddings/chinese/fasttext/zh_merged_model_020422_tokenized.bin")
-	default:
-		return filepath.Join(p.Assets, p.Lang+"_fasttext.bin")
-	}
+	return filepath.Join(p.Assets, p.Lang+"_fasttext.bin")
 }
 
 var paths = &Paths{"./assets", "en"}

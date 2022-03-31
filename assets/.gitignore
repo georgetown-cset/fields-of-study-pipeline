@@ -19,3 +19,5 @@
 /zh_field_fasttext_vectors.csv
 /zh_fasttext.bin
 /zh_vocab.txt
+/en_vocab.txt
+/en_fasttext.bin

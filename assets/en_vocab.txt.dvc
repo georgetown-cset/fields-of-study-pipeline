@@ -1,0 +1,4 @@
+outs:
+- md5: b37060c70d6b29afa3eb6d0267828147
+  size: 44493606
+  path: en_vocab.txt
