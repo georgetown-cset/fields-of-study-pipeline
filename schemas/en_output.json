@@ -1,0 +1,1563 @@
+[
+  {
+    "mode": "REQUIRED",
+    "name": "merged_id",
+    "type": "STRING",
+    "description": "Merged-corpus publication ID (as in gcp_cset_links_v2)"
+  },
+  {
+    "name": "field_40700",
+    "type": "FLOAT64",
+    "description": "Score for field 40700"
+  },
+  {
+    "name": "field_459310",
+    "type": "FLOAT64",
+    "description": "Score for field 459310"
+  },
+  {
+    "name": "field_1276947",
+    "type": "FLOAT64",
+    "description": "Score for field 1276947"
+  },
+  {
+    "name": "field_1862650",
+    "type": "FLOAT64",
+    "description": "Score for field 1862650"
+  },
+  {
+    "name": "field_1965285",
+    "type": "FLOAT64",
+    "description": "Score for field 1965285"
+  },
+  {
+    "name": "field_2524010",
+    "type": "FLOAT64",
+    "description": "Score for field 2524010"
+  },
+  {
+    "name": "field_2549261",
+    "type": "FLOAT64",
+    "description": "Score for field 2549261"
+  },
+  {
+    "name": "field_2989005",
+    "type": "FLOAT64",
+    "description": "Score for field 2989005"
+  },
+  {
+    "name": "field_3079626",
+    "type": "FLOAT64",
+    "description": "Score for field 3079626"
+  },
+  {
+    "name": "field_3116431",
+    "type": "FLOAT64",
+    "description": "Score for field 3116431"
+  },
+  {
+    "name": "field_4249254",
+    "type": "FLOAT64",
+    "description": "Score for field 4249254"
+  },
+  {
+    "name": "field_5900021",
+    "type": "FLOAT64",
+    "description": "Score for field 5900021"
+  },
+  {
+    "name": "field_6303427",
+    "type": "FLOAT64",
+    "description": "Score for field 6303427"
+  },
+  {
+    "name": "field_6557445",
+    "type": "FLOAT64",
+    "description": "Score for field 6557445"
+  },
+  {
+    "name": "field_8010536",
+    "type": "FLOAT64",
+    "description": "Score for field 8010536"
+  },
+  {
+    "name": "field_8058405",
+    "type": "FLOAT64",
+    "description": "Score for field 8058405"
+  },
+  {
+    "name": "field_9390403",
+    "type": "FLOAT64",
+    "description": "Score for field 9390403"
+  },
+  {
+    "name": "field_10138342",
+    "type": "FLOAT64",
+    "description": "Score for field 10138342"
+  },
+  {
+    "name": "field_11171543",
+    "type": "FLOAT64",
+    "description": "Score for field 11171543"
+  },
+  {
+    "name": "field_11413529",
+    "type": "FLOAT64",
+    "description": "Score for field 11413529"
+  },
+  {
+    "name": "field_12554922",
+    "type": "FLOAT64",
+    "description": "Score for field 12554922"
+  },
+  {
+    "name": "field_13280743",
+    "type": "FLOAT64",
+    "description": "Score for field 13280743"
+  },
+  {
+    "name": "field_13736549",
+    "type": "FLOAT64",
+    "description": "Score for field 13736549"
+  },
+  {
+    "name": "field_13965031",
+    "type": "FLOAT64",
+    "description": "Score for field 13965031"
+  },
+  {
+    "name": "field_15708023",
+    "type": "FLOAT64",
+    "description": "Score for field 15708023"
+  },
+  {
+    "name": "field_15744967",
+    "type": "FLOAT64",
+    "description": "Score for field 15744967"
+  },
+  {
+    "name": "field_16005928",
+    "type": "FLOAT64",
+    "description": "Score for field 16005928"
+  },
+  {
+    "name": "field_16674752",
+    "type": "FLOAT64",
+    "description": "Score for field 16674752"
+  },
+  {
+    "name": "field_16685009",
+    "type": "FLOAT64",
+    "description": "Score for field 16685009"
+  },
+  {
+    "name": "field_17409809",
+    "type": "FLOAT64",
+    "description": "Score for field 17409809"
+  },
+  {
+    "name": "field_17744445",
+    "type": "FLOAT64",
+    "description": "Score for field 17744445"
+  },
+  {
+    "name": "field_18547055",
+    "type": "FLOAT64",
+    "description": "Score for field 18547055"
+  },
+  {
+    "name": "field_18903297",
+    "type": "FLOAT64",
+    "description": "Score for field 18903297"
+  },
+  {
+    "name": "field_19165224",
+    "type": "FLOAT64",
+    "description": "Score for field 19165224"
+  },
+  {
+    "name": "field_19417346",
+    "type": "FLOAT64",
+    "description": "Score for field 19417346"
+  },
+  {
+    "name": "field_19527891",
+    "type": "FLOAT64",
+    "description": "Score for field 19527891"
+  },
+  {
+    "name": "field_21547014",
+    "type": "FLOAT64",
+    "description": "Score for field 21547014"
+  },
+  {
+    "name": "field_21880701",
+    "type": "FLOAT64",
+    "description": "Score for field 21880701"
+  },
+  {
+    "name": "field_21951064",
+    "type": "FLOAT64",
+    "description": "Score for field 21951064"
+  },
+  {
+    "name": "field_22212356",
+    "type": "FLOAT64",
+    "description": "Score for field 22212356"
+  },
+  {
+    "name": "field_23123220",
+    "type": "FLOAT64",
+    "description": "Score for field 23123220"
+  },
+  {
+    "name": "field_24326235",
+    "type": "FLOAT64",
+    "description": "Score for field 24326235"
+  },
+  {
+    "name": "field_24667770",
+    "type": "FLOAT64",
+    "description": "Score for field 24667770"
+  },
+  {
+    "name": "field_24890656",
+    "type": "FLOAT64",
+    "description": "Score for field 24890656"
+  },
+  {
+    "name": "field_26271046",
+    "type": "FLOAT64",
+    "description": "Score for field 26271046"
+  },
+  {
+    "name": "field_26873012",
+    "type": "FLOAT64",
+    "description": "Score for field 26873012"
+  },
+  {
+    "name": "field_27206212",
+    "type": "FLOAT64",
+    "description": "Score for field 27206212"
+  },
+  {
+    "name": "field_28490314",
+    "type": "FLOAT64",
+    "description": "Score for field 28490314"
+  },
+  {
+    "name": "field_28826006",
+    "type": "FLOAT64",
+    "description": "Score for field 28826006"
+  },
+  {
+    "name": "field_29456083",
+    "type": "FLOAT64",
+    "description": "Score for field 29456083"
+  },
+  {
+    "name": "field_29595303",
+    "type": "FLOAT64",
+    "description": "Score for field 29595303"
+  },
+  {
+    "name": "field_29694066",
+    "type": "FLOAT64",
+    "description": "Score for field 29694066"
+  },
+  {
+    "name": "field_30475298",
+    "type": "FLOAT64",
+    "description": "Score for field 30475298"
+  },
+  {
+    "name": "field_31258907",
+    "type": "FLOAT64",
+    "description": "Score for field 31258907"
+  },
+  {
+    "name": "field_31903555",
+    "type": "FLOAT64",
+    "description": "Score for field 31903555"
+  },
+  {
+    "name": "field_31972630",
+    "type": "FLOAT64",
+    "description": "Score for field 31972630"
+  },
+  {
+    "name": "field_33070731",
+    "type": "FLOAT64",
+    "description": "Score for field 33070731"
+  },
+  {
+    "name": "field_33332235",
+    "type": "FLOAT64",
+    "description": "Score for field 33332235"
+  },
+  {
+    "name": "field_33577790",
+    "type": "FLOAT64",
+    "description": "Score for field 33577790"
+  },
+  {
+    "name": "field_33923547",
+    "type": "FLOAT64",
+    "description": "Score for field 33923547"
+  },
+  {
+    "name": "field_34447519",
+    "type": "FLOAT64",
+    "description": "Score for field 34447519"
+  },
+  {
+    "name": "field_36289849",
+    "type": "FLOAT64",
+    "description": "Score for field 36289849"
+  },
+  {
+    "name": "field_37037264",
+    "type": "FLOAT64",
+    "description": "Score for field 37037264"
+  },
+  {
+    "name": "field_37621935",
+    "type": "FLOAT64",
+    "description": "Score for field 37621935"
+  },
+  {
+    "name": "field_37914503",
+    "type": "FLOAT64",
+    "description": "Score for field 37914503"
+  },
+  {
+    "name": "field_38652104",
+    "type": "FLOAT64",
+    "description": "Score for field 38652104"
+  },
+  {
+    "name": "field_39432304",
+    "type": "FLOAT64",
+    "description": "Score for field 39432304"
+  },
+  {
+    "name": "field_39549134",
+    "type": "FLOAT64",
+    "description": "Score for field 39549134"
+  },
+  {
+    "name": "field_41008148",
+    "type": "FLOAT64",
+    "description": "Score for field 41008148"
+  },
+  {
+    "name": "field_41895202",
+    "type": "FLOAT64",
+    "description": "Score for field 41895202"
+  },
+  {
+    "name": "field_41999313",
+    "type": "FLOAT64",
+    "description": "Score for field 41999313"
+  },
+  {
+    "name": "field_42219234",
+    "type": "FLOAT64",
+    "description": "Score for field 42219234"
+  },
+  {
+    "name": "field_42360764",
+    "type": "FLOAT64",
+    "description": "Score for field 42360764"
+  },
+  {
+    "name": "field_42407357",
+    "type": "FLOAT64",
+    "description": "Score for field 42407357"
+  },
+  {
+    "name": "field_42475967",
+    "type": "FLOAT64",
+    "description": "Score for field 42475967"
+  },
+  {
+    "name": "field_42972112",
+    "type": "FLOAT64",
+    "description": "Score for field 42972112"
+  },
+  {
+    "name": "field_43617362",
+    "type": "FLOAT64",
+    "description": "Score for field 43617362"
+  },
+  {
+    "name": "field_44154836",
+    "type": "FLOAT64",
+    "description": "Score for field 44154836"
+  },
+  {
+    "name": "field_44870925",
+    "type": "FLOAT64",
+    "description": "Score for field 44870925"
+  },
+  {
+    "name": "field_45355965",
+    "type": "FLOAT64",
+    "description": "Score for field 45355965"
+  },
+  {
+    "name": "field_46141821",
+    "type": "FLOAT64",
+    "description": "Score for field 46141821"
+  },
+  {
+    "name": "field_46312422",
+    "type": "FLOAT64",
+    "description": "Score for field 46312422"
+  },
+  {
+    "name": "field_47768531",
+    "type": "FLOAT64",
+    "description": "Score for field 47768531"
+  },
+  {
+    "name": "field_48824518",
+    "type": "FLOAT64",
+    "description": "Score for field 48824518"
+  },
+  {
+    "name": "field_49040817",
+    "type": "FLOAT64",
+    "description": "Score for field 49040817"
+  },
+  {
+    "name": "field_49204034",
+    "type": "FLOAT64",
+    "description": "Score for field 49204034"
+  },
+  {
+    "name": "field_49774154",
+    "type": "FLOAT64",
+    "description": "Score for field 49774154"
+  },
+  {
+    "name": "field_50522688",
+    "type": "FLOAT64",
+    "description": "Score for field 50522688"
+  },
+  {
+    "name": "field_52119013",
+    "type": "FLOAT64",
+    "description": "Score for field 52119013"
+  },
+  {
+    "name": "field_53553401",
+    "type": "FLOAT64",
+    "description": "Score for field 53553401"
+  },
+  {
+    "name": "field_54286561",
+    "type": "FLOAT64",
+    "description": "Score for field 54286561"
+  },
+  {
+    "name": "field_54355233",
+    "type": "FLOAT64",
+    "description": "Score for field 54355233"
+  },
+  {
+    "name": "field_54750564",
+    "type": "FLOAT64",
+    "description": "Score for field 54750564"
+  },
+  {
+    "name": "field_55493867",
+    "type": "FLOAT64",
+    "description": "Score for field 55493867"
+  },
+  {
+    "name": "field_55587333",
+    "type": "FLOAT64",
+    "description": "Score for field 55587333"
+  },
+  {
+    "name": "field_56739046",
+    "type": "FLOAT64",
+    "description": "Score for field 56739046"
+  },
+  {
+    "name": "field_57879066",
+    "type": "FLOAT64",
+    "description": "Score for field 57879066"
+  },
+  {
+    "name": "field_58640448",
+    "type": "FLOAT64",
+    "description": "Score for field 58640448"
+  },
+  {
+    "name": "field_59822182",
+    "type": "FLOAT64",
+    "description": "Score for field 59822182"
+  },
+  {
+    "name": "field_60644358",
+    "type": "FLOAT64",
+    "description": "Score for field 60644358"
+  },
+  {
+    "name": "field_61434518",
+    "type": "FLOAT64",
+    "description": "Score for field 61434518"
+  },
+  {
+    "name": "field_61696701",
+    "type": "FLOAT64",
+    "description": "Score for field 61696701"
+  },
+  {
+    "name": "field_62520636",
+    "type": "FLOAT64",
+    "description": "Score for field 62520636"
+  },
+  {
+    "name": "field_62649853",
+    "type": "FLOAT64",
+    "description": "Score for field 62649853"
+  },
+  {
+    "name": "field_65244806",
+    "type": "FLOAT64",
+    "description": "Score for field 65244806"
+  },
+  {
+    "name": "field_66938386",
+    "type": "FLOAT64",
+    "description": "Score for field 66938386"
+  },
+  {
+    "name": "field_70410870",
+    "type": "FLOAT64",
+    "description": "Score for field 70410870"
+  },
+  {
+    "name": "field_70721500",
+    "type": "FLOAT64",
+    "description": "Score for field 70721500"
+  },
+  {
+    "name": "field_71240020",
+    "type": "FLOAT64",
+    "description": "Score for field 71240020"
+  },
+  {
+    "name": "field_71924100",
+    "type": "FLOAT64",
+    "description": "Score for field 71924100"
+  },
+  {
+    "name": "field_73283319",
+    "type": "FLOAT64",
+    "description": "Score for field 73283319"
+  },
+  {
+    "name": "field_73484699",
+    "type": "FLOAT64",
+    "description": "Score for field 73484699"
+  },
+  {
+    "name": "field_74363100",
+    "type": "FLOAT64",
+    "description": "Score for field 74363100"
+  },
+  {
+    "name": "field_74650414",
+    "type": "FLOAT64",
+    "description": "Score for field 74650414"
+  },
+  {
+    "name": "field_74909509",
+    "type": "FLOAT64",
+    "description": "Score for field 74909509"
+  },
+  {
+    "name": "field_74916050",
+    "type": "FLOAT64",
+    "description": "Score for field 74916050"
+  },
+  {
+    "name": "field_75473681",
+    "type": "FLOAT64",
+    "description": "Score for field 75473681"
+  },
+  {
+    "name": "field_75630572",
+    "type": "FLOAT64",
+    "description": "Score for field 75630572"
+  },
+  {
+    "name": "field_76155785",
+    "type": "FLOAT64",
+    "description": "Score for field 76155785"
+  },
+  {
+    "name": "field_77088390",
+    "type": "FLOAT64",
+    "description": "Score for field 77088390"
+  },
+  {
+    "name": "field_77595967",
+    "type": "FLOAT64",
+    "description": "Score for field 77595967"
+  },
+  {
+    "name": "field_77805123",
+    "type": "FLOAT64",
+    "description": "Score for field 77805123"
+  },
+  {
+    "name": "field_78458016",
+    "type": "FLOAT64",
+    "description": "Score for field 78458016"
+  },
+  {
+    "name": "field_78519656",
+    "type": "FLOAT64",
+    "description": "Score for field 78519656"
+  },
+  {
+    "name": "field_78762247",
+    "type": "FLOAT64",
+    "description": "Score for field 78762247"
+  },
+  {
+    "name": "field_79403827",
+    "type": "FLOAT64",
+    "description": "Score for field 79403827"
+  },
+  {
+    "name": "field_80444323",
+    "type": "FLOAT64",
+    "description": "Score for field 80444323"
+  },
+  {
+    "name": "field_86803240",
+    "type": "FLOAT64",
+    "description": "Score for field 86803240"
+  },
+  {
+    "name": "field_87355193",
+    "type": "FLOAT64",
+    "description": "Score for field 87355193"
+  },
+  {
+    "name": "field_87717796",
+    "type": "FLOAT64",
+    "description": "Score for field 87717796"
+  },
+  {
+    "name": "field_88463610",
+    "type": "FLOAT64",
+    "description": "Score for field 88463610"
+  },
+  {
+    "name": "field_89423630",
+    "type": "FLOAT64",
+    "description": "Score for field 89423630"
+  },
+  {
+    "name": "field_90856448",
+    "type": "FLOAT64",
+    "description": "Score for field 90856448"
+  },
+  {
+    "name": "field_90924648",
+    "type": "FLOAT64",
+    "description": "Score for field 90924648"
+  },
+  {
+    "name": "field_91375879",
+    "type": "FLOAT64",
+    "description": "Score for field 91375879"
+  },
+  {
+    "name": "field_91586092",
+    "type": "FLOAT64",
+    "description": "Score for field 91586092"
+  },
+  {
+    "name": "field_94375191",
+    "type": "FLOAT64",
+    "description": "Score for field 94375191"
+  },
+  {
+    "name": "field_95124753",
+    "type": "FLOAT64",
+    "description": "Score for field 95124753"
+  },
+  {
+    "name": "field_95444343",
+    "type": "FLOAT64",
+    "description": "Score for field 95444343"
+  },
+  {
+    "name": "field_95457728",
+    "type": "FLOAT64",
+    "description": "Score for field 95457728"
+  },
+  {
+    "name": "field_97137747",
+    "type": "FLOAT64",
+    "description": "Score for field 97137747"
+  },
+  {
+    "name": "field_97355855",
+    "type": "FLOAT64",
+    "description": "Score for field 97355855"
+  },
+  {
+    "name": "field_98274493",
+    "type": "FLOAT64",
+    "description": "Score for field 98274493"
+  },
+  {
+    "name": "field_99454951",
+    "type": "FLOAT64",
+    "description": "Score for field 99454951"
+  },
+  {
+    "name": "field_99508421",
+    "type": "FLOAT64",
+    "description": "Score for field 99508421"
+  },
+  {
+    "name": "field_100001284",
+    "type": "FLOAT64",
+    "description": "Score for field 100001284"
+  },
+  {
+    "name": "field_100970517",
+    "type": "FLOAT64",
+    "description": "Score for field 100970517"
+  },
+  {
+    "name": "field_105639569",
+    "type": "FLOAT64",
+    "description": "Score for field 105639569"
+  },
+  {
+    "name": "field_105702510",
+    "type": "FLOAT64",
+    "description": "Score for field 105702510"
+  },
+  {
+    "name": "field_105795698",
+    "type": "FLOAT64",
+    "description": "Score for field 105795698"
+  },
+  {
+    "name": "field_106159729",
+    "type": "FLOAT64",
+    "description": "Score for field 106159729"
+  },
+  {
+    "name": "field_107038049",
+    "type": "FLOAT64",
+    "description": "Score for field 107038049"
+  },
+  {
+    "name": "field_107053488",
+    "type": "FLOAT64",
+    "description": "Score for field 107053488"
+  },
+  {
+    "name": "field_107457646",
+    "type": "FLOAT64",
+    "description": "Score for field 107457646"
+  },
+  {
+    "name": "field_107826830",
+    "type": "FLOAT64",
+    "description": "Score for field 107826830"
+  },
+  {
+    "name": "field_107872376",
+    "type": "FLOAT64",
+    "description": "Score for field 107872376"
+  },
+  {
+    "name": "field_107993555",
+    "type": "FLOAT64",
+    "description": "Score for field 107993555"
+  },
+  {
+    "name": "field_108827166",
+    "type": "FLOAT64",
+    "description": "Score for field 108827166"
+  },
+  {
+    "name": "field_109214941",
+    "type": "FLOAT64",
+    "description": "Score for field 109214941"
+  },
+  {
+    "name": "field_110354214",
+    "type": "FLOAT64",
+    "description": "Score for field 110354214"
+  },
+  {
+    "name": "field_111368507",
+    "type": "FLOAT64",
+    "description": "Score for field 111368507"
+  },
+  {
+    "name": "field_111472728",
+    "type": "FLOAT64",
+    "description": "Score for field 111472728"
+  },
+  {
+    "name": "field_111919701",
+    "type": "FLOAT64",
+    "description": "Score for field 111919701"
+  },
+  {
+    "name": "field_112698675",
+    "type": "FLOAT64",
+    "description": "Score for field 112698675"
+  },
+  {
+    "name": "field_112930515",
+    "type": "FLOAT64",
+    "description": "Score for field 112930515"
+  },
+  {
+    "name": "field_113775141",
+    "type": "FLOAT64",
+    "description": "Score for field 113775141"
+  },
+  {
+    "name": "field_114614502",
+    "type": "FLOAT64",
+    "description": "Score for field 114614502"
+  },
+  {
+    "name": "field_114793014",
+    "type": "FLOAT64",
+    "description": "Score for field 114793014"
+  },
+  {
+    "name": "field_115704247",
+    "type": "FLOAT64",
+    "description": "Score for field 115704247"
+  },
+  {
+    "name": "field_115903868",
+    "type": "FLOAT64",
+    "description": "Score for field 115903868"
+  },
+  {
+    "name": "field_116915560",
+    "type": "FLOAT64",
+    "description": "Score for field 116915560"
+  },
+  {
+    "name": "field_117671659",
+    "type": "FLOAT64",
+    "description": "Score for field 117671659"
+  },
+  {
+    "name": "field_118084267",
+    "type": "FLOAT64",
+    "description": "Score for field 118084267"
+  },
+  {
+    "name": "field_118487528",
+    "type": "FLOAT64",
+    "description": "Score for field 118487528"
+  },
+  {
+    "name": "field_118524514",
+    "type": "FLOAT64",
+    "description": "Score for field 118524514"
+  },
+  {
+    "name": "field_118552586",
+    "type": "FLOAT64",
+    "description": "Score for field 118552586"
+  },
+  {
+    "name": "field_118615104",
+    "type": "FLOAT64",
+    "description": "Score for field 118615104"
+  },
+  {
+    "name": "field_119599485",
+    "type": "FLOAT64",
+    "description": "Score for field 119599485"
+  },
+  {
+    "name": "field_119767625",
+    "type": "FLOAT64",
+    "description": "Score for field 119767625"
+  },
+  {
+    "name": "field_119857082",
+    "type": "FLOAT64",
+    "description": "Score for field 119857082"
+  },
+  {
+    "name": "field_120314980",
+    "type": "FLOAT64",
+    "description": "Score for field 120314980"
+  },
+  {
+    "name": "field_120665830",
+    "type": "FLOAT64",
+    "description": "Score for field 120665830"
+  },
+  {
+    "name": "field_121332964",
+    "type": "FLOAT64",
+    "description": "Score for field 121332964"
+  },
+  {
+    "name": "field_121684516",
+    "type": "FLOAT64",
+    "description": "Score for field 121684516"
+  },
+  {
+    "name": "field_121864883",
+    "type": "FLOAT64",
+    "description": "Score for field 121864883"
+  },
+  {
+    "name": "field_121955636",
+    "type": "FLOAT64",
+    "description": "Score for field 121955636"
+  },
+  {
+    "name": "field_124101348",
+    "type": "FLOAT64",
+    "description": "Score for field 124101348"
+  },
+  {
+    "name": "field_124952713",
+    "type": "FLOAT64",
+    "description": "Score for field 124952713"
+  },
+  {
+    "name": "field_125565743",
+    "type": "FLOAT64",
+    "description": "Score for field 125565743"
+  },
+  {
+    "name": "field_126255220",
+    "type": "FLOAT64",
+    "description": "Score for field 126255220"
+  },
+  {
+    "name": "field_126322002",
+    "type": "FLOAT64",
+    "description": "Score for field 126322002"
+  },
+  {
+    "name": "field_126348684",
+    "type": "FLOAT64",
+    "description": "Score for field 126348684"
+  },
+  {
+    "name": "field_126794175",
+    "type": "FLOAT64",
+    "description": "Score for field 126794175"
+  },
+  {
+    "name": "field_126838900",
+    "type": "FLOAT64",
+    "description": "Score for field 126838900"
+  },
+  {
+    "name": "field_126894567",
+    "type": "FLOAT64",
+    "description": "Score for field 126894567"
+  },
+  {
+    "name": "field_127313418",
+    "type": "FLOAT64",
+    "description": "Score for field 127313418"
+  },
+  {
+    "name": "field_127413603",
+    "type": "FLOAT64",
+    "description": "Score for field 127413603"
+  },
+  {
+    "name": "field_131872663",
+    "type": "FLOAT64",
+    "description": "Score for field 131872663"
+  },
+  {
+    "name": "field_133425853",
+    "type": "FLOAT64",
+    "description": "Score for field 133425853"
+  },
+  {
+    "name": "field_133731056",
+    "type": "FLOAT64",
+    "description": "Score for field 133731056"
+  },
+  {
+    "name": "field_134018914",
+    "type": "FLOAT64",
+    "description": "Score for field 134018914"
+  },
+  {
+    "name": "field_134306372",
+    "type": "FLOAT64",
+    "description": "Score for field 134306372"
+  },
+  {
+    "name": "field_134560507",
+    "type": "FLOAT64",
+    "description": "Score for field 134560507"
+  },
+  {
+    "name": "field_136229726",
+    "type": "FLOAT64",
+    "description": "Score for field 136229726"
+  },
+  {
+    "name": "field_136264566",
+    "type": "FLOAT64",
+    "description": "Score for field 136264566"
+  },
+  {
+    "name": "field_136764020",
+    "type": "FLOAT64",
+    "description": "Score for field 136764020"
+  },
+  {
+    "name": "field_138496976",
+    "type": "FLOAT64",
+    "description": "Score for field 138496976"
+  },
+  {
+    "name": "field_138885662",
+    "type": "FLOAT64",
+    "description": "Score for field 138885662"
+  },
+  {
+    "name": "field_138921699",
+    "type": "FLOAT64",
+    "description": "Score for field 138921699"
+  },
+  {
+    "name": "field_139719470",
+    "type": "FLOAT64",
+    "description": "Score for field 139719470"
+  },
+  {
+    "name": "field_140793950",
+    "type": "FLOAT64",
+    "description": "Score for field 140793950"
+  },
+  {
+    "name": "field_141071460",
+    "type": "FLOAT64",
+    "description": "Score for field 141071460"
+  },
+  {
+    "name": "field_142362112",
+    "type": "FLOAT64",
+    "description": "Score for field 142362112"
+  },
+  {
+    "name": "field_142724271",
+    "type": "FLOAT64",
+    "description": "Score for field 142724271"
+  },
+  {
+    "name": "field_143998085",
+    "type": "FLOAT64",
+    "description": "Score for field 143998085"
+  },
+  {
+    "name": "field_144024400",
+    "type": "FLOAT64",
+    "description": "Score for field 144024400"
+  },
+  {
+    "name": "field_144027150",
+    "type": "FLOAT64",
+    "description": "Score for field 144027150"
+  },
+  {
+    "name": "field_144133560",
+    "type": "FLOAT64",
+    "description": "Score for field 144133560"
+  },
+  {
+    "name": "field_144237770",
+    "type": "FLOAT64",
+    "description": "Score for field 144237770"
+  },
+  {
+    "name": "field_145236788",
+    "type": "FLOAT64",
+    "description": "Score for field 145236788"
+  },
+  {
+    "name": "field_145420912",
+    "type": "FLOAT64",
+    "description": "Score for field 145420912"
+  },
+  {
+    "name": "field_146978453",
+    "type": "FLOAT64",
+    "description": "Score for field 146978453"
+  },
+  {
+    "name": "field_147176958",
+    "type": "FLOAT64",
+    "description": "Score for field 147176958"
+  },
+  {
+    "name": "field_147597530",
+    "type": "FLOAT64",
+    "description": "Score for field 147597530"
+  },
+  {
+    "name": "field_147789679",
+    "type": "FLOAT64",
+    "description": "Score for field 147789679"
+  },
+  {
+    "name": "field_148383697",
+    "type": "FLOAT64",
+    "description": "Score for field 148383697"
+  },
+  {
+    "name": "field_149635348",
+    "type": "FLOAT64",
+    "description": "Score for field 149635348"
+  },
+  {
+    "name": "field_149782125",
+    "type": "FLOAT64",
+    "description": "Score for field 149782125"
+  },
+  {
+    "name": "field_149923435",
+    "type": "FLOAT64",
+    "description": "Score for field 149923435"
+  },
+  {
+    "name": "field_150903083",
+    "type": "FLOAT64",
+    "description": "Score for field 150903083"
+  },
+  {
+    "name": "field_151730666",
+    "type": "FLOAT64",
+    "description": "Score for field 151730666"
+  },
+  {
+    "name": "field_153294291",
+    "type": "FLOAT64",
+    "description": "Score for field 153294291"
+  },
+  {
+    "name": "field_153349607",
+    "type": "FLOAT64",
+    "description": "Score for field 153349607"
+  },
+  {
+    "name": "field_153911025",
+    "type": "FLOAT64",
+    "description": "Score for field 153911025"
+  },
+  {
+    "name": "field_154945302",
+    "type": "FLOAT64",
+    "description": "Score for field 154945302"
+  },
+  {
+    "name": "field_155202549",
+    "type": "FLOAT64",
+    "description": "Score for field 155202549"
+  },
+  {
+    "name": "field_155647269",
+    "type": "FLOAT64",
+    "description": "Score for field 155647269"
+  },
+  {
+    "name": "field_159047783",
+    "type": "FLOAT64",
+    "description": "Score for field 159047783"
+  },
+  {
+    "name": "field_159110408",
+    "type": "FLOAT64",
+    "description": "Score for field 159110408"
+  },
+  {
+    "name": "field_159390177",
+    "type": "FLOAT64",
+    "description": "Score for field 159390177"
+  },
+  {
+    "name": "field_159467904",
+    "type": "FLOAT64",
+    "description": "Score for field 159467904"
+  },
+  {
+    "name": "field_159985019",
+    "type": "FLOAT64",
+    "description": "Score for field 159985019"
+  },
+  {
+    "name": "field_161191863",
+    "type": "FLOAT64",
+    "description": "Score for field 161191863"
+  },
+  {
+    "name": "field_162118730",
+    "type": "FLOAT64",
+    "description": "Score for field 162118730"
+  },
+  {
+    "name": "field_162324750",
+    "type": "FLOAT64",
+    "description": "Score for field 162324750"
+  },
+  {
+    "name": "field_162853370",
+    "type": "FLOAT64",
+    "description": "Score for field 162853370"
+  },
+  {
+    "name": "field_164705383",
+    "type": "FLOAT64",
+    "description": "Score for field 164705383"
+  },
+  {
+    "name": "field_165205528",
+    "type": "FLOAT64",
+    "description": "Score for field 165205528"
+  },
+  {
+    "name": "field_165556158",
+    "type": "FLOAT64",
+    "description": "Score for field 165556158"
+  },
+  {
+    "name": "field_166957645",
+    "type": "FLOAT64",
+    "description": "Score for field 166957645"
+  },
+  {
+    "name": "field_167562979",
+    "type": "FLOAT64",
+    "description": "Score for field 167562979"
+  },
+  {
+    "name": "field_169760540",
+    "type": "FLOAT64",
+    "description": "Score for field 169760540"
+  },
+  {
+    "name": "field_170154142",
+    "type": "FLOAT64",
+    "description": "Score for field 170154142"
+  },
+  {
+    "name": "field_171146098",
+    "type": "FLOAT64",
+    "description": "Score for field 171146098"
+  },
+  {
+    "name": "field_171250308",
+    "type": "FLOAT64",
+    "description": "Score for field 171250308"
+  },
+  {
+    "name": "field_173608175",
+    "type": "FLOAT64",
+    "description": "Score for field 173608175"
+  },
+  {
+    "name": "field_175444787",
+    "type": "FLOAT64",
+    "description": "Score for field 175444787"
+  },
+  {
+    "name": "field_175605778",
+    "type": "FLOAT64",
+    "description": "Score for field 175605778"
+  },
+  {
+    "name": "field_177322064",
+    "type": "FLOAT64",
+    "description": "Score for field 177322064"
+  },
+  {
+    "name": "field_177713679",
+    "type": "FLOAT64",
+    "description": "Score for field 177713679"
+  },
+  {
+    "name": "field_178550888",
+    "type": "FLOAT64",
+    "description": "Score for field 178550888"
+  },
+  {
+    "name": "field_178790620",
+    "type": "FLOAT64",
+    "description": "Score for field 178790620"
+  },
+  {
+    "name": "field_178802073",
+    "type": "FLOAT64",
+    "description": "Score for field 178802073"
+  },
+  {
+    "name": "field_178980831",
+    "type": "FLOAT64",
+    "description": "Score for field 178980831"
+  },
+  {
+    "name": "field_179104552",
+    "type": "FLOAT64",
+    "description": "Score for field 179104552"
+  },
+  {
+    "name": "field_180747234",
+    "type": "FLOAT64",
+    "description": "Score for field 180747234"
+  },
+  {
+    "name": "field_183696295",
+    "type": "FLOAT64",
+    "description": "Score for field 183696295"
+  },
+  {
+    "name": "field_184779094",
+    "type": "FLOAT64",
+    "description": "Score for field 184779094"
+  },
+  {
+    "name": "field_185544564",
+    "type": "FLOAT64",
+    "description": "Score for field 185544564"
+  },
+  {
+    "name": "field_185592680",
+    "type": "FLOAT64",
+    "description": "Score for field 185592680"
+  },
+  {
+    "name": "field_186060115",
+    "type": "FLOAT64",
+    "description": "Score for field 186060115"
+  },
+  {
+    "name": "field_187212893",
+    "type": "FLOAT64",
+    "description": "Score for field 187212893"
+  },
+  {
+    "name": "field_187320778",
+    "type": "FLOAT64",
+    "description": "Score for field 187320778"
+  },
+  {
+    "name": "field_187736073",
+    "type": "FLOAT64",
+    "description": "Score for field 187736073"
+  },
+  {
+    "name": "field_188027245",
+    "type": "FLOAT64",
+    "description": "Score for field 188027245"
+  },
+  {
+    "name": "field_188147891",
+    "type": "FLOAT64",
+    "description": "Score for field 188147891"
+  },
+  {
+    "name": "field_190253527",
+    "type": "FLOAT64",
+    "description": "Score for field 190253527"
+  },
+  {
+    "name": "field_191897082",
+    "type": "FLOAT64",
+    "description": "Score for field 191897082"
+  },
+  {
+    "name": "field_192562407",
+    "type": "FLOAT64",
+    "description": "Score for field 192562407"
+  },
+  {
+    "name": "field_194828623",
+    "type": "FLOAT64",
+    "description": "Score for field 194828623"
+  },
+  {
+    "name": "field_195094911",
+    "type": "FLOAT64",
+    "description": "Score for field 195094911"
+  },
+  {
+    "name": "field_195244886",
+    "type": "FLOAT64",
+    "description": "Score for field 195244886"
+  },
+  {
+    "name": "field_199104240",
+    "type": "FLOAT64",
+    "description": "Score for field 199104240"
+  },
+  {
+    "name": "field_199289684",
+    "type": "FLOAT64",
+    "description": "Score for field 199289684"
+  },
+  {
+    "name": "field_199343813",
+    "type": "FLOAT64",
+    "description": "Score for field 199343813"
+  },
+  {
+    "name": "field_199360897",
+    "type": "FLOAT64",
+    "description": "Score for field 199360897"
+  },
+  {
+    "name": "field_199539241",
+    "type": "FLOAT64",
+    "description": "Score for field 199539241"
+  },
+  {
+    "name": "field_199639397",
+    "type": "FLOAT64",
+    "description": "Score for field 199639397"
+  },
+  {
+    "name": "field_200601418",
+    "type": "FLOAT64",
+    "description": "Score for field 200601418"
+  },
+  {
+    "name": "field_201995342",
+    "type": "FLOAT64",
+    "description": "Score for field 201995342"
+  },
+  {
+    "name": "field_202444582",
+    "type": "FLOAT64",
+    "description": "Score for field 202444582"
+  },
+  {
+    "name": "field_203014093",
+    "type": "FLOAT64",
+    "description": "Score for field 203014093"
+  },
+  {
+    "name": "field_204321447",
+    "type": "FLOAT64",
+    "description": "Score for field 204321447"
+  },
+  {
+    "name": "field_205649164",
+    "type": "FLOAT64",
+    "description": "Score for field 205649164"
+  },
+  {
+    "name": "field_502942594",
+    "type": "FLOAT64",
+    "description": "Score for field 502942594"
+  },
+  {
+    "name": "field_505870484",
+    "type": "FLOAT64",
+    "description": "Score for field 505870484"
+  },
+  {
+    "name": "field_509550671",
+    "type": "FLOAT64",
+    "description": "Score for field 509550671"
+  },
+  {
+    "name": "field_510606860",
+    "type": "FLOAT64",
+    "description": "Score for field 510606860"
+  },
+  {
+    "name": "field_512399662",
+    "type": "FLOAT64",
+    "description": "Score for field 512399662"
+  },
+  {
+    "name": "field_524765639",
+    "type": "FLOAT64",
+    "description": "Score for field 524765639"
+  },
+  {
+    "name": "field_526734887",
+    "type": "FLOAT64",
+    "description": "Score for field 526734887"
+  },
+  {
+    "name": "field_528095902",
+    "type": "FLOAT64",
+    "description": "Score for field 528095902"
+  },
+  {
+    "name": "field_539667460",
+    "type": "FLOAT64",
+    "description": "Score for field 539667460"
+  },
+  {
+    "name": "field_542102704",
+    "type": "FLOAT64",
+    "description": "Score for field 542102704"
+  },
+  {
+    "name": "field_545542383",
+    "type": "FLOAT64",
+    "description": "Score for field 545542383"
+  },
+  {
+    "name": "field_548081761",
+    "type": "FLOAT64",
+    "description": "Score for field 548081761"
+  },
+  {
+    "name": "field_548259974",
+    "type": "FLOAT64",
+    "description": "Score for field 548259974"
+  },
+  {
+    "name": "field_549774020",
+    "type": "FLOAT64",
+    "description": "Score for field 549774020"
+  },
+  {
+    "name": "field_556039675",
+    "type": "FLOAT64",
+    "description": "Score for field 556039675"
+  },
+  {
+    "name": "field_556758197",
+    "type": "FLOAT64",
+    "description": "Score for field 556758197"
+  },
+  {
+    "name": "field_2522767166",
+    "type": "FLOAT64",
+    "description": "Score for field 2522767166"
+  }
+]
