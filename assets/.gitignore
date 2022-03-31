@@ -21,3 +21,5 @@
 /zh_vocab.txt
 /en_vocab.txt
 /en_fasttext.bin
+/en_tfidf.pkl
+/zh_tfidf.pkl

@@ -1,0 +1,4 @@
+outs:
+- md5: b3cace6f185f3d9790b7d756a72b0104
+  size: 172006000
+  path: zh_tfidf.pkl
