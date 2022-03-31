@@ -1,4 +1,4 @@
 outs:
-- md5: 4720d212f7dad2461c15dfc62eef3b86
-  size: 17874215
+- md5: 74b2a7db76c005f6282217168380b08e
+  size: 17877980
   path: zh_field_tfidf_vectors.json

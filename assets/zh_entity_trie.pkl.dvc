@@ -1,4 +1,4 @@
 outs:
-- md5: a724c45ad733d4fed4f3b106a7f3b257
+- md5: 163a6b6b4759c3abd362cfd60d6928ab
   size: 645755
   path: zh_entity_trie.pkl
