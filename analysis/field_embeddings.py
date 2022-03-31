@@ -112,7 +112,7 @@ def load_fonts():
     return font_props
 
 
-def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, **kw):
+def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, size=8, **kw):
     """
     PARAMETERS
     parent_tsne = parent df values or None if there's no parent point
@@ -123,7 +123,7 @@ def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, **kw):
 
     sns.set_theme('notebook', 'white')
 
-    plt.figure(figsize=(8, 8))
+    plt.figure(figsize=(size, size))
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = FONT_NAME
 
@@ -160,15 +160,15 @@ def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, **kw):
     return scatter
 
 
-def plot_l0_scatter(tsne_df, lang: str):
+def plot_l0_scatter(tsne_df, lang: str, **kw):
     # Plot level-0 fields
     set_scale(1.25)
-    plot_tsne(tsne_df.query('level == 0'))
+    plot_tsne(tsne_df.query('level == 0'), **kw)
     set_title(f'Level-0 Field Embeddings ({lang.upper()})')
     save(f'{lang}-scatter-level-0.{FILE_TYPE}')
 
 
-def plot_l1_scatter(tsne_df, parents, lang, plot_parent=False):
+def plot_l1_scatter(tsne_df, parents, lang, plot_parent=False, **kw):
     # Plot level 1 child fields of each parent
     # set plot_parent = True to plot the parent point on the graph
     set_scale(1)
@@ -182,7 +182,7 @@ def plot_l1_scatter(tsne_df, parents, lang, plot_parent=False):
         else:
             parent_tsne = None
             outfilename = f'{lang}-scatter-level-1-{parent_name}.pdf'
-        plot_tsne(child_tsne, parent_tsne=parent_tsne)
+        plot_tsne(child_tsne, parent_tsne=parent_tsne, **kw)
         save(outfilename)
 
 
