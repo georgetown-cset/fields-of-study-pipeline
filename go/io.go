@@ -11,8 +11,6 @@ import (
 	"bufio"
 	"compress/gzip"
 	"encoding/csv"
-	"encoding/json"
-	"fmt"
 	jsoniter "github.com/json-iterator/go"
 	"gonum.org/v1/gonum/mat"
 	"io"
@@ -22,7 +20,6 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-	"sync"
 )
 
 // readDenseVectorFile reads field fastText vectors from a TSV
@@ -135,39 +132,13 @@ func (meta *Meta) TSVHeader(scoreColumn bool) string {
 	return strings.Join(header, outputDelimiter)
 }
 
-// WriteTSVHeader writes a field score header to a file
-func (meta *Meta) WriteTSVHeader(file *os.File, scoreColumn bool) {
-	_, err := file.WriteString(meta.TSVHeader(scoreColumn) + "\n")
-	if err != nil {
-		log.Fatal(err)
+// Header returns an array of field IDs for use in a header
+func (meta *Meta) Header() []int {
+	var header []int
+	for _, field := range meta.Fields {
+		header = append(header, field.Id)
 	}
-}
-
-// MarshalTSV marshals docScores into TSV
-func (docScores *DocScores) MarshalTSV(label string) string {
-	row := NewTSVRow(docScores.MergedId, label)
-	for _, score := range docScores.Scores {
-		row = append(row, strconv.FormatFloat(score, 'f', outputPrecision, 64))
-	}
-	return strings.Join(row, outputDelimiter)
-}
-
-// MarshalVectorTSV marshals docScore dense vectors (fastText, entity fastText) into TSV
-func (docScores *DocScores) MarshalVectorTSV(label string, vector *mat.VecDense) string {
-	row := NewTSVRow(docScores.MergedId, label)
-	// Surely a better way?
-	for i := 0; i < vector.Len(); i++ {
-		row = append(row, strconv.FormatFloat(vector.AtVec(i), 'f', outputPrecision, 64))
-	}
-	return strings.Join(row, outputDelimiter)
-}
-
-func NewTSVRow(docId string, label string) []string {
-	var row = []string{docId}
-	if label != "" {
-		row = append(row, label)
-	}
-	return row
+	return header
 }
 
 // ReadInputs iterates over lines in one or more input files (possibly gzipped)
@@ -226,117 +197,7 @@ func ReadInputs(path string) <-chan []byte {
 	return lines
 }
 
-type DocScoresOutput struct {
-	Id     string             `json:"merged_id"`
-	Fields []FieldScoreOutput `json:"fields"`
-}
-
 type FieldScoreOutput struct {
 	Id    int     `json:"id"`
 	Score float64 `json:"score"`
-}
-
-func ReshapeOutput(inputPath string, outputPath string) {
-	fileIn, err := os.Open(inputPath)
-	if err != nil {
-		log.Fatalf("Could not %v", err)
-	}
-	defer func(fileIn *os.File) {
-		_ = fileIn.Close()
-	}(fileIn)
-
-	records := make(chan []string, maxWorker)
-	inputDone := make(chan bool)
-	headerOutput := make(chan []string)
-	var wg sync.WaitGroup
-	go func() {
-		err = TSVToChanMaps(fileIn, records, headerOutput, &wg)
-		if err != nil {
-			log.Fatal(err)
-		}
-		close(records)
-		inputDone <- true
-	}()
-
-	header := <-headerOutput
-	for w := 0; w < maxWorker; w++ {
-		go func(workerId int) {
-			var fileOut *os.File
-			if outputPath == "" {
-				// Write output to stdout if no path specified
-				fileOut = os.Stdout
-			} else {
-				// Otherwise open the output file
-				if maxWorker > 1 {
-					index := fmt.Sprintf("_%03d", workerId)
-					fileOut, err = os.Create(outputPath + index + ".jsonl")
-				} else {
-					fileOut, err = os.Create(outputPath)
-				}
-				if err != nil {
-					log.Fatalf("Could not %v", err)
-				}
-				defer func(fileOut *os.File) {
-					_ = fileOut.Close()
-				}(fileOut)
-			}
-
-			for record := range records {
-				output := DocScoresOutput{
-					Id:     record[0],
-					Fields: nil,
-				}
-				for i := 1; i < len(header); i++ {
-					fieldId, err := strconv.Atoi(header[i])
-					if err != nil {
-						log.Fatal(err)
-					}
-					fieldScore, err := strconv.ParseFloat(record[i], 64)
-					output.Fields = append(output.Fields, FieldScoreOutput{
-						Id:    fieldId,
-						Score: fieldScore,
-					})
-				}
-				bytes, err := json.Marshal(output)
-				if err != nil {
-					log.Fatal(err)
-				}
-				_, err = fileOut.Write(bytes)
-				if err != nil {
-					log.Fatal(err)
-				}
-				_, err = fileOut.WriteString("\n")
-				if err != nil {
-					log.Fatal(err)
-				}
-				wg.Done()
-			}
-		}(w)
-	}
-	wg.Wait()
-	<-inputDone
-}
-
-// TSVToChanMaps parses the TSV from the reader and send a dictionary in the chan c, using the header row as the keys.
-func TSVToChanMaps(reader io.Reader, c chan<- []string, headerOutput chan<- []string, waitGroup *sync.WaitGroup) error {
-	r := csv.NewReader(reader)
-	r.Comma = '\t'
-	var header []string
-	for {
-		record, err := r.Read()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if header == nil {
-			header = record
-			headerOutput <- record
-		} else {
-			c <- record
-			waitGroup.Add(1)
-		}
-	}
-	return nil
 }

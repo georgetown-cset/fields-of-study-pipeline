@@ -12,9 +12,11 @@ require (
 
 require (
 	github.com/VividCortex/ewma v1.1.1 // indirect
+	github.com/apache/thrift v0.0.0-20181112125854-24918abba929 // indirect
 	github.com/armon/go-radix v1.0.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.1 // indirect
 	github.com/fatih/color v1.10.0 // indirect
+	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
 	github.com/james-bowman/sparse v0.0.0-20210729090128-1e6c7dd483e9 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/compress v1.15.1 // indirect
@@ -27,6 +29,8 @@ require (
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
+	github.com/xitongsys/parquet-go v1.5.1 // indirect
+	github.com/xitongsys/parquet-go-source v0.0.0-20220315005136-aec0fe3e777c // indirect
 	golang.org/x/exp v0.0.0-20220328175248-053ad81199eb // indirect
 	golang.org/x/sys v0.0.0-20211019181941-9d821ace8654 // indirect
 )

@@ -14,7 +14,10 @@ type Job struct {
 	Doc Doc
 }
 
+// JobQueue carries inputs to the dispatcher
 var JobQueue chan Job
+
+// ResultQueue carries outputs back to the main thread
 var ResultQueue chan *DocScores
 
 // Worker represents the worker that executes the job

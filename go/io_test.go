@@ -96,18 +96,3 @@ func TestReadInputsGlobGz(t *testing.T) {
 		t.Fail()
 	}
 }
-
-func TestReshapeOutput(t *testing.T) {
-	ReshapeOutput("test/short_en_outputs.tsv", "")
-	ReshapeOutput("test/short_en_outputs.tsv", "/tmp/short_en_outputs.jsonl")
-}
-
-func TestReshapeOutputOneWorker(t *testing.T) {
-	maxWorker = 1
-	ReshapeOutput("test/short_en_outputs.tsv", "/tmp/short_en_outputs_1worker")
-}
-
-func TestReshapeOutputTwoWorkers(t *testing.T) {
-	maxWorker = 2
-	ReshapeOutput("test/short_en_outputs.tsv", "/tmp/short_en_outputs_2worker")
-}

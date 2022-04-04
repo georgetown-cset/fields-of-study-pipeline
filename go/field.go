@@ -80,8 +80,8 @@ func (scorer *Scorer) Score(docEmbedding *DocEmbedding) *DocScores {
 }
 
 // average calculates field scores by averaging over the scores from the three embedding methods
-func (scorer *Scorer) average(scores ...*mat.VecDense) []float64 {
-	avg := make([]float64, scorer.Meta.FieldCount)
+func (scorer *Scorer) average(scores ...*mat.VecDense) []FieldScoreOutput {
+	avg := make([]FieldScoreOutput, scorer.Meta.FieldCount)
 	var score, n, sum float64
 	/*
 		We average the available scores for each field, excluding missing values. This isn't quite faithful to the
@@ -113,10 +113,10 @@ func (scorer *Scorer) average(scores ...*mat.VecDense) []float64 {
 		}
 		if n > 0 {
 			// average the n available scores
-			avg[i] = sum / n
+			avg[i] = FieldScoreOutput{scorer.Meta.Keys[i], sum / n}
 		} else {
 			// If no scores are available, the field score is zero
-			avg[i] = sum
+			avg[i] = FieldScoreOutput{scorer.Meta.Keys[i], sum}
 		}
 	}
 	return avg
@@ -224,9 +224,9 @@ func loadMeta() []*FieldMeta {
 
 // DocScores holds the field scores associated with a document
 type DocScores struct {
-	MergedId       string
-	Scores         []float64
-	FastTextScores *mat.VecDense
-	TfidfScores    *mat.VecDense
-	EntityScores   *mat.VecDense
+	MergedId       string             `json:"merged_id"`
+	Scores         []FieldScoreOutput `json:"fields"`
+	FastTextScores *mat.VecDense      `json:"-"`
+	TfidfScores    *mat.VecDense      `json:"-"`
+	EntityScores   *mat.VecDense      `json:"-"`
 }

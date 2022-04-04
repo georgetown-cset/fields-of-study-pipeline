@@ -4,7 +4,7 @@ Calculate field scores for documents.
 package main
 
 import (
-	"encoding/json"
+	json "github.com/json-iterator/go"
 	"log"
 	"os"
 	"time"
@@ -27,9 +27,6 @@ func Score() {
 			_ = fout.Close()
 		}(fout)
 	}
-	// Write headers to output
-	meta := NewMeta()
-	meta.WriteTSVHeader(fout, outputAll)
 
 	// Set up the worker pool
 	dispatcher := NewDispatcher(maxWorker, outputAll)
@@ -76,28 +73,21 @@ func Score() {
 	outputCount := 0
 	inputIsDone := false
 	go func() {
+		if err != nil {
+			log.Fatal("Can't create file", err)
+		}
 		// Read scores from the result channel as they become available
 		for {
 			scores := <-ResultQueue
-			if !outputAll {
-				_, err := fout.WriteString(scores.MarshalTSV("") + "\n")
-				if err != nil {
-					log.Fatal(err)
-				}
-			} else {
-				_, err := fout.WriteString(scores.MarshalVectorTSV("fastText", scores.FastTextScores) + "\n")
-				if err != nil {
-					log.Fatal(err)
-				}
-				_, err = fout.WriteString(scores.MarshalVectorTSV("entity", scores.EntityScores) + "\n")
-				if err != nil {
-					log.Fatal(err)
-				}
-				_, err = fout.WriteString(scores.MarshalVectorTSV("tfidf", scores.TfidfScores) + "\n")
-				if err != nil {
-					log.Fatal(err)
-				}
+			obj, err := json.MarshalToString(&scores)
+			_, err = fout.WriteString(obj + "\n")
+			if err != nil {
+				return
 			}
+			if err != nil {
+				log.Fatal(err)
+			}
+
 			outputCount++
 
 			if showProgress {
@@ -107,6 +97,9 @@ func Score() {
 			}
 			if inputIsDone && jobCount == outputCount {
 				outputDone <- true
+			}
+			if err != nil {
+				log.Println("WriteStop error", err)
 			}
 		}
 	}()

@@ -105,36 +105,6 @@ func main() {
 						Destination: &showProgress,
 					},
 				},
-			}, {
-				Name:      "reshape",
-				Usage:     "Reshape field score output for BigQuery",
-				UsageText: "fields reshape [options]",
-				Action: func(c *cli.Context) error {
-					ReshapeOutput(inputPath, outputPath)
-					return nil
-				},
-				Flags: []cli.Flag{
-					&cli.StringFlag{
-						Name:        "input",
-						Aliases:     []string{"i"},
-						Required:    true,
-						Usage:       "Path to input JSONL with fields 'merged_id' and 'text'",
-						Destination: &inputPath,
-					},
-					&cli.StringFlag{
-						Name:        "output",
-						Aliases:     []string{"o"},
-						Usage:       "Path to output TSV",
-						Destination: &outputPath,
-					},
-					&cli.IntFlag{
-						Name:        "workers",
-						Aliases:     []string{"w"},
-						Usage:       "Worker pool size",
-						Value:       1,
-						Destination: &maxWorker,
-					},
-				},
 			},
 		},
 	}
