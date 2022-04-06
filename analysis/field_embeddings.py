@@ -13,7 +13,7 @@ from matplotlib import font_manager
 from sklearn.manifold import TSNE
 from sklearn.metrics.pairwise import cosine_similarity
 
-from fos.vectors import load_field_fasttext, load_field_keys
+from fos.vectors import load_field_fasttext, load_field_keys, load_field_entities
 
 FIG_DIR = 'field_embeddings'
 L0_FIELDS = {
@@ -27,11 +27,7 @@ FONT_NAME = 'Nunito Sans'
 FILE_TYPE = 'png'
 
 
-def main(lang='en'):
-    # Load the matrix of field FastText vectors
-    # The field vectors form a matrix with {field count} rows and {FastText dimensionality} columns.
-    vectors = load_field_fasttext(lang).index
-
+def main(vectors, lang='en'):
     # Load the row order as indicated by field IDs
     keys = load_field_keys(lang)
 
@@ -267,4 +263,11 @@ def save(name):
 
 if __name__ == '__main__':
     for lang in ['zh', 'en']:
-        main(lang)
+        # Load the matrix of field vectors
+        # The field vectors form a matrix with {field count} rows and {FastText dimensionality} columns.
+        ft_vectors = load_field_fasttext(lang).index
+        main(ft_vectors, lang)
+
+        # Same for entities
+        entity_vectors = load_field_entities(lang).index
+        main(entity_vectors, lang)
