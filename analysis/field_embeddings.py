@@ -108,7 +108,7 @@ def load_fonts():
     return font_props
 
 
-def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, size=8, **kw):
+def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, size=20, **kw):
     """
     PARAMETERS
     parent_tsne = parent df values or None if there's no parent point
@@ -174,10 +174,10 @@ def plot_l1_scatter(tsne_df, parents, lang, plot_parent=False, **kw):
 
         if plot_parent:
             parent_tsne = tsne_df.query(f'level == 0 & display_name == "{parent_name}"')
-            outfilename = f'{lang}-scatter-parent-level-1-{parent_name}.pdf'
+            outfilename = f'{lang}-scatter-parent-level-1-{parent_name}.{FILE_TYPE}'
         else:
             parent_tsne = None
-            outfilename = f'{lang}-scatter-level-1-{parent_name}.pdf'
+            outfilename = f'{lang}-scatter-level-1-{parent_name}.{FILE_TYPE}'
         plot_tsne(child_tsne, parent_tsne=parent_tsne, **kw)
         save(outfilename)
 
@@ -194,7 +194,7 @@ def sim_table(vectors, attrs, mask):
 
 def plot_heatmap(sim_df, annot=True):
     # Plot a heatmap of similarities
-    f, ax = plt.subplots(figsize=(10, 10))
+    f, ax = plt.subplots(figsize=(20, 20))
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = FONT_NAME
     sns.heatmap(sim_df,
@@ -265,9 +265,11 @@ if __name__ == '__main__':
     for lang in ['zh', 'en']:
         # Load the matrix of field vectors
         # The field vectors form a matrix with {field count} rows and {FastText dimensionality} columns.
+        FIG_DIR = 'field_embeddings/fasttext'
         ft_vectors = load_field_fasttext(lang).index
         main(ft_vectors, lang)
 
         # Same for entities
+        FIG_DIR = 'field_embeddings/entity'
         entity_vectors = load_field_entities(lang).index
         main(entity_vectors, lang)
