@@ -1,0 +1,4 @@
+outs:
+- md5: d91461bd9781d2a8d026b077dbcc72e1
+  size: 173400064
+  path: wiki.db
