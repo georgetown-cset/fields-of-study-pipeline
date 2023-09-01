@@ -6,12 +6,12 @@ with neighbors as (
   select
     merged_id,
     ref_id as neighbor_id
-  from gcp_cset_links_v2.paper_references_merged
+  from literature.references
   union distinct
   select
     ref_id as merged_id,
     merged_id as neighbor_id
-  from gcp_cset_links_v2.paper_references_merged
+  from literature.references
 ),
 neighbor_scores as (
   -- The papers without scores are non-EN/ZH or don't have title/abstract.
@@ -22,7 +22,7 @@ neighbor_scores as (
     neighbors.neighbor_id,
     neighbor_scores.fields
   -- For publications without field scores (see WHERE)
-  from gcp_cset_links_v2.article_links_nested
+  from literature.sources_nested
   -- Take the IDs of all their neighbors (at this point any
   -- pubs not in the citation graph drop out)
   inner join neighbors using(merged_id)
