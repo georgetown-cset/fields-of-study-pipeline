@@ -30,6 +30,7 @@ staging_dataset = f"staging_{production_dataset}"
 
 pipeline_args = get_default_args()
 pipeline_args["on_failure_callback"] = None
+pipeline_args["retries"] = 1
 
 def mk_command_seq(cmds: list) -> str:
     scripts = " && ".join(cmds)
@@ -101,7 +102,7 @@ with DAG("new_fields_of_study",
                 f"rm -r fields-of-study-pipeline/assets/corpus/* || true",
                 "cd fields-of-study-pipeline",
                 (f"PYTHONPATH=. python3 scripts/download_corpus.py {lang} "
-                 "{{'' if dag_run and dag_run.conf.get('rerun', False) else '--skip_prev'}} "
+                 "{{'' if dag_run and dag_run.conf.get('rerun') else '--skip_prev'}} "
                     f"--use_default_clients --bq_dest {staging_dataset} --extract_bucket {bucket} "
                     f"--extract_prefix {tmp_dir}/inputs/{lang}_corpus-")
             ])
