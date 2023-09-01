@@ -18,53 +18,40 @@ from airflow.operators.bash import BashOperator
 from airflow.operators.dummy import DummyOperator
 from airflow.operators.python import PythonOperator
 from airflow.hooks.base_hook import BaseHook
-from airflow.providers.slack.operators.slack import SlackAPIPostOperator
-from datetime import timedelta, datetime
+from datetime import datetime
 
-from dataloader.airflow_utils.slack import task_fail_slack_alert
+from dataloader.airflow_utils.defaults import DATA_BUCKET, PROJECT_ID, GCP_ZONE, DAGS_DIR, get_default_args, \
+    get_post_success
 from dataloader.scripts.populate_documentation import update_table_descriptions
 
-
-default_args = {
-    "owner": "airflow",
-    "depends_on_past": False,
-    "start_date": datetime(2022, 1, 27),
-    "email": [],
-    "email_on_failure": False,
-    "email_on_retry": False,
-    "retries": 1,
-    "retry_delay": timedelta(minutes=5),
-    "on_failure_callback": task_fail_slack_alert
-}
 
 production_dataset = "fields_of_study_v2"
 staging_dataset = f"staging_{production_dataset}"
 
+pipeline_args = get_default_args()
+pipeline_args["on_failure_callback"] = None
 
 def mk_command_seq(cmds: list) -> str:
     scripts = " && ".join(cmds)
-    return (f"gcloud compute ssh jm3312@{gce_resource_id} --zone {gce_zone} "
+    return (f"gcloud compute ssh jm3312@{gce_resource_id} --zone {GCP_ZONE} "
                 f"--command \"{scripts}\"")
 
 
 with DAG("new_fields_of_study",
-            default_args=default_args,
+            default_args=pipeline_args,
             description="Labels our scholarly literature with fields of study",
             schedule_interval=None,
             user_defined_macros = {"staging_dataset": staging_dataset, "production_dataset": production_dataset},
             catchup=False
          ) as dag:
     slack_webhook = BaseHook.get_connection("slack")
-    bucket = "airflow-data-exchange"
+    bucket = DATA_BUCKET
     tmp_dir = f"{production_dataset}/tmp"
     outputs_dir = f"{tmp_dir}/outputs"
     schema_dir = f"{production_dataset}/schemas"
     sql_dir = f"sql/{production_dataset}"
     backups_dataset = f"{production_dataset}_backups"
-    project_id = "gcp-cset-projects"
-    gce_zone = "us-east1-c"
     gce_resource_id = "fos-runner"
-    dags_dir = os.environ.get("DAGS_FOLDER")
 
     # We keep script inputs and outputs in a tmp dir on gcs, so clean it out at the start of each run. We clean at
     # the start of the run so if the run fails we can examine the failed data
@@ -76,8 +63,8 @@ with DAG("new_fields_of_study",
 
     # start the instance where we'll run the download and scoring scripts
     gce_instance_start = ComputeEngineStartInstanceOperator(
-        project_id=project_id,
-        zone=gce_zone,
+        project_id=PROJECT_ID,
+        zone=GCP_ZONE,
         resource_id=gce_resource_id,
         task_id="start-"+gce_resource_id
     )
@@ -145,8 +132,8 @@ with DAG("new_fields_of_study",
 
     # stop the instance
     gce_instance_stop = ComputeEngineStopInstanceOperator(
-        project_id=project_id,
-        zone=gce_zone,
+        project_id=PROJECT_ID,
+        zone=GCP_ZONE,
         resource_id=gce_resource_id,
         task_id="stop-"+gce_resource_id
     )
@@ -155,7 +142,7 @@ with DAG("new_fields_of_study",
     prev_op = gce_instance_stop
 
     # Run the downstream queries in the order they appear in query_sequence.txt
-    with open(f"{dags_dir}/sequences/{production_dataset}/query_sequence.txt") as f:
+    with open(f"{DAGS_DIR}/sequences/{production_dataset}/query_sequence.txt") as f:
         for table_name in f:
             table_name = table_name.strip()
             if not table_name:
@@ -167,7 +154,7 @@ with DAG("new_fields_of_study",
                         "query": "{% include '" + f"{sql_dir}/{table_name}.sql" + "' %}",
                         "useLegacySql": False,
                         "destinationTable": {
-                            "projectId": project_id,
+                            "projectId": PROJECT_ID,
                             "datasetId": staging_dataset,
                             "tableId": table_name
                         },
@@ -182,7 +169,7 @@ with DAG("new_fields_of_study",
 
     wait_for_checks = DummyOperator(task_id="wait_for_checks")
 
-    for query in os.listdir(f"{os.environ.get('DAGS_FOLDER')}/{sql_dir}"):
+    for query in os.listdir(f"{DAGS_DIR}/{sql_dir}"):
         if not query.startswith("check_"):
             continue
         check = BigQueryCheckOperator(
@@ -199,7 +186,7 @@ with DAG("new_fields_of_study",
 
     curr_date = datetime.now().strftime('%Y%m%d')
     # copy to production, populate table descriptions, backup tables
-    with open(f"{os.environ.get('DAGS_FOLDER')}/schemas/{production_dataset}/tables.json") as f:
+    with open(f"{DAGS_DIR}/schemas/{production_dataset}/tables.json") as f:
         table_desc = json.loads(f.read())
     for table in ["field_scores", "field_meta", "field_children", "top_fields"]:
         prod_table_name = f"{production_dataset}.{table}"
@@ -213,7 +200,7 @@ with DAG("new_fields_of_study",
         pop_descriptions = PythonOperator(
             task_id="populate_column_documentation_for_" + table,
             op_kwargs={
-                "input_schema": f"{os.environ.get('DAGS_FOLDER')}/schemas/{production_dataset}/{table}.json",
+                "input_schema": f"{DAGS_DIR}/schemas/{production_dataset}/{table}.json",
                 "table_name": prod_table_name,
                 "table_description": table_desc[prod_table_name]
             },
@@ -229,13 +216,7 @@ with DAG("new_fields_of_study",
 
         wait_for_checks >> table_copy >> pop_descriptions >> table_backup >> wait_for_backup
 
-    success_alert = SlackAPIPostOperator(
-        task_id="post_success",
-        token=slack_webhook.password,
-        text="(new!) fields of study update succeeded!",
-        channel=slack_webhook.login,
-        username="airflow"
-    )
+    success_alert = get_post_success("Fields of study v2 update succeeded!", dag)
 
     # as a final step before posting success, update the prev_{en,zh}_corpus tables so we'll know what text we used
     # on previous runs
@@ -252,7 +233,7 @@ with DAG("new_fields_of_study",
                                   f"(merged_id in (select merged_id from {production_dataset}.field_scores)))"),
                         "useLegacySql": False,
                         "destinationTable": {
-                            "projectId": project_id,
+                            "projectId": PROJECT_ID,
                             "datasetId": staging_dataset,
                             "tableId": f"prev_{lang}_corpus"
                         },
