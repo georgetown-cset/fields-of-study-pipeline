@@ -3,7 +3,7 @@ import pytest
 from fos.corpus import Translator
 
 
-@pytest.skip("cost")
+@pytest.mark.skip("cost")
 def test_translate_text():
     translator = Translator()
     text = "与乌克兰类似，台湾老一代和年轻一代对家国的记忆和感知相去甚远"
@@ -11,7 +11,7 @@ def test_translate_text():
     assert isinstance(translation, str)
 
 
-@pytest.skip("cost")
+@pytest.mark.skip("cost")
 def test_translate_batch():
     translator = Translator()
     texts = [
