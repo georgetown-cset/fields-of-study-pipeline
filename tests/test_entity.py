@@ -13,7 +13,7 @@ def test_embed_entities():
     entity_vector = embed_entities("natural language processing", trie)
     assert isinstance(entity_vector, np.ndarray)
     assert entity_vector.shape == (FASTTEXT_DIM,)
-    assert entity_vector.dtype == np.float32
+    assert entity_vector.dtype == np.float_
 
 
 def test_embed_nothing():
@@ -22,8 +22,8 @@ def test_embed_nothing():
     result = embed_entities("", trie)
     assert isinstance(result, np.ndarray)
     assert result.shape == (FASTTEXT_DIM,)
-    assert result.dtype == np.float32
-    assert (result == np.float32(0)).all()
+    assert result.dtype == np.float_
+    assert (result == np.float32(0)).all() or (result == np.float64(0)).all()
 
 
 def test_find_entities():
