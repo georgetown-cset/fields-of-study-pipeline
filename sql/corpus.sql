@@ -17,7 +17,7 @@ with meta as (
     abstract,
   from staging_literature.all_metadata_with_cld2_lid
   -- Get merged_id
-  inner join literature.sources on article_links.orig_id = all_metadata_with_cld2_lid.id
+  inner join literature.sources on sources.orig_id = all_metadata_with_cld2_lid.id
   where
   -- This just shrinks the results a bit (to publications with @lang titles or @lang abstracts or both)
   (
