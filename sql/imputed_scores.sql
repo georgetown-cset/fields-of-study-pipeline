@@ -6,23 +6,23 @@ with neighbors as (
   select
     merged_id,
     ref_id as neighbor_id
-  from gcp_cset_links_v2.paper_references_merged
+  from literature.references
   union distinct
   select
     ref_id as merged_id,
     merged_id as neighbor_id
-  from gcp_cset_links_v2.paper_references_merged
+  from literature.references
 ),
 neighbor_scores as (
   -- The papers without scores are non-EN/ZH or don't have title/abstract.
   -- Our approach is to find any neighbors of theirs in the citation
   -- graph that do have scores
   select
-    article_links_nested.merged_id,
+    sources.merged_id,
     neighbors.neighbor_id,
     neighbor_scores.fields
   -- For publications without field scores (see WHERE)
-  from gcp_cset_links_v2.article_links_nested
+  from (select distinct merged_id from literature.sources) as sources
   -- Take the IDs of all their neighbors (at this point any
   -- pubs not in the citation graph drop out)
   inner join neighbors using(merged_id)
@@ -32,7 +32,7 @@ neighbor_scores as (
     on neighbor_scores.merged_id = neighbors.neighbor_id
   -- We exclude papers that already have scores
   left join {{staging_dataset}}.en_zh_scores
-    on en_zh_scores.merged_id = article_links_nested.merged_id
+    on en_zh_scores.merged_id = sources.merged_id
   -- The more readable 'where not in (subquery)' approach gives an OOM
   -- error, so we do left join + where
   where

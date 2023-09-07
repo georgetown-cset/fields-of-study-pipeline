@@ -25,4 +25,4 @@ select
 from
   merged
 where
-  merged_id in (select merged_id from gcp_cset_links_v2.article_links)
+  merged_id in (select merged_id from literature.sources)
