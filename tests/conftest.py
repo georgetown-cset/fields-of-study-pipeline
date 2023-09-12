@@ -15,7 +15,7 @@ from fos.model import FieldModel
 from fos.settings import CORPUS_DIR, ASSETS_DIR
 from fos.util import read_go_output, run
 
-TEST_ASSETS_DIR = Path(__file__).parent / 'assets'
+TEST_ASSETS_DIR = Path(__file__).parent.absolute() / 'assets'
 
 
 @pytest.fixture
