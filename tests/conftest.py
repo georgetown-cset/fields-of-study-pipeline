@@ -86,7 +86,7 @@ def _score(texts, model):
 @pytest.fixture
 def en_go_scores():
     Path('/tmp/fos.tsv').unlink(missing_ok=True)
-    run(f"go/fields score -i tests/assets/texts.jsonl -o /tmp/fos.tsv", shell=True, check=True)
+    run(f"go/fields score -i {TEST_ASSETS_DIR}/texts.jsonl -o /tmp/fos.tsv", shell=True, check=True)
     scores = read_go_output("/tmp/fos.tsv")
     return scores
 
