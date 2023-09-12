@@ -83,7 +83,7 @@ def read_go_output(path):
     with open(path, 'rt') as f:
         for line in f:
             record = json.loads(line)
-            output[record['merged_id']] = {x['ix']: x['score'] for x in record['fields']}
+            output[record['merged_id']] = {x['id']: x['score'] for x in record['fields']}
     return output
 
 
