@@ -76,20 +76,14 @@ def read_output(path):
 def read_go_output(path):
     """Read output from the Go implementation.
 
-    Output is a TSV with doc IDs in the first column and field scores in the rest. A header row gives the field IDs.
-    If --all was passed, a second column named `score` indicates which scores the row gives: fastText, entity, tfidf, or
-    field/average.
+    Output is a JSONL with doc IDs in key 'merged_id' field scores as {"id": str, "score": float} dicts.
+    Nested under key 'fields'.
     """
     output = {}
     with open(path, 'rt') as f:
-        reader = csv.DictReader(f, delimiter='\t')
-        for row in reader:
-            merged_id = row.pop('merged_id')
-            if 'score' in row:
-                method = row.pop('score')
-                output[(merged_id, method)] = {int(k): float(v) for k, v in row.items()}
-            else:
-                output[merged_id] = {int(k): float(v) for k, v in row.items()}
+        for line in f:
+            record = json.loads(line)
+            output[record['merged_id']] = {x['ix']: x['score'] for x in record['fields']}
     return output
 
 

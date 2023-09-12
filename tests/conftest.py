@@ -16,6 +16,7 @@ from fos.settings import CORPUS_DIR, ASSETS_DIR
 from fos.util import read_go_output, run
 
 TEST_ASSETS_DIR = Path(__file__).parent.absolute() / 'assets'
+TEMP_GO_OUTPUT_PATH = Path("/tmp/fos.jsonl")
 
 
 @pytest.fixture
@@ -85,9 +86,9 @@ def _score(texts, model):
 
 @pytest.fixture
 def en_go_scores():
-    Path('/tmp/fos.tsv').unlink(missing_ok=True)
-    run(f"go/fields score -i {TEST_ASSETS_DIR}/texts.jsonl -o /tmp/fos.tsv", shell=True, check=True)
-    scores = read_go_output("/tmp/fos.tsv")
+    TEMP_GO_OUTPUT_PATH.unlink(missing_ok=True)
+    run(f"go/fields score -i {TEST_ASSETS_DIR}/texts.jsonl -o {TEMP_GO_OUTPUT_PATH}", shell=True, check=True)
+    scores = read_go_output(TEMP_GO_OUTPUT_PATH)
     return scores
 
 
