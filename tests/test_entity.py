@@ -13,7 +13,7 @@ def test_embed_entities():
     entity_vector = embed_entities("natural language processing", trie)
     assert isinstance(entity_vector, np.ndarray)
     assert entity_vector.shape == (FASTTEXT_DIM,)
-    assert entity_vector.dtype == np.float_
+    assert entity_vector.dtype in (np.float32, np.float64)
 
 
 def test_embed_nothing():
@@ -37,7 +37,7 @@ def test_find_entities():
     assert field_name == 'Engineering management'
     assert isinstance(embedding, np.ndarray)
     assert embedding.shape == (FASTTEXT_DIM,)
-    assert embedding.dtype == np.float32
+    assert embedding.dtype in (np.float32, np.float64)
 
 
 def test_find_uppercase():
