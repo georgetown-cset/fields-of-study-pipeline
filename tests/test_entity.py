@@ -13,8 +13,7 @@ def test_embed_entities():
     entity_vector = embed_entities("natural language processing", trie)
     assert isinstance(entity_vector, np.ndarray)
     assert entity_vector.shape == (FASTTEXT_DIM,)
-    assert entity_vector.dtype in (np.float32, np.float64)
-
+    assert entity_vector.dtype in (np.dtype('float32'), np.dtype('float64'))
 
 def test_embed_nothing():
     # If there are no entities mentioned in the text, we return a zeroed array
@@ -22,7 +21,7 @@ def test_embed_nothing():
     result = embed_entities("", trie)
     assert isinstance(result, np.ndarray)
     assert result.shape == (FASTTEXT_DIM,)
-    assert result.dtype == np.float_
+    assert result.dtype in (np.dtype('float32'), np.dtype('float64'))
     assert (result == np.float32(0)).all() or (result == np.float64(0)).all()
 
 
@@ -37,7 +36,7 @@ def test_find_entities():
     assert field_name == 'Engineering management'
     assert isinstance(embedding, np.ndarray)
     assert embedding.shape == (FASTTEXT_DIM,)
-    assert embedding.dtype in (np.float32, np.float64)
+    assert embedding.dtype in (np.dtype('float32'), np.dtype('float64'))
 
 
 def test_find_uppercase():
