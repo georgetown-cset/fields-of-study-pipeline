@@ -47,11 +47,3 @@ def test_serialize_embedding():
     assert len(from_disk['entity']) == 250 and all([x == 0.0 for x in from_disk['entity']])
     assert from_disk['tfidf'] == []
     assert from_disk['foo'] == 'bar'
-
-
-def test_create_similarity():
-    raise NotImplementedError
-
-
-def test_average_similarity():
-    raise NotImplementedError
