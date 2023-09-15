@@ -3,9 +3,9 @@
 with in_lang_ids as (
   select
     merged_id,
-  from gcp_cset_links_v2.all_metadata_with_cld2_lid
+  from staging_literature.all_metadata_with_cld2_lid
   -- Get merged_id
-  inner join gcp_cset_links_v2.article_links on article_links.orig_id = all_metadata_with_cld2_lid.id
+  inner join literature.sources on literature.orig_id = all_metadata_with_cld2_lid.id
   where
   -- This just shrinks the results a bit (to publications with en/zh titles or abstracts)
   (
