@@ -49,9 +49,3 @@ def test_serialize_embedding():
     assert from_disk['foo'] == 'bar'
 
 
-def test_create_similarity():
-    raise NotImplementedError
-
-
-def test_average_similarity():
-    raise NotImplementedError
