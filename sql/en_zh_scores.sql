@@ -5,7 +5,7 @@ with in_lang_ids as (
     merged_id,
   from staging_literature.all_metadata_with_cld2_lid
   -- Get merged_id
-  inner join literature.sources on literature.orig_id = all_metadata_with_cld2_lid.id
+  inner join literature.sources on sources.orig_id = all_metadata_with_cld2_lid.id
   where
   -- This just shrinks the results a bit (to publications with en/zh titles or abstracts)
   (
