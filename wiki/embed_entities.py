@@ -20,7 +20,7 @@ from fos.vectors import load_field_fasttext, load_field_keys
 
 VECTOR_DIM = 250
 
-db = dataset.connect('sqlite:///data/wiki.db')
+db = dataset.connect('sqlite:///wiki/data/wiki.db')
 table = db['pages']
 
 
@@ -44,12 +44,12 @@ def main(lang='en', exclude_self_mentions=False):
     for field in table:
         field_id = field['id']
         text = field[f'{lang}_text']
-        title = field[f'{lang}_title']
+        titles = [field[f'en_title_{i}'] for i in range(1, 4)]
         entity_vector = np.zeros((VECTOR_DIM,), dtype=np.float32)
 
         # In English at L2+ and in Chinese starting with some fields in L1, we don't always have field text; these
         # entity embeddings will be zeroed
-        if title is None:
+        if titles[0] is None and titles[1] is None and titles[2] is None:
             print(f'No {lang} page for {field["display_name"]}')
             entity_vectors[field_id] = entity_vector
             continue
@@ -58,19 +58,28 @@ def main(lang='en', exclude_self_mentions=False):
             entity_vectors[field_id] = entity_vector
             continue
         # If we have a page title and text, we'll include the vector in the automaton
-        id_to_title[field_id] = title
+        # we can't include all our titles in the automaton so we're going to have to settle for just dropping
+        # secondary and tertiary titles here and hoping it doesn't break our embeddings too much
+        # TODO: determine if this is a problem
+        id_to_title[field_id] = titles[0] if titles[0] is not None \
+            else titles[1] if titles[1] is not None else titles[2]
 
         # Count how many times each entity is mentioned using the automaton created above
         entities = Counter([v for k, v in find_keywords(text.lower(), field_matcher)])
         for mention, count in entities.items():
-            if mention == title.lower() and exclude_self_mentions:
+            if (mention == titles[0].lower() or (titles[1] and mention == titles[1].lower())
+                or (titles[2] and mention == titles[2].lower())) and exclude_self_mentions:
                 # In text for a given field, that field tends to receive a lot of mentions. It isn't yet clear whether
                 # the MAG team used the corresponding vectors in the entity vector, or excluded them, making the entity
                 # embedding a representation of all *other* entity mentions. I believe they're included based on best
                 # understanding of the motivation for the entity vectors.
                 continue
             # Get the field ID for the mentioned entity, so we can slice the field vectors in the right place
-            mention_id = table.find_one(**{f'{lang}_title': mention})['id']
+            statement = f'''SELECT id from pages  where lower(en_title_1) = "{mention.lower()}" 
+            or lower(en_title_2) = "{mention.lower()}" or lower(en_title_3) = "{mention.lower()}" LIMIT 1'''
+            mention_id = None
+            for row in db.query(statement):
+                mention_id = row["id"]
             # Here `field_index == mention_id` gives us the single vector that corresponds to the mentioned field ID
             for _ in range(count):
                 # We weight the vector by mention count. This is an IndexError if we don't find `mention_id` in
@@ -98,7 +107,7 @@ def create_field_matcher(lang='en'):
     publication text. Unlike the final entity matcher, this automaton doesn't have any useful values. We're just using
     it to find mentions.
     """
-    fields = [field[f'{lang}_title'] for field in table]
+    fields = set([field[f'en_title_{i}'] for i in range(1, 4) for field in table if field[f'en_title_{i}']])
     return create_automaton({field.lower(): field for field in fields if field is not None})
 
 
@@ -113,8 +122,8 @@ def write_entity_matcher(entity_vectors, id_to_title, lang):
     })
     if lang == 'en':
         output_path = EN_ENTITY_PATH
-    elif lang == 'zh':
-        output_path = ZH_ENTITY_PATH
+    # elif lang == 'zh':
+    #     output_path = ZH_ENTITY_PATH
     else:
         raise ValueError(lang)
     with open(output_path, 'wb') as f:
@@ -130,8 +139,8 @@ def write_entity_similarity(entity_vectors, field_index, lang):
     entity_similarity = MatrixSimilarity(indexed_vectors, num_features=VECTOR_DIM, dtype=np.float32)
     if lang == 'en':
         output_path = EN_FIELD_ENTITY_PATH
-    elif lang == 'zh':
-        output_path = ZH_FIELD_ENTITY_PATH
+    # elif lang == 'zh':
+    #     output_path = ZH_FIELD_ENTITY_PATH
     else:
         raise ValueError(lang)
     with open(output_path, 'wb') as f:
@@ -141,7 +150,7 @@ def write_entity_similarity(entity_vectors, field_index, lang):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--lang', default='en', choices=('en', 'zh'), help='Language')
+    parser.add_argument('--lang', default='en', help='Language')
     parser.add_argument('--exclude_self_mentions', action='store_true', help='See comments')
     args = parser.parse_args()
     main(lang=args.lang, exclude_self_mentions=args.exclude_self_mentions)

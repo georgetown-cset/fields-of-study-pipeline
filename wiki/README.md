@@ -4,6 +4,8 @@
 
 ### 0. `read_field_meta.py`
 
+*Note*: this file has not been updated or rerun between the old version of fields of study and the new version, unlike all the following files.
+
 First we identify the fields we'll be looking for.
 
 We read MAG's field metadata and write out a TSV that contains the key identifiers from MAG (integer field ID, display 
@@ -32,27 +34,35 @@ Output: `data/fields.tsv`, which looks like
 | .......... |     . | ............ | ............    | ............ |
 | .......... |     . | ............ | ............    | ............ |
 
-### 1. `fetch_page_titles.py`
+### 1. `edit_field_meta.py`
+
+*Note*: This is a new file for the new version of fields of study, added to insert in new custom fields rather than relying on the ones in MAG.
+
+Here, we modify our fields list to include our custom fields for levels 2 and 3, and replace any fields in lower levels that we're using instead of the original MAG fields. We also modify our field hierarchy, which we'll use later in the process when we're actually sharing our final fields, but which we want to make sure is accurate now.
+
+The important things are to make sure that we correctly replace fields in level 0 or 1 that we're modifying from MAG, and that we include all needed information about our fields for later analysis.
+
+Process:
+
+First, place your custom levels2and3.tsv document in wiki/data.
+
+```shell
+python edit_field_meta.py
+```
+
+### 2. `fetch_page_titles.py`
 
 Next we find Wiki page titles for as many fields as possible.
 
 Given the English Wikipedia page title for a field (if known) or otherwise the field name in English, we hit the 
 Mediawiki API asking for metadata on any such page in English Wikipedia. Specifically, we request its `langlinks`
 property, which describes corresponding pages in other languages/Wikipedias. (In the browser, these are the language 
-links on the bottom of the left-hand nav.) This maps English-language fields to Chinese-language fields.
+links on the bottom of the left-hand nav.)
 
-There are a few possible outcomes:
-
-1. We look up an English page whose name matches that of a field like "statistical lempel-viz" but it doesn't exist
-   (maybe it once did; maybe not). We fall back to searching Wikipedia for this term (in a second API request), in case
+In the case we don't find the actual page, we instead fall back to searching Wikipedia for this term (in a second API request), in case
    there's a near match. We write that field-to-page mapping to `data/search.tsv` for manual review.
-2. We find the desired English page but the `langlinks` property doesn't include a link to a corresponding page on 
-   Chinese Wikipedia. We write out just the English page name and ID, along with the MAG metadata, to 
-   `data/field_pages.json`.
-3. We find the desired English page and a linked Chinese page. We write out each page name and page ID, along with the 
-   MAG metadata, to `data/field_pages.json`.
 
-Input: field metadata from previous step in `data/fields.tsv`.
+Input: field metadata from previous step in `data/all_fields.tsv`.
 
 Process:
 ```shell
@@ -80,7 +90,7 @@ If any new successful searches were added to `data/manual_page_titles.tsv`, re-r
 
 Output: `data/field_pages.json`, `data/search.tsv`, `data/not_found.txt`.
 
-### 2. `describe_page_titles.py`
+### 3. `describe_page_titles.py`
 
 We run this script to summarize and validate the results of the previous step.
 
@@ -90,30 +100,19 @@ python describe_page_titles.py
 
 Example output:
 ```shell
-# 7 pages missing from output:
-# id
-# 2985900164                Spatial behavior
-# 2984324743             Interactive control
-# 2987823439             Differential method
-# 2986150514                     Self repair
-# 2985904603            Information networks
-# 2987955292    Sudden infant death syndrome
-# 2987264701                  Peer influence
-# Name: wiki_title, dtype: object
+# 0 pages missing from output:
+# Series([], Name: wiki_title_1, dtype: object)
 # 
-# Coverage by level (n ZH, n EN):
-#               zh_title
-# level                 
-# 0             (19, 19)
-# 1           (277, 292)
-# 2      (23123, 137289)
+# Coverage by level (n second titles, n primary EN titles):
+#       en_title_2
+# level           
+# 0        (0, 19)
+# 1       (0, 278)
+# 2       (3, 104)
+# 3       (1, 704)
 ```
 
 Ideally all the fields in the input would also appear in the output, but this may not be true.
-We also expect far less coverage of fields in Chinese Wikipedia than in English Wikipedia, but want to check how much.
-In the above output, it looks good in levels 0-1 and much worse at level 2. 
-The distribution of coverage could matter---conceivably the pages that don't appear in Chinese Wikipedia correspond with 
-level-2 fields we aren't interested in (e.g., non-STEM).
 
 ### 4. `fetch_page_content.py`
 
@@ -132,16 +131,33 @@ python fetch_page_content.py
 
 Outputs: `data/wiki.db`.
 
-### 5. `write_field_text.py`
+### 5. `extract_text.py`
 
 Next we get the text content for each field ready for embedding.
 
 Inputs: `data/wiki.db`.
-Outputs: `data/field_content.json` and `data/field_text.tsv`.
 
-### 5. `embed_field_text.py`
+### 6. `fetch_reference_text.py`
 
-Last step! We embed the text for each field.
+Here, using the text content extracted, we find the reference text from each field and add it in.
+
+Inputs: `data/wiki.db`.
+
+*Note*: This program currently have to be run from one level higher than the previous programs, e.g. not from the wiki directory, as follows:
+
+`python -m wiki.fetch_reference_text`
+
+This is because it relies on the `fos` module.
+
+### 7. `describe_text_coverage.py`
+
+We use this program to ensure our text coverage is good and consistent. Example output is below:
+
+```There are 1076 records in the refs table, and of those, 941 have at least one reference.```
+
+### 7. `embed_field_text.py`
+
+We next embed the text for each field.
 The paths below assume the `field-of-study-pipelines` repo can be found in the parent of this project's directory. 
 
 English:
@@ -154,16 +170,10 @@ python embed_field_text.py \
   --lang=en
 ```
 
+*Note*: This program currently have to be run from one level higher than the previous programs, e.g. not from the wiki directory, as follows:
+
+`python -m wiki.embed_field_text`
+
+This is because it relies on the `fos` module.
+
 Outputs: `en_field_fasttext.npz` and `en_field_tfidf.npz`.
-
-For Chinese,
-
-```shell
-python embed_field_text.py \
-  ../field-of-study-pipelines/assets/scientific-lit-embeddings/chinese/fasttext/zh_merged_model_011322.bin \
-  ../field-of-study-pipelines/assets/scientific-lit-embeddings/chinese/tfidfs/tfidf_model_zh_sample_011222.pkl \
-  ../field-of-study-pipelines/assets/scientific-lit-embeddings/chinese/tfidfs/id2word_dict_zh_sample_011222.txt \
-  --lang=zh
-```
-
-Outputs: `zh_field_fasttext.npz` and `zh_field_tfidf.npz`.

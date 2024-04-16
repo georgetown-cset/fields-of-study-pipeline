@@ -2,11 +2,12 @@
 with matches as (
   select
     refs.id,
-    meta.id as orig_id,
+    works.id as orig_id,
   from field_model_replication.wiki_references_temp refs
-    -- We get the DOIs associated with publications here
-  left join staging_literature.all_metadata_norm meta on meta.clean_doi = refs.id_value
-  where id_type = 'doi'
+    -- We get the PMIDs associated with publications here
+    -- Note that openalex prepends a long url that we have to remove with substring
+  left join openalex.works on "PMC" || substring(works.ids.pmcid, 43) = refs.id_value
+  where id_type = 'pmc'
 )
 select
   DISTINCT
