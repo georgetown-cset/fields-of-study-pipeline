@@ -4,8 +4,9 @@
 import math
 import pickle
 from pathlib import Path
-from typing import Tuple, List
+from typing import Tuple, List, Iterable
 
+import numpy as np
 from fasttext.FastText import _FastText
 from gensim import matutils
 from gensim.corpora import Dictionary
@@ -23,7 +24,7 @@ def embed_fasttext(text, model):
     vector = model.get_sentence_vector(text)
     if not len(vector):
         return []
-    return vector
+    return norm(vector)
 
 
 def embed_tfidf(text: List, tfidf: TfIdfTransformer, dictionary):
@@ -130,3 +131,21 @@ def sparse_norm(vector):
         return [(term_id, x / length) for term_id, x in vector]
     else:
         return list(vector)
+
+
+def norm_sum(vectors: Iterable[np.ndarray]) -> np.ndarray:
+    vector = np.sum(vectors, axis=0)
+    return norm(vector)
+
+
+def norm(vector: np.ndarray) -> np.ndarray:
+    l2_norm = np.linalg.norm(vector, 2)
+    if l2_norm == 0:
+        return vector
+    return vector / l2_norm
+
+
+def convert_vector(v):
+    if v is None:
+        return None
+    return np.array(v, dtype=np.float32)

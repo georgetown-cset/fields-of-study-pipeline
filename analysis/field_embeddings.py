@@ -4,8 +4,8 @@ Visualize field embeddings.
 import os
 from pathlib import Path
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import seaborn as sns
 from adjustText import adjust_text
@@ -13,7 +13,7 @@ from matplotlib import font_manager
 from sklearn.manifold import TSNE
 from sklearn.metrics.pairwise import cosine_similarity
 
-from fos.vectors import load_field_fasttext, load_field_keys
+from fos.vectors import load_field_fasttext, load_field_keys, load_field_entities
 
 FIG_DIR = 'field_embeddings'
 L0_FIELDS = {
@@ -26,11 +26,8 @@ FONT_PATH = 'fonts/NunitoSans-Black.ttf'
 FONT_NAME = 'Nunito Sans'
 FILE_TYPE = 'png'
 
-def main(lang='en'):
-    # Load the matrix of field FastText vectors
-    # The field vectors form a matrix with {field count} rows and {FastText dimensionality} columns.
-    vectors = load_field_fasttext(lang).index
 
+def main(vectors, lang='en'):
     # Load the row order as indicated by field IDs
     keys = load_field_keys(lang)
 
@@ -62,7 +59,10 @@ def main(lang='en'):
     # Plot L0 embeddings in 2d
     plot_l0_scatter(tsne_df, lang)
     # For each L0, plot the 2d coords of its L1 children
-    plot_l1_scatter(tsne_df, parents, lang)
+    # plot_l1_scatter(tsne_df, parents, lang)
+
+    # For each L0, plot the 2d coords of its L1 children WITH THE PARENT        
+    plot_l1_scatter(tsne_df, parents, lang, plot_parent=True)
 
     # Plot the cosine similarities of the L0 embeddings as a heatmap
     plot_l0_heatmap(vectors, attrs, lang)
@@ -91,7 +91,8 @@ def fit_tsne(vectors, keys, attrs):
     tsne_df = pd.DataFrame(tsne_coords)
     tsne_df.rename(columns={0: 'x', 1: 'y'}, inplace=True)
     tsne_df.index = keys
-    assert tsne_df.shape[0] == attrs.shape[0]
+    assert not tsne_df.index.duplicated().any()
+    assert not attrs.index.duplicated().any()
     tsne_df = tsne_df.merge(attrs, left_index=True, right_index=True, how='inner')
     return tsne_df
 
@@ -107,14 +108,39 @@ def load_fonts():
     return font_props
 
 
-def plot_tsne(tsne_df):
-    sns.set_theme('notebook', 'white', rc={"figure.figsize": (4, 4)})
+def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, size=20, **kw):
+    """
+    PARAMETERS
+    parent_tsne = parent df values or None if there's no parent point
 
-    plt.figure(figsize=(8, 8))
+    Modify the input tsne_df
+    """
+    tsne_df = tsne_df.copy()
+
+    sns.set_theme('notebook', 'white')
+
+    plt.figure(figsize=(size, size))
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = FONT_NAME
 
-    scatter = sns.scatterplot(x='x', y='y', data=tsne_df, s=25, legend=False)
+    tsne_df['relationship'] = 'Child'
+    tsne_df['text_color'] = 'blue'
+
+    # plot parent point
+    if parent_tsne is not None:
+        parent_tsne = parent_tsne.copy()
+        parent_tsne['relationship'] = 'Parent'
+        parent_tsne['text_color'] = 'red'
+        tsne_df = pd.concat([tsne_df, parent_tsne], ignore_index=True)
+
+    if neighbors_tsne is not None:
+        neighbors_tsne = neighbors_tsne.copy()
+        neighbors_tsne['relationship'] = 'Neighbor'
+        neighbors_tsne['text_color'] = 'green'
+        tsne_df = pd.concat([tsne_df, neighbors_tsne], ignore_index=True)
+
+    scatter = sns.scatterplot(x='x', y='y', data=tsne_df, s=25, hue='relationship', legend=False, **kw)
+
     scatter.set_xlabel('t-SNE x')
     scatter.set_ylabel('t-SNE y')
     texts = []
@@ -123,28 +149,37 @@ def plot_tsne(tsne_df):
                             tsne_df.y[i],
                             tsne_df['display_name'][i],
                             horizontalalignment='left',
-                            color='black')
+                            color=tsne_df['text_color'][i])
         texts.append(text)
+
     adjust_text(texts, arrowprops=dict(arrowstyle="-", color='gray', lw=1))
     return scatter
 
 
-def plot_l0_scatter(tsne_df, lang: str):
+def plot_l0_scatter(tsne_df, lang: str, **kw):
     # Plot level-0 fields
     set_scale(1.25)
-    plot_tsne(tsne_df.query('level == 0'))
+    plot_tsne(tsne_df.query('level == 0'), **kw)
     set_title(f'Level-0 Field Embeddings ({lang.upper()})')
     save(f'{lang}-scatter-level-0.{FILE_TYPE}')
 
 
-def plot_l1_scatter(tsne_df, parents, lang):
+def plot_l1_scatter(tsne_df, parents, lang, plot_parent=False, **kw):
     # Plot level 1 child fields of each parent
+    # set plot_parent = True to plot the parent point on the graph
     set_scale(1)
     for parent_name, children in parents.groupby('parent_name'):
         child_tsne = tsne_df.loc[children['child_id']]
-        plot_tsne(child_tsne)
         set_title(f'{parent_name}: Level-1 Field Embeddings ({lang.upper()})')
-        save(f'{lang}-scatter-level-1-{parent_name}.{FILE_TYPE}')
+
+        if plot_parent:
+            parent_tsne = tsne_df.query(f'level == 0 & display_name == "{parent_name}"')
+            outfilename = f'{lang}-scatter-parent-level-1-{parent_name}.{FILE_TYPE}'
+        else:
+            parent_tsne = None
+            outfilename = f'{lang}-scatter-level-1-{parent_name}.{FILE_TYPE}'
+        plot_tsne(child_tsne, parent_tsne=parent_tsne, **kw)
+        save(outfilename)
 
 
 def sim_table(vectors, attrs, mask):
@@ -159,7 +194,7 @@ def sim_table(vectors, attrs, mask):
 
 def plot_heatmap(sim_df, annot=True):
     # Plot a heatmap of similarities
-    f, ax = plt.subplots(figsize=(10, 10))
+    f, ax = plt.subplots(figsize=(20, 20))
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = FONT_NAME
     sns.heatmap(sim_df,
@@ -228,4 +263,13 @@ def save(name):
 
 if __name__ == '__main__':
     for lang in ['zh', 'en']:
-        main(lang)
+        # Load the matrix of field vectors
+        # The field vectors form a matrix with {field count} rows and {FastText dimensionality} columns.
+        FIG_DIR = 'field_embeddings/fasttext'
+        ft_vectors = load_field_fasttext(lang).index
+        main(ft_vectors, lang)
+
+        # Same for entities
+        FIG_DIR = 'field_embeddings/entity'
+        entity_vectors = load_field_entities(lang).index
+        main(entity_vectors, lang)

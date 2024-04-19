@@ -5,9 +5,8 @@ from typing import List, Tuple, Optional
 import numpy as np
 
 from fos.entity import load_entities, embed_entities
-from fos.util import convert_vector
 from fos.vectors import load_tfidf, load_fasttext, load_field_fasttext, load_field_tfidf, load_field_keys, \
-    embed_fasttext, embed_tfidf, load_field_entities, sparse_similarity
+    embed_fasttext, embed_tfidf, load_field_entities, sparse_similarity, convert_vector
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -120,3 +119,15 @@ class FieldModel(object):
         else:
             entity = None
         return Similarity(fasttext=fasttext, tfidf=tfidf, entity=entity)
+
+    def run(self, text, dict_output=True):
+        embedding = self.embed(text)
+        similarities = self.score(embedding)
+        scores = similarities.average()
+        return self.label(scores, dict_output=dict_output)
+
+    def label(self, scores, dict_output=True):
+        assert len(scores) == len(self.index), (len(scores), len(self.index))
+        if dict_output:
+            return {int(k): x for k, x in zip(self.index, scores)}
+        return [{"id": int(k), "score": x} for k, x in zip(self.index, scores)]

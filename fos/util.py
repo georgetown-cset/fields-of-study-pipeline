@@ -1,14 +1,16 @@
+import csv
 import gzip
 import json
 import re
 import string
+import subprocess
 import unicodedata
+from functools import partial
 from pathlib import Path
-from typing import Iterable
 
-import numpy as np
+import pandas as pd
 
-from fos.settings import CORPUS_DIR
+from fos.settings import CORPUS_DIR, PIPELINES_DIR
 
 # We want to replace these whitespace characters with spaces
 # fasttext expects newlines to represent document breaks, so they can't appear in the input to get_sentence_vector()
@@ -22,19 +24,6 @@ TO_CLEAN_LOWER = str.maketrans(string.ascii_uppercase + WS,
 # We'll remove lone numbers ('11' but not 'X11')
 LONE_NUMBERS = re.compile(r'\b\d+\b')
 NONBREAKING_SPACE = re.compile(r"[^\S\n\v]+")
-
-
-def test_replace():
-    assert 'QUICK BROWN FOX?'.translate(TO_CLEAN_LOWER) == 'quick brown fox'
-    assert 'A 0e!"#$%&\'()*+,\-./:;<=>?@[\\\]^_`{|}~]'.translate(TO_CLEAN_LOWER) == 'a 0e'
-    assert '产业组织理论'.translate(TO_CLEAN_LOWER) == '产业组织理论'
-    assert '\r\n'.translate(TO_CLEAN_LOWER) == '  '
-    assert LONE_NUMBERS.sub('', 'X11 11') == 'X11 '
-
-
-def test_preprocess():
-    assert preprocess(' QUICK BROWN FOX?', 'en') == 'quick brown fox'
-    assert preprocess('产业组织理论', 'zh') == '产业组织理论'
 
 
 def preprocess(text, lang='en'):
@@ -54,20 +43,6 @@ def preprocess(text, lang='en'):
     return text.strip()
 
 
-def norm_sum(vectors: Iterable[np.ndarray]) -> np.ndarray:
-    vector = np.sum(vectors, axis=0)
-    l2_norm = np.linalg.norm(vector, 2, axis=0)
-    if l2_norm == 0:
-        return vector
-    return vector / l2_norm
-
-
-def convert_vector(v):
-    if v is None:
-        return None
-    return np.array(v, dtype=np.float32)
-
-
 def iter_bq_extract(prefix, corpus_dir=CORPUS_DIR):
     files = list(Path(corpus_dir).glob(f'{prefix}*.jsonl.gz'))
     assert files
@@ -77,3 +52,39 @@ def iter_bq_extract(prefix, corpus_dir=CORPUS_DIR):
                 if not line:
                     continue
                 yield json.loads(line)
+
+
+def preprocess_text(record, lang="en"):
+    text = ""
+    if "title" in record and not pd.isnull(record["title"]):
+        text += record["title"] + " "
+    if "abstract" in record and not pd.isnull(record["abstract"]):
+        text += record["abstract"]
+    return preprocess(text, lang)
+
+
+def read_output(path):
+    """Read scoring output from JSONL."""
+    output = {}
+    with open(path, 'rt') as f:
+        for line in f:
+            record = json.loads(line)
+            output[record['merged_id']] = record
+    return output
+
+
+def read_go_output(path):
+    """Read output from the Go implementation.
+
+    Output is a JSONL with doc IDs in key 'merged_id' field scores as {"id": str, "score": float} dicts.
+    Nested under key 'fields'.
+    """
+    output = {}
+    with open(path, 'rt') as f:
+        for line in f:
+            record = json.loads(line)
+            output[record['merged_id']] = {x['id']: x['score'] for x in record['fields']}
+    return output
+
+
+run = partial(subprocess.run, cwd=str(PIPELINES_DIR), capture_output=True, text=True)

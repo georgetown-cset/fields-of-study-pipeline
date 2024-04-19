@@ -6,3 +6,9 @@
 /zh_field_entity_similarity.pkl
 /zh_field_vectors.pkl
 /zh_field_tfidf_similarity.pkl
+/en_tfidf.pkl
+/zh_tfidf.pkl
+/en_field_tfidf_vectors.json
+/zh_field_tfidf_vectors.json
+/en_fasttext.bin
+/zh_fasttext.bin
