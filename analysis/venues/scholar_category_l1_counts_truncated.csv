@@ -1,0 +1,51 @@
+scholar_cat,l1_k1,n,prop
+bio_agronomycropscience,Botany,82,0.30597014925373134
+bio_agronomycropscience,Biochemistry,22,0.08208955223880597
+bio_agronomycropscience,Composite material,16,0.05970149253731343
+bio_agronomycropscience,Genetics,16,0.05970149253731343
+bio_agronomycropscience,Nuclear chemistry,14,0.05223880597014925
+bio_biotechnology,Biochemistry,82,0.15413533834586465
+bio_biotechnology,Waste management,50,0.09398496240601503
+bio_biotechnology,Cell biology,30,0.05639097744360902
+bio_biotechnology,Molecular biology,26,0.04887218045112782
+bio_biotechnology,Geochemistry,25,0.046992481203007516
+eng_artificialintelligence,Machine learning,117,0.1956521739130435
+eng_artificialintelligence,Mathematical optimization,59,0.09866220735785954
+eng_artificialintelligence,Control theory,46,0.07692307692307693
+eng_artificialintelligence,Pattern recognition,44,0.07357859531772576
+eng_artificialintelligence,Computer network,38,0.06354515050167224
+eng_computationallinguistics,Speech recognition,261,0.2652439024390244
+eng_computationallinguistics,Machine learning,133,0.13516260162601626
+eng_computationallinguistics,Natural language processing,116,0.11788617886178862
+eng_computationallinguistics,Linguistics,113,0.11483739837398374
+eng_computationallinguistics,Pattern recognition,50,0.0508130081300813
+eng_computerhardwaredesign,Control theory,124,0.1269191402251791
+eng_computerhardwaredesign,Computer architecture,86,0.08802456499488229
+eng_computerhardwaredesign,Telecommunications,86,0.08802456499488229
+eng_computerhardwaredesign,Parallel computing,80,0.08188331627430911
+eng_computerhardwaredesign,Electronic engineering,53,0.05424769703172978
+eng_computersecuritycryptography,Computer security,225,0.225
+eng_computersecuritycryptography,Computer network,105,0.105
+eng_computersecuritycryptography,Internet privacy,94,0.094
+eng_computersecuritycryptography,Algorithm,42,0.042
+eng_computersecuritycryptography,Machine learning,42,0.042
+eng_computervisionpatternrecognition,Pattern recognition,173,0.20400943396226415
+eng_computervisionpatternrecognition,Computer vision,147,0.1733490566037736
+eng_computervisionpatternrecognition,Machine learning,143,0.16863207547169812
+eng_computervisionpatternrecognition,Algorithm,39,0.045990566037735846
+eng_computervisionpatternrecognition,Mathematical optimization,38,0.04481132075471698
+eng_datamininganalysis,Machine learning,124,0.19405320813771518
+eng_datamininganalysis,Pattern recognition,63,0.09859154929577464
+eng_datamininganalysis,Data mining,53,0.08294209702660407
+eng_datamininganalysis,Algorithm,49,0.07668231611893583
+eng_datamininganalysis,Information retrieval,39,0.06103286384976526
+eng_libraryinformationscience,Social science,34,0.11333333333333333
+eng_libraryinformationscience,Library science,18,0.06
+eng_libraryinformationscience,Linguistics,13,0.043333333333333335
+eng_libraryinformationscience,Literature,11,0.03666666666666667
+eng_libraryinformationscience,Data science,9,0.03
+med_virology,Virology,157,0.36511627906976746
+med_virology,Immunology,62,0.14418604651162792
+med_virology,Cell biology,52,0.12093023255813953
+med_virology,Genetics,13,0.030232558139534883
+med_virology,Pediatrics,13,0.030232558139534883
