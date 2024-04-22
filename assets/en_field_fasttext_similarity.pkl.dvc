@@ -1,4 +1,4 @@
 outs:
-- md5: e2b287c7085d46c03b55fcdb2b433cb4
-  size: 311285
+- md5: 5a0bb55cd1fd21a612765fa4ad1e355f
+  size: 3712285
   path: en_field_fasttext_similarity.pkl
