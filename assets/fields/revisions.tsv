@@ -1,0 +1,907 @@
+parent_name	level	display_name	normalized_name	wiki_title	wiki_title_second	wiki_title_third
+computer science	1	Algorithms	algorithms	Analysis of algorithms		
+computer science	1	Artificial intelligence	artificial intelligence	Artificial intelligence		
+computer science	1	Computational science	computational science	Computational science		
+computer science	1	Computer architecture	computer architecture	Computer architecture		
+computer science	1	Computer graphics	computer graphics	Computer graphics (computer science)		
+computer science	1	Computer hardware	computer hardware	Computer hardware		
+computer science	1	Computer networks	computer networks	Computer network		
+computer science	1	Computer security	computer security	Computer security		
+computer science	1	Databases	databases	Database theory		
+computer science	1	Human–computer interaction	human–computer interaction	Human–computer interaction		
+computer science	1	Library science	library science	Library science		
+computer science	1	Operating systems	operating systems	Operating system		
+computer science	1	Programming languages	programming languages	Programming language theory		
+computer science	1	Computer simulation	computer simulation	Computer simulation		
+computer science	1	Software engineering	software engineering	Software engineering		
+computer science	1	Theoretical computer science	theoretical computer science	Theoretical computer science		
+computer science	1	High-performance computing	high-performance computing	High-performance computing		
+computer science	1	Quantum computing	quantum computing	Quantum computing		
+biology	1	Astrobiology	astrobiology	Astrobiology		
+biology	1	Biochemistry	biochemistry	Biochemistry		
+biology	1	Bioinformatics	bioinformatics	Bioinformatics		
+biology	1	Biophysics	biophysics	Biophysics		
+biology	1	Biotechnology	biotechnology	Biotechnology		
+biology	1	Botany	botany	Botany		
+biology	1	Cancer research	cancer research	Cancer research		
+biology	1	Cell biology	cell biology	Cell biology		
+biology	1	Computational biology	computational biology	Computational biology		
+biology	1	Ecology	ecology	Ecology		
+biology	1	Evolutionary biology	evolutionary biology	Evolutionary biology		
+biology	1	Genetics	genetics	Genetics		
+biology	1	Immunology	immunology	Immunology		
+biology	1	Microbiology	microbiology	Microbiology		
+biology	1	Molecular biology	molecular biology	Molecular biology		
+biology	1	Neuroscience	neuroscience	Neuroscience		
+biology	1	Paleontology	paleontology	Paleontology		
+biology	1	Pharmacology	pharmacology	Pharmacology		
+biology	1	Physiology	physiology	Physiology		
+biology	1	Toxicology	toxicology	Toxicology		
+biology	1	Virology	virology	Virology		
+biology	1	Cryobiology	cryobiology	Cryobiology		
+biology	1	Developmental biology	developmental biology	Developmental Biology		
+biology	1	Natural history	natural history	Natural history		
+biology	1	Parasitology	parasitology	Parasitology		
+biology	1	Photobiology	photobiology	Photobiology		
+biology	1	Radiobiology	radiobiology	Radiobiology		
+biology	1	Sociobiology	sociobiology	Sociobiology		
+biology	1	Synthetic biology	synthetic biology	Synthetic biology		
+biology	1	Systems biology	systems biology	Systems biology		
+biology	1	Zoology	zoology	Zoology		
+engineering	1	Semiconductors	semiconductors	Semiconductor		
+artificial intelligence	2	Computer vision	computer vision	Computer vision		
+artificial intelligence	2	Data mining	data mining	Data mining		
+artificial intelligence	2	Data science	data science	Data science		
+artificial intelligence	2	Information retrieval	information retrieval	Information retrieval		
+artificial intelligence	2	Knowledge management	knowledge management	Knowledge management		
+artificial intelligence	2	Machine learning	machine learning	Machine learning		
+artificial intelligence	2	Natural language processing	natural language processing	Natural language processing		
+artificial intelligence	2	Speech recognition	speech recognition	Speech recognition		
+artificial intelligence	2	Robotics	robotics	Robotics		
+artificial intelligence	2	Reinforcement learning	reinforcement learning	Reinforcement learning		
+artificial intelligence	2	Neuro-Symbolic AI	neuro-symbolic ai	Neuro-symbolic AI		
+artificial intelligence	2	Game Theory	game theory	Game theory		
+artificial intelligence	3	Agent architectures	agent architectures	Agent architecture		
+artificial intelligence	3	Bayesian learning mechanisms	bayesian learning mechanisms	Bayesian learning mechanisms		
+artificial intelligence	3	Bayesian inference	bayesian inference	Bayesian inference		
+artificial intelligence	3	Cognitive architectures	cognitive architectures	Cognitive architecture		
+artificial intelligence	3	Computational creativity	computational creativity	Computational creativity		
+artificial intelligence	3	Neural coding	neural coding	Neural coding		
+artificial intelligence	3	Adversarial machine learning	adversarial machine learning	Adversarial machine learning		
+artificial intelligence	3	Facial recognition	facial recognition	Facial recognition		
+artificial intelligence	3	Gesture recognition	gesture recognition	Gesture recognition		
+artificial intelligence	3	Pose tracking	pose tracking	Pose tracking		
+artificial intelligence	3	Computational photography	computational photography	Computational photography		
+artificial intelligence	3	Text-to-image-models	text-to-image-models	Text-to-image model		
+artificial intelligence	3	Synthetic media	synthetic media	Synthetic media		
+artificial intelligence	3	Image retrieval	image retrieval	Image retrieval		
+artificial intelligence	3	Program optimization	program optimization	Program optimization		
+artificial intelligence	3	Mathematical optimization	mathematical optimization	Mathematical optimization		
+artificial intelligence	3	Motion analysis	motion analysis	Motion analysis		
+artificial intelligence	3	Object detection	object detection	Object detection		
+artificial intelligence	3	Object categorization from image search	object categorization from image search	Object categorization from image search		
+artificial intelligence	3	Image segmentation	image segmentation	Image segmentation		
+artificial intelligence	3	Activity recognition	activity recognition	Activity recognition		
+artificial intelligence	3	Robotic sensing	robotic sensing	Robotic sensing		
+artificial intelligence	3	Self-driving cars	self-driving cars	Self-driving cars		
+artificial intelligence	3	Vehicular automation	vehicular automation	Vehicular automation		
+artificial intelligence	3	Constraint learning	constraint learning	Constraint learning		
+artificial intelligence	3	Distributed constraint optimization	distributed constraint optimization	Distributed constraint optimization		
+artificial intelligence	3	Discrete optimization	discrete optimization	Discrete optimization		
+artificial intelligence	3	Continuous optimization	continuous optimization	Continuous optimization		
+artificial intelligence	3	Satisfiability modulo theories	satisfiability modulo theories	Satisfiability modulo theories		
+artificial intelligence	3	Anomaly Detection	anomaly detection	Anomaly detection		
+artificial intelligence	3	Chatbots	chatbots	Chatbot		
+artificial intelligence	3	Dialogue systems	dialogue systems	Dialogue system		
+artificial intelligence	3	Recommender systems	recommender systems	Recommender system		
+artificial intelligence	3	Data stream mining	data stream mining	Data stream mining		
+artificial intelligence	3	Data and information visualization	data and information visualization	Data and information visualization		
+artificial intelligence	3	Structure mining	structure mining	Structure mining		
+artificial intelligence	3	Social network analysis	social network analysis	Social network analysis		
+artificial intelligence	3	Knowledge graphs	knowledge graphs	Knowledge graph		
+artificial intelligence	3	Knowledge bases	knowledge bases	Knowledge base		
+artificial intelligence	3	Collaborative filtering	collaborative filtering	Collaborative filtering		
+artificial intelligence	3	Information retrieval	information retrieval	Information retrieval		
+artificial intelligence	3	Auction theory	auction theory	Auction theory		
+artificial intelligence	3	Market systems	market systems	Market system		
+artificial intelligence	3	Behavioral game theory	behavioral game theory	Behavioral game theory		
+artificial intelligence	3	Computer simulation	computer simulation	Computer simulation		
+artificial intelligence	3	Cooperative game theory	cooperative game theory	Cooperative game theory		
+artificial intelligence	3	Economic equilibrium	economic equilibrium	Economic equilibrium		
+artificial intelligence	3	Fair division	fair division	Fair division		
+artificial intelligence	3	General game playing	general game playing	General game playing		
+artificial intelligence	3	Mechanism design	mechanism design	Mechanism design		
+artificial intelligence	3	Negotiation theory	negotiation theory	Negotiation theory		
+artificial intelligence	3	Social choice theory	social choice theory	Social choice theory		
+artificial intelligence	3	Voting behavior	voting behavior	Voting behavior		
+artificial intelligence	3	Human-based computation	human-based computation	Human-based computation		
+artificial intelligence	3	Crowdsourcing	crowdsourcing	Crowdsourcing		
+artificial intelligence	3	Human-based computation game	human-based computation game	Human-based computation game		
+artificial intelligence	3	Procedural generation	procedural generation	Procedural generation		
+artificial intelligence	3	Virtual humans	virtual humans	Virtual human		
+artificial intelligence	3	Human-agent teaming	human-agent teaming	Human-agent team		
+artificial intelligence	3	Human-computer interaction	human-computer interaction	Human-computer interaction		
+artificial intelligence	3	Intelligent user interfaces	intelligent user interfaces	Intelligent user interface		
+artificial intelligence	3	Preference learning	preference learning	Preference learning		
+artificial intelligence	3	Automated reasoning	automated reasoning	Automated reasoning		
+artificial intelligence	3	Automated theorem proving	automated theorem proving	Automated theorem proving		
+artificial intelligence	3	Case-Based reasoning	case-based reasoning	Case-based reasoning		
+artificial intelligence	3	Commonsense reasoning	commonsense reasoning	Commonsense reasoning		
+artificial intelligence	3	Description logic	description logic	Description logic		
+artificial intelligence	3	Diagnosis	diagnosis	Diagnosis (artificial intelligence)		
+artificial intelligence	3	Abductive reasoning	abductive reasoning	Abductive reasoning		
+artificial intelligence	3	Spatial-temporal reasoning	spatial-temporal reasoning	Spatial-temporal reasoning		
+artificial intelligence	3	Knowledge acquisition	knowledge acquisition	Knowledge acquisition		
+artificial intelligence	3	Knowledge engineering	knowledge engineering	Knowledge engineering		
+artificial intelligence	3	Knowledge representation and reasoning	knowledge representation and reasoning	Knowledge representation and reasoning		
+artificial intelligence	3	Ontology language	ontology language	Ontology language		
+artificial intelligence	3	Logic programming	logic programming	Logic programming		
+artificial intelligence	3	Nonmonotonic logic	nonmonotonic logic	Nonmonotonic logic		
+artificial intelligence	3	Qualitative reasoning	qualitative reasoning	Qualitative reasoning		
+artificial intelligence	3	Active learning	active learning	Active learning (machine learning)		
+artificial intelligence	3	Robustness	robustness	Robustness (computer science)		
+artificial intelligence	3	Bio-inspired computing	bio-inspired computing	Bio-inspired computing		
+artificial intelligence	3	Uncertainty quantification	uncertainty quantification	Uncertainty quantification		
+artificial intelligence	3	Statistical classification	statistical classification	Statistical classification		
+artificial intelligence	3	Regression analysis	regression analysis	Regression analysis		
+artificial intelligence	3	Cluster analysis	cluster analysis	Cluster analysis		
+artificial intelligence	3	Deep learning	deep learning	Deep learning		
+artificial intelligence	3	Neural networks	neural networks	Neural network		
+artificial intelligence	3	Statistical learning theory	statistical learning theory	Statistical learning theory		
+artificial intelligence	3	Dimensionality reduction	dimensionality reduction	Dimensionality reduction		
+artificial intelligence	3	Feature selection	feature selection	Feature selection		
+artificial intelligence	3	Distributed artificial intelligence	distributed artificial intelligence	Distributed artificial intelligence		
+artificial intelligence	3	Federated learning	federated learning	Federated learning		
+artificial intelligence	3	Ethics of Artificial Intelligence	ethics of artificial intelligence	Ethics of artificial intelligence		
+artificial intelligence	3	Algorithmic bias	algorithmic bias	Algorithmic bias		
+artificial intelligence	3	Fairness	fairness	Fairness (machine learning)		
+artificial intelligence	3	Ensemble learning	ensemble learning	Ensemble learning		
+artificial intelligence	3	Evolutionary computation	evolutionary computation	Evolutionary computation		
+artificial intelligence	3	Hyperparameter optimization	hyperparameter optimization	Hyperparameter optimization		
+artificial intelligence	3	AI alignment	ai alignment	AI alignment		
+artificial intelligence	3	Kernel methods	kernel methods	Kernel method		
+artificial intelligence	3	Learning to rank	learning to rank	Learning to rank		
+artificial intelligence	3	Multiclass classification	multiclass classification	Multiclass classification		
+artificial intelligence	3	Multi-label classification	multi-label classification	Multi-label classification		
+artificial intelligence	3	Multimodal learning	multimodal learning	Multimodal learning		
+artificial intelligence	3	Generative models	generative models	Generative model		
+artificial intelligence	3	Generative artificial intelligence	generative artificial intelligence	Generative artificial intelligence		
+artificial intelligence	3	Autoencoders	autoencoders	Autoencoders		
+artificial intelligence	3	Online machine learning	online machine learning	Online machine learning		
+artificial intelligence	3	Multi-armed bandits	multi-armed bandits	Multi-armed bandit		
+artificial intelligence	3	Graphical models	graphical models	Graphical model		
+artificial intelligence	3	Quantum machine learning	quantum machine learning	Quantum machine learning		
+artificial intelligence	3	Weak supervision	weak supervision	Weak supervision		
+artificial intelligence	3	Structured prediction	structured prediction	Structured prediction		
+artificial intelligence	3	Transfer learning	transfer learning	Transfer learning		
+artificial intelligence	3	Multi-task learning	multi-task learning	Multi-task learning		
+artificial intelligence	3	Meta-learning	meta-learning	Meta-learning (computer science)		
+artificial intelligence	3	Unsupervised learning	unsupervised learning	Unsupervised learning		
+artificial intelligence	3	Self-supervised learning	self-supervised learning	Self-supervised learning		
+artificial intelligence	3	Multi-agent systems	multi-agent systems	Multi-agent system		
+artificial intelligence	3	Agent-based social simulation	agent-based social simulation	Agent-based social simulation		
+artificial intelligence	3	Agent-based modeling	agent-based modeling	Agent-based modeling		
+artificial intelligence	3	Emergent algorithms	emergent algorithms	Emergent algorithm		
+artificial intelligence	3	Multi-agent reinforcement learning	multi-agent reinforcement learning	Multi-agent reinforcement learning		
+artificial intelligence	3	Multi-agent planning	multi-agent planning	Multi-agent planning		
+artificial intelligence	3	Explainable artificial intelligence	explainable artificial intelligence	Explainable artificial intelligence		
+artificial intelligence	3	Artificial intelligence in government	artificial intelligence in government	Artificial intelligence in government		
+artificial intelligence	3	Regulation of artificial intelligence	regulation of artificial intelligence	Regulation of artificial intelligence		
+artificial intelligence	3	Artificial general intelligence	artificial general intelligence	Artificial general intelligence		
+artificial intelligence	3	AI safety	ai safety	AI safety		
+artificial intelligence	3	Trustworthy computing	trustworthy computing	Trustworthy computing		
+artificial intelligence	3	Markov decision processes	markov decision processes	Markov decision process		
+artificial intelligence	3	Partially observable markov decision processes	partially observable markov decision processes	Partially observable markov decision process		
+artificial intelligence	3	Model-based reasoning	model-based reasoning	Model-based reasoning		
+artificial intelligence	3	Automated planning and scheduling	automated planning and scheduling	Automated planning and scheduling		
+artificial intelligence	3	Bayesian networks	bayesian networks	Bayesian network		
+artificial intelligence	3	Probabilistic programming	probabilistic programming	Probabilistic programming		
+artificial intelligence	3	Sequential decision making	sequential decision making	Sequential decision making		
+artificial intelligence	3	Stochastic optimization	stochastic optimization	Stochastic optimization		
+artificial intelligence	3	Robot control	robot control	Robot control		
+artificial intelligence	3	Robot learning	robot learning	Robot learning		
+artificial intelligence	3	Cognitive robotics	cognitive robotics	Cognitive robotics		
+artificial intelligence	3	Human-robot interaction	human-robot interaction	Human-robot Interaction		
+artificial intelligence	3	Robot localization	robot localization	Robot localization		
+artificial intelligence	3	Robotic mapping	robotic mapping	Robotic mapping		
+artificial intelligence	3	Robot navigation	robot navigation	Robot navigation		
+artificial intelligence	3	Motion planning	motion planning	Motion planning		
+artificial intelligence	3	Sensor fusion	sensor fusion	Sensor fusion		
+artificial intelligence	3	Distributed search engine	distributed search engine	Distributed search engine		
+artificial intelligence	3	Metaheuristics	metaheuristics	Metaheuristic		
+artificial intelligence	3	Argument mining	argument mining	Argument mining		
+artificial intelligence	3	Information extraction	information extraction	Information extraction		
+artificial intelligence	3	Language model	language model	Language model		
+artificial intelligence	3	Semantic parsing	semantic parsing	Semantic parsing		
+artificial intelligence	3	Machine translation	machine translation	Machine translation		
+artificial intelligence	3	Ontology learning	ontology learning	Ontology learning		
+artificial intelligence	3	Question answering	question answering	Question answering		
+artificial intelligence	3	Speech processing	speech processing	Speech processing		
+artificial intelligence	3	Signal processing	signal processing	Signal processing		
+artificial intelligence	3	Speech synthesis	speech synthesis	Speech synthesis		
+artificial intelligence	3	Text mining	text mining	Text mining		
+artificial intelligence	3	Automatic summarization	automatic summarization	Automatic summarization		
+artificial intelligence	3	Shallow parsing	shallow parsing	Shallow parsing		
+artificial intelligence	3	Parsing	parsing	Parsing		
+artificial intelligence	3	Document classification	document classification	Document classification		
+artificial intelligence	3	Sentiment analysis	sentiment analysis	Sentiment analysis		
+artificial intelligence	3	Program synthesis	program synthesis	Program synthesis		
+artificial intelligence	3	Neuroevolution	neuroevolution	Neuroevolution		
+artificial intelligence	3	Neural architecture search	neural architecture search	Neural architecture search		
+artificial intelligence	3	Artificial life	artificial life	Artificial life		
+artificial intelligence	3	Genetic programming	genetic programming	Genetic programming		
+artificial intelligence	3	Model predictive control	model predictive control	Model predictive control		
+artificial intelligence	3	Offline learning	offline learning	Offline learning		
+artificial intelligence	3	Deep reinforcement learning	deep reinforcement learning	Deep reinforcement learning		
+artificial intelligence	3	Self-play	self-play	Self-play		
+artificial intelligence	3	Mutual information	mutual information	Mutual information		
+artificial intelligence	3	State space search	state space search	State space search		
+artificial intelligence	3	Regularization	regularization	Regularization (mathematics)		
+artificial intelligence	3	Intrinsic motivation	intrinsic motivation	Intrinsic motivation (artificial intelligence)		
+artificial intelligence	3	Empowerment	empowerment	Empowerment (artificial intelligence)		
+artificial intelligence	3	Generative adversarial networks	generative adversarial networks	Generative adversarial network		
+artificial intelligence	3	Data augmentation	data augmentation	Data augmentation		
+artificial intelligence	3	One-shot learning	one-shot learning	One-shot learning (computer vision)		
+artificial intelligence	3	Domain adaptation	domain adaptation	Domain adaptation		
+artificial intelligence	3	Knowledge distillation	knowledge distillation	Knowledge distillation		
+artificial intelligence	3	Conditional random fields	conditional random fields	Conditional random fields		
+artificial intelligence	3	Active contour model	active contour model	Active contour model		
+artificial intelligence	3	Autoregressive model	autoregressive model	Autoregressive model		
+artificial intelligence	3	Visual servoing	visual servoing	Visual servoing		
+artificial intelligence	3	Optimal control	optimal control	Optimal control		
+artificial intelligence	3	Robot locomotion	robot locomotion	Robot locomotion		
+artificial intelligence	3	Simultaneous localization and mapping	simultaneous localization and mapping	Simultaneous localization and mapping		
+artificial intelligence	3	Trajectory optimization	trajectory optimization	Trajectory optimization		
+artificial intelligence	3	Collocation	collocation	Collocation (remote sensing)		
+artificial intelligence	3	Neuromorphic engineering	neuromorphic engineering	Neuromorphic engineering		
+artificial intelligence	3	Artificial consciousness	artificial consciousness	Artificial consciousness		
+artificial intelligence	3	Artificial empathy	artificial empathy	Artificial empathy		
+artificial intelligence	3	Weak artificial intelligence	weak artificial intelligence	Weak artificial intelligence		
+semiconductors	2	Integrated circuit packaging	integrated circuit packaging	Integrated circuit packaging		
+semiconductors	2	Die preparation	die preparation	Die preparation		
+semiconductors	2	Wafer testing	wafer testing	Wafer testing		
+semiconductors	2	Doping	doping	Doping (semiconductor)		
+semiconductors	2	Etching	etching	Etching (microfabrication)		
+semiconductors	2	Microlithography	microlithography	Microlithography		
+semiconductors	2	Photolithography	photolithography	Photolithography		
+semiconductors	2	Nanolithography	nanolithography	Nanolithography		
+semiconductors	2	Microfabrication	microfabrication	Microfabrication		
+semiconductors	2	3D microfabrication	3d microfabrication	3D microfabrication		
+semiconductors	2	Wafer Fabrication	wafer fabrication	Wafer Fabrication		
+semiconductors	2	Semiconductor device fabrication	semiconductor device fabrication	Semiconductor device fabrication		
+semiconductors	3	Chip-scale packaging	chip-scale packaging	Chip-scale packaging		
+semiconductors	3	Wafer dicing	wafer dicing	Wafer dicing		
+semiconductors	3	Wafer backgrinding	wafer backgrinding	Wafer backgrinding		
+semiconductors	3	Wire bonding	wire bonding	Wire bonding		
+semiconductors	3	Transfer molding	transfer molding	Transfer molding		
+semiconductors	3	Injection moulding	injection moulding	Injection moulding		
+semiconductors	3	Wafer bonding	wafer bonding	Wafer bonding		
+semiconductors	3	Ball bonding	ball bonding	Ball bonding		
+semiconductors	3	Flip chip	flip chip	Flip chip		
+semiconductors	3	Wedge bonding	wedge bonding	Wedge bonding		
+semiconductors	3	Wafer-level packaging	wafer-level packaging	Wafer-level packaging		
+semiconductors	3	System in a package	system in a package	System in a package		
+semiconductors	3	System on a chip	system on a chip	System on a chip		
+semiconductors	3	Automatic test equipment	automatic test equipment	Automatic test equipment		
+semiconductors	3	Curve tracer	curve tracer	Curve tracer		
+semiconductors	3	Burn-in	burn-in	Burn-in		
+semiconductors	3	Dielectric withstand test	dielectric withstand test	Dielectric withstand test		
+semiconductors	3	Chemical-mechanical polishing	chemical-mechanical polishing	Chemical-mechanical polishing		
+semiconductors	3	Vacuum deposition	vacuum deposition	Vacuum deposition		
+semiconductors	3	Ion beam deposition	ion beam deposition	Ion beam deposition		
+semiconductors	3	Chemical vapor deposition	chemical vapor deposition	Chemical vapor deposition		
+semiconductors	3	Physical vapor deposition	physical vapor deposition	Physical vapor deposition		
+semiconductors	3	Atomic layer deposition	atomic layer deposition	Atomic layer deposition		
+semiconductors	3	Electroplating	electroplating	Electroplating		
+semiconductors	3	Metalorganic vapour-phase epitaxy	metalorganic vapour-phase epitaxy	Metalorganic vapour-phase epitaxy		
+semiconductors	3	Molecular-beam epitaxy	molecular-beam epitaxy	Molecular-beam epitaxy		
+semiconductors	3	Plasma-enhanced chemical vapor deposition	plasma-enhanced chemical vapor deposition	Plasma-enhanced chemical vapor deposition		
+semiconductors	3	Ion implantation	ion implantation	Ion implantation		
+semiconductors	3	Monolayer doping	monolayer doping	Monolayer doping		
+semiconductors	3	RCA clean	rca clean	RCA clean		
+semiconductors	3	Plasma etching	plasma etching	Plasma etching		
+semiconductors	3	Photomask	photomask	Photomask		
+semiconductors	3	Computational lithography	computational lithography	Computational lithography		
+semiconductors	3	Photoresist	photoresist	Photoresist		
+semiconductors	3	Mask inspection	mask inspection	Mask inspection		
+semiconductors	3	Lithography stepper	lithography stepper	Stepper		
+semiconductors	3	Electron-beam lithography	electron-beam lithography	Electron-beam lithography		
+semiconductors	3	Ion milling machine	ion milling machine	Ion milling machine		
+semiconductors	3	Ellipsometry	ellipsometry	Ellipsometry		
+semiconductors	3	Atomic force microscopy	atomic force microscopy	Atomic force microscopy		
+semiconductors	3	Shallow trench isolation	shallow trench isolation	Shallow trench isolation		
+semiconductors	3	Rapid thermal processing	rapid thermal processing	Rapid thermal processing		
+semiconductors	3	IC interconnect	ic interconnect	Interconnect (integrated circuits)		
+semiconductors	3	MEMS	mems	MEMS		
+semiconductors	3	DRAM	dram	Dynamic random-access memory		
+semiconductors	3	Flash memory	flash memory	Flash memory		
+semiconductors	3	Active-pixel sensor	active-pixel sensor	Active-pixel sensor		
+semiconductors	3	Atomic layer etching	atomic layer etching	Atomic layer etching		
+semiconductors	3	Reactive-ion etching	reactive-ion etching	Reactive-ion etching		
+semiconductors	3	Deep reactive-ion etching	deep reactive-ion etching	Deep reactive-ion etching		
+semiconductors	3	BGA packaging	bga packaging	Ball grid array		
+semiconductors	3	Multi-chip module	multi-chip module	Multi-chip module		
+semiconductors	3	Package on a package	package on a package	Package on a package		
+semiconductors	3	Through-silicon via	through-silicon via	Through-silicon via		
+semiconductors	3	Fan-out packaging	fan-out packaging	Fan-out wafer-level packaging		
+semiconductors	3	eWLB packaging	ewlb packaging	Embedded wafer level ball grid array		
+semiconductors	3	3D integrated circuit	3d integrated circuit	Three-dimensional integrated circuit		
+semiconductors	3	Interposer	interposer	Interposer		
+semiconductors	3	Dry etching	dry etching	Dry etching		
+semiconductors	3	EUV lithography	euv lithography	Extreme ultraviolet lithography		
+semiconductors	3	Immersion lithography	immersion lithography	Immersion lithography		
+semiconductors	3	Multiple patterning	multiple patterning	Multiple patterning		
+semiconductors	3	Maskless lithography	maskless lithography	Maskless lithography		
+semiconductors	3	Resolution enhancement technologies	resolution enhancement technologies	Resolution enhancement technologies		
+semiconductors	3	EDA software	eda software	Electronic design automation		
+semiconductors	3	Design rule checking	design rule checking	Design rule checking		
+semiconductors	3	Next-generation lithography	next-generation lithography	Next-generation lithography		
+semiconductors	3	Phase-shift mask	phase-shift mask	Phase-shift mask		
+semiconductors	3	Off-axis illumination	off-axis illumination	Off-axis illumination		
+semiconductors	3	Optical proximity correction	optical proximity correction	Optical proximity correction		
+semiconductors	3	Inverse lithography	inverse lithography	Inverse lithography		
+semiconductors	3	X-ray lithography	x-ray lithography	X-ray lithography		
+semiconductors	3	Quantum lithography	quantum lithography	Quantum lithography		
+semiconductors	3	Ion beam lithography	ion beam lithography	Ion beam lithography		
+semiconductors	3	CMOS	cmos	CMOS		
+semiconductors	3	MOSFET	mosfet	MOSFET		
+semiconductors	3	Field-effect transistor	field-effect transistor	Field-effect transistor		
+biotechnology	2	Agricultural biotechnology	agricultural biotechnology	Agricultural biotechnology		
+biotechnology	2	Environmental biotechnology	environmental biotechnology	Environmental biotechnology		
+biotechnology	2	Medical biotechnology	medical biotechnology	Biotechnology#Medicine		
+biotechnology	2	Biomedical engineering	biomedical engineering	Biomedical Engineering		
+biotechnology	2	Biochemical and Bioproducts engineering	biochemical and bioproducts engineering	Biochemical Engineering	Bioproducts engineering	
+biotechnology	2	Biological systems engineering	biological systems engineering	Biological Systems Engineering		
+biotechnology	2	Biomolecular engineering	biomolecular engineering	Biomolecular Engineering		
+biotechnology	3	Sustainable agriculture	sustainable agriculture	Sustainable agriculture		
+biotechnology	3	Genetically modified crops	genetically modified crops	Genetically modified crops		
+biotechnology	3	Synthetic biology	synthetic biology	Synthetic Biology		
+biotechnology	3	Animal vaccine development	animal vaccine development	Animal_vaccination#Vaccine_production		
+biotechnology	3	Biofertilizer	biofertilizer	Biofertilizer		
+biotechnology	3	Cellular agriculture	cellular agriculture	Cellular agriculture		
+biotechnology	3	Bioremediation	bioremediation	Bioremediation		
+biotechnology	3	Renewable energy	renewable energy	Renewable energy		
+biotechnology	3	Bioenergy	bioenergy	Bioenergy		
+biotechnology	3	Biomass	biomass	Biomass (energy)		
+biotechnology	3	Microbial biodegradation	microbial biodegradation	Microbial biodegradation		
+biotechnology	3	Drug discovery	drug discovery	Drug discovery		
+biotechnology	3	Drug development	drug development	Drug development		
+biotechnology	3	Biopharmaceutical	biopharmaceutical	Biopharmaceutical		
+biotechnology	3	Pharmaceutical manufacturing	pharmaceutical manufacturing	Pharmaceutical manufacturing		
+biotechnology	3	Pharmaceutical engineering	pharmaceutical engineering	Pharmaceutical engineering		
+biotechnology	3	Molecular diagnostics	molecular diagnostics	Molecular diagnostics		
+biotechnology	3	Genetic testing	genetic testing	Genetic testing		
+biotechnology	3	Pharmacogenomics	pharmacogenomics	Pharmacogenomics		
+biotechnology	3	Personalized medicine	personalized medicine	Personalized medicine		
+biotechnology	3	Cell therapy	cell therapy	Cell therapy		
+biotechnology	3	Gene therapy	gene therapy	Gene therapy		
+biotechnology	3	Biosensors	biosensors	Biosensor		
+biotechnology	3	Fermentation in food processing	fermentation in food processing	Fermentation in food processing		
+biotechnology	3	Genetically modified food	genetically modified food	Genetically modified food		
+biotechnology	3	Food engineering	food engineering	Food engineering		
+biotechnology	3	Food microbiology	food microbiology	Food microbiology		
+biotechnology	3	Microbial food cultures	microbial food cultures	Microbial food cultures		
+biotechnology	3	Neural engineering	neural engineering	Neural engineering		
+biotechnology	3	Bionanotechnology	bionanotechnology	Bionanotechnology		
+biotechnology	3	Clinical engineering	clinical engineering	Clinical engineering		
+biotechnology	3	Biomechanical engineering	biomechanical engineering	Biomechanical engineering		
+biotechnology	3	Genetic engineering	genetic engineering	Genetic engineering		
+biotechnology	3	Tissue engineering	tissue engineering	Tissue engineering		
+biotechnology	3	Cell engineering	cell engineering	Cell engineering		
+biotechnology	3	Medical imaging	medical imaging	Medical Imaging		
+biotechnology	3	Rehabilitation engineering	rehabilitation engineering	Rehabilitation engineering		
+biotechnology	3	Biomedical instrumentation	biomedical instrumentation	Bioinstrumentation		
+biotechnology	3	Biomaterials	biomaterials	Biomaterial		
+biotechnology	3	Industrial fermentation	industrial fermentation	Industrial fermentation		
+biotechnology	3	Feed manufacturing	feed manufacturing	Feed manufacturing		
+biotechnology	3	Industrial enzymes	industrial enzymes	Industrial enzymes		
+biotechnology	3	Biofabrication	biofabrication	Biofabrication		
+biotechnology	3	Biofuel	biofuel	Biofuel		
+biotechnology	3	Bioplastics	bioplastics	Bioplastic		
+genetics	2	Quantitative genetics	quantitative genetics	Quantitative Genetics		
+genetics	2	Classical genetics	classical genetics	Classical Genetics		
+genetics	2	Behavioural genetics	behavioural genetics	Behavioural Genetics		
+genetics	2	Molecular genetics	molecular genetics	Molecular Genetics		
+genetics	2	Population genetics	population genetics	Population Genetics		
+genetics	2	Medical genetics	medical genetics	Medical Genetics		
+genetics	2	Epigenetics	epigenetics	Epigenetics		
+genetics	2	Genomics	genomics	Genomics		
+genetics	2	Genetic engineering	genetic engineering	Genetic engineering		
+genetics	2	Microbial genetics	microbial genetics	Microbial Genetics		
+genetics	2	Plant genetics	plant genetics	Plant Genetics		
+genetics	3	Conservation genetics	conservation genetics	Conservation genetics		
+genetics	3	Ecological genetics	ecological genetics	Ecological Genetics		
+genetics	3	Landscape genetics	landscape genetics	Landscape genetics		
+genetics	3	Phylogeography	phylogeography	Phylogeography		
+genetics	3	Phylogenetics	phylogenetics	Phylogenetics		
+genetics	3	Paleogenetics	paleogenetics	Paleogenetics		
+genetics	3	Archaeogenetics	archaeogenetics	Archaeogenetics		
+genetics	3	Immunogenetics	immunogenetics	Immunogenetics		
+genetics	3	Genetic epidemiology	genetic epidemiology	Genetic epidemiology		
+genetics	3	Cytogenetics	cytogenetics	Cytogenetics		
+genetics	3	Molecular cytogenetics	molecular cytogenetics	Molecular cytogenetics		
+genetics	3	Gene therapy	gene therapy	Gene therapy		
+genetics	3	Personalized medicine	personalized medicine	Personalized medicine		
+genetics	3	Predictive medicine	predictive medicine	Predictive medicine		
+genetics	3	Oncogenomics	oncogenomics	Oncogenomics		
+genetics	3	Human mitochondrial genetics	human mitochondrial genetics	Human mitochondrial genetics		
+genetics	3	Neurogenetics	neurogenetics	Neurogenetics		
+genetics	3	Pharmacogenomics	pharmacogenomics	Pharmacogenomics		
+genetics	3	Genetic testing	genetic testing	Genetic testing		
+genetics	3	Genetic analysis	genetic analysis	Genetic analysis		
+genetics	3	Epigenetic therapy	epigenetic therapy	Epigenetic therapy		
+genetics	3	Clinical metagenomic sequencing	clinical metagenomic sequencing	Clinical metagenomic sequencing		
+genetics	3	Clinicogenomics	clinicogenomics	Clinicogenomics		
+genetics	3	Personalized genomics	personalized genomics	Personalized genomics		
+genetics	3	Noninvasive genotyping	noninvasive genotyping	Noninvasive genotyping		
+genetics	3	Transplant engineering	transplant engineering	Transplant engineering		
+genetics	3	Psychiatric genetics	psychiatric genetics	Psychiatric genetics		
+genetics	3	gene expression	gene expression	Gene expression		
+genetics	3	behavioral epigenetics	behavioral epigenetics	behavioral epigenetics		
+genetics	3	Sleep epigenetics	sleep epigenetics	Sleep epigenetics		
+genetics	3	Epigenetics of human development	epigenetics of human development	Epigenetics of human development		
+genetics	3	Transgenerational epigenetic inheritance	transgenerational epigenetic inheritance	Transgenerational epigenetic inheritance		
+genetics	3	Computational epigenetics	computational epigenetics	Computational epigenetics		
+genetics	3	Epigenome editing	epigenome editing	Epigenome editing		
+genetics	3	Epigenomics	epigenomics	Epigenomics		
+genetics	3	Nutriepigenomics	nutriepigenomics	Nutriepigenomics		
+genetics	3	Cancer epigenetics	cancer epigenetics	Cancer epigenetics		
+genetics	3	Pharmacoepigenetics	pharmacoepigenetics	Pharmacoepigenetics		
+genetics	3	Single cell epigenomics	single cell epigenomics	Single cell epigenomics		
+genetics	3	Cognitive genomics	cognitive genomics	Cognitive genomics		
+genetics	3	Comparative genomics	comparative genomics	Comparative genomics		
+genetics	3	Functional genomics	functional genomics	Functional genomics		
+genetics	3	Metagenomics	metagenomics	Metagenomics		
+genetics	3	Neurogenomics	neurogenomics	Neurogenomics		
+genetics	3	Personal genomics	personal genomics	Personal genomics		
+genetics	3	Pharmacogenomics	pharmacogenomics	Pharmacogenomics		
+genetics	3	Toxicogenomics	toxicogenomics	Toxicogenomics		
+genetics	3	Population genomics	population genomics	Population genomics		
+genetics	3	Nutritional genomics	nutritional genomics	Nutritional genomics		
+genetics	3	Structural genomics	structural genomics	Structural genomics		
+genetics	3	Hologenomics	hologenomics	Hologenomics		
+genetics	3	Metatranscriptomics	metatranscriptomics	Metatranscriptomics		
+genetics	3	Paleogenomics	paleogenomics	Paleogenomics		
+genetics	3	Phylogenomics	phylogenomics	Phylogenomics		
+genetics	3	Proteogenomics	proteogenomics	Proteogenomics		
+genetics	3	Radiogenomics	radiogenomics	Radiogenomics		
+genetics	3	Ribonomics	ribonomics	Ribonomics		
+genetics	3	Chemogenomics	chemogenomics	Chemogenomics		
+genetics	3	Viral metagenomics	viral metagenomics	Viral metagenomics		
+genetics	3	Public health genomics	public health genomics	Public health genomics		
+genetics	3	Translatomics	translatomics	Translatomics		
+genetics	3	Computational genomics	computational genomics	Computational genomics		
+genetics	3	Transcriptomics	transcriptomics	Transcriptomics		
+genetics	3	Transposon mutagenesis	transposon mutagenesis	Transposon mutagenesis		
+genetics	3	Artificial gene synthesis	artificial gene synthesis	Artificial gene synthesis		
+genetics	3	Cassette mutagenesis	cassette mutagenesis	Cassette mutagenesis		
+genetics	3	Gene targeting	gene targeting	Gene targeting		
+genetics	3	Prime editing	prime editing	Prime editing		
+genetics	3	Human germline engineering	human germline engineering	Human germline engineering		
+genetics	3	Directed evolution	directed evolution	Directed evolution		
+genetics	3	Bacterial genetics	bacterial genetics	Bacterial genetics		
+genetics	3	Ribotyping	ribotyping	Ribotyping		
+genetics	3	Pathogenomics	pathogenomics	Pathogenomics		
+genetics	3	Antimicrobial resistance	antimicrobial resistance	Antimicrobial resistance		
+genetics	3	Genetic architecture	genetic architecture	Genetic architecture		
+genetics	3	Genetic genealogy	genetic genealogy	Genetic genealogy		
+genetics	3	Microevolution	microevolution	Microevolution		
+genetics	3	Gene mapping	gene mapping	Gene mapping		
+genetics	3	Spermatogenesis	spermatogenesis	Spermatogenesis		
+genetics	3	Anagenesis	anagenesis	Anagenesis		
+genetics	3	Deletion mapping	deletion mapping	Deletion mapping		
+genetics	3	Parthenogenesis	parthenogenesis	Parthenogenesis		
+genetics	3	Structural inheritance	structural inheritance	Structural inheritance		
+genetics	3	Genome architecture mapping	genome architecture mapping	Genome architecture mapping		
+genetics	3	Genome informatics	genome informatics	Genome informatics		
+genetics	3	Dynamical genetics	dynamical genetics	Dynamical genetics		
+genetics	3	Imaging genetics	imaging genetics	Imaging genetics		
+immunology	2	Cancer imunology	cancer imunology	Cancer immunology		
+immunology	2	Immunomics	immunomics	Immunomics		
+immunology	2	Immunopathology	immunopathology	Immunopathology		
+immunology	2	Immunotherapy	immunotherapy	Immunotherapy		
+immunology	2	Developmental immunology	developmental immunology	Immunology#Developmental_immunology		
+immunology	2	Synthetic immunology	synthetic immunology	Synthetic immunology		
+immunology	2	Viral dynamics	viral dynamics	Viral dynamics		
+immunology	2	Clinical immunology	clinical immunology	Immunology#Clinical_immunology		
+immunology	2	Immunochemistry	immunochemistry	Immunochemistry		
+immunology	2	Immunotoxicology	immunotoxicology	Immunotoxicology		
+immunology	2	Classical immunology	classical immunology	Immunology#Classical_immunology		
+immunology	2	Immunogenetics	immunogenetics	Immunogenetics		
+immunology	3	Immunoediting	immunoediting	Immunoediting		
+immunology	3	Cancer vaccine	cancer vaccine	Cancer vaccine		
+immunology	3	Cancer immunotherapy	cancer immunotherapy	Cancer immunotherapy		
+immunology	3	Immunoproteomics	immunoproteomics	Immunoproteomics		
+immunology	3	Systems immunology	systems immunology	Systems immunology		
+immunology	3	Autoimmunity	autoimmunity	Autoimmunity		
+immunology	3	Immunodeficiency	immunodeficiency	Immunodeficiency		
+immunology	3	Hypersensitivity	hypersensitivity	Hypersensitivity		
+immunology	3	Immune dysregulation	immune dysregulation	Immune dysregulation		
+immunology	3	Allergen immunotherapy	allergen immunotherapy	Allergen immunotherapy		
+immunology	3	Testicular immunology	testicular immunology	Testicular immunology		
+immunology	3	Immunodermatology	immunodermatology	Immunodermatology		
+immunology	3	Intravascular immunology	intravascular immunology	Intravascular immunology		
+immunology	3	Osteoimmunology	osteoimmunology	Osteoimmunology		
+immunology	3	Mucosal immunology	mucosal immunology	Mucosal immunology		
+immunology	3	Neuroimmunology 	neuroimmunology 	Neuroimmunology		
+immunology	3	Immunohaematology	immunohaematology	Immunohaematology		
+immunology	3	Ecoimmunology	ecoimmunology	Ecoimmunology		
+immunology	3	Computational immunology	computational immunology	Computational immunology		
+immunology	3	Nutritional immunology	nutritional immunology	Nutritional immunology		
+immunology	3	Humoral immunology	humoral immunology	Humoral immunity		
+immunology	3	Molecular immunology	molecular immunology	Molecular Immunology		
+immunology	3	Cell-mediated immunity	cell-mediated immunity	Cell-mediated immunity		
+immunology	3	Reproductive immunology	reproductive immunology	Reproductive immunology		
+immunology	3	Immunophysics	immunophysics	Immunophysics		
+immunology	3	Psychoneuroimmunology	psychoneuroimmunology	Psychoneuroimmunology		
+immunology	3	Immune tolerance	immune tolerance	Immune tolerance		
+immunology	3	Immunocompetence	immunocompetence	Immunocompetence		
+immunology	3	Allergy	allergy	Allergy		
+immunology	3	Microbial symbiosis and immunity	microbial symbiosis and immunity	Microbial symbiosis and immunity		
+immunology	3	Viral phylodynamics	viral phylodynamics	Viral phylodynamics		
+immunology	3	Immunometabolism	immunometabolism	Immunometabolism		
+immunology	3	Immuno-psychiatry	immuno-psychiatry	Immuno-psychiatry		
+immunology	3	Cytotoxicity	cytotoxicity	Cytotoxicity		
+immunology	3	Host-directed therapeutics	host-directed therapeutics	Host-directed therapeutics		
+neuroscience	2	Cognitive neuroscience	cognitive neuroscience	Cognitive Neuroscience		
+neuroscience	2	Neuroanatomy	neuroanatomy	Neuroanatomy		
+neuroscience	2	Neurochemistry	neurochemistry	Neurochemistry		
+neuroscience	2	Neuroendocrinology	neuroendocrinology	Neuroendocrinology		
+neuroscience	2	Neuropathology	neuropathology	Neuropathology		
+neuroscience	2	Neuropharmacology	neuropharmacology	Neuropharmacology		
+neuroscience	2	Neurophysiology	neurophysiology	Neurophysiology		
+neuroscience	2	Molecular neuroscience	molecular neuroscience	Molecular Neuroscience		
+neuroscience	2	Cellular neuroscience	cellular neuroscience	Cellular neuroscience		
+neuroscience	2	Computational neuroscience	computational neuroscience	Computational Neuroscience		
+neuroscience	2	Systems neuroscience	systems neuroscience	Systems Neuroscience		
+neuroscience	2	Sensory neuroscience	sensory neuroscience	Sensory Neuroscience		
+neuroscience	2	Evolutionary neuroscience	evolutionary neuroscience	Evolutionary neuroscience		
+neuroscience	2	Behavioral neuroscience	behavioral neuroscience	Behavioral Neuroscience		
+neuroscience	2	Neurogenetics	neurogenetics	Neurogenetics		
+neuroscience	2	Clinical neuroscience	clinical neuroscience	Clinical Neuroscience		
+neuroscience	2	Affective neuroscience	affective neuroscience	Affective neuroscience		
+neuroscience	2	Dynamical neuroscience	dynamical neuroscience	Dynamical neuroscience		
+neuroscience	2	Network neuroscience	network neuroscience	Network neuroscience		
+neuroscience	2	Computational neuroscience	computational neuroscience	Computational neuroscience		
+neuroscience	3	Electrophysiology	electrophysiology	Electrophysiology		
+neuroscience	3	Psychoneuroendocrinology	psychoneuroendocrinology	Psychoneuroendocrinology		
+neuroscience	3	Clinical neurochemistry	clinical neurochemistry	Clinical neurochemistry		
+neuroscience	3	Neuroproteomics	neuroproteomics	Neuroproteomics		
+neuroscience	3	Neuroscience of sleep	neuroscience of sleep	Neuroscience of sleep		
+neuroscience	3	Clinical neurophysiology	clinical neurophysiology	Clinical neurophysiology		
+neuroscience	3	Quantum cognition	quantum cognition	Quantum cognition		
+neuroscience	3	Neuroethology	neuroethology	Neuroethology		
+neuroscience	3	Neuromorphology	neuromorphology	Neuromorphology		
+neuroscience	3	Neuroanatomy of intimacy	neuroanatomy of intimacy	Neuroanatomy of intimacy		
+neuroscience	3	Neuroanatomy of handedness	neuroanatomy of handedness	Neuroanatomy of handedness		
+neuroscience	3	Memory and aging	memory and aging	Memory and aging		
+neuroscience	3	Neurolinguistics	neurolinguistics	Neurolinguistics		
+neuroscience	3	Neuroimaging	neuroimaging	Neuroimaging		
+neuroscience	3	Nutritional neuroscience	nutritional neuroscience	Nutritional neuroscience		
+neuroscience	3	Neuroinformatics	neuroinformatics	Neuroinformatics		
+neuroscience	3	Neural engineering	neural engineering	Neural engineering		
+neuroscience	3	Biocybernetics	biocybernetics	Biocybernetics		
+neuroscience	3	Neurophilosophy	neurophilosophy	Neurophilosophy		
+neuroscience	3	Neuroethics	neuroethics	Neuroethics		
+neuroscience	3	Neuroradiology	neuroradiology	Neuroradiology		
+neuroscience	3	Integrative neuroscience	integrative neuroscience	Integrative neuroscience		
+neuroscience	3	Psychosurgery	psychosurgery	Psychosurgery		
+neuroscience	3	Neuroscience and intelligence	neuroscience and intelligence	Neuroscience and intelligence		
+neuroscience	3	Cultural neuroscience	cultural neuroscience	Cultural neuroscience		
+neuroscience	3	Neuroscience and race	neuroscience and race	Neuroscience and race		
+neuroscience	3	Neuroanthropology	neuroanthropology	Neuroanthropology		
+neuroscience	3	Neurocinema	neurocinema	Neurocinema		
+neuroscience	3	Neurohistory	neurohistory	Neurohistory		
+neuroscience	3	Evolution of nervous systems	evolution of nervous systems	Evolution of nervous systems		
+neuroscience	3	Evolution of the brain	evolution of the brain	Evolution of the brain		
+neuroscience	3	Neurobiological origins of language	neurobiological origins of language	Neurobiological origins of language		
+neuroscience	3	Neuroeconomics	neuroeconomics	Neuroeconomics		
+neuroscience	3	Consumer neuroscience	consumer neuroscience	Consumer neuroscience		
+neuroscience	3	Neuromanagement	neuromanagement	Neuromanagement		
+neuroscience	3	Neuromarketing	neuromarketing	Neuromarketing		
+neuroscience	3	Neuroepistemology	neuroepistemology	Neuroepistemology		
+neuroscience	3	Neuroesthetics	neuroesthetics	Neuroesthetics		
+neuroscience	3	Neurophenomenology	neurophenomenology	Neurophenomenology		
+neuroscience	3	Educational neuroscience	educational neuroscience	Educational neuroscience		
+neuroscience	3	Interpersonal neurobiology	interpersonal neurobiology	Interpersonal neurobiology		
+neuroscience	3	Neurocriminology	neurocriminology	Neurocriminology		
+neuroscience	3	Neuromechanics	neuromechanics	Neuromechanics		
+neuroscience	3	Neurorobotics	neurorobotics	Neurorobotics		
+neuroscience	3	Paleoneurobiology	paleoneurobiology	Paleoneurobiology		
+neuroscience	3	Neuropsychopharmacology	neuropsychopharmacology	Neuropsychopharmacology		
+neuroscience	3	Developmental neuropsychology	developmental neuropsychology	Developmental neuropsychology		
+neuroscience	3	Neuroscience of music	neuroscience of music	Neuroscience of music		
+neuroscience	3	Neuroscience of sex differences	neuroscience of sex differences	Neuroscience of sex differences		
+neuroscience	3	Neuroscience of multilingualism	neuroscience of multilingualism	Neuroscience of multilingualism		
+neuroscience	3	Neuroscience of religion	neuroscience of religion	Neuroscience of religion		
+neuroscience	3	Neuroscience of rhythm	neuroscience of rhythm	Neuroscience of rhythm		
+neuroscience	3	Neuroscience of aging	neuroscience of aging	Neuroscience of aging		
+neuroscience	3	Neuroepigenetics	neuroepigenetics	Neuroepigenetics		
+neuroscience	3	Cognitive biology	cognitive biology	Cognitive biology		
+neuroscience	3	Cognitive neuropsychology	cognitive neuropsychology	Cognitive neuropsychology		
+neuroscience	3	Comparative cognition	comparative cognition	Comparative cognition		
+neuroscience	3	Molecular cellular cognition	molecular cellular cognition	Molecular cellular cognition		
+neuroscience	3	Neurocognition	neurocognition	Neurocognition		
+neuroscience	3	Neuroenhancement	neuroenhancement	Neuroenhancement		
+neuroscience	3	Neuroheuristics	neuroheuristics	Neuroheuristics		
+neuroscience	3	Spatial cognition	spatial cognition	Spatial cognition		
+neuroscience	3	Brain morphometry	brain morphometry	Brain morphometry		
+neuroscience	3	Behavioral epigenetics	behavioral epigenetics	Behavioral epigenetics		
+neuroscience	3	Chronobiology	chronobiology	Chronobiology		
+neuroscience	3	Cognitive development	cognitive development	Cognitive development		
+neuroscience	3	Numerical cognition	numerical cognition	Numerical cognition		
+neuroscience	3	Neuropsychoanalysis	neuropsychoanalysis	Neuropsychoanalysis		
+neuroscience	3	Neuropolitics	neuropolitics	Neuropolitics		
+neuroscience	3	Neuromorality	neuromorality	Neuromorality		
+neuroscience	3	Neuroarchaeology	neuroarchaeology	Neuroarchaeology		
+neuroscience	3	Neurogastronomy	neurogastronomy	Neurogastronomy		
+neuroscience	3	Connectomics	connectomics	Connectomics		
+neuroscience	3	Functional integration	functional integration	Functional integration (neurobiology)		
+neuroscience	3	Neuro-ophthalmology	neuro-ophthalmology	Neuro-ophthalmology		
+neuroscience	3	Neurosecurity	neurosecurity	Neurosecurity		
+neuroscience	3	Neurolaw	neurolaw	Neurolaw		
+neuroscience	3	Positive neuroscience	positive neuroscience	Positive neuroscience		
+neuroscience	3	Visual neuroscience	visual neuroscience	Visual neuroscience		
+neuroscience	3	Neurometrics	neurometrics	Neurometrics		
+neuroscience	3	Neurophysics	neurophysics	Neurophysics		
+neuroscience	3	Neurogenomics	neurogenomics	Neurogenomics		
+neuroscience	3	Biological psychopathology	biological psychopathology	Biological psychopathology		
+neuroscience	3	Developmental psychobiology	developmental psychobiology	Developmental psychobiology		
+neuroscience	3	Neuroecology	neuroecology	Neuroecology		
+neuroscience	3	Cognitive hearing science	cognitive hearing science	Cognitive hearing science		
+neuroscience	3	Cognitive neuroscience of dreams	cognitive neuroscience of dreams	Cognitive neuroscience of dreams		
+neuroscience	3	Developmental cognitive neuroscience	developmental cognitive neuroscience	Developmental cognitive neuroscience		
+neuroscience	3	Neurovirology	neurovirology	Neurovirology		
+neuroscience	3	Translational neuroscience	translational neuroscience	Translational neuroscience		
+neuroscience	3	Synaptic pharmacology	synaptic pharmacology	Synaptic pharmacology		
+neuroscience	3	Social cognitive neuroscience	social cognitive neuroscience	Social cognitive neuroscience		
+neuroscience	3	Social neuroscience	social neuroscience	Social neuroscience		
+neuroscience	3	Neurocardiology	neurocardiology	Neurocardiology		
+neuroscience	3	Neuroepidemiology	neuroepidemiology	Neuroepidemiology		
+neuroscience	3	Neuroimmunology	neuroimmunology	Neuroimmunology		
+neuroscience	3	Neurotology	neurotology	Neurotology		
+neuroscience	3	Physiological psychology	physiological psychology	Physiological psychology		
+neuroscience	3	Psychoneuroimmunology	psychoneuroimmunology	Psychoneuroimmunology		
+neuroscience	3	Neuroscience in space	neuroscience in space	Neuroscience in space		
+neuroscience	3	Neuroscience and sexual orientation	neuroscience and sexual orientation	Neuroscience and sexual orientation		
+neuroscience	3	Brain–computer interfacing	brain–computer interfacing	Brain–computer interfacing		
+neuroscience	3	Brain–brain interface	brain–brain interface	Brain–brain interface		
+neuroscience	3	Interventional neuroradiology	interventional neuroradiology	Interventional neuroradiology		
+neuroscience	3	Augmented cognition	augmented cognition	Augmented cognition		
+neuroscience	3	Computational anatomy	computational anatomy	Computational anatomy		
+neuroscience	3	Neurohydrodynamics	neurohydrodynamics	Neurohydrodynamics		
+neuroscience	3	Artificial brain	artificial brain	Artificial brain		
+neuroscience	3	Brain simulation	brain simulation	Brain simulation		
+neuroscience	3	Neuroanatomy of memory	neuroanatomy of memory	Neuroanatomy of memory		
+neuroscience	3	Diffeomorphometry	diffeomorphometry	Diffeomorphometry		
+neuroscience	3	Neuroscience of free will	neuroscience of free will	Neuroscience of free will		
+virology	2	Viral pathogenesis	viral pathogenesis	Viral pathogenesis		
+virology	2	Viral genetics	viral genetics	Virus#Genome	Virus#Genetic_mutation_and_recombination	
+virology	2	Mycovirology	mycovirology	Mycovirology		
+virology	2	Plant virology	plant virology	Plant virus		
+virology	2	Animal virology	animal virology	Animal virus		
+virology	2	Marine virology	marine virology	Marine viruses		
+virology	2	Archael virology	archael virology	Archaeal virus		
+virology	2	Phage virology	phage virology	Bacteriophage		
+virology	2	Synthetic virology	synthetic virology	Synthetic virology		
+virology	2	Viral life cycle and processes	viral life cycle and processes	Viral life cycle	Virus#Replication_cycle	Virus#Genome_replication
+virology	2	Virus structure	virus structure	Virus#Structure		
+virology	2	Viral evolution	viral evolution	Viral evolution		
+virology	2	Viral classification	viral classification	Virus classification		
+virology	2	Virotherapy	virotherapy	Virotherapy		
+virology	3	Virulence	virulence	Virulence		
+virology	3	Immune evasion	immune evasion	Immune evasion		
+virology	3	Pathogen transmission	pathogen transmission	Pathogen transmission		
+virology	3	Viral entry	viral entry	Viral entry		
+virology	3	Cytopathic effect	cytopathic effect	Cytopathic effect		
+virology	3	Viral disease	viral disease	Viral disease		
+virology	3	Host defense	host defense	Virus#Host_defence_mechanisms		
+virology	3	Viral oncogenesis	viral oncogenesis	Oncovirus		
+virology	3	Viral transformation	viral transformation	Viral transformation		
+virology	3	Viral genome	viral genome	Virus#Genome		
+virology	3	Antigenic drift	antigenic drift	Antigenic drift		
+virology	3	Antigenic shift	antigenic shift	Antigenic shift		
+virology	3	Phenotype mixing	phenotype mixing	Phenotype mixing		
+virology	3	Viral reassortment	viral reassortment	Reassortment		
+virology	3	Viral recombination	viral recombination	Genetic_recombination#RNA_virus_recombination		
+virology	3	Viral phylodynamics	viral phylodynamics	Viral phylodynamics		
+virology	3	Virome	virome	Virome		
+virology	3	Viriome	viriome	Viriome		
+virology	3	Veterinary virology	veterinary virology	Veterinary virology		
+virology	3	Zoonosis	zoonosis	Zoonosis		
+virology	3	Phage therapy	phage therapy	Phage therapy		
+virology	3	Phage display	phage display	Phage display		
+virology	3	Phage-ligand technology 	phage-ligand technology 	Phage-ligand technology		
+virology	3	Phage ecology	phage ecology	Phage ecology		
+virology	3	Phageome	phageome	Phageome		
+virology	3	Viroplasm	viroplasm	Viroplasm		
+virology	3	Viral replication	viral replication	Viral replication		
+virology	3	Virus latency	virus latency	Virus latency		
+virology	3	Viral shedding	viral shedding	Viral shedding		
+virology	3	Lytic cycle	lytic cycle	Lytic cycle		
+virology	3	Lysogenic cycle	lysogenic cycle	Lysogenic cycle		
+virology	3	Viral proteins	viral proteins	Viral protein		
+virology	3	Viral envelope	viral envelope	Viral envelope		
+virology	3	Viral capsid	viral capsid	Capsid		
+virology	3	Virulence factors	virulence factors	Virulence factors		
+virology	3	Virophysics	virophysics	Virophysics		
+virology	3	Viral emergence	viral emergence	Emergent virus		
+virology	3	Paleovirology	paleovirology	Paleovirology		
+virology	3	Viral vectors	viral vectors	Viral vectors		
+virology	3	Viral gene therapy	viral gene therapy	Gene_therapy#Viruses	Virotherapy#Viral_gene_therapy	
+virology	3	Oncolytic virus	oncolytic virus	Oncolytic virus		
+virology	3	Virosomes	virosomes	Virosomes		
+virology	3	Immunization	immunization	Immunization		
+virology	3	Virophage	virophage	Virophage		
+virology	3	Vaccine development	vaccine development	Vaccine		
+virology	3	Antiviral drug development	antiviral drug development	Antiviral_drug#Antiviral_drug_design		
+virology	3	Viral epidemiology	viral epidemiology	Virus#Epidemiology		
+virology	3	Human virome	human virome	Human virome		
+bioinformatics	2	Computational biology	computational biology	Computational Biology		
+bioinformatics	2	Lipidomics	lipidomics	Lipidomics		
+bioinformatics	2	Proteomics	proteomics	Proteomics		
+bioinformatics	2	Glycomics	glycomics	Glycomics		
+bioinformatics	2	Transcriptomics	transcriptomics	Transcriptomics technologies		
+bioinformatics	2	Translatomics	translatomics	Translatomics		
+bioinformatics	2	Metabolomics	metabolomics	Metabolomics		
+bioinformatics	2	Interactomics	interactomics	Interactome		
+bioinformatics	2	Structural bioinformatics	structural bioinformatics	Structural bioinformatics		
+bioinformatics	2	Systems biology	systems biology	Systems biology		
+bioinformatics	2	Health informatics	health informatics	Health informatics		
+bioinformatics	2	Genomics	genomics	Genomics		
+bioinformatics	3	Computational anatomy	computational anatomy	Computational anatomy		
+bioinformatics	3	Computational neuroscience	computational neuroscience	Computational neuroscience		
+bioinformatics	3	Biostatistics	biostatistics	Biostatistics		
+bioinformatics	3	Protein function prediction	protein function prediction	Protein function prediction		
+bioinformatics	3	Protein structure prediction	protein structure prediction	Protein structure prediction		
+bioinformatics	3	Protein–protein interaction prediction	protein–protein interaction prediction	Protein–protein interaction prediction		
+bioinformatics	3	Protein-protein interactions	protein-protein interactions	Protein-protein interactions		
+bioinformatics	3	Biomarker	biomarker	Biomarker		
+bioinformatics	3	Proteogenomics	proteogenomics	Proteogenomics		
+bioinformatics	3	Post-translational modifications	post-translational modifications	Post-translational modifications		
+bioinformatics	3	Immunoproteomics	immunoproteomics	Immunoproteomics		
+bioinformatics	3	Phosphoproteomics	phosphoproteomics	Phosphoproteomics		
+bioinformatics	3	Secretomics	secretomics	Secretomics		
+bioinformatics	3	Chemoproteomics	chemoproteomics	Chemoproteomics		
+bioinformatics	3	Metaproteomics	metaproteomics	Metaproteomics		
+bioinformatics	3	Gene expression profiling	gene expression profiling	Gene expression profiling		
+bioinformatics	3	Single-cell transcriptomics	single-cell transcriptomics	Single-cell transcriptomics		
+bioinformatics	3	Metabolic network modelling	metabolic network modelling	Metabolic network modelling		
+bioinformatics	3	Exometabolomics	exometabolomics	Exometabolomics		
+bioinformatics	3	Metabolic network	metabolic network	Metabolic network		
+bioinformatics	3	Genetic interaction network	genetic interaction network	Genetic interaction network		
+bioinformatics	3	Virtual screening	virtual screening	Virtual screening		
+bioinformatics	3	Molecular dynamics	molecular dynamics	Molecular dynamics		
+bioinformatics	3	Molecular modeling	molecular modeling	Molecular modeling		
+bioinformatics	3	Biosimulation	biosimulation	Biosimulation		
+bioinformatics	3	Cellular model	cellular model	Cellular model		
+bioinformatics	3	Modelling biological systems	modelling biological systems	Modelling biological systems		
+bioinformatics	3	Cancer systems biology	cancer systems biology	Cancer systems biology		
+bioinformatics	3	Systems immunology	systems immunology	Systems immunology		
+bioinformatics	3	Systems biomedicine	systems biomedicine	Systems biomedicine		
+bioinformatics	3	Biomedical text mining	biomedical text mining	Biomedical text mining		
+bioinformatics	3	Clinical decision support system	clinical decision support system	Clinical decision support system		
+bioinformatics	3	Imaging informatics	imaging informatics	Imaging informatics		
+bioinformatics	3	Digital pathology	digital pathology	Digital pathology		
+bioinformatics	3	Bioimage informatics	bioimage informatics	Bioimage informatics		
+bioinformatics	3	Sequence alignment	sequence alignment	Sequence alignment		
+bioinformatics	3	Alignment-free sequence analysis	alignment-free sequence analysis	Alignment-free sequence analysis		
+bioinformatics	3	Sequence assembly	sequence assembly	Sequence assembly		
+bioinformatics	3	Gene prediction	gene prediction	Gene prediction		
+bioinformatics	3	Comparative genomics	comparative genomics	Comparative genomics		
+bioinformatics	3	Computational genomics	computational genomics	Computational genomics		
+bioinformatics	3	Functional genomics	functional genomics	Functional genomics		
+bioinformatics	3	Cognitive genomics	cognitive genomics	Cognitive genomics		
+bioinformatics	3	Metagenomics	metagenomics	Metagenomics		
+bioinformatics	3	Neurogenomics	neurogenomics	Neurogenomics		
+bioinformatics	3	Personal genomics	personal genomics	Personal genomics		
+bioinformatics	3	Epigenomics	epigenomics	Epigenomics		
+bioinformatics	3	Pharmacogenomics 	pharmacogenomics 	Pharmacogenomics		
+bioinformatics	3	Toxicogenomics	toxicogenomics	Toxicogenomics		
+bioinformatics	3	Population genomics	population genomics	Population genomics		
+bioinformatics	3	Nutritional genomics	nutritional genomics	Nutritional genomics		
+bioinformatics	3	Structural genomics	structural genomics	Structural genomics		
+bioinformatics	3	Hologenomics	hologenomics	Hologenomics		
+bioinformatics	3	Metatranscriptomics	metatranscriptomics	Metatranscriptomics		
+bioinformatics	3	Paleogenomics	paleogenomics	Paleogenomics		
+bioinformatics	3	Phylogenomics	phylogenomics	Phylogenomics		
+bioinformatics	3	Radiogenomics	radiogenomics	Radiogenomics		
+bioinformatics	3	Ribonomics	ribonomics	Ribonomics		
+bioinformatics	3	Nutriepigenomics	nutriepigenomics	Nutriepigenomics		
+bioinformatics	3	Single cell epigenomics	single cell epigenomics	Single cell epigenomics		
+bioinformatics	3	Chemogenomics	chemogenomics	Chemogenomics		
+bioinformatics	3	Viral metagenomics	viral metagenomics	Viral metagenomics		
+bioinformatics	3	Public health genomics	public health genomics	Public health genomics		
+bioinformatics	3	Clinicogenomics	clinicogenomics	Clinicogenomics		
+bioinformatics	3	Personalized genomics	personalized genomics	Personalized genomics		
+computer security	2	Application security	application security	Application security		
+computer security	2	Internet security	internet security	Internet security		
+computer security	2	Network security	network security	Network security		
+computer security	2	Language-based security	language-based security	Language-based security		
+computer security	2	Hardware security	hardware security	Hardware security		
+computer security	2	Cryptography	cryptography	Cryptography		
+computer security	2	Decentralized computing	decentralized computing	Decentralized computing		
+computer security	2	Information privacy	information privacy	Information privacy		
+computer security	3	Threat analysis	threat analysis	Threat (computer)		
+computer security	3	Vulnerability assessment	vulnerability assessment	Vulnerability assessment		
+computer security	3	Social engineering	social engineering	Social engineering (security)		
+computer security	3	Brute-force attacks	brute-force attacks	Brute-force attack		
+computer security	3	Mobile security	mobile security	Mobile security		
+computer security	3	Wireless security	wireless security	Wireless security		
+computer security	3	Browser security	browser security	Browser security		
+computer security	3	Control system security	control system security	Control system security		
+computer security	3	Access control	access control	Access control		
+computer security	3	Data center security	data center security	Data center security		
+computer security	3	Security information and event management	security information and event management	Security information and event management		
+computer security	3	Digital forensics	digital forensics	Digital forensics		
+computer security	3	Spyware	spyware	Spyware		
+computer security	3	Malware analysis	malware analysis	Malware analysis		
+computer security	3	Hardening	hardening	Hardening (computing)		
+computer security	3	File verification	file verification	File verification		
+computer security	3	File integrity monitoring	file integrity monitoring	File integrity monitoring		
+computer security	3	Control-flow integrity	control-flow integrity	Control-flow integrity		
+computer security	3	Arbitrary code execution	arbitrary code execution	Arbitrary code execution		
+computer security	3	SQL injection attacks	sql injection attacks	SQL injection attack		
+computer security	3	Web tracking	web tracking	Web tracking		
+computer security	3	Code injection	code injection	Code injection		
+computer security	3	Watering hole attacks	watering hole attacks	Watering hole attack		
+computer security	3	Drive-by dowloads	drive-by dowloads	Drive-by download		
+computer security	3	Browser exploitation	browser exploitation	Browser exploit		
+computer security	3	Certificate transparency	certificate transparency	Certificate Transparency		
+computer security	3	Certificate revocation	certificate revocation	Certificate revocation		
+computer security	3	DNS analytics	dns analytics	DNS analytics		
+computer security	3	Email filtering	email filtering	Email filtering		
+computer security	3	Cross-site scripting	cross-site scripting	Cross-site scripting		
+computer security	3	Network assurance	network assurance	IT network assurance		
+computer security	3	Traffic analysis	traffic analysis	Traffic analysis		
+computer security	3	Network behavior anomaly detection	network behavior anomaly detection	Network behavior anomaly detection		
+computer security	3	User behavior analytics	user behavior analytics	User behavior analytics		
+computer security	3	Man-in-the-middle attacks	man-in-the-middle attacks	Man-in-the-middle attack		
+computer security	3	Sniffing attacks	sniffing attacks	Sniffing attack		
+computer security	3	Session hijacking	session hijacking	Session hijacking		
+computer security	3	Denial-of-service attacks	denial-of-service attacks	Denial-of-service attack		
+computer security	3	Allowlisting	allowlisting	Whitelist		
+computer security	3	Denylisting	denylisting	Blacklist (computing)		
+computer security	3	Sandboxing	sandboxing	Sandbox (computer security)		
+computer security	3	Firewalls	firewalls	Firewall (computing)		
+computer security	3	Honeypots and honeynets	honeypots and honeynets	Honeypot (computing)		
+computer security	3	Intrusion detection	intrusion detection	Intrusion Detection		
+computer security	3	Evasion	evasion	Evasion (network security)		
+computer security	3	Program analysis	program analysis	Program analysis		
+computer security	3	Reverse engineering	reverse engineering	Reverse engineering		
+computer security	3	Buffer overflow protection	buffer overflow protection	Buffer overflow protection		
+computer security	3	Proof-carrying code	proof-carrying code	Proof-carrying code		
+computer security	3	Static program analysis	static program analysis	Static program analysis		
+computer security	3	Dynamic program analysis	dynamic program analysis	Dynamic program analysis		
+computer security	3	Fuzzing	fuzzing	Fuzzing		
+computer security	3	Symbolic execution	symbolic execution	Symbolic execution		
+computer security	3	Side-channel attacks	side-channel attacks	Side-channel attack		
+computer security	3	Digital supply chain security	digital supply chain security	Digital supply chain security		
+computer security	3	Supply chain attacks	supply chain attacks	Supply chain attack		
+computer security	3	Backdooring	backdooring	Backdoor (computing)		
+computer security	3	Secure cryptoprocessors	secure cryptoprocessors	Secure cryptoprocessor		
+computer security	3	Digital signatures	digital signatures	Digital signature		
+computer security	3	Post-quantum cryptography	post-quantum cryptography	Post-quantum cryptography		
+computer security	3	Public-key cryptography	public-key cryptography	Public-key cryptography		
+computer security	3	Cryptographic protocols	cryptographic protocols	Cryptographic protocol		
+computer security	3	Zero-knowledge proofs	zero-knowledge proofs	Zero-knowledge proof		
+computer security	3	Information flow	information flow	Information flow (information theory)		
+computer security	3	Secure multi-party computation	secure multi-party computation	Secure multi-party computation		
+computer security	3	Steganography	steganography	Steganography		
+computer security	3	Certificate-based encryption	certificate-based encryption	Certificate-based encryption		
+computer security	3	Encryption	encryption	Encryption		
+computer security	3	Consensus protocols	consensus protocols	Consensus (computer science)		
+computer security	3	Smart contracts	smart contracts	Smart contract		
+computer security	3	Blockchain analysis	blockchain analysis	Blockchain analysis		
+computer security	3	Distributed databases	distributed databases	Distributed database		
+computer security	3	Blockchain ledgers	blockchain ledgers	Blockchain-based database		
+computer security	3	Data anonymization	data anonymization	Data anonymization		
+computer security	3	Differential privacy	differential privacy	Differential privacy		
+computer security	3	Authentication	authentication	Authentication		
+computer security	3	Biometrics	biometrics	Biometrics		
+computer security	3	Credential stuffing	credential stuffing	Credential stuffing		
+computer security	3	Homomorphic encryption	homomorphic encryption	Homomorphic encryption		
+computer security	3	Multi-factor authentication	multi-factor authentication	Multi-factor authentication		
+computer security	3	Message authentication	message authentication	Message authentication		
+computer security	3	Internet censorship circumvention	internet censorship circumvention	Internet censorship circumvention		
+computer security	3	Onion routing	onion routing	Onion routing		
