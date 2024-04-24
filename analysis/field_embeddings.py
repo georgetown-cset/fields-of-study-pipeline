@@ -262,12 +262,12 @@ def save(name):
 
 
 if __name__ == '__main__':
-    for lang in ['zh', 'en']:
-        # Load the matrix of field vectors
-        # The field vectors form a matrix with {field count} rows and {FastText dimensionality} columns.
-        FIG_DIR = 'field_embeddings/fasttext'
-        ft_vectors = load_field_fasttext(lang).index
-        main(ft_vectors, lang)
+    lang = "en"
+    # Load the matrix of field vectors
+    # The field vectors form a matrix with {field count} rows and {FastText dimensionality} columns.
+    FIG_DIR = 'field_embeddings/fasttext'
+    ft_vectors = load_field_fasttext(lang).index
+    main(ft_vectors, lang)
 
         # Same for entities
         FIG_DIR = 'field_embeddings/entity'

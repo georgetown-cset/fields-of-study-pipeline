@@ -1,4 +1,0 @@
-outs:
-- md5: 347cefa423a72045e6aa8753b5709c8d
-  size: 11878
-  path: zh_field_tfidf_similarity.pkl
