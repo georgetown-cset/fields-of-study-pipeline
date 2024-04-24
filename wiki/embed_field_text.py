@@ -98,7 +98,7 @@ def write_tfidf_similarity(tfidf_embeddings, dictionary, lang):
 
 
 def write_fasttext_similarity(ft_embeddings, lang):
-    """"Write to disk a matrix of fasttext vectors for fields."""
+    """Write to disk a matrix of fasttext vectors for fields."""
     if lang == 'en':
         output_path = EN_FIELD_FASTTEXT_PATH
     # elif lang == 'zh':
