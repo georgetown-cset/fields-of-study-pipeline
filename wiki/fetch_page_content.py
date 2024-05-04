@@ -54,8 +54,11 @@ def read_field_meta(upsert: bool = False) -> tuple:
     with open('data/field_pages.json', 'rt') as f:
         for line in f:
             record = json.loads(line)
+            # Ensure no downstream duplicates via whitespace in names
+            record['normalized_name'] = record['normalized_name'].strip()
+            record['display_name'] = record['display_name'].strip()
             # Check whether complete field data is already in the database
-            existing = table.find_one(normalized_name=record['normalized_name'])
+            existing = table.find_one(normalized_name=record['normalized_name'].trim())
             if existing is not None:
                 # We don't have a page title so there's nothing to do, or we do but already have the page HTML:
                 en_done = [f"en_title_{i}" not in existing or f"en_html_{i}" in existing for i in range(1, 4)]
