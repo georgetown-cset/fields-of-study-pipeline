@@ -21,6 +21,8 @@ from tqdm import tqdm
 db = dataset.connect('sqlite:///data/wiki.db')
 table = db['pages']
 
+# Enforce uniqueness on display name in the table of page content
+db.query("""create unique index if not exists display_name on pages(display_name);""")
 
 def main(upsert=False):
     for field, existing in tqdm(read_field_meta(upsert=upsert)):
@@ -53,7 +55,7 @@ def read_field_meta(upsert: bool = False) -> tuple:
         for line in f:
             record = json.loads(line)
             # Check whether complete field data is already in the database
-            existing = table.find_one(id=record['normalized_name'])
+            existing = table.find_one(normalized_name=record['normalized_name'])
             if existing is not None:
                 # We don't have a page title so there's nothing to do, or we do but already have the page HTML:
                 en_done = [f"en_title_{i}" not in existing or f"en_html_{i}" in existing for i in range(1, 4)]
