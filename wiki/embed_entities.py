@@ -33,16 +33,15 @@ def main(lang='en', exclude_self_mentions=False):
     field_matcher = create_field_matcher(lang)
     # We'll be using the FastText field embeddings, so load that matrix and the index mapping row -> field ID
     field_vectors = load_field_fasttext(lang)
-    field_index = np.array(load_field_keys(lang), dtype=int)
+    keys = load_field_keys(lang)
+    field_index = np.array(keys, dtype=object)
     # Container for fields => the frequency-weighted average of the mentioned fields in their text
     entity_vectors = {}
-    # The FastText embeddings are indexed by integer field IDs, and when creating the entity matcher we'll need to look
-    # up entity names by ID
     id_to_title = {}
 
     # Iterate over each field ...
     for field in table:
-        field_id = field['id']
+        field_id = field['display_name']
         text = field[f'{lang}_text']
         titles = [field[f'en_title_{i}'] for i in range(1, 4)]
         entity_vector = np.zeros((VECTOR_DIM,), dtype=np.float32)
@@ -75,11 +74,11 @@ def main(lang='en', exclude_self_mentions=False):
                 # understanding of the motivation for the entity vectors.
                 continue
             # Get the field ID for the mentioned entity, so we can slice the field vectors in the right place
-            statement = f'''SELECT id from pages  where lower(en_title_1) = "{mention.lower()}" 
+            statement = f'''SELECT display_name from pages  where lower(en_title_1) = "{mention.lower()}" 
             or lower(en_title_2) = "{mention.lower()}" or lower(en_title_3) = "{mention.lower()}" LIMIT 1'''
             mention_id = None
             for row in db.query(statement):
-                mention_id = row["id"]
+                mention_id = row["display_name"]
             # Here `field_index == mention_id` gives us the single vector that corresponds to the mentioned field ID
             for _ in range(count):
                 # We weight the vector by mention count. This is an IndexError if we don't find `mention_id` in
