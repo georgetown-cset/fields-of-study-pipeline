@@ -4,7 +4,7 @@
 
 ### 0. `read_field_meta.py`
 
-*Note*: this file has not been updated or rerun between the old version of fields of study and the new version, unlike all the following files.
+*Note*: this file has not been updated or rerun between the old version of fields of study and the new version, unlike all the following files. (We don't need it.)
 
 First we identify the fields we'll be looking for.
 
