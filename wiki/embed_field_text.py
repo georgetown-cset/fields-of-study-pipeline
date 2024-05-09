@@ -13,8 +13,7 @@ from scipy.sparse import csr_matrix
 from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, \
     EN_FIELD_KEY_PATH, ZH_FIELD_KEY_PATH
 from fos.util import preprocess
-from fos.vectors import load_fasttext, load_tfidf, embed_tfidf
-
+from fos.vectors import load_fasttext, load_tfidf, embed_tfidf, norm
 
 db = dataset.connect('sqlite:///wiki/data/wiki.db')
 table = db['pages']
@@ -49,7 +48,7 @@ def main(lang='en'):
         #     ft_embeddings[field_id] = ft_model.get_sentence_vector('\t'.join(jieba.cut(clean_text)))
         #     tfidf_embeddings[field_id] = embed_tfidf(jieba.cut(clean_text), tfidf, dictionary)
         # else:
-        ft_embeddings[field_id] = ft_model.get_sentence_vector(clean_text)
+        ft_embeddings[field_id] = norm(ft_model.get_sentence_vector(clean_text))
         tfidf_embeddings[field_id] = embed_tfidf(clean_text.split(), tfidf, dictionary)
 
     print(f"FastText embeddings for {len(ft_embeddings)} of {len(table)} fields")
