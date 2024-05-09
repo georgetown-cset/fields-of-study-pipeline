@@ -58,7 +58,7 @@ def read_field_meta(upsert: bool = False) -> tuple:
             record['normalized_name'] = record['normalized_name'].strip()
             record['display_name'] = record['display_name'].strip()
             # Check whether complete field data is already in the database
-            existing = table.find_one(normalized_name=record['normalized_name'].trim())
+            existing = table.find_one(normalized_name=record['normalized_name'].strip())
             if existing is not None:
                 # We don't have a page title so there's nothing to do, or we do but already have the page HTML:
                 en_done = [f"en_title_{i}" not in existing or f"en_html_{i}" in existing for i in range(1, 4)]

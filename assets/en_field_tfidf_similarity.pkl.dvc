@@ -1,4 +1,5 @@
 outs:
-- md5: 664f99d154a0e7e56706388dc45cb728
-  size: 22919129
+- md5: 592734fc6cefe4ccbc6a430ae5981efc
+  size: 6608993
   path: en_field_tfidf_similarity.pkl
+  hash: md5

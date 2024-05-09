@@ -571,6 +571,9 @@
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 1, "child_normalized_name": "3d microfabrication", "child_display_name": "3D microfabrication", "child_level": "2"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 1, "child_normalized_name": "wafer fabrication", "child_display_name": "Wafer Fabrication", "child_level": "2"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 1, "child_normalized_name": "semiconductor device fabrication", "child_display_name": "Semiconductor device fabrication", "child_level": "2"}
+{"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 1, "child_normalized_name": "integrated circuit design", "child_display_name": "Integrated circuit design", "child_level": "2"}
+{"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 1, "child_normalized_name": "core ip", "child_display_name": "Core IP", "child_level": "2"}
+{"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 1, "child_normalized_name": "eda software", "child_display_name": "EDA software", "child_level": "2"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "chip-scale packaging", "child_display_name": "Chip-scale packaging", "child_level": "3"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "wafer dicing", "child_display_name": "Wafer dicing", "child_level": "3"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "wafer backgrinding", "child_display_name": "Wafer backgrinding", "child_level": "3"}
@@ -635,7 +638,6 @@
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "multiple patterning", "child_display_name": "Multiple patterning", "child_level": "3"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "maskless lithography", "child_display_name": "Maskless lithography", "child_level": "3"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "resolution enhancement technologies", "child_display_name": "Resolution enhancement technologies", "child_level": "3"}
-{"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "eda software", "child_display_name": "EDA software", "child_level": "3"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "design rule checking", "child_display_name": "Design rule checking", "child_level": "3"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "next-generation lithography", "child_display_name": "Next-generation lithography", "child_level": "3"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "phase-shift mask", "child_display_name": "Phase-shift mask", "child_level": "3"}
@@ -648,6 +650,11 @@
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "cmos", "child_display_name": "CMOS", "child_level": "3"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "mosfet", "child_display_name": "MOSFET", "child_level": "3"}
 {"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "field-effect transistor", "child_display_name": "Field-effect transistor", "child_level": "3"}
+{"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "processor design", "child_display_name": "Processor design", "child_level": "3"}
+{"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "asic", "child_display_name": "ASIC", "child_level": "3"}
+{"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "fpga", "child_display_name": "FPGA", "child_level": "3"}
+{"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "cpu", "child_display_name": "CPU", "child_level": "3"}
+{"normalized_name": "semiconductors", "display_name": "semiconductors", "parent_level": 2, "child_normalized_name": "gpu", "child_display_name": "GPU", "child_level": "3"}
 {"normalized_name": "biotechnology", "display_name": "biotechnology", "parent_level": 1, "child_normalized_name": "agricultural biotechnology", "child_display_name": "Agricultural biotechnology", "child_level": "2"}
 {"normalized_name": "biotechnology", "display_name": "biotechnology", "parent_level": 1, "child_normalized_name": "environmental biotechnology", "child_display_name": "Environmental biotechnology", "child_level": "2"}
 {"normalized_name": "biotechnology", "display_name": "biotechnology", "parent_level": 1, "child_normalized_name": "medical biotechnology", "child_display_name": "Medical biotechnology", "child_level": "2"}
