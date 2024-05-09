@@ -1,4 +1,3 @@
 *_corpus-*.jsonl*
 *_embeddings.jsonl
 *_scores.jsonl
-*_scores.tsv
