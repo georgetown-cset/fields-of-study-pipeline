@@ -4,8 +4,9 @@
 import math
 import pickle
 from pathlib import Path
-from typing import Tuple, List
+from typing import List, Tuple
 
+import numpy as np
 from fasttext.FastText import _FastText
 from gensim import matutils
 from gensim.corpora import Dictionary
@@ -130,3 +131,10 @@ def sparse_norm(vector):
         return [(term_id, x / length) for term_id, x in vector]
     else:
         return list(vector)
+
+
+def norm(vector: np.ndarray) -> np.ndarray:
+    l2_norm = np.linalg.norm(vector, 2)
+    if l2_norm == 0:
+        return vector
+    return vector / l2_norm

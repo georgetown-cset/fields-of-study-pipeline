@@ -1,4 +1,5 @@
 [core]
     remote = gcs
+    autostage = true
 ['remote "gcs"']
     url = gs://fields-of-study-model/pipeline-dvc
