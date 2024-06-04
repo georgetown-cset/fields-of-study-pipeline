@@ -336,7 +336,6 @@
 {"normalized_name": "biology", "display_name": "biology", "parent_level": 0, "child_normalized_name": "biotechnology", "child_display_name": "Biotechnology", "child_level": "1"}
 {"normalized_name": "biology", "display_name": "biology", "parent_level": 0, "child_normalized_name": "botany", "child_display_name": "Botany", "child_level": "1"}
 {"normalized_name": "biology", "display_name": "biology", "parent_level": 0, "child_normalized_name": "cell biology", "child_display_name": "Cell biology", "child_level": "1"}
-{"normalized_name": "bioinformatics", "display_name": "bioinformatics", "parent_level": 1, "child_normalized_name": "computational biology", "child_display_name": "Computational biology", "child_level": "2"}
 {"normalized_name": "biology", "display_name": "biology", "parent_level": 0, "child_normalized_name": "ecology", "child_display_name": "Ecology", "child_level": "1"}
 {"normalized_name": "biology", "display_name": "biology", "parent_level": 0, "child_normalized_name": "evolutionary biology", "child_display_name": "Evolutionary biology", "child_level": "1"}
 {"normalized_name": "biology", "display_name": "biology", "parent_level": 0, "child_normalized_name": "genetics", "child_display_name": "Genetics", "child_level": "1"}
@@ -1030,6 +1029,7 @@
 {"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "antiviral drug development", "child_display_name": "Antiviral drug development", "child_level": "3"}
 {"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "viral epidemiology", "child_display_name": "Viral epidemiology", "child_level": "3"}
 {"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "human virome", "child_display_name": "Human virome", "child_level": "3"}
+{"normalized_name": "bioinformatics", "display_name": "bioinformatics", "parent_level": 1, "child_normalized_name": "computational biology", "child_display_name": "Computational biology", "child_level": "2"}
 {"normalized_name": "bioinformatics", "display_name": "bioinformatics", "parent_level": 1, "child_normalized_name": "lipidomics", "child_display_name": "Lipidomics", "child_level": "2"}
 {"normalized_name": "bioinformatics", "display_name": "bioinformatics", "parent_level": 1, "child_normalized_name": "proteomics", "child_display_name": "Proteomics", "child_level": "2"}
 {"normalized_name": "bioinformatics", "display_name": "bioinformatics", "parent_level": 1, "child_normalized_name": "glycomics", "child_display_name": "Glycomics", "child_level": "2"}

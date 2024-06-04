@@ -259,13 +259,20 @@ def html_to_text(content, section: str) -> tuple:
         section_field = doc.xpath(f'//h2[@id="{section}"]')
         if not section_field:
             section_field = doc.xpath(f'//h3[@id="{section}"]')
+        if section == "(Top)":
+            section_field = doc.xpath(f'//section[@data-mw-section-id="0"]')
         for element in section_field:
             unwanted = element.xpath('//script|//style')
             for u in unwanted:
                 u.drop_tree()
-            text = element.getparent().text_content()
+            if section == "(Top)":
+                text = element.text_content()
+            else:
+                text = element.getparent().text_content()
             referenced = set(CITE_BRACKETS.findall(text))
             text = remove_wiki_brackets(text.strip())
+            if section == "(Top)":
+                print(text)
             return text, clean_references(referenced)
     # All our text should be in paragraphs; this restricts the text to the article text, excluding the infobox etc.
     for tag in ['math', 'ref', 'nowiki', 'cite']:

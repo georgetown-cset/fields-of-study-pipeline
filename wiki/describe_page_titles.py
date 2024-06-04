@@ -17,7 +17,7 @@ def main():
 
     # We expect far less coverage of fields in Chinese wikipedia than in English wikipedia---check how much
     print('\nCoverage by level (n second titles, n primary EN titles):')
-    # (19, 19) means we have 19 ZH and 19 EN wiki pages at level 0
+    # (19, 19) means we have 19 second and 19 primary wiki page titles at level 0
     print(pages.groupby('level').agg({'en_title_2': lambda x: ((~x.isna()).sum(), len(x))}))
 
 

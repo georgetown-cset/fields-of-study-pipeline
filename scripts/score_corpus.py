@@ -57,6 +57,7 @@ def create_output(
 
 def main(lang="en",
          limit=1000,
+         corpus=CORPUS_DIR,
          bq_format=False,
          output_path=None,
          write_fasttext=False,
@@ -70,7 +71,7 @@ def main(lang="en",
     start_time = timeit.default_timer()
     i = 0
     with open(output_path, 'wt') as f:
-        for record in iter_extract(lang):
+        for record in iter_extract(lang, corpus):
             embedding = fields.embed(record['text'])
             sim = fields.score(embedding)
             avg_sim_values = zip_longest(fields.index, sim.average().astype(float))
@@ -109,6 +110,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Score merged corpus text')
     parser.add_argument('lang', choices=('en', 'zh'), help='Language')
     parser.add_argument('--limit', type=int, default=10000, help='Record limit')
+    parser.add_argument('--corpus', default=CORPUS_DIR, help='Directory where corpus to run over exists')
     parser.add_argument('--bq_format', action='store_true', help='If specified, will output nested field scores')
     parser.add_argument('-o', '--output', help='Output path')
     parser.add_argument('-f', '--fasttext', action='store_true', help='Write fastText scores to output')
@@ -119,6 +121,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     main(lang=args.lang,
          limit=args.limit,
+         corpus=args.corpus,
          bq_format=args.bq_format,
          output_path=args.output,
          write_fasttext=args.fasttext,
