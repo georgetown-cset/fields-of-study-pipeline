@@ -1003,7 +1003,7 @@
 {"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "zoonosis", "child_display_name": "Zoonosis", "child_level": "3"}
 {"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "phage therapy", "child_display_name": "Phage therapy", "child_level": "3"}
 {"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "phage display", "child_display_name": "Phage display", "child_level": "3"}
-{"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "phage-ligand technology ", "child_display_name": "Phage-ligand technology ", "child_level": "3"}
+{"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "phage-ligand technology", "child_display_name": "Phage-ligand technology", "child_level": "3"}
 {"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "phage ecology", "child_display_name": "Phage ecology", "child_level": "3"}
 {"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "phageome", "child_display_name": "Phageome", "child_level": "3"}
 {"normalized_name": "virology", "display_name": "virology", "parent_level": 2, "child_normalized_name": "viroplasm", "child_display_name": "Viroplasm", "child_level": "3"}
