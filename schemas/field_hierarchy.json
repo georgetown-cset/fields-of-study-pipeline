@@ -1,0 +1,38 @@
+[
+  {
+    "mode": "REQUIRED",
+    "name": "normalized_name",
+    "type": "STRING",
+    "description": "Normalized name of the field of study."
+  },
+  {
+    "mode": "REQUIRED",
+    "name": "display_name",
+    "type": "STRING",
+    "description": "Display name of the field of study."
+  },
+  {
+    "mode": "REQUIRED",
+    "name": "parent_level",
+    "type": "INTEGER",
+    "description": "Field of study level."
+  },
+  {
+    "mode": "REQUIRED",
+    "name": "child_normalized_name",
+    "type": "STRING",
+    "description": "Normalized name of the field of study's child field."
+  },
+  {
+    "mode": "REQUIRED",
+    "name": "child_display_name",
+    "type": "STRING",
+    "description": "Display name of the field of study's child field."
+  },
+  {
+    "mode": "REQUIRED",
+    "name": "child_level",
+    "type": "INTEGER",
+    "description": "Child field of study level."
+  }
+]
