@@ -1,5 +1,5 @@
 attrs==21.4.0
-dvc[gs]==3.0.1
+dvc[gs]==3.42.0
 fasttext==0.9.2
 gensim==3.8.3
 google-cloud-bigquery==2.31.0
