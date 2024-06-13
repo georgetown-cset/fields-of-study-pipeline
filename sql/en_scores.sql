@@ -7,18 +7,19 @@ with in_lang_ids as (
   -- Get merged_id
   inner join literature.sources on sources.orig_id = all_metadata_with_cld2_lid.id
   where
-  -- This just shrinks the results a bit (to publications with en/zh titles or abstracts)
+  -- This just shrinks the results a bit (to publications with en titles or abstracts)
   (
     (title is not null
       and title_cld2_lid_success is true
       and title_cld2_lid_is_reliable is true
-      and lower(title_cld2_lid_first_result_short_code) in ("en", "zh")) is true
+      and lower(title_cld2_lid_first_result_short_code) = "en" is true
     or (abstract is not null
       and abstract_cld2_lid_success is true
       and abstract_cld2_lid_is_reliable is true
-      and lower(abstract_cld2_lid_first_result_short_code) in ("en", "zh")) is true
+      and lower(abstract_cld2_lid_first_result_short_code) = "en" is true
   )
 ),
+
 old_scores as (
   select
     merged_id,
@@ -30,7 +31,7 @@ old_scores as (
       select
         merged_id
       from
-        {{staging_dataset}}.new_en_zh_scores
+        {{staging_dataset}}.new_en
     ) and merged_id in (
       select
         merged_id
@@ -38,10 +39,11 @@ old_scores as (
         in_lang_ids
     )
 )
+
 select
   merged_id,
-  array_agg(struct(field.id, field.score)) as fields
-from {{staging_dataset}}.new_en_zh_scores,
+  array_agg(struct(field.display_name, field.score)) as fields
+from {{staging_dataset}}.new_en,
 unnest(fields) as field
 group by merged_id
 union all

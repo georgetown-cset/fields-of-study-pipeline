@@ -3,11 +3,11 @@
 -- from the field model, so this will fail when MAG has deployed an updated model and we
 -- haven't.
 select
-    count(field.id) = 0
+    count(field.display_name) = 0
 from
   {{staging_dataset}}.field_scores, unnest(fields) as field
 where
-  field.id not in (
-    select field_id
+  field.display_name not in (
+    select display_name
     from {{staging_dataset}}.field_meta
 )
