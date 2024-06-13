@@ -2,3 +2,4 @@ outs:
 - md5: c2f2469e3b4c48a88d8ff69263567e80
   size: 19834905
   path: word2vec.bin
+  hash: md5

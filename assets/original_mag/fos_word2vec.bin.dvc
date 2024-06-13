@@ -2,3 +2,4 @@ outs:
 - md5: ea9c2ecbaca688a516a4e59cfd6bea9f
   size: 5939728
   path: fos_word2vec.bin
+  hash: md5

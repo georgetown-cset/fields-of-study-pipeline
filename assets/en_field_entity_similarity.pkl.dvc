@@ -1,5 +1,5 @@
 outs:
-- md5: 2ce7fbe0f51641839a0108e37dff2306
-  size: 1110285
+- md5: ed2fb7d7cb4bd7248fc5338e29c126e7
+  size: 311285
   path: en_field_entity_similarity.pkl
   hash: md5
