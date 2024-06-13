@@ -75,7 +75,7 @@ with DAG("new_fields_of_study",
         task_id=f"refresh_artifacts",
         bash_command=mk_command_seq([
             "cd /mnt/disks/data",
-            f"rm -r fields-of-study-pipeline || true",
+            f"rm -rf fields-of-study-pipeline || true",
             f"gsutil -m cp -r gs://{bucket}/{production_dataset}/fields-of-study-pipeline .",
             "cd fields-of-study-pipeline",
             "pip install -r requirements.txt",
