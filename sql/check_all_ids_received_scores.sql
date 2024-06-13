@@ -7,6 +7,6 @@ where
     select
       merged_id
     from
-      {{staging_dataset}}.new_en_scores
+      {{staging_dataset}}.new_en
   )
 )
