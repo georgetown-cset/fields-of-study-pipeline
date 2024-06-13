@@ -89,7 +89,7 @@ with DAG("new_fields_of_study",
 
     prev_op = refresh_artifacts
 
-    languages = ["en", "zh"]
+    languages = ["en"]
     for lang in languages:
         # run the download script; filter inputs to only "changed" rows if the user did not pass the "rerun" param
         # through the dagrun config
@@ -218,7 +218,7 @@ with DAG("new_fields_of_study",
 
     success_alert = get_post_success("Fields of study v2 update succeeded!", dag)
 
-    # as a final step before posting success, update the prev_{en,zh}_corpus tables so we'll know what text we used
+    # as a final step before posting success, update the prev_{lang}_corpus tables so we'll know what text we used
     # on previous runs
     for lang in languages:
         copy_corpus = BigQueryInsertJobOperator(
