@@ -13,8 +13,9 @@ with neighbors as (
     merged_id as neighbor_id
   from literature.references
 ),
+
 neighbor_scores as (
-  -- The papers without scores are non-EN/ZH or don't have title/abstract.
+  -- The papers without scores are non-EN or don't have title/abstract.
   -- Our approach is to find any neighbors of theirs in the citation
   -- graph that do have scores
   select
@@ -28,22 +29,23 @@ neighbor_scores as (
   inner join neighbors using(merged_id)
   -- And get any scores associated (at this point any pubs
   -- whose neighbors don't have scores drop out)
-  inner join {{staging_dataset}}.en_zh_scores neighbor_scores
+  inner join {{staging_dataset}}.en_scores neighbor_scores
     on neighbor_scores.merged_id = neighbors.neighbor_id
   -- We exclude papers that already have scores
-  left join {{staging_dataset}}.en_zh_scores
-    on en_zh_scores.merged_id = sources.merged_id
+  left join {{staging_dataset}}.en_scores
+    on en_scores.merged_id = sources.merged_id
   -- The more readable 'where not in (subquery)' approach gives an OOM
   -- error, so we do left join + where
   where
-    -- As explained immediately above exclude paprers that already
+    -- As explained immediately above exclude papers that already
     -- have scores
-    en_zh_scores.merged_id is null
+    en_scores.merged_id is null
     -- A small number of papers that go through the field model don't
     -- receive any non-negative scores, and these may appear in the
     -- en_zh_scores table, so exclude them here
     and neighbor_scores.fields is not null
 ),
+
 n_neighbors as (
   -- How many neighbors with 1+ field score (any field) does each of these papers have?
   select distinct
@@ -52,13 +54,14 @@ n_neighbors as (
   from neighbor_scores
   group by merged_id
 ),
+
 observed_fields as (
   -- Summarize neighbors' observed field scores. This is
   -- the first step in imputation. Below we weight the
   -- resulting averages
   select
     merged_id,
-    field.id as field_id,
+    field.display_name as display_name,
     -- Take the field average over the observed scores
     avg(field.score) as avg_neighbors_score,
     -- How many references with a score for this field?
@@ -66,15 +69,15 @@ observed_fields as (
   from neighbor_scores, unnest(fields) as field
   group by
     merged_id,
-    field.id
+    field.display_name
 ),
+
 unnested_imputations as (
-  --
   select
     -- For each publication-field pair (for the fields we observe among a
     -- publication's references) ...
     observed_fields.merged_id,
-    observed_fields.field_id,
+    observed_fields.display_name,
     -- We have the average over the observed scores for a field;
     round(observed_fields.avg_neighbors_score, 4) as avg_neighbors_score,
     -- We have the count of the neighbors for which a non-negative score
@@ -91,12 +94,13 @@ unnested_imputations as (
   from observed_fields
   inner join n_neighbors using (merged_id)
 )
--- Reshape for consistency with en_zh_scores
+
+-- Reshape for consistency with en_scores
 select
   merged_id,
   neighbors_count,
   array_agg(struct(
-    field_id as id,
+    display_name,
     avg_neighbors_score,
     neighbors_with_field_count,
     score

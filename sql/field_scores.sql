@@ -6,13 +6,13 @@ with merged as (
     merged_id,
     fields,
     false as is_imputed
-  from {{staging_dataset}}.en_zh_scores
+  from {{staging_dataset}}.en_scores
   union all
   select
     merged_id,
     -- We unnest and nest again so that the structs match; imputed_scores has more nested fields
     array_agg(struct(
-      field.id,
+      field.display_name,
       field.score
       )) as fields,
     true as is_imputed
