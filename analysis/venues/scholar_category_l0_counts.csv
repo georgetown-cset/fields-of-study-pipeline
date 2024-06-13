@@ -1,0 +1,168 @@
+scholar_cat,l0_k1,id
+bio_agronomycropscience,Biology,586
+bio_agronomycropscience,Environmental science,157
+bio_agronomycropscience,Chemistry,82
+bio_agronomycropscience,Geology,75
+bio_agronomycropscience,Computer science,38
+bio_agronomycropscience,Materials science,27
+bio_agronomycropscience,Geography,13
+bio_agronomycropscience,Engineering,6
+bio_agronomycropscience,Economics,5
+bio_agronomycropscience,Physics,5
+bio_agronomycropscience,Mathematics,3
+bio_agronomycropscience,Business,1
+bio_agronomycropscience,History,1
+bio_agronomycropscience,Medicine,1
+bio_biotechnology,Biology,564
+bio_biotechnology,Chemistry,267
+bio_biotechnology,Engineering,38
+bio_biotechnology,Materials science,35
+bio_biotechnology,Environmental science,18
+bio_biotechnology,Computer science,17
+bio_biotechnology,Medicine,16
+bio_biotechnology,Physics,8
+bio_biotechnology,Business,6
+bio_biotechnology,Economics,6
+bio_biotechnology,Political science,5
+bio_biotechnology,Geology,4
+bio_biotechnology,Mathematics,4
+bio_biotechnology,Sociology,3
+bio_biotechnology,Geography,3
+bio_biotechnology,History,2
+bio_biotechnology,Psychology,2
+bio_biotechnology,Philosophy,1
+bio_biotechnology,Art,1
+eng_artificialintelligence,Computer science,685
+eng_artificialintelligence,Mathematics,210
+eng_artificialintelligence,Engineering,31
+eng_artificialintelligence,Economics,15
+eng_artificialintelligence,Physics,10
+eng_artificialintelligence,Sociology,6
+eng_artificialintelligence,Business,6
+eng_artificialintelligence,Psychology,6
+eng_artificialintelligence,Medicine,6
+eng_artificialintelligence,Geography,5
+eng_artificialintelligence,Geology,4
+eng_artificialintelligence,Biology,4
+eng_artificialintelligence,Materials science,3
+eng_artificialintelligence,Environmental science,3
+eng_artificialintelligence,Philosophy,2
+eng_artificialintelligence,Art,2
+eng_artificialintelligence,Political science,1
+eng_artificialintelligence,Chemistry,1
+eng_computationallinguistics,Computer science,757
+eng_computationallinguistics,Mathematics,85
+eng_computationallinguistics,Philosophy,74
+eng_computationallinguistics,Sociology,23
+eng_computationallinguistics,Psychology,19
+eng_computationallinguistics,Political science,11
+eng_computationallinguistics,History,7
+eng_computationallinguistics,Art,6
+eng_computationallinguistics,Biology,5
+eng_computationallinguistics,Medicine,4
+eng_computationallinguistics,Business,2
+eng_computationallinguistics,Chemistry,2
+eng_computationallinguistics,Geography,2
+eng_computationallinguistics,Economics,1
+eng_computationallinguistics,Engineering,1
+eng_computationallinguistics,Physics,1
+eng_computerhardwaredesign,Computer science,690
+eng_computerhardwaredesign,Mathematics,125
+eng_computerhardwaredesign,Physics,66
+eng_computerhardwaredesign,Engineering,61
+eng_computerhardwaredesign,Materials science,23
+eng_computerhardwaredesign,Chemistry,14
+eng_computerhardwaredesign,Biology,7
+eng_computerhardwaredesign,Geography,4
+eng_computerhardwaredesign,Medicine,3
+eng_computerhardwaredesign,Art,2
+eng_computerhardwaredesign,Psychology,2
+eng_computerhardwaredesign,Business,1
+eng_computerhardwaredesign,Economics,1
+eng_computerhardwaredesign,Political science,1
+eng_computersecuritycryptography,Computer science,808
+eng_computersecuritycryptography,Mathematics,139
+eng_computersecuritycryptography,Engineering,13
+eng_computersecuritycryptography,Business,8
+eng_computersecuritycryptography,Psychology,5
+eng_computersecuritycryptography,Economics,4
+eng_computersecuritycryptography,Geography,4
+eng_computersecuritycryptography,Physics,4
+eng_computersecuritycryptography,Sociology,4
+eng_computersecuritycryptography,Art,3
+eng_computersecuritycryptography,Environmental science,2
+eng_computersecuritycryptography,Political science,2
+eng_computersecuritycryptography,Biology,1
+eng_computersecuritycryptography,Chemistry,1
+eng_computersecuritycryptography,History,1
+eng_computersecuritycryptography,Medicine,1
+eng_computervisionpatternrecognition,Computer science,702
+eng_computervisionpatternrecognition,Mathematics,145
+eng_computervisionpatternrecognition,Physics,29
+eng_computervisionpatternrecognition,Psychology,19
+eng_computervisionpatternrecognition,Medicine,17
+eng_computervisionpatternrecognition,Political science,15
+eng_computervisionpatternrecognition,Philosophy,12
+eng_computervisionpatternrecognition,History,11
+eng_computervisionpatternrecognition,Biology,11
+eng_computervisionpatternrecognition,Art,10
+eng_computervisionpatternrecognition,Geography,9
+eng_computervisionpatternrecognition,Geology,5
+eng_computervisionpatternrecognition,Business,5
+eng_computervisionpatternrecognition,Environmental science,3
+eng_computervisionpatternrecognition,Engineering,2
+eng_computervisionpatternrecognition,Chemistry,2
+eng_computervisionpatternrecognition,Sociology,2
+eng_computervisionpatternrecognition,Materials science,1
+eng_datamininganalysis,Computer science,813
+eng_datamininganalysis,Mathematics,78
+eng_datamininganalysis,Sociology,46
+eng_datamininganalysis,Engineering,11
+eng_datamininganalysis,Economics,10
+eng_datamininganalysis,Business,8
+eng_datamininganalysis,Biology,7
+eng_datamininganalysis,Medicine,7
+eng_datamininganalysis,Geography,6
+eng_datamininganalysis,Political science,4
+eng_datamininganalysis,Geology,3
+eng_datamininganalysis,Environmental science,2
+eng_datamininganalysis,History,2
+eng_datamininganalysis,Psychology,2
+eng_datamininganalysis,Philosophy,1
+eng_libraryinformationscience,Computer science,365
+eng_libraryinformationscience,Sociology,148
+eng_libraryinformationscience,Psychology,71
+eng_libraryinformationscience,Medicine,62
+eng_libraryinformationscience,Political science,46
+eng_libraryinformationscience,Geography,46
+eng_libraryinformationscience,Philosophy,45
+eng_libraryinformationscience,Economics,43
+eng_libraryinformationscience,History,34
+eng_libraryinformationscience,Business,33
+eng_libraryinformationscience,Art,29
+eng_libraryinformationscience,Mathematics,27
+eng_libraryinformationscience,Environmental science,13
+eng_libraryinformationscience,Biology,11
+eng_libraryinformationscience,Engineering,11
+eng_libraryinformationscience,Physics,6
+eng_libraryinformationscience,Chemistry,5
+eng_libraryinformationscience,Materials science,3
+eng_libraryinformationscience,Geology,2
+med_virology,Biology,705
+med_virology,Medicine,242
+med_virology,Chemistry,9
+med_virology,Psychology,6
+med_virology,Political science,6
+med_virology,Geography,6
+med_virology,Economics,5
+med_virology,Computer science,4
+med_virology,Business,3
+med_virology,History,3
+med_virology,Art,2
+med_virology,Geology,2
+med_virology,Environmental science,2
+med_virology,Mathematics,1
+med_virology,Materials science,1
+med_virology,Philosophy,1
+med_virology,Engineering,1
+med_virology,Sociology,1

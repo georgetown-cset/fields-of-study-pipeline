@@ -1,0 +1,4 @@
+outs:
+- md5: 505ed08c7e94340b3394c935283e6d5e
+  size: 520547756
+  path: ai_venue_text.jsonl

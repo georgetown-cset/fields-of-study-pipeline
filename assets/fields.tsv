@@ -1,0 +1,312 @@
+id	level	display_name	normalized_name	wiki_title
+2522767166	1	Data science	data science	Data science
+39432304	0	Environmental science	environmental science	Environmental science
+127313418	0	Geology	geology	Geology
+185592680	0	Chemistry	chemistry	Chemistry
+95457728	0	History	history	History
+127413603	0	Engineering	engineering	Engineering
+17744445	0	Political science	political science	Political science
+144133560	0	Business	business	Business
+15744967	0	Psychology	psychology	Psychology
+162324750	0	Economics	economics	Economics
+33923547	0	Mathematics	mathematics	Mathematics
+71924100	0	Medicine	medicine	Medicine
+205649164	0	Geography	geography	Geography
+86803240	0	Biology	biology	Biology
+138885662	0	Philosophy	philosophy	Philosophy
+142362112	0	Art	art	Art
+144024400	0	Sociology	sociology	Sociology
+121332964	0	Physics	physics	Physics
+192562407	0	Materials science	materials science	Materials science
+41008148	0	Computer science	computer science	Computer science
+199639397	1	Engineering drawing	engineering drawing	Engineering drawing
+133425853	1	Neoclassical economics	neoclassical economics	Neoclassical economics
+131872663	1	Obstetrics	obstetrics	Obstetrics
+124101348	1	Data mining	data mining	Data mining
+78458016	1	Evolutionary biology	evolutionary biology	Evolutionary biology
+119599485	1	Electrical engineering	electrical engineering	Electrical engineering
+29595303	1	Media studies	media studies	Media studies
+95444343	1	Cell biology	cell biology	Cell biology
+75630572	1	Applied psychology	applied psychology	Applied psychology
+159047783	1	Virology	virology	Virology
+140793950	1	Animal science	animal science	Animal science
+16685009	1	Andrology	andrology	Andrology
+177713679	1	Intensive care medicine	intensive care medicine	Intensive care medicine
+150903083	1	Biotechnology	biotechnology	Biotechnology
+97137747	1	Forestry	forestry	Forestry
+37914503	1	Mathematical physics	mathematical physics	Mathematical physics
+21547014	1	Operations management	operations management	Operations management
+151730666	1	Paleontology	paleontology	Paleontology
+62520636	1	Quantum mechanics	quantum mechanics	Quantum mechanics
+44870925	1	Astrophysics	astrophysics	Astrophysics
+2989005	1	Nuclear medicine	nuclear medicine	Nuclear medicine
+89423630	1	Microbiology	microbiology	Microbiology
+5900021	1	Petrology	petrology	Petrology
+42219234	1	Anesthesia	anesthesia	Anesthesia
+31903555	1	Food science	food science	Food science
+27206212	1	Theology	theology	Theology
+106159729	1	Financial economics	financial economics	Financial economics
+143998085	1	Oncology	oncology	Oncology
+41999313	1	Molecular physics	molecular physics	Molecular physics
+50522688	1	Economic growth	economic growth	Economic growth
+510606860	1	Ceramic materials	ceramic materials	Ceramic materials
+111919701	1	Operating system	operating system	Operating system
+114793014	1	Geomorphology	geomorphology	Geomorphology
+36289849	1	Social science	social science	Social science
+184779094	1	Atomic physics	atomic physics	Atomic physics
+154945302	1	Artificial intelligence	artificial intelligence	Artificial intelligence
+48824518	1	Agricultural economics	agricultural economics	Agricultural economics
+107826830	1	Environmental resource management	environmental resource management	Environmental resource management
+42972112	1	Veterinary medicine	veterinary medicine	Veterinary medicine
+178550888	1	Business administration	business administration	Business administration
+94375191	1	Arithmetic	arithmetic	Arithmetic
+91586092	1	Atmospheric sciences	atmospheric sciences	Atmospheric sciences
+26271046	1	Economic geography	economic geography	Economic geography
+178802073	1	Aeronautics	aeronautics	Aeronautics
+165205528	1	Seismology	seismology	Seismology
+37621935	1	Agricultural science	agricultural science	Agricultural science
+164705383	1	Cardiology	cardiology	Cardiology
+111368507	1	Oceanography	oceanography	Oceanography
+58640448	1	Cartography	cartography	Cartography
+153911025	1	Molecular biology	molecular biology	Molecular biology
+70410870	1	Clinical psychology	clinical psychology	Clinical psychology
+204321447	1	Natural language processing	natural language processing	Natural language processing
+187212893	1	Pediatrics	pediatrics	Pediatrics
+60644358	1	Bioinformatics	bioinformatics	Bioinformatics
+148383697	1	Regional science	regional science	Regional science
+53553401	1	Genealogy	genealogy	Genealogy
+112930515	1	Risk analysis (engineering)	risk analysis	Risk analysis (engineering)
+108827166	1	Internet privacy	internet privacy	Internet privacy
+73283319	1	Financial system	financial system	Financial system
+149782125	1	Econometrics	econometrics	Econometrics
+138496976	1	Developmental psychology	developmental psychology	Developmental psychology
+512399662	1	Family medicine	family medicine	Family medicine
+24326235	1	Electronic engineering	electronic engineering	Electronic engineering
+13280743	1	Geodesy	geodesy	Geodesy
+87717796	1	Environmental engineering	environmental engineering	Environmental engineering
+2524010	1	Geometry	geometry	Geometry
+134306372	1	Mathematical analysis	mathematical analysis	Mathematical analysis
+39549134	1	Public relations	public relations	Public relations
+100001284	1	Public economics	public economics	Public economics
+117671659	1	Manufacturing engineering	manufacturing engineering	Manufacturing engineering
+3116431	1	Public administration	public administration	Public administration
+105795698	1	Statistics	statistics	Statistics
+70721500	1	Computational biology	computational biology	Computational biology
+202444582	1	Pure mathematics	pure mathematics	Pure mathematics
+178980831	1	Pattern recognition	pattern recognition	Pattern recognition
+80444323	1	Theoretical computer science	theoretical computer science	Theoretical computer science
+33332235	1	Theoretical physics	theoretical physics	Theoretical physics
+42475967	1	Operations research	operations research	Operations research
+548259974	1	Audiology	audiology	Audiology
+29694066	1	Orthodontics	orthodontics	Orthodontics
+46312422	1	Communication	communication	Communication
+149635348	1	Embedded system	embedded system	Embedded system
+95124753	1	Environmental ethics	environmental ethics	Environmental ethics
+147597530	1	Computational chemistry	computational chemistry	Computational chemistry
+62649853	1	Remote sensing	remote sensing	Remote sensing
+175444787	1	Microeconomics	microeconomics	Microeconomics
+180747234	1	Cognitive psychology	cognitive psychology	Cognitive psychology
+133731056	1	Control engineering	control engineering	Control engineering
+13736549	1	Industrial engineering	industrial engineering	Industrial engineering
+173608175	1	Parallel computing	parallel computing	Parallel computing
+55493867	1	Biochemistry	biochemistry	Biochemistry
+549774020	1	Welfare economics	welfare economics	Welfare economics
+136764020	1	World Wide Web	world wide web	World Wide Web
+115704247	1	Analytical chemistry	analytical chemistry	Analytical chemistry
+199360897	1	Programming language	programming language	Programming language
+134018914	1	Endocrinology	endocrinology	Endocrinology
+177322064	1	Radiochemistry	radiochemistry	Radiochemistry
+45355965	1	Socioeconomics	socioeconomics	Socioeconomics
+110354214	1	Engineering management	engineering management	Engineering management
+556758197	1	Monetary economics	monetary economics	Monetary economics
+105639569	1	Economic policy	economic policy	Economic policy
+107038049	1	Aesthetics	aesthetics	Aesthetics
+124952713	1	Literature	literature	Literature
+54286561	1	Agroforestry	agroforestry	Agroforestry
+90856448	1	Zoology	zoology	Zoology
+21880701	1	Process engineering	process engineering	Process engineering
+185544564	1	Nuclear physics	nuclear physics	Nuclear physics
+119767625	1	Optometry	optometry	Optometry
+56739046	1	Knowledge management	knowledge management	Knowledge management
+114614502	1	Combinatorics	combinatorics	Combinatorics
+8058405	1	Geophysics	geophysics	Geophysics
+167562979	1	Classical economics	classical economics	Classical economics
+52119013	1	Art history	art history	Art history
+183696295	1	Biochemical engineering	biochemical engineering	Biochemical engineering
+155647269	1	Medicinal chemistry	medicinal chemistry	Medicinal chemistry
+170154142	1	Architectural engineering	architectural engineering	Architectural engineering
+459310	1	Computational science	computational science	Computational science
+91375879	1	Environmental planning	environmental planning	Environmental planning
+116915560	1	Nuclear engineering	nuclear engineering	Nuclear engineering
+125565743	1	Algebra	algebra	Algebra
+73484699	1	Criminology	criminology	Criminology
+166957645	1	Archaeology	archaeology	Archaeology
+136264566	1	Economy	economy	Economy
+119857082	1	Machine learning	machine learning	Machine learning
+42407357	1	Physiology	physiology	Physiology
+30475298	1	Computational physics	computational physics	Computational physics
+77088390	1	Database	database	Database
+41895202	1	Linguistics	linguistics	Linguistics
+194828623	1	Emergency medicine	emergency medicine	Emergency medicine
+49204034	1	Climatology	climatology	Climatology
+118487528	1	Ophthalmology	ophthalmology	Ophthalmology
+145420912	1	Mathematics education	mathematics education	Mathematics education
+33070731	1	Toxicology	toxicology	Toxicology
+77595967	1	Forensic engineering	forensic engineering	Forensic engineering
+145236788	1	Labour economics	labour economics	Labour economics
+142724271	1	Pathology	pathology	Pathology
+18903297	1	Ecology	ecology	Ecology
+159467904	1	Chemical physics	chemical physics	Chemical physics
+99508421	1	Physical medicine and rehabilitation	physical medicine and rehabilitation	Physical medicine and rehabilitation
+98274493	1	Pharmacology	pharmacology	Pharmacology
+19165224	1	Anthropology	anthropology	Anthropology
+186060115	1	Biological system	biological system	Biological system
+188147891	1	Cognitive science	cognitive science	Cognitive science
+74909509	1	Gerontology	gerontology	Gerontology
+121864883	1	Statistical physics	statistical physics	Statistical physics
+15708023	1	Humanities	humanities	Humanities
+6303427	1	Economic history	economic history	Economic history
+107872376	1	Environmental chemistry	environmental chemistry	Environmental chemistry
+121684516	1	Computer graphics (images)	computer graphics images	Computer graphics
+126255220	1	Mathematical optimization	mathematical optimization	Mathematical optimization
+149923435	1	Demography	demography	Demography
+34447519	1	Market economy	market economy	Market economy
+57879066	1	Mechanics	mechanics	Mechanics
+17409809	1	Geochemistry	geochemistry	Geochemistry
+505870484	1	Fishery	fishery	Fishery
+19417346	1	Pedagogy	pedagogy	Pedagogy
+24667770	1	Religious studies	religious studies	Religious studies
+187320778	1	Geotechnical engineering	geotechnical engineering	Geotechnical engineering
+3079626	1	Quantum electrodynamics	quantum electrodynamics	Quantum electrodynamics
+155202549	1	International trade	international trade	International trade
+199104240	1	Marine engineering	marine engineering	Marine engineering
+59822182	1	Botany	botany	Botany
+188027245	1	Polymer chemistry	polymer chemistry	Polymer chemistry
+99454951	1	Environmental health	environmental health	Environmental health
+11413529	1	Algorithm	algorithm	Algorithm
+90924648	1	Gastroenterology	gastroenterology	Gastroenterology
+4249254	1	Demographic economics	demographic economics	Demographic economics
+54750564	1	Commerce	commerce	Commerce
+118524514	1	Computer architecture	computer architecture	Computer architecture
+175605778	1	Natural resource economics	natural resource economics	Natural resource economics
+112698675	1	Advertising	advertising	Advertising
+187736073	1	Management	management	Management
+31258907	1	Computer network	computer network	Computer network
+54355233	1	Genetics	genetics	Genetics
+111472728	1	Epistemology	epistemology	Epistemology
+65244806	1	Control theory	control theory	Control theory
+107053488	1	Construction engineering	construction engineering	Construction engineering
+136229726	1	Biomedical engineering	biomedical engineering	Biomedical engineering
+43617362	1	Chromatography	chromatography	Chromatography
+200601418	1	Reliability engineering	reliability engineering	Reliability engineering
+47768531	1	Development economics	development economics	Development economics
+1965285	1	Earth science	earth science	Earth science
+40700	1	Industrial organization	industrial organization	Industrial organization
+171250308	1	Nanotechnology	nanotechnology	Nanotechnology
+126348684	1	Polymer science	polymer science	Polymer science
+16674752	1	Mining engineering	mining engineering	Mining engineering
+31972630	1	Computer vision	computer vision	Computer vision
+526734887	1	Environmental protection	environmental protection	Environmental protection
+61696701	1	Engineering physics	engineering physics	Engineering physics
+29456083	1	Gynecology	gynecology	Gynaecology
+78519656	1	Mechanical engineering	mechanical engineering	Mechanical engineering
+6557445	1	Agronomy	agronomy	Agronomy
+126322002	1	Internal medicine	internal medicine	Internal medicine
+97355855	1	Thermodynamics	thermodynamics	Thermodynamics
+10138342	1	Finance	finance	Finance
+190253527	1	Law and economics	law and economics	Law and economics
+147789679	1	Physical chemistry	physical chemistry	Physical chemistry
+118084267	1	Positive economics	positive economics	Positive economics
+74363100	1	Economic system	economic system	Economic system
+139719470	1	Macroeconomics	macroeconomics	Macroeconomics
+201995342	1	Systems engineering	systems engineering	Systems engineering
+509550671	1	Medical education	medical education	Medical education
+49774154	1	Multimedia	multimedia	Multimedia
+66938386	1	Structural engineering	structural engineering	Structural engineering
+169760540	1	Neuroscience	neuroscience	Neuroscience
+121955636	1	Accounting	accounting	Accounting
+8010536	1	Crystallography	crystallography	Crystallography
+118552586	1	Psychiatry	psychiatry	Psychiatry
+162118730	1	Actuarial science	actuarial science	Actuarial science
+134560507	1	Environmental economics	environmental economics	Environmental economics
+16005928	1	Dermatology	dermatology	Dermatology
+162853370	1	Marketing	marketing	Marketing
+524765639	1	Water resource management	water resource management	Water resource management
+44154836	1	Simulation	simulation	Simulation
+179104552	1	Inorganic chemistry	inorganic chemistry	Inorganic chemistry
+153294291	1	Meteorology	meteorology	Meteorology
+171146098	1	Automotive engineering	automotive engineering	Automotive engineering
+203014093	1	Immunology	immunology	Immunology
+71240020	1	Stereochemistry	stereochemistry	Stereochemistry
+77805123	1	Social psychology	social psychology	Social psychology
+22212356	1	Transport engineering	transport engineering	Transportation engineering
+141071460	1	Surgery	surgery	Surgery
+24890656	1	Acoustics	acoustics	Acoustics
+11171543	1	Psychoanalysis	psychoanalysis	Psychoanalysis
+37037264	1	Hydrology	hydrology	Hydrology
+502942594	1	Cancer research	cancer research	Cancer research
+147176958	1	Civil engineering	civil engineering	Civil engineering
+61434518	1	General surgery	general surgery	General surgery
+105702510	1	Anatomy	anatomy	Anatomy
+126794175	1	Topology	topology	Topology
+107993555	1	Gender studies	gender studies	Gender studies
+79403827	1	Real-time computing	real time computing	Real-time computing
+28490314	1	Speech recognition	speech recognition	Speech recognition
+55587333	1	Engineering ethics	engineering ethics	Engineering ethics
+23123220	1	Information retrieval	information retrieval	Information retrieval
+75473681	1	Photochemistry	photochemistry	Photochemistry
+120314980	1	Distributed computing	distributed computing	Distributed computing
+76155785	1	Telecommunications	telecommunications	Telecommunication
+42360764	1	Chemical engineering	chemical engineering	Chemical engineering
+2549261	1	Ethnology	ethnology	Ethnology
+88463610	1	Agricultural engineering	agricultural engineering	Agricultural engineering
+74916050	1	Classics	classics	Classics
+26873012	1	Condensed matter physics	condensed matter physics	Condensed matter physics
+107457646	1	Human–computer interaction	human computer interaction	Human–computer interaction
+195244886	1	Ancient history	ancient history	Ancient history
+120665830	1	Optics	optics	Optics
+21951064	1	Combinatorial chemistry	combinatorial chemistry	Combinatorial chemistry
+159390177	1	Soil science	soil science	Soil science
+199343813	1	Dentistry	dentistry	Dentistry
+49040817	1	Optoelectronics	optoelectronics	Optoelectronics
+178790620	1	Organic chemistry	organic chemistry	Organic chemistry
+126894567	1	Urology	urology	Urology
+78762247	1	Petroleum engineering	petroleum engineering	Petroleum engineering
+153349607	1	Visual arts	visual arts	Visual arts
+159110408	1	Nursing	nursing	Nursing
+46141821	1	Nuclear magnetic resonance	nuclear magnetic resonance	Nuclear magnetic resonance
+545542383	1	Medical emergency	medical emergency	Medical emergency
+38652104	1	Computer security	computer security	Computer security
+126838900	1	Radiology	radiology	Radiology
+191897082	1	Metallurgy	metallurgy	Metallurgy
+138921699	1	Political economy	political economy	Political economy
+113775141	1	Computer engineering	computer engineering	Computer engineering
+33577790	1	Calculus	calculus	Calculus
+87355193	1	Astrobiology	astrobiology	Astrobiology
+1862650	1	Physical therapy	physical therapy	Physical therapy
+144237770	1	Mathematical economics	mathematical economics	Mathematical economics
+556039675	1	Traditional medicine	traditional medicine	Traditional medicine
+118615104	1	Discrete mathematics	discrete mathematics	Discrete mathematics
+199539241	1	Law	law	Law
+115903868	1	Software engineering	software engineering	Software engineering
+12554922	1	Biophysics	biophysics	Biophysics
+542102704	1	Psychotherapist	psychotherapist	Psychotherapy
+74650414	1	Classical mechanics	classical mechanics	Classical mechanics
+548081761	1	Waste management	waste management	Waste management
+528095902	1	Pulp and paper industry	pulp and paper industry	Pulp and paper industry
+539667460	1	Management science	management science	Management science
+1276947	1	Astronomy	astronomy	Astronomy
+109214941	1	Particle physics	particle physics	Particle physics
+161191863	1	Library science	library science	Library science
+165556158	1	Keynesian economics	keynesian economics	Keynesian economics
+18547055	1	International economics	international economics	International economics
+146978453	1	Aerospace engineering	aerospace engineering	Aerospace engineering
+199289684	1	Mineralogy	mineralogy	Mineralogy
+100970517	1	Physical geography	physical geography	Physical geography
+195094911	1	Process management	process management	Process management
+13965031	1	Nuclear chemistry	nuclear chemistry	Nuclear chemistry
+19527891	1	Medical physics	medical physics	Medical physics
+9390403	1	Computer hardware	computer hardware	Computer hardware
+159985019	1	Composite material	composite material	Composite material
+144027150	1	Horticulture	horticulture	Horticulture
+28826006	1	Applied mathematics	applied mathematics	Applied mathematics

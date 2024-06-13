@@ -109,6 +109,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+oldpyvenv/
 ENV/
 env.bak/
 venv.bak/
@@ -214,3 +215,4 @@ fabric.properties
 
 .idea
 key.json
+.DS_Store

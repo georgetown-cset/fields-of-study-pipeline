@@ -1,13 +1,23 @@
+-- Get database IDs for observed DOIs
 with matches as (
   select
-    wiki_references.*,
-    pid,
-  from field_model_replication.wiki_references
-  left join gcp_cset_semantic_scholar.gorc_metadata on cast(id_value as int64) = pid
+    refs.id,
+   CAST(papers.corpusid AS STRING) as orig_id,
+  from field_model_replication.wiki_references_temp refs
+    -- We get the PMIDs associated with publications here
+    -- Note that openalex prepends a long url that we have to remove with substring
+  left join semantic_scholar.papers on CAST(papers.corpusid AS STRING) = refs.id_value
   where id_type = 's2'
 )
 select
-  pid is not null as in_gorc,
-  count(*)
+  DISTINCT
+  matches.id,
+  merged_id,
+  COALESCE(title_english, "") || " " || COALESCE(abstract_english, "") as text,
 from matches
-group by in_gorc
+-- Walk orig_id -> merged_id
+inner join literature.sources using(orig_id)
+-- Given merged_id, get best EN title and abstract
+-- We already have language-specific results in the 'en_corpus' and 'zh_corpus' tables, but many refs from ZH wikipedia
+-- are to EN papers.
+inner join literature.papers using(merged_id)

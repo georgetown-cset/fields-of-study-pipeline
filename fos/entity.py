@@ -19,7 +19,7 @@ import ahocorasick
 import numpy as np
 
 from fos.settings import ASSETS_DIR, FASTTEXT_DIM
-from fos.util import norm_sum
+from fos.vectors import norm_sum
 
 
 def embed_entities(text, trie) -> Optional[np.ndarray]:
