@@ -1,3 +1,7 @@
 [submodule "assets/scientific-lit-embeddings"]
 	path = assets/scientific-lit-embeddings
 	url = https://github.com/georgetown-cset/scientific-lit-embeddings.git
+[submodule "dataloader"]
+	path = dataloader
+	url = https://github.com/georgetown-cset/dataloader.git
+	branch = master
