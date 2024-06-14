@@ -7,13 +7,14 @@ FOS_DIR = Path(__file__).parent
 PIPELINES_DIR = FOS_DIR.parent
 ASSETS_DIR = PIPELINES_DIR / 'assets'
 CORPUS_DIR = ASSETS_DIR / 'corpus'
+EMBEDDINGS_DIR = ASSETS_DIR / 'scientific-lit-embeddings'
 SQL_DIR = PIPELINES_DIR / 'sql'
 
 QUERY_PATH = SQL_DIR / 'corpus.sql'
 
-EN_FASTTEXT_PATH = ASSETS_DIR / 'en_fasttext.bin'
-EN_TFIDF_PATH = ASSETS_DIR / 'en_tfidf.pkl'
-EN_DICT_PATH = ASSETS_DIR / 'en_vocab.txt'
+EN_FASTTEXT_PATH = EMBEDDINGS_DIR / 'english/fasttext/en_merged_model_120221.bin'
+EN_TFIDF_PATH = EMBEDDINGS_DIR / 'english/tfidfs/tfidf_model_en_merged_sample.pkl'
+EN_DICT_PATH = EMBEDDINGS_DIR / 'english/tfidfs/id2word_dict_en_merged_sample.txt'
 
 ZH_FASTTEXT_PATH = ASSETS_DIR / 'zh_fasttext.bin'
 ZH_TFIDF_PATH = ASSETS_DIR / 'zh_tfidf.pkl'
