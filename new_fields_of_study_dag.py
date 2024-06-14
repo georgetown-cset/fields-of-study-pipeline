@@ -79,9 +79,9 @@ with DAG("new_fields_of_study",
             f"gsutil -m cp -r gs://{bucket}/{production_dataset}/fields-of-study-pipeline .",
             "cd fields-of-study-pipeline",
             "pip install -r requirements.txt",
-            "/home/jm3312/.local/bin/dvc pull",
+            "python3 -m dvc pull",
             "cd assets/scientific-lit-embeddings/",
-            "/home/jm3312/.local/bin/dvc pull"
+            "python3 -m dvc pull"
         ])
     )
 
