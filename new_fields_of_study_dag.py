@@ -52,6 +52,7 @@ with DAG("new_fields_of_study",
     sql_dir = f"sql/{production_dataset}"
     backups_dataset = f"{production_dataset}_backups"
     gce_resource_id = "fos-runner"
+    bq_labels = {"dataset": "fields_of_study_v2"}
 
     # We keep script inputs and outputs in a tmp dir on gcs, so clean it out at the start of each run. We clean at
     # the start of the run so if the run fails we can examine the failed data
@@ -124,7 +125,8 @@ with DAG("new_fields_of_study",
             source_format="NEWLINE_DELIMITED_JSON",
             create_disposition="CREATE_IF_NEEDED",
             write_disposition="WRITE_TRUNCATE",
-            autodetect=True
+            autodetect=True,
+            labels=bq_labels,
         )
 
         prev_op >> download >> score_corpus >> load_to_gcs
@@ -160,7 +162,8 @@ with DAG("new_fields_of_study",
                         },
                         "allowLargeResults": True,
                         "createDisposition": "CREATE_IF_NEEDED",
-                        "writeDisposition": "WRITE_TRUNCATE"
+                        "writeDisposition": "WRITE_TRUNCATE",
+                        "labels": bq_labels,
                     }
                 }
             )
@@ -178,7 +181,8 @@ with DAG("new_fields_of_study",
             params={
                 "dataset": staging_dataset
             },
-            use_legacy_sql=False
+            use_legacy_sql=False,
+            labels=bq_labels,
         )
         prev_op >> check >> wait_for_checks
 
@@ -195,7 +199,8 @@ with DAG("new_fields_of_study",
             source_project_dataset_tables=[f"{staging_dataset}.{table}"],
             destination_project_dataset_table=prod_table_name,
             create_disposition="CREATE_IF_NEEDED",
-            write_disposition="WRITE_TRUNCATE"
+            write_disposition="WRITE_TRUNCATE",
+            labels=bq_labels,
         )
         pop_descriptions = PythonOperator(
             task_id="populate_column_documentation_for_" + table,
@@ -211,7 +216,8 @@ with DAG("new_fields_of_study",
             source_project_dataset_tables=[f"{staging_dataset}.{table}"],
             destination_project_dataset_table=f"{backups_dataset}.{table}_{curr_date}",
             create_disposition="CREATE_IF_NEEDED",
-            write_disposition="WRITE_TRUNCATE"
+            write_disposition="WRITE_TRUNCATE",
+            labels=bq_labels,
         )
 
         wait_for_checks >> table_copy >> pop_descriptions >> table_backup >> wait_for_backup
@@ -239,7 +245,8 @@ with DAG("new_fields_of_study",
                         },
                         "allowLargeResults": True,
                         "createDisposition": "CREATE_IF_NEEDED",
-                        "writeDisposition": "WRITE_TRUNCATE"
+                        "writeDisposition": "WRITE_TRUNCATE",
+                        "labels": bq_labels,
                     }
                 }
             )
