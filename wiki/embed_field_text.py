@@ -5,13 +5,11 @@ import pickle
 from argparse import ArgumentParser
 
 import dataset
-# import jieba
 import numpy as np
 from gensim.similarities import MatrixSimilarity, SparseMatrixSimilarity
 from scipy.sparse import csr_matrix
 
-from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, \
-    EN_FIELD_KEY_PATH, ZH_FIELD_KEY_PATH
+from fos.settings import EN_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, EN_FIELD_KEY_PATH
 from fos.util import preprocess
 from fos.vectors import load_fasttext, load_tfidf, embed_tfidf, norm
 
@@ -34,8 +32,6 @@ def main(lang='en'):
         text = field.get(f'{lang}_text', '')
         if text is None:
             text = ''
-        # if lang == 'zh' and field[f'en_text_mt'] is not None and len(field[f'en_text_mt']) > 0:
-        #     text += ' ' + field['en_text_mt']
         if not len(text):
             print(f'No {lang} text for {field_id}')
             continue
@@ -44,10 +40,6 @@ def main(lang='en'):
             print(f'No {lang} text for {field_id}')
             continue
         print(f'{field_id}: len {len(clean_text)}')
-        # if lang == 'zh':
-        #     ft_embeddings[field_id] = ft_model.get_sentence_vector('\t'.join(jieba.cut(clean_text)))
-        #     tfidf_embeddings[field_id] = embed_tfidf(jieba.cut(clean_text), tfidf, dictionary)
-        # else:
         ft_embeddings[field_id] = norm(ft_model.get_sentence_vector(clean_text))
         tfidf_embeddings[field_id] = embed_tfidf(clean_text.split(), tfidf, dictionary)
 
@@ -71,8 +63,6 @@ def write_field_keys(keys, lang):
     """Write out the row order of the field embedding matrices."""
     if lang == 'en':
         output_path = EN_FIELD_KEY_PATH
-    # elif lang == 'zh':
-    #     output_path = ZH_FIELD_KEY_PATH
     else:
         raise ValueError(lang)
     with open(output_path, 'wt') as f:
@@ -85,8 +75,6 @@ def write_tfidf_similarity(tfidf_embeddings, dictionary, lang):
     """"Write to disk a matrix of tfidf vectors for fields."""
     if lang == 'en':
         output_path = EN_FIELD_TFIDF_PATH
-    # elif lang == 'zh':
-    #     output_path = ZH_FIELD_TFIDF_PATH
     else:
         raise ValueError(lang)
     tfidf_index = SparseMatrixSimilarity((to_sparse(v, len(dictionary)) for v in tfidf_embeddings.values()),
@@ -100,8 +88,6 @@ def write_fasttext_similarity(ft_embeddings, lang, vector_dim):
     """Write to disk a matrix of fasttext vectors for fields."""
     if lang == 'en':
         output_path = EN_FIELD_FASTTEXT_PATH
-    # elif lang == 'zh':
-    #     output_path = ZH_FIELD_FASTTEXT_PATH
     else:
         raise ValueError(lang)
     ft_similarity = MatrixSimilarity(ft_embeddings.values(), num_features=vector_dim, dtype=np.float32)
