@@ -5,7 +5,7 @@ This requires reading content from our SQLite database ``wiki.db``, which contai
 API requests.
 
 Takes as input ``wiki.db``.
-Writes to disk ``field_content.json`` and ``field_text.tsv``.
+Updates fields in ``wiki.db`` records.
 """
 import os.path
 import re
