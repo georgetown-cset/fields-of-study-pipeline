@@ -47,10 +47,12 @@ def test_load_field_entities():
         fields = load_field_entities(lang)
         assert isinstance(fields, gensim.similarities.MatrixSimilarity)
 
+
 def test_batch_embed_fasttext(texts):
     for lang in ['en', 'zh']:
         model = load_fasttext(lang)
         vectors = [model.get_sentence_vector(text) for text in texts.values()]
+
 
 def test_batch_embed_tfidf(texts):
     for lang in ['en', 'zh']:
