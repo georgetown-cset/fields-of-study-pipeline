@@ -1,5 +1,5 @@
 outs:
-- md5: 770d5912c76a4e1c302d400fd57f2bf2
-  size: 1061412864
+- md5: c00d714ff7ee18371dea11fe1f3afe97
+  size: 367001600
   path: wiki.db
   hash: md5
