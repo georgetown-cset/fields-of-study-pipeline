@@ -1,0 +1,1103 @@
+Environmental science
+Geology
+Chemistry
+History
+Engineering
+Political science
+Business
+Psychology
+Economics
+Mathematics
+Medicine
+Geography
+Biology
+Philosophy
+Art
+Sociology
+Physics
+Materials science
+Computer science
+Engineering drawing
+Neoclassical economics
+Obstetrics
+Electrical engineering
+Media studies
+Applied psychology
+Virology
+Andrology
+Intensive care medicine
+Forestry
+Mathematical physics
+Operations management
+Paleontology
+Quantum mechanics
+Astrophysics
+Nuclear medicine
+Petrology
+Anesthesia
+Food science
+Theology
+Financial economics
+Oncology
+Molecular physics
+Economic growth
+Ceramic materials
+Geomorphology
+Social science
+Atomic physics
+Agricultural economics
+Environmental resource management
+Veterinary medicine
+Business administration
+Arithmetic
+Atmospheric sciences
+Economic geography
+Aeronautics
+Seismology
+Agricultural science
+Cardiology
+Oceanography
+Cartography
+Clinical psychology
+Pediatrics
+Regional science
+Genealogy
+Risk analysis (engineering)
+Financial system
+Econometrics
+Developmental psychology
+Family medicine
+Electronic engineering
+Geodesy
+Environmental engineering
+Geometry
+Mathematical analysis
+Public relations
+Public economics
+Manufacturing engineering
+Public administration
+Statistics
+Pure mathematics
+Theoretical physics
+Operations research
+Audiology
+Orthodontics
+Communication
+Embedded system
+Environmental ethics
+Computational chemistry
+Remote sensing
+Microeconomics
+Cognitive psychology
+Control engineering
+Industrial engineering
+Biochemistry
+Welfare economics
+Analytical chemistry
+Endocrinology
+Radiochemistry
+Socioeconomics
+Engineering management
+Monetary economics
+Economic policy
+Aesthetics
+Literature
+Agroforestry
+Process engineering
+Nuclear physics
+Optometry
+Combinatorics
+Geophysics
+Classical economics
+Art history
+Biochemical engineering
+Medicinal chemistry
+Architectural engineering
+Computational science
+Environmental planning
+Nuclear engineering
+Algebra
+Criminology
+Archaeology
+Economy
+Physiology
+Computational physics
+Linguistics
+Emergency medicine
+Climatology
+Ophthalmology
+Mathematics education
+Forensic engineering
+Labour economics
+Pathology
+Chemical physics
+Physical medicine and rehabilitation
+Pharmacology
+Anthropology
+Cognitive science
+Gerontology
+Statistical physics
+Humanities
+Economic history
+Environmental chemistry
+Mathematical optimization
+Demography
+Market economy
+Mechanics
+Geochemistry
+Pedagogy
+Religious studies
+Geotechnical engineering
+Quantum electrodynamics
+International trade
+Marine engineering
+Polymer chemistry
+Environmental health
+Gastroenterology
+Demographic economics
+Commerce
+Natural resource economics
+Advertising
+Management
+Epistemology
+Control theory
+Construction engineering
+Biomedical engineering
+Chromatography
+Reliability engineering
+Development economics
+Earth science
+Industrial organization
+Nanotechnology
+Polymer science
+Mining engineering
+Environmental protection
+Engineering physics
+Gynecology
+Mechanical engineering
+Internal medicine
+Thermodynamics
+Finance
+Law and economics
+Physical chemistry
+Positive economics
+Economic system
+Macroeconomics
+Systems engineering
+Medical education
+Structural engineering
+Neuroscience
+Accounting
+Crystallography
+Psychiatry
+Actuarial science
+Environmental economics
+Dermatology
+Marketing
+Water resource management
+Inorganic chemistry
+Meteorology
+Automotive engineering
+Immunology
+Stereochemistry
+Social psychology
+Transport engineering
+Surgery
+Acoustics
+Psychoanalysis
+Hydrology
+Cancer research
+Civil engineering
+General surgery
+Anatomy
+Topology
+Gender studies
+Engineering ethics
+Photochemistry
+Telecommunications
+Chemical engineering
+Ethnology
+Agricultural engineering
+Classics
+Condensed matter physics
+Ancient history
+Optics
+Combinatorial chemistry
+Soil science
+Dentistry
+Optoelectronics
+Organic chemistry
+Urology
+Petroleum engineering
+Visual arts
+Nursing
+Nuclear magnetic resonance
+Medical emergency
+Radiology
+Metallurgy
+Political economy
+Computer engineering
+Calculus
+Astrobiology
+Physical therapy
+Mathematical economics
+Traditional medicine
+Discrete mathematics
+Law
+Software engineering
+Psychotherapist
+Classical mechanics
+Waste management
+Pulp and paper industry
+Management science
+Astronomy
+Particle physics
+Keynesian economics
+International economics
+Aerospace engineering
+Mineralogy
+Physical geography
+Process management
+Nuclear chemistry
+Medical physics
+Composite material
+Applied mathematics
+Algorithms
+Artificial intelligence
+Computer architecture
+Computer graphics
+Computer hardware
+Computer networks
+Computer security
+Databases
+Human–computer interaction
+Library science
+Operating systems
+Programming languages
+Computer simulation
+Theoretical computer science
+High-performance computing
+Quantum computing
+Bioinformatics
+Biophysics
+Biotechnology
+Botany
+Cell biology
+Computational biology
+Ecology
+Evolutionary biology
+Genetics
+Microbiology
+Molecular biology
+Toxicology
+Cryobiology
+Developmental biology
+Natural history
+Parasitology
+Photobiology
+Radiobiology
+Sociobiology
+Synthetic biology
+Systems biology
+Zoology
+Semiconductors
+Computer vision
+Data mining
+Data science
+Information retrieval
+Knowledge management
+Machine learning
+Natural language processing
+Speech recognition
+Robotics
+Reinforcement learning
+Neuro-Symbolic AI
+Game Theory
+Agent architectures
+Bayesian learning mechanisms
+Bayesian inference
+Cognitive architectures
+Computational creativity
+Neural coding
+Adversarial machine learning
+Facial recognition
+Gesture recognition
+Pose tracking
+Computational photography
+Text-to-image-models
+Synthetic media
+Image retrieval
+Program optimization
+Motion analysis
+Object detection
+Object categorization from image search
+Image segmentation
+Activity recognition
+Robotic sensing
+Self-driving cars
+Vehicular automation
+Constraint learning
+Distributed constraint optimization
+Discrete optimization
+Continuous optimization
+Satisfiability modulo theories
+Anomaly Detection
+Chatbots
+Dialogue systems
+Recommender systems
+Data stream mining
+Data and information visualization
+Structure mining
+Social network analysis
+Knowledge graphs
+Knowledge bases
+Collaborative filtering
+Auction theory
+Market systems
+Behavioral game theory
+Cooperative game theory
+Economic equilibrium
+Fair division
+General game playing
+Mechanism design
+Negotiation theory
+Social choice theory
+Voting behavior
+Human-based computation
+Crowdsourcing
+Human-based computation game
+Procedural generation
+Virtual humans
+Human-agent teaming
+Human-computer interaction
+Intelligent user interfaces
+Preference learning
+Automated reasoning
+Automated theorem proving
+Case-Based reasoning
+Commonsense reasoning
+Description logic
+Diagnosis
+Abductive reasoning
+Spatial-temporal reasoning
+Knowledge acquisition
+Knowledge engineering
+Knowledge representation and reasoning
+Ontology language
+Logic programming
+Nonmonotonic logic
+Qualitative reasoning
+Active learning
+Robustness
+Bio-inspired computing
+Uncertainty quantification
+Statistical classification
+Regression analysis
+Cluster analysis
+Deep learning
+Neural networks
+Statistical learning theory
+Dimensionality reduction
+Feature selection
+Distributed artificial intelligence
+Federated learning
+Ethics of Artificial Intelligence
+Algorithmic bias
+Fairness
+Ensemble learning
+Evolutionary computation
+Hyperparameter optimization
+AI alignment
+Kernel methods
+Learning to rank
+Multiclass classification
+Multi-label classification
+Multimodal learning
+Generative models
+Generative artificial intelligence
+Autoencoders
+Online machine learning
+Multi-armed bandits
+Graphical models
+Quantum machine learning
+Weak supervision
+Structured prediction
+Transfer learning
+Multi-task learning
+Meta-learning
+Unsupervised learning
+Self-supervised learning
+Multi-agent systems
+Agent-based social simulation
+Agent-based modeling
+Emergent algorithms
+Multi-agent reinforcement learning
+Multi-agent planning
+Explainable artificial intelligence
+Artificial intelligence in government
+Regulation of artificial intelligence
+Artificial general intelligence
+AI safety
+Trustworthy computing
+Markov decision processes
+Partially observable markov decision processes
+Model-based reasoning
+Automated planning and scheduling
+Bayesian networks
+Probabilistic programming
+Sequential decision making
+Stochastic optimization
+Robot control
+Robot learning
+Cognitive robotics
+Human-robot interaction
+Robot localization
+Robotic mapping
+Robot navigation
+Motion planning
+Sensor fusion
+Distributed search engine
+Metaheuristics
+Argument mining
+Information extraction
+Language model
+Semantic parsing
+Machine translation
+Ontology learning
+Question answering
+Speech processing
+Signal processing
+Speech synthesis
+Text mining
+Automatic summarization
+Shallow parsing
+Parsing
+Document classification
+Sentiment analysis
+Program synthesis
+Neuroevolution
+Neural architecture search
+Artificial life
+Genetic programming
+Model predictive control
+Offline learning
+Deep reinforcement learning
+Self-play
+Mutual information
+State space search
+Regularization
+Intrinsic motivation
+Empowerment
+Generative adversarial networks
+Data augmentation
+One-shot learning
+Domain adaptation
+Knowledge distillation
+Conditional random fields
+Active contour model
+Autoregressive model
+Visual servoing
+Optimal control
+Robot locomotion
+Simultaneous localization and mapping
+Trajectory optimization
+Collocation
+Neuromorphic engineering
+Artificial consciousness
+Artificial empathy
+Weak artificial intelligence
+Integrated circuit packaging
+Die preparation
+Wafer testing
+Doping
+Etching
+Microlithography
+Photolithography
+Nanolithography
+Microfabrication
+3D microfabrication
+Wafer Fabrication
+Semiconductor device fabrication
+Chip-scale packaging
+Wafer dicing
+Wafer backgrinding
+Wire bonding
+Transfer molding
+Injection moulding
+Wafer bonding
+Ball bonding
+Flip chip
+Wedge bonding
+Wafer-level packaging
+System in a package
+System on a chip
+Automatic test equipment
+Curve tracer
+Burn-in
+Dielectric withstand test
+Chemical-mechanical polishing
+Vacuum deposition
+Ion beam deposition
+Chemical vapor deposition
+Physical vapor deposition
+Atomic layer deposition
+Electroplating
+Metalorganic vapour-phase epitaxy
+Molecular-beam epitaxy
+Plasma-enhanced chemical vapor deposition
+Ion implantation
+Monolayer doping
+RCA clean
+Plasma etching
+Photomask
+Computational lithography
+Photoresist
+Mask inspection
+Lithography stepper
+Electron-beam lithography
+Ion milling machine
+Ellipsometry
+Atomic force microscopy
+Shallow trench isolation
+Rapid thermal processing
+IC interconnect
+MEMS
+DRAM
+Flash memory
+Active-pixel sensor
+Atomic layer etching
+Reactive-ion etching
+Deep reactive-ion etching
+BGA packaging
+Multi-chip module
+Package on a package
+Through-silicon via
+Fan-out packaging
+eWLB packaging
+3D integrated circuit
+Interposer
+Dry etching
+EUV lithography
+Immersion lithography
+Multiple patterning
+Maskless lithography
+Resolution enhancement technologies
+EDA software
+Design rule checking
+Next-generation lithography
+Phase-shift mask
+Off-axis illumination
+Optical proximity correction
+Inverse lithography
+X-ray lithography
+Quantum lithography
+Ion beam lithography
+CMOS
+MOSFET
+Field-effect transistor
+Agricultural biotechnology
+Environmental biotechnology
+Medical biotechnology
+Biochemical and Bioproducts engineering
+Biological systems engineering
+Biomolecular engineering
+Sustainable agriculture
+Genetically modified crops
+Animal vaccine development
+Biofertilizer
+Cellular agriculture
+Bioremediation
+Renewable energy
+Bioenergy
+Biomass
+Microbial biodegradation
+Drug discovery
+Drug development
+Biopharmaceutical
+Pharmaceutical manufacturing
+Pharmaceutical engineering
+Molecular diagnostics
+Genetic testing
+Pharmacogenomics
+Personalized medicine
+Cell therapy
+Gene therapy
+Biosensors
+Fermentation in food processing
+Genetically modified food
+Food engineering
+Food microbiology
+Microbial food cultures
+Neural engineering
+Bionanotechnology
+Clinical engineering
+Biomechanical engineering
+Genetic engineering
+Tissue engineering
+Cell engineering
+Medical imaging
+Rehabilitation engineering
+Biomedical instrumentation
+Biomaterials
+Industrial fermentation
+Feed manufacturing
+Industrial enzymes
+Biofabrication
+Biofuel
+Bioplastics
+Quantitative genetics
+Classical genetics
+Behavioural genetics
+Molecular genetics
+Population genetics
+Medical genetics
+Epigenetics
+Genomics
+Microbial genetics
+Plant genetics
+Conservation genetics
+Ecological genetics
+Landscape genetics
+Phylogeography
+Phylogenetics
+Paleogenetics
+Archaeogenetics
+Immunogenetics
+Genetic epidemiology
+Cytogenetics
+Molecular cytogenetics
+Predictive medicine
+Oncogenomics
+Human mitochondrial genetics
+Neurogenetics
+Genetic analysis
+Epigenetic therapy
+Clinical metagenomic sequencing
+Clinicogenomics
+Personalized genomics
+Noninvasive genotyping
+Transplant engineering
+Psychiatric genetics
+gene expression
+Behavioral epigenetics
+Sleep epigenetics
+Epigenetics of human development
+Transgenerational epigenetic inheritance
+Computational epigenetics
+Epigenome editing
+Epigenomics
+Nutriepigenomics
+Cancer epigenetics
+Pharmacoepigenetics
+Single cell epigenomics
+Cognitive genomics
+Comparative genomics
+Functional genomics
+Metagenomics
+Neurogenomics
+Personal genomics
+Toxicogenomics
+Population genomics
+Nutritional genomics
+Structural genomics
+Hologenomics
+Metatranscriptomics
+Paleogenomics
+Phylogenomics
+Proteogenomics
+Radiogenomics
+Ribonomics
+Chemogenomics
+Viral metagenomics
+Public health genomics
+Translatomics
+Computational genomics
+Transcriptomics
+Transposon mutagenesis
+Artificial gene synthesis
+Cassette mutagenesis
+Gene targeting
+Prime editing
+Human germline engineering
+Directed evolution
+Bacterial genetics
+Ribotyping
+Pathogenomics
+Antimicrobial resistance
+Genetic architecture
+Genetic genealogy
+Microevolution
+Gene mapping
+Spermatogenesis
+Anagenesis
+Deletion mapping
+Parthenogenesis
+Structural inheritance
+Genome architecture mapping
+Genome informatics
+Dynamical genetics
+Imaging genetics
+Cancer imunology
+Immunomics
+Immunopathology
+Immunotherapy
+Developmental immunology
+Synthetic immunology
+Viral dynamics
+Clinical immunology
+Immunochemistry
+Immunotoxicology
+Classical immunology
+Immunoediting
+Cancer vaccine
+Cancer immunotherapy
+Immunoproteomics
+Systems immunology
+Autoimmunity
+Immunodeficiency
+Hypersensitivity
+Immune dysregulation
+Allergen immunotherapy
+Testicular immunology
+Immunodermatology
+Intravascular immunology
+Osteoimmunology
+Mucosal immunology
+Immunohaematology
+Ecoimmunology
+Computational immunology
+Nutritional immunology
+Humoral immunology
+Molecular immunology
+Cell-mediated immunity
+Reproductive immunology
+Immunophysics
+Psychoneuroimmunology
+Immune tolerance
+Immunocompetence
+Allergy
+Microbial symbiosis and immunity
+Viral phylodynamics
+Immunometabolism
+Immuno-psychiatry
+Cytotoxicity
+Host-directed therapeutics
+Cognitive neuroscience
+Neuroanatomy
+Neurochemistry
+Neuroendocrinology
+Neuropathology
+Neuropharmacology
+Neurophysiology
+Molecular neuroscience
+Cellular neuroscience
+Computational neuroscience
+Systems neuroscience
+Sensory neuroscience
+Evolutionary neuroscience
+Behavioral neuroscience
+Clinical neuroscience
+Affective neuroscience
+Dynamical neuroscience
+Network neuroscience
+Electrophysiology
+Psychoneuroendocrinology
+Clinical neurochemistry
+Neuroproteomics
+Neuroscience of sleep
+Clinical neurophysiology
+Quantum cognition
+Neuroethology
+Neuromorphology
+Neuroanatomy of intimacy
+Neuroanatomy of handedness
+Memory and aging
+Neurolinguistics
+Neuroimaging
+Nutritional neuroscience
+Neuroinformatics
+Biocybernetics
+Neurophilosophy
+Neuroethics
+Neuroradiology
+Integrative neuroscience
+Psychosurgery
+Neuroscience and intelligence
+Cultural neuroscience
+Neuroscience and race
+Neuroanthropology
+Neurocinema
+Neurohistory
+Evolution of nervous systems
+Evolution of the brain
+Neurobiological origins of language
+Neuroeconomics
+Consumer neuroscience
+Neuromanagement
+Neuromarketing
+Neuroepistemology
+Neuroesthetics
+Neurophenomenology
+Educational neuroscience
+Interpersonal neurobiology
+Neurocriminology
+Neuromechanics
+Neurorobotics
+Paleoneurobiology
+Neuropsychopharmacology
+Developmental neuropsychology
+Neuroscience of music
+Neuroscience of sex differences
+Neuroscience of multilingualism
+Neuroscience of religion
+Neuroscience of rhythm
+Neuroscience of aging
+Neuroepigenetics
+Cognitive biology
+Cognitive neuropsychology
+Comparative cognition
+Molecular cellular cognition
+Neurocognition
+Neuroenhancement
+Neuroheuristics
+Spatial cognition
+Brain morphometry
+Chronobiology
+Cognitive development
+Numerical cognition
+Neuropsychoanalysis
+Neuropolitics
+Neuromorality
+Neuroarchaeology
+Neurogastronomy
+Connectomics
+Functional integration
+Neuro-ophthalmology
+Neurosecurity
+Neurolaw
+Positive neuroscience
+Visual neuroscience
+Neurometrics
+Neurophysics
+Biological psychopathology
+Developmental psychobiology
+Neuroecology
+Cognitive hearing science
+Cognitive neuroscience of dreams
+Developmental cognitive neuroscience
+Neurovirology
+Translational neuroscience
+Synaptic pharmacology
+Social cognitive neuroscience
+Social neuroscience
+Neurocardiology
+Neuroepidemiology
+Neuroimmunology
+Neurotology
+Physiological psychology
+Neuroscience in space
+Neuroscience and sexual orientation
+Brain–computer interfacing
+Brain–brain interface
+Interventional neuroradiology
+Augmented cognition
+Computational anatomy
+Neurohydrodynamics
+Artificial brain
+Brain simulation
+Neuroanatomy of memory
+Diffeomorphometry
+Neuroscience of free will
+Viral pathogenesis
+Viral genetics
+Mycovirology
+Plant virology
+Animal virology
+Marine virology
+Archael virology
+Phage virology
+Synthetic virology
+Viral life cycle and processes
+Virus structure
+Viral evolution
+Viral classification
+Virotherapy
+Virulence
+Immune evasion
+Pathogen transmission
+Viral entry
+Cytopathic effect
+Viral disease
+Host defense
+Viral oncogenesis
+Viral transformation
+Viral genome
+Antigenic drift
+Antigenic shift
+Phenotype mixing
+Viral reassortment
+Viral recombination
+Virome
+Viriome
+Veterinary virology
+Zoonosis
+Phage therapy
+Phage display
+Phage-ligand technology
+Phage ecology
+Phageome
+Viroplasm
+Viral replication
+Virus latency
+Viral shedding
+Lytic cycle
+Lysogenic cycle
+Viral proteins
+Viral envelope
+Viral capsid
+Virulence factors
+Virophysics
+Viral emergence
+Paleovirology
+Viral vectors
+Viral gene therapy
+Oncolytic virus
+Virosomes
+Immunization
+Virophage
+Vaccine development
+Antiviral drug development
+Viral epidemiology
+Human virome
+Lipidomics
+Proteomics
+Glycomics
+Metabolomics
+Interactomics
+Structural bioinformatics
+Health informatics
+Biostatistics
+Protein function prediction
+Protein structure prediction
+Protein–protein interaction prediction
+Protein-protein interactions
+Biomarker
+Post-translational modifications
+Phosphoproteomics
+Secretomics
+Chemoproteomics
+Metaproteomics
+Gene expression profiling
+Single-cell transcriptomics
+Metabolic network modelling
+Exometabolomics
+Metabolic network
+Genetic interaction network
+Virtual screening
+Molecular dynamics
+Molecular modeling
+Biosimulation
+Cellular model
+Modelling biological systems
+Cancer systems biology
+Systems biomedicine
+Biomedical text mining
+Clinical decision support system
+Imaging informatics
+Digital pathology
+Bioimage informatics
+Sequence alignment
+Alignment-free sequence analysis
+Sequence assembly
+Gene prediction
+Application security
+Internet security
+Network security
+Language-based security
+Hardware security
+Cryptography
+Decentralized computing
+Information privacy
+Threat analysis
+Vulnerability assessment
+Social engineering
+Brute-force attacks
+Mobile security
+Wireless security
+Browser security
+Control system security
+Access control
+Data center security
+Security information and event management
+Digital forensics
+Spyware
+Malware analysis
+Hardening
+File verification
+File integrity monitoring
+Control-flow integrity
+Arbitrary code execution
+SQL injection attacks
+Web tracking
+Code injection
+Watering hole attacks
+Drive-by dowloads
+Browser exploitation
+Certificate transparency
+Certificate revocation
+DNS analytics
+Email filtering
+Cross-site scripting
+Network assurance
+Traffic analysis
+Network behavior anomaly detection
+User behavior analytics
+Man-in-the-middle attacks
+Sniffing attacks
+Session hijacking
+Denial-of-service attacks
+Allowlisting
+Denylisting
+Sandboxing
+Firewalls
+Honeypots and honeynets
+Intrusion detection
+Evasion
+Program analysis
+Reverse engineering
+Buffer overflow protection
+Proof-carrying code
+Static program analysis
+Dynamic program analysis
+Fuzzing
+Symbolic execution
+Side-channel attacks
+Digital supply chain security
+Supply chain attacks
+Backdooring
+Secure cryptoprocessors
+Digital signatures
+Post-quantum cryptography
+Public-key cryptography
+Cryptographic protocols
+Zero-knowledge proofs
+Information flow
+Secure multi-party computation
+Steganography
+Certificate-based encryption
+Encryption
+Consensus protocols
+Smart contracts
+Blockchain analysis
+Distributed databases
+Blockchain ledgers
+Data anonymization
+Differential privacy
+Authentication
+Biometrics
+Credential stuffing
+Homomorphic encryption
+Multi-factor authentication
+Message authentication
+Internet censorship circumvention
+Onion routing
