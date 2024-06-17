@@ -9,3 +9,4 @@
 /zh_tfidf.pkl
 /zh_field_tfidf_vectors.json
 /zh_fasttext.bin
+/en_field_keys.txt
