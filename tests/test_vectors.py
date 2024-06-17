@@ -53,3 +53,10 @@ def test_batch_embed_fasttext(texts):
         model = load_fasttext(lang)
         vectors = [model.get_sentence_vector(text) for text in texts.values()]
 
+
+def test_batch_embed_tfidf(texts):
+    for lang in ['en']:
+        tfidf, dictionary = load_tfidf(lang)
+        bow = [dictionary.doc2bow(text.split()) for text in texts.values()]
+        # __iter__ applies the transform
+        dtm = [doc for doc in tfidf.gensim_model[bow]]

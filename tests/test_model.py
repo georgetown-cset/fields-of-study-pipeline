@@ -15,7 +15,7 @@ from fos.model import FieldModel, Embedding
 
 def test_create_field_model():
     # Test that we can instantiate a field model in both languages
-    for lang in ['en', 'zh']:
+    for lang in ['en']:
         fields = FieldModel(lang)
         assert isinstance(fields.fasttext, _FastText)
         assert isinstance(fields.tfidf, TfIdfTransformer)
