@@ -3,6 +3,7 @@ import json
 import math
 import timeit
 from itertools import zip_longest
+from datetime import datetime as dt
 
 import numpy as np
 from more_itertools import chunked
@@ -20,6 +21,7 @@ def row_norm(vectors):
 
 
 def main(lang='en', chunk_size=1_000, limit=1_000):
+    print(f'[{dt.now().isoformat()}] Loading assets')
     # Vectors for embedding publications
     fasttext = load_fasttext(lang)
     tfidf, dictionary = load_tfidf(lang)
@@ -35,11 +37,13 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
 
     i = 0
     start_time = timeit.default_timer()
+    print(f'[{dt.now().isoformat()}] Starting job')
 
     with open(CORPUS_DIR / f'{lang}_scores.jsonl', 'wt') as f:
         # Break iterable into sub-iterables with chunk_size elements. The last sub-iterable will (probably) have length
         # less than chunk_size.
         for batch in chunked(iter_bq_extract(f'{lang}_'), chunk_size):
+            batch_start_time = timeit.default_timer()
             ft = [fasttext.get_sentence_vector(record['text']) for record in batch]
             ft = row_norm(ft)
             ft_sim = np.dot(field_fasttext.index, ft.T).T
@@ -56,17 +60,28 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
             avg_sim = np.apply_along_axis(lambda x: np.average(x[x > 0.0], axis=0), 0, sims)
 
             for record, row in zip_longest(batch, avg_sim):
-                f.write(json.dumps({'merged_id': record['merged_id'],
-                                    'fields': [
-                                        {'id': k, 'score': None if math.isnan(float(v)) else float(v)}
-                                        for k, v in zip_longest(index, row)]}) + '\n')
+                f.write(json.dumps({
+                    'merged_id': record['merged_id'],
+                    'fields': [
+                        {
+                            'id': k,
+                            'score': None if math.isnan(float(v)) else float(v)
+                        }
+                        for k, v in zip_longest(index, row)]
+                }) + '\n')
             i += len(batch)
+
+            batch_stop_time = timeit.default_timer()
+            batch_elapsed = round(batch_stop_time - batch_start_time, 1)
+            print(f'[{dt.now().isoformat()}] Scored {len(batch):,} docs in {batch_elapsed}s ({i:,} scored so far)')
+
             if limit and (i >= limit):
+                print(f'[{dt.now().isoformat()}] Stopping (--limit was {limit:,})')
                 break
 
     stop_time = timeit.default_timer()
     elapsed = round(stop_time - start_time, 1)
-    print(f'{limit} docs in {elapsed}s')
+    print(f'[{dt.now().isoformat()}] Scored {i:,} docs in {elapsed}s')
 
 
 if __name__ == '__main__':
