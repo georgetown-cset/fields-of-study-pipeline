@@ -30,6 +30,7 @@ def worker(lang, n_workers, worker_id, batch_size, limit):
 
     for batch_id, batch in enumerate(chunked(iter_bq_extract(f'{lang}_'), batch_size)):
         with open(f'{lang}_scores_{batch_id}_{worker_id}.jsonl', 'wt') as f:
+            batch_start_time = timeit.default_timer()
             for line_index, record in enumerate(batch):
                 if not (line_index - worker_id) % n_workers == 0 or line_index < worker_id:
                     n += 1
@@ -44,7 +45,9 @@ def worker(lang, n_workers, worker_id, batch_size, limit):
                     break
         if limit and (worker_n >= worker_limit):
             break
-        print(f"[{dt.now().isoformat()}] Worker {worker_id} scored {len(batch)} records ({worker_n} so far)")
+        batch_elapsed = round(timeit.default_timer() - batch_start_time, 1)
+        print(f"[{dt.now().isoformat()}] Worker {worker_id} scored {len(batch)} records ({worker_n} by worker so far) "
+              f"in {batch_elapsed}s")
 
     elapsed = round(timeit.default_timer() - start_time, 1)
     print(f"[{dt.now().isoformat()}] Worker {worker_id} shutdown after {worker_n + 1} records processed in {elapsed}s")
