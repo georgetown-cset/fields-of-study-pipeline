@@ -35,6 +35,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.profile:
         fields = FieldModel("en")
-        embed(fields)
+        embed(fields, limit=10_000)
     else:
         main()
