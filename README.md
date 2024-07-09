@@ -197,3 +197,59 @@ To update the artifacts used by airflow, run `bash push_to_airflow.sh`.
 To view the dag, visit [this link](https://sc8c690a9f43753bep-tp.appspot.com/graph?dag_id=new_fields_of_study). To
 trigger a run on only new or modified data, trigger the dag without configuration parameters. To rerun on all data, 
 trigger the dag with the configuration `{"rerun": true}`.
+
+## Optimization
+
+We start with about 8s per 1,000 documents, as measured by `scripts/benchmark.py`. 
+
+`batch_score_corpus.py` doesn't do much better. Working on chunks of 10K documents at a time, we see 74s per chunk.
+
+Profiling shows us that after loading assets, we 
+- 11.9% of run time -> 13% of post-asset-load run time on JSON encoding
+- 7.9% -> 8.6% on fastText embedding
+- 2.7% -> 3.0% on tf-IDF embedding
+- 65% -> 71% on similarity scoring
+
+Decomposing that similarity scoring time:
+- 40.8% of overall time -> 62.8% of post-asset-load run time on tf-idf (sparse) similarity 
+- 23.8% of overall time -> 36.6% of post-asset-load run time on FastText similarity
+
+fastText embedding is just 8.6% of post-asset-load run time, but if there's a lot of Python overhead it would be easy enough to switch to the CLI, so below are timings for that. 
+
+fastText CLI running over the first 10K documents in the EN corpus (via `scripts/dump_texts.py`):
+```shell
+(venv) james@Air fastText-0.9.2 % time ./fasttext print-sentence-vectors ../assets/scientific-lit-embeddings/english/fasttext/en_merged_model_120221.bin < ../assets/corpus/en_texts.txt > ../assets/corpus/en_fasttext.txt
+./fasttext print-sentence-vectors  < ../assets/corpus/en_texts.txt >   34.80s user 7.23s system 87% cpu 48.281 total
+(venv) james@Air fastText-0.9.2 % time ./fasttext print-sentence-vectors ../assets/scientific-lit-embeddings/english/fasttext/en_merged_model_120221.bin < ../assets/corpus/en_texts.txt > ../assets/corpus/en_fasttext.txt
+./fasttext print-sentence-vectors  < ../assets/corpus/en_texts.txt >   34.69s user 6.69s system 88% cpu 46.804 total
+(venv) james@Air fastText-0.9.2 % time ./fasttext print-sentence-vectors ../assets/scientific-lit-embeddings/english/fasttext/en_merged_model_120221.bin < ../assets/corpus/en_texts.txt > ../assets/corpus/en_fasttext.txt
+./fasttext print-sentence-vectors  < ../assets/corpus/en_texts.txt >   32.45s user 5.57s system 92% cpu 41.224 total
+```
+
+My initial thinking is that the easiest first thing to implement will be multiprocessing. WIP is in `scripts/score_parallel.py`. 
+
+```shell
+python score_parallel.py --max-workers 3 --limit 2000 
+[2024-07-09T10:49:11.737608] Starting job with 3 workers
+[2024-07-09T10:49:13.518511] Loading assets on worker 2 with PID 10194
+[2024-07-09T10:49:13.518584] Loading assets on worker 0 with PID 10192
+[2024-07-09T10:49:13.518691] Loading assets on worker 1 with PID 10193
+[2024-07-09T10:50:23.173557] Scored 1,000 docs in 71.4s (1,000 scored so far)
+[2024-07-09T10:51:08.714332] Scored 1,000 docs in 45.5s (2,000 scored so far)
+[2024-07-09T10:51:08.714489] Stopping (--limit was 2,000)
+[2024-07-09T10:51:08.719219] Scored 2,000 docs in 117.0s
+Worker 1 shutdown
+Worker 2 shutdown
+Worker 0 shutdown
+```
+
+```shell
+python score_parallel.py --max-workers 1 --limit 2000 
+[2024-07-09T10:47:59.609473] Starting job with 1 workers
+[2024-07-09T10:48:01.003656] Loading assets on worker 0 with PID 10134
+[2024-07-09T10:48:25.497661] Scored 1,000 docs in 25.9s (1,000 scored so far)
+[2024-07-09T10:48:39.571742] Scored 1,000 docs in 14.1s (2,000 scored so far)
+[2024-07-09T10:48:39.571794] Stopping (--limit was 2,000)
+[2024-07-09T10:48:39.572247] Scored 2,000 docs in 40.0s
+Worker 0 shutdown
+```
