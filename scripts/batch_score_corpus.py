@@ -20,7 +20,7 @@ def row_norm(vectors):
     return np.divide(vectors, norms, where=norms != 0.0)
 
 
-def main(lang='en', chunk_size=1_000, limit=1_000):
+def main(lang='en', chunk_size=1_000, limit=1_000, corpus_dir=CORPUS_DIR, verbose: bool = False):
     print(f'[{dt.now().isoformat()}] Loading assets')
     # Vectors for embedding publications
     fasttext = load_fasttext(lang)
@@ -39,10 +39,10 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
     start_time = timeit.default_timer()
     print(f'[{dt.now().isoformat()}] Starting job')
 
-    with open(CORPUS_DIR / f'{lang}_scores.jsonl', 'wt') as f:
+    with open(corpus_dir / f'{lang}_scores.jsonl', 'wt') as f:
         # Break iterable into sub-iterables with chunk_size elements. The last sub-iterable will (probably) have length
         # less than chunk_size.
-        for batch in chunked(iter_bq_extract(f'{lang}_'), chunk_size):
+        for batch in chunked(iter_bq_extract(f'{lang}_', corpus_dir=corpus_dir, verbose=verbose), chunk_size):
             batch_start_time = timeit.default_timer()
             ft = [fasttext.get_sentence_vector(record['text']) for record in batch]
             ft = row_norm(ft)
@@ -89,5 +89,7 @@ if __name__ == '__main__':
     parser.add_argument('lang', choices=('en', 'zh'), help='Language')
     parser.add_argument('--chunk-size', type=int, default=5000, help='Chunk size')
     parser.add_argument('--limit', type=int, default=10000, help='Record limit')
+    parser.add_argument('--corpus-dir', type=str, default=CORPUS_DIR, help='Input and output directory')
+    parser.add_argument('-v', '--verbose', action='store_true', help='Verbose output')
     args = parser.parse_args()
-    main(lang=args.lang, chunk_size=args.chunk_size, limit=args.limit)
+    main(lang=args.lang, chunk_size=args.chunk_size, limit=args.limit, corpus_dir=args.corpus_dir, verbose=args.verbose)
