@@ -4,6 +4,7 @@ import math
 import timeit
 from itertools import zip_longest
 from datetime import datetime as dt
+from pathlib import Path
 
 import numpy as np
 from more_itertools import chunked
@@ -89,7 +90,7 @@ if __name__ == '__main__':
     parser.add_argument('lang', choices=('en', 'zh'), help='Language')
     parser.add_argument('--chunk-size', type=int, default=5000, help='Chunk size')
     parser.add_argument('--limit', type=int, default=10000, help='Record limit')
-    parser.add_argument('--corpus-dir', type=str, default=CORPUS_DIR, help='Input and output directory')
+    parser.add_argument('--corpus-dir', type=Path, default=CORPUS_DIR, help='Input and output directory')
     parser.add_argument('-v', '--verbose', action='store_true', help='Verbose output')
     args = parser.parse_args()
     main(lang=args.lang, chunk_size=args.chunk_size, limit=args.limit, corpus_dir=args.corpus_dir, verbose=args.verbose)
