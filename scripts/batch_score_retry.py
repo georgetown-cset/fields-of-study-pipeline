@@ -1,0 +1,111 @@
+import argparse
+import json
+import math
+import timeit
+from itertools import zip_longest
+from datetime import datetime as dt
+from pathlib import Path
+
+import numpy as np
+from more_itertools import chunked
+
+from fos.entity import load_entities, embed_entities
+from fos.settings import CORPUS_DIR
+from fos.util import iter_bq_extract
+from fos.vectors import load_fasttext, load_tfidf, load_field_fasttext, load_field_tfidf, load_field_entities, \
+    load_field_keys, batch_sparse_similarity
+
+
+def row_norm(vectors):
+    norms = np.linalg.norm(vectors, ord=2, axis=1)[:, None]
+    return np.divide(vectors, norms, where=norms != 0.0)
+
+
+def main(lang='en', chunk_size=1_000, limit=1_000, corpus_dir=CORPUS_DIR, verbose: bool = False, skip_file=None):
+    print(f'[{dt.now().isoformat()}] Loading assets')
+    # Vectors for embedding publications
+    fasttext = load_fasttext(lang)
+    tfidf, dictionary = load_tfidf(lang)
+    entities = load_entities(lang)
+
+    # Field embeddings
+    field_fasttext = load_field_fasttext(lang)
+    field_tfidf = load_field_tfidf(lang)
+    field_entities = load_field_entities(lang)
+
+    # Field embedding index (gives the field IDs corresponding with field score vector elements)
+    index = load_field_keys(lang)
+
+    i = 0
+    start_time = timeit.default_timer()
+    print(f'[{dt.now().isoformat()}] Starting job')
+
+    processed_ids = set()
+    if skip_file:
+        with open(skip_file, 'rt') as f:
+            [processed_ids.add(line) for line in f if line]
+        print(f"{len(processed_ids):,} previous output IDs")
+    else:
+        print("No previous output IDs")
+
+    with open(corpus_dir / f'{lang}_scores_retry.jsonl', 'wt') as f:
+        # Break iterable into sub-iterables with chunk_size elements. The last sub-iterable will (probably) have length
+        # less than chunk_size.
+        for batch in chunked(iter_bq_extract(f'{lang}_', corpus_dir=corpus_dir, verbose=verbose), chunk_size):
+            batch_start_time = timeit.default_timer()
+
+            batch = [record for record in batch if record["merged_id"] not in processed_ids]
+            if not batch:
+                print(f'[{dt.now().isoformat()}] Skipping all {len(batch):,} previously seen docs in batch')
+                continue
+
+            ft = [fasttext.get_sentence_vector(record['text']) for record in batch]
+            ft = row_norm(ft)
+            ft_sim = np.dot(field_fasttext.index, ft.T).T
+
+            bow = [dictionary.doc2bow(record['text'].split()) for record in batch]
+            dtm = [doc for doc in tfidf.gensim_model[bow]]
+            tfidf_sim = batch_sparse_similarity(dtm, field_tfidf.index)
+
+            ent = [embed_entities(record['text'], entities) for record in batch]
+            ent = row_norm(ent)
+            entity_sim = np.dot(field_entities.index, ent.T).T
+
+            sims = np.array((ft_sim, tfidf_sim.A, entity_sim))
+            avg_sim = np.apply_along_axis(lambda x: np.average(x[x > 0.0], axis=0), 0, sims)
+
+            for record, row in zip_longest(batch, avg_sim):
+                f.write(json.dumps({
+                    'merged_id': record['merged_id'],
+                    'fields': [
+                        {
+                            'id': k,
+                            'score': None if math.isnan(float(v)) else float(v)
+                        }
+                        for k, v in zip_longest(index, row)]
+                }) + '\n')
+            i += len(batch)
+
+            batch_stop_time = timeit.default_timer()
+            batch_elapsed = round(batch_stop_time - batch_start_time, 1)
+            print(f'[{dt.now().isoformat()}] Scored {len(batch):,} docs in {batch_elapsed}s ({i:,} scored so far)')
+
+            if limit and (i >= limit):
+                print(f'[{dt.now().isoformat()}] Stopping (--limit was {limit:,})')
+                break
+
+    stop_time = timeit.default_timer()
+    elapsed = round(stop_time - start_time, 1)
+    print(f'[{dt.now().isoformat()}] Scored {i:,} docs in {elapsed}s')
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Score merged corpus text')
+    parser.add_argument('lang', choices=('en', 'zh'), help='Language')
+    parser.add_argument('--chunk-size', type=int, default=5000, help='Chunk size')
+    parser.add_argument('--limit', type=int, default=10000, help='Record limit')
+    parser.add_argument('--corpus-dir', type=Path, default=CORPUS_DIR, help='Input and output directory')
+    parser.add_argument('--skip-file', type=Path, help='Skip any records in this previous output file')
+    parser.add_argument('-v', '--verbose', action='store_true', help='Verbose output')
+    args = parser.parse_args()
+    main(lang=args.lang, chunk_size=args.chunk_size, limit=args.limit, corpus_dir=args.corpus_dir, verbose=args.verbose, skip_file=args.skip_file)
