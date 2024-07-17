@@ -61,7 +61,7 @@ observed_fields as (
   -- resulting averages
   select
     merged_id,
-    field.display_name as display_name,
+    field.id as name,
     -- Take the field average over the observed scores
     avg(field.score) as avg_neighbors_score,
     -- How many references with a score for this field?
@@ -69,7 +69,7 @@ observed_fields as (
   from neighbor_scores, unnest(fields) as field
   group by
     merged_id,
-    field.display_name
+    field.id
 ),
 
 unnested_imputations as (
@@ -77,7 +77,7 @@ unnested_imputations as (
     -- For each publication-field pair (for the fields we observe among a
     -- publication's references) ...
     observed_fields.merged_id,
-    observed_fields.display_name,
+    observed_fields.name,
     -- We have the average over the observed scores for a field;
     round(observed_fields.avg_neighbors_score, 4) as avg_neighbors_score,
     -- We have the count of the neighbors for which a non-negative score
@@ -100,7 +100,7 @@ select
   merged_id,
   neighbors_count,
   array_agg(struct(
-    display_name,
+    name,
     avg_neighbors_score,
     neighbors_with_field_count,
     score

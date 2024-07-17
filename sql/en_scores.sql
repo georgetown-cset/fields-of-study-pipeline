@@ -1,5 +1,5 @@
 -- Merge any new scores with the old ones in the production dataset; if we have scores for
--- an id in both tables (which can happen if the text for that id changed), take the new score
+-- an id in both tables (which can happen if the text for that id changed), take the new --score
 with in_lang_ids as (
   select
     merged_id,
@@ -12,11 +12,13 @@ with in_lang_ids as (
     (title is not null
       and title_cld2_lid_success is true
       and title_cld2_lid_is_reliable is true
-      and lower(title_cld2_lid_first_result_short_code) = "en" is true
+      and lower(title_cld2_lid_first_result_short_code) = "en"
+    )
     or (abstract is not null
       and abstract_cld2_lid_success is true
       and abstract_cld2_lid_is_reliable is true
-      and lower(abstract_cld2_lid_first_result_short_code) = "en" is true
+      and lower(abstract_cld2_lid_first_result_short_code) = "en"
+    )
   )
 ),
 
@@ -42,7 +44,7 @@ old_scores as (
 
 select
   merged_id,
-  array_agg(struct(field.display_name, field.score)) as fields
+  array_agg(struct(field.id, field.score)) as fields
 from {{staging_dataset}}.new_en,
 unnest(fields) as field
 group by merged_id
