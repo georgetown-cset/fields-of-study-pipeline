@@ -1,57 +1,9 @@
-with neighbors as (
-  -- The paper_references_merged table is an edge list
-  -- giving paper, reference pairs. We union it with
-  -- these same pairs in the reverse order to get a lookup
-  -- table of citation graph neighbors
-  select
-    merged_id,
-    ref_id as neighbor_id
-  from literature.references
-  union distinct
-  select
-    ref_id as merged_id,
-    merged_id as neighbor_id
-  from literature.references
-),
-
-neighbor_scores as (
-  -- The papers without scores are non-EN or don't have title/abstract.
-  -- Our approach is to find any neighbors of theirs in the citation
-  -- graph that do have scores
-  select
-    sources.merged_id,
-    neighbors.neighbor_id,
-    neighbor_scores.fields
-  -- For publications without field scores (see WHERE)
-  from (select distinct merged_id from literature.sources) as sources
-  -- Take the IDs of all their neighbors (at this point any
-  -- pubs not in the citation graph drop out)
-  inner join neighbors using(merged_id)
-  -- And get any scores associated (at this point any pubs
-  -- whose neighbors don't have scores drop out)
-  inner join {{staging_dataset}}.en_scores neighbor_scores
-    on neighbor_scores.merged_id = neighbors.neighbor_id
-  -- We exclude papers that already have scores
-  left join {{staging_dataset}}.en_scores
-    on en_scores.merged_id = sources.merged_id
-  -- The more readable 'where not in (subquery)' approach gives an OOM
-  -- error, so we do left join + where
-  where
-    -- As explained immediately above exclude papers that already
-    -- have scores
-    en_scores.merged_id is null
-    -- A small number of papers that go through the field model don't
-    -- receive any non-negative scores, and these may appear in the
-    -- en_zh_scores table, so exclude them here
-    and neighbor_scores.fields is not null
-),
-
-n_neighbors as (
+with n_neighbors as (
   -- How many neighbors with 1+ field score (any field) does each of these papers have?
   select distinct
     merged_id,
     count(distinct neighbor_id) as n
-  from neighbor_scores
+  from {{staging_dataset}}.neighbor_scores
   group by merged_id
 ),
 
@@ -61,12 +13,12 @@ observed_fields as (
   -- resulting averages
   select
     merged_id,
-    field.id as name,
+    field.name,
     -- Take the field average over the observed scores
     avg(field.score) as avg_neighbors_score,
     -- How many references with a score for this field?
     count(distinct neighbor_id) as neighbors_with_field_count
-  from neighbor_scores, unnest(fields) as field
+  from {{staging_dataset}}.neighbor_scores, unnest(fields) as field
   group by
     merged_id,
     field.id

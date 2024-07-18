@@ -10,7 +10,7 @@ WITH
   level_zero_fields AS (
   SELECT DISTINCT
     normalized_name,
-    name,
+    display_name as name,
     parent_level AS level
   FROM
     staging_fields_of_study_v2.field_hierarchy
