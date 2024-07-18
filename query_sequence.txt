@@ -1,5 +1,7 @@
 en_scores
+neighbor_scores
 imputed_scores
 field_scores
 field_meta
+parent_fields
 top_fields
