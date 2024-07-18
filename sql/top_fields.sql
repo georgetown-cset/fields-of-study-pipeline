@@ -3,7 +3,7 @@ with unnested as (
     merged_id,
     field.name,
     field.score as field_score
-  from staging_fields_of_study_v2.field_scores, unnest(fields) as field
+  from {{staging_dataset}}.field_scores, unnest(fields) as field
 ),
 
 field_ranks as (
@@ -14,7 +14,7 @@ field_ranks as (
     field_score,
     row_number() over (partition by merged_id, level order by field_score desc) as field_rank
   from unnested
-  inner join staging_fields_of_study_v2.field_meta using(name)
+  inner join {{staging_dataset}}.field_meta using(name)
 ),
 
 limit_children as (
@@ -22,9 +22,9 @@ limit_children as (
     field_ranks.merged_id,
     name
   from field_ranks
-  inner join staging_fields_of_study_v2.field_hierarchy
+  inner join {{staging_dataset}}.field_hierarchy
     on name = child_display_name
-  inner join staging_fields_of_study_v2.parent_fields
+  inner join {{staging_dataset}}.parent_fields
   on (field_ranks.merged_id = parent_fields.merged_id and level_one_field = display_name)
   where field_level = 2 or field_level = 3
 )
