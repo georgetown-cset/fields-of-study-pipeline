@@ -117,7 +117,7 @@ def add_new_fields_to_hierarchy(field_hierarchy: defaultdict, manual_field_updat
     for elem in manual_field_update:
         row = manual_field_update[elem]
         field_hierarchy[elem][row["parent_name"]] = {"normalized_name": row["parent_name"],
-            "display_name": all_fields[row["parent_name"]]["normalized_name"], "parent_level": int(row["level"]) - 1,
+            "display_name": all_fields[row["parent_name"]]["display_name"], "parent_level": int(row["level"]) - 1,
             "child_normalized_name": row["normalized_name"], "child_display_name": row["display_name"],
             "child_level": row["level"]}
 
