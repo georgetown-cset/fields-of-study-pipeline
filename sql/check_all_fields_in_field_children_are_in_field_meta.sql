@@ -5,6 +5,6 @@ from
   {{staging_dataset}}.field_hierarchy
 where
   display_name not in (
-    select display_name
+    select name
     from {{staging_dataset}}.field_meta
 )
