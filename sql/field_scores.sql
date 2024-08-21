@@ -12,7 +12,7 @@ with merged as (
     merged_id,
     -- We unnest and nest again so that the structs match; imputed_scores has more nested fields
     array_agg(struct(
-      field.display_name,
+      field.name,
       field.score
       )) as fields,
     true as is_imputed

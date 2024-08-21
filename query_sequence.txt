@@ -1,7 +1,6 @@
-new_en_zh_scores
-en_zh_scores
+en_scores
+neighbor_scores
 imputed_scores
 field_scores
 field_meta
-field_children
 top_fields
