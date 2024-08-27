@@ -3,7 +3,7 @@ with unnested as (
     merged_id,
     field.name,
     field.score as field_score
-  from subset, unnest(fields) as field
+  from {{staging_dataset}}.field_scores, unnest(fields) as field
 ),
 
 field_ranks as (
