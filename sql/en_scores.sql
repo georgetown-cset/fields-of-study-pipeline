@@ -40,17 +40,32 @@ old_scores as (
       from
         in_lang_ids
     )
+),
+
+combined_scores as (
+  select
+    merged_id,
+    array_agg(struct(field.id as name, field.score)) as fields
+  from {{staging_dataset}}.new_en,
+  unnest(fields) as field
+  group by merged_id
+  union all
+  select
+    merged_id,
+    fields
+  from
+    old_scores
 )
 
+-- https://cloud.google.com/bigquery/docs/arrays#filtering_arrays
 select
   merged_id,
-  array_agg(struct(field.id as name, field.score)) as fields
-from {{staging_dataset}}.new_en,
-unnest(fields) as field
-group by merged_id
-union all
-select
-  merged_id,
-  fields
-from
-  old_scores
+  array(
+    select as struct
+      field.name,
+      field.score
+    from unnest(fields) AS field
+    -- Exclude fields we aren't satisfied with, after review
+    where field.name not in ('Process management', 'Access control', 'Social engineering')
+  ) as fields
+from combined_scores
