@@ -1,27 +1,29 @@
 ## Overview
 
-This repo contains materials for a replication of MAG's fields of study. This involves the following:
+This repo contains materials for the fields of study project (as described in ``Multi-Label Field Classification for Scientific Documents using Expert and
+Crowd-sourced Knowledge''). This involves the following:
 
-1. Our starting point is the merged corpus, specifically its EN and ZH text. We use it to learn _FastText_ and _tf-idf
+1. Our starting point is our merged corpus of publications, specifically its English-language text. We use it to learn _FastText_ and _tf-idf
    word vectors_.
 
 2. The second fundamental input is a taxonomy that defines fields of study, in a hierarchy of broad areas like
-   "computer science" and more granular subfields like "machine learning". We derived this taxonomy from MAG. For
+   "computer science" and more granular subfields like "machine learning". We derived the top level of this taxonomy from the taxonomy previously used by MAG,
+   and create the lower layers ourselves (as described in the paper). For
    current purposes it's static. We call this the _field taxonomy_.
 
-3. For each field in the taxonomy, we have various associated text extracted from Wikipedia (pages and their references).
+4. For each field in the taxonomy, we have various associated text extracted from Wikipedia (pages and their references).
    Using this _field content_ and the word vectors learned from the merged corpus, we create embeddings for each
    field. We refer to these as FastText and tf-idf _field embeddings_.
 
-4. We then identify in the field content every mention of another field. (For instance, the "computer science" content
+5. We then identify in the field content every mention of another field. (For instance, the "computer science" content
    mentions "artificial intelligence," "machine learning," and many other fields.) The averages of the FastText field 
    embeddings for these mentioned fields are the _entity embeddings_ for each field.
 
-5. Next, for each EN and ZH publication in the merged corpus we create _publication embeddings_. Specifically, for each
+6. Next, for each English publication in the merged corpus we create _publication embeddings_. Specifically, for each
    publication a _FastText embedding_, _tf-idf embedding_, and _FastText field mention embedding_ (as immediately above,
    but for fields mentioned in the publication text).
 
-6. Lastly, scoring: we compute the cosine similarities of the embeddings for publications and fields. This yields up to
+7. Lastly, scoring: we compute the cosine similarities of the embeddings for publications and fields. This yields up to
    three cosine similarity (FastText, tf-idf, and mention FastText) for a publication-field pair. We average them to get
    a publication's field score.
 
@@ -65,12 +67,11 @@ BQ dataset and the `gs://fields-of-study` bucket.
 
 ## Pipeline
 
-Retrieve EN and ZH text in the merged corpus:
+Retrieve English text in our merged corpus:
 
 ```shell
 # writes 'assets/corpus/{lang}_corpus-*.jsonl.gz'
 PYTHONPATH=. python scripts/download_corpus.py en
-PYTHONPATH=. python scripts/download_corpus.py zh
 ```
 
 Embed the publication text:
@@ -79,7 +80,6 @@ Embed the publication text:
 # reads 'assets/corpus/{lang}_corpus-*.jsonl.gz'
 # writes 'assets/corpus/{lang}_embeddings.jsonl'
 PYTHONPATH=. python scripts/embed_corpus.py en
-PYTHONPATH=. python scripts/embed_corpus.py zh
 ```
 
 Calculate field scores from the publication embeddings:
@@ -88,7 +88,6 @@ Calculate field scores from the publication embeddings:
 # reads 'assets/corpus/{lang}_embeddings.jsonl'
 # writes 'assets/corpus/{lang}_scores.tsv'
 PYTHONPATH=. python scripts/score_embeddings.py en
-PYTHONPATH=. python scripts/score_embeddings.py zh
 ```
 
 Alternatively, embed + score without writing the publication embeddings to the disk:
@@ -97,21 +96,19 @@ Alternatively, embed + score without writing the publication embeddings to the d
 # reads 'assets/corpus/{lang}_corpus-*.jsonl.gz'
 # writes 'assets/corpus/{lang}_scores.jsonl'
 PYTHONPATH=. python scripts/score_corpus.py en
-PYTHONPATH=. python scripts/score_corpus.py zh
 ```
 
 ## Project workflow
 
 ### 1. Merged corpus text and word vectors
 
-We start by retrieving EN and ZH text in the merged corpus.
+We start by retrieving English in the merged corpus.
 
 ```shell
 PYTHONPATH=. python scripts/download_corpus.py en
-PYTHONPATH=. python scripts/download_corpus.py zh
 ```
 
-We learned EN and ZH FastText and tf-idf vectors from these corpora. Documentation for this is
+We learned English FastText and tf-idf vectors from these corpora. Documentation for this is
 in `assets/scientific-lit-embeddings`.
 
 Outputs (annually):
@@ -156,12 +153,11 @@ Outputs (annually):
 
 ### 5. Publication embedding
 
-We embed each EN and ZH publication in the preprocessed corpora (1) using the FastText and tf-idf vectors (2), and by
+We embed each English publication in the preprocessed corpora (1) using the FastText and tf-idf vectors (2), and by
 averaging the entity embeddings (3) for each field mentioned in the publication text.
 
 ```shell
 PYTHONPATH=. python scripts/embed_corpus.py en
-PYTHONPATH=. python scripts/embed_corpus.py zh
 ```
 
 Outputs (~weekly):
@@ -175,7 +171,6 @@ over these cosine similarities yielding field scores.
 
 ```shell
 PYTHONPATH=. python scripts/score_embeddings.py en
-PYTHONPATH=. python scripts/score_embeddings.py zh
 ```
 
 Outputs (~weekly):
