@@ -1,7 +1,7 @@
 ## Overview
 
-This repo contains materials for the fields of study project (as described in ``Multi-Label Field Classification for Scientific Documents using Expert and
-Crowd-sourced Knowledge''). This involves the following:
+This repo contains materials for the fields of study project (as described in "Multi-Label Field Classification for Scientific Documents using Expert and
+Crowd-sourced Knowledge"). This involves the following:
 
 1. Our starting point is our merged corpus of publications, specifically its English-language text. We use it to learn _FastText_ and _tf-idf
    word vectors_.
