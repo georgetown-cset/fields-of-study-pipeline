@@ -23,6 +23,7 @@ from datetime import datetime
 from dataloader.airflow_utils.defaults import DATA_BUCKET, PROJECT_ID, GCP_ZONE, DAGS_DIR, get_default_args, \
     get_post_success
 from dataloader.scripts.populate_documentation import update_table_descriptions
+from dataloader.scripts.clean_backups import clean_backups
 
 
 production_dataset = "fields_of_study_v2"
@@ -222,7 +223,13 @@ with DAG("new_fields_of_study",
 
         wait_for_checks >> table_copy >> pop_descriptions >> table_backup >> wait_for_backup
 
+    update_archive = PythonOperator(
+        task_id="update_archive",
+        op_kwargs={"dataset": backups_dataset, "backup_prefix": production_dataset},
+        python_callable=clean_backups,
+    )
     success_alert = get_post_success("Fields of study v2 update succeeded!", dag)
+    update_archive >> success_alert
 
     # as a final step before posting success, update the prev_{lang}_corpus tables so we'll know what text we used
     # on previous runs
@@ -251,4 +258,4 @@ with DAG("new_fields_of_study",
                 }
             )
 
-        wait_for_backup >> copy_corpus >> success_alert
+        wait_for_backup >> copy_corpus >> update_archive
