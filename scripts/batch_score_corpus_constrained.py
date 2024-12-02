@@ -47,7 +47,6 @@ def batch_tfidf(tfidf, dictionary, batch):
 def average_similarity(ft, entity, tfidf):
     sims = np.array((ft, tfidf.A, entity))
     valid_mask = (sims >= 0) & (sims <= 1)
-    # Originally This occupies about 24% of call time
     valid_sums = np.sum(sims * valid_mask, axis=0)
     valid_counts = np.sum(valid_mask, axis=0)
     avg = np.divide(valid_sums, valid_counts, where=valid_counts > 0)
@@ -119,6 +118,7 @@ def load_constraints() -> Dict[Tuple[int, int], List[int]]:
 
 def to_score_records(indices, scores, index):
     records = []
+    # The indices and scores are sorted ascending
     for field_id, score in zip(reversed(indices), reversed(scores)):
         if np.isnan(score):
             continue
@@ -133,6 +133,7 @@ def main(chunk_size=1_000, limit=1_000):
 
     # Load vectors for fields + models for embedding publications
     model = FieldModel()
+
     # Pulling these arrays out of the model instance is slightly faster
     field_fasttext = model.field_fasttext.index
     field_tfidf = model.field_tfidf.index
@@ -147,6 +148,7 @@ def main(chunk_size=1_000, limit=1_000):
     index = meta['name'].to_numpy()
     levels = meta['level'].to_numpy()
 
+    # We use the L0-L1 slices of all the assets repeatedly on each batch, so copy them out
     l0l1_levels = levels[levels <= 1]
     l0l1_fasttext = field_fasttext[levels <= 1]
     l0l1_tfidf = field_tfidf[levels <= 1]
