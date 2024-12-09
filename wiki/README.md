@@ -170,11 +170,11 @@ python embed_field_text.py \
   --lang=en
 ```
 
-*Note*: This program currently have to be run from one level higher than the previous programs, e.g. not from the wiki directory, as follows:
+*Note*: This program imports the `fos` module, so from the `./wiki` directory, invoke it like 
 
-`python -m wiki.embed_field_text`
-
-This is because it relies on the `fos` module.
+```shell
+PYTHONPATH=.. python embed_field_text.py
+```
 
 Outputs: `en_field_fasttext.npz` and `en_field_tfidf.npz`.
 
