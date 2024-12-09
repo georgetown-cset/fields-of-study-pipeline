@@ -38,7 +38,7 @@ def set_default_clients():
     _storage_client = storage.Client(project=PROJECT_ID)
 
 
-def create_bq_client(key_path: Optional[str] = KEY_PATH) -> bigquery.Client:
+def create_bq_client(key_path: Optional[str] = None) -> bigquery.Client:
     """Create BQ API Client."""
     global _bq_client
     if _bq_client:
@@ -48,7 +48,7 @@ def create_bq_client(key_path: Optional[str] = KEY_PATH) -> bigquery.Client:
     return _bq_client
 
 
-def create_storage_client(key_path: Optional[str] = KEY_PATH) -> storage.Client:
+def create_storage_client(key_path: Optional[str] = None) -> storage.Client:
     """Create GCS API Client."""
     global _storage_client
     if _storage_client:
