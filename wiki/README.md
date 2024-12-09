@@ -155,7 +155,7 @@ We use this program to ensure our text coverage is good and consistent. Example 
 
 ```There are 1076 records in the refs table, and of those, 941 have at least one reference.```
 
-### 7. `embed_field_text.py`
+### 8. `embed_field_text.py`
 
 We next embed the text for each field.
 The paths below assume the `field-of-study-pipelines` repo can be found in the parent of this project's directory. 
@@ -177,3 +177,11 @@ python embed_field_text.py \
 This is because it relies on the `fos` module.
 
 Outputs: `en_field_fasttext.npz` and `en_field_tfidf.npz`.
+
+### 9. `embed_entities.py`
+
+This script uses outputs from the previous step to create entity-mention embeddings using the field text and the output from the previous step. 
+Entity-mention embeddings are created by averaging the embeddings of the fields mentioned in the text.
+
+We have two outputs: (1) an entity matcher to efficiently find field mentions in publication text, yielding
+the corresponding field vectors; and (2) a matrix of entity vectors for fields (via `gensim.similarities.docsim.MatrixSimilarity`), for scoring purposes: comparison of entity-based publication embeddings against entity-based field embeddings.
