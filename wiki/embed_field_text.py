@@ -35,30 +35,26 @@ def main():
     meta['tfidf'] = None
 
     names = []
-    texts = []
-    fts = []
-    tfidfs = []
     for field in table:
         name, text = read_wiki_record(field, meta)
         if not text:
-            # No text available
+            print(f'Skipped {name}: no field text available')
             continue
         if name in names:
-            # Duplicate field name after normalization in DB
+            print(f'Skipped {name}: duplicate field name after normalization in DB')
+            continue
+        if name not in meta.index:
+            print(f'Skipped {name}: in DB but not final metadata')
             continue
         names.append(name)
-        texts.append(text)
-        fts.append(norm(ft_model.get_sentence_vector(text)))
-        tfidfs.append(embed_tfidf(text.split(), tfidf, dictionary))
+        meta.at[name, 'text'] = text
+        meta.at[name, 'ft'] = norm(ft_model.get_sentence_vector(text))
+        meta.at[name, 'tfidf'] = embed_tfidf(text.split(), tfidf, dictionary)
 
-    meta['text'] = texts
-    meta['ft'] = fts
-    meta['tfidf'] = tfidfs
-
+    assert meta['text'].notnull().all()
     meta = meta.reset_index()
     meta.sort_values(['level', 'name'], inplace=True)
-    meta['index'] = meta.index
-    meta.to_json(ASSETS_DIR / "fields/field_meta_full.jsonl", lines=True, orient='records')
+    meta.to_json(ASSETS_DIR / "fields/field_meta.jsonl", lines=True, orient='records')
 
     # Write a matrix of fasttext vectors for fields (via `gensim.similarities.docsim.MatrixSimilarity`), for comparison
     # to fasttext publication vectors in scoring
