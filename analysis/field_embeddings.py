@@ -16,8 +16,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 from fos.vectors import load_field_fasttext, load_field_keys, load_field_entities
 
-db = dataset.connect('sqlite:///../wiki/data/wiki.db')
-table = db['pages']
 
 FIG_DIR = 'field_embeddings'
 L0_FIELDS = {
@@ -34,14 +32,15 @@ FILE_TYPE = 'png'
 def main(vectors, lang='en'):
     # Load the field embedding matrix row order as indicated by field display names
     keys = load_field_keys(lang)
-    levels = pd.DataFrame(db.query("select distinct display_name, level from pages"))
-    assert not levels["display_name"].duplicated().any()
-    assert levels["display_name"].isin(keys).all()
-    assert levels["level"].isin([0, 1, 2, 3]).all()
-    assert len(keys) == len(levels)
+    levels = pd.read_json('../assets/fields/field_meta.jsonl', lines=True)
+    levels = levels.rename(columns={'name': 'display_name'})
+    levels = levels.loc[levels.level <= 1]
+    keys = [x for x in keys if x in levels.display_name.values]
+    vectors = vectors[:len(keys)]
 
     # Get the parent-child relations between fields
-    children = pd.read_json('../assets/fields/all_fields_hierarchy.jsonl', lines=True)
+    children = pd.read_json('../assets/fields/field_children.jsonl', lines=True)
+    children = children.loc[children.parent_name.isin(levels.loc[levels.level == 0, 'display_name'])]
 
     # Add Nunito Sans to matplotlib's font manager
     load_fonts()
@@ -52,13 +51,12 @@ def main(vectors, lang='en'):
     # Add levels
     assert len(tsne_df) == len(levels)
     tsne_df = tsne_df.merge(levels, left_index=True, right_on='display_name', how='inner')
+    assert len(tsne_df) == len(levels)
 
     # Plot L0 embeddings in 2d
     plot_l0_scatter(tsne_df, lang)
-    # For each L0, plot the 2d coords of its L1 children
-    # plot_l1_scatter(tsne_df, parents, lang)
 
-    # For each L0, plot the 2d coords of its L1 children WITH THE PARENT
+    # For each L0, plot the 2d coords of its L1 children with the parent
     plot_l1_scatter(tsne_df, children, lang, plot_parent=True)
 
     # Plot the cosine similarities of the L0 embeddings as a heatmap
@@ -93,7 +91,7 @@ def load_fonts():
     return font_props
 
 
-def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, size=20, **kw):
+def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, size=10, **kw):
     """
     PARAMETERS
     parent_tsne = parent df values or None if there's no parent point
@@ -126,15 +124,16 @@ def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, size=20, **kw):
 
     scatter = sns.scatterplot(x='x', y='y', data=tsne_df, s=25, hue='relationship', legend=False, **kw)
 
-    scatter.set_xlabel('t-SNE x')
-    scatter.set_ylabel('t-SNE y')
+    scatter.set_xlabel('t-SNE x', size=12)
+    scatter.set_ylabel('t-SNE y', size=12)
     texts = []
     for i, row in tsne_df.iterrows():
         text = scatter.text(row["x"],
                             row["y"],
                             row['display_name'],
                             horizontalalignment='left',
-                            color=row['text_color'])
+                            color=row['text_color'],
+                            size=12)
         texts.append(text)
 
     adjust_text(texts, arrowprops=dict(arrowstyle="-", color='gray', lw=1))
@@ -143,7 +142,7 @@ def plot_tsne(tsne_df, parent_tsne=None, neighbors_tsne=None, size=20, **kw):
 
 def plot_l0_scatter(tsne_df, lang: str, **kw):
     # Plot level-0 fields
-    set_scale(1.25)
+    set_scale(2)
     plot_tsne(tsne_df.query('level == 0'), **kw)
     set_title(f'Level-0 Field Embeddings ({lang.upper()})')
     save(f'{lang}-scatter-level-0.{FILE_TYPE}')
@@ -153,10 +152,10 @@ def plot_l0_scatter(tsne_df, lang: str, **kw):
 def plot_l1_scatter(tsne_df, parents, lang, plot_parent=False, **kw):
     # Plot level 1 child fields of each parent
     # set plot_parent = True to plot the parent point on the graph
-    set_scale(1)
-    for parent_name, children in parents.groupby('display_name'):
+    set_scale(2)
+    for parent_name, children in parents.groupby('parent_name'):
         # Subset the tsne df to only include the children of the parent
-        child_tsne = tsne_df.loc[tsne_df["display_name"].isin(children['child_display_name'])]
+        child_tsne = tsne_df.loc[tsne_df["display_name"].isin(children['child_name'])]
         set_title(f'{parent_name}: Level-1 Field Embeddings ({lang.upper()})')
 
         if plot_parent:
@@ -182,7 +181,7 @@ def sim_table(vectors, keys, mask):
 
 def plot_heatmap(sim_df, annot=True):
     # Plot a heatmap of similarities
-    f, ax = plt.subplots(figsize=(20, 20))
+    f, ax = plt.subplots(figsize=(10, 10))
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = FONT_NAME
     sns.heatmap(sim_df,
@@ -191,10 +190,10 @@ def plot_heatmap(sim_df, annot=True):
                 cmap="magma",
                 cbar=False)
     xlocs, xlabels = plt.xticks()
-    plt.setp(xlabels, rotation=45, ha='right')
+    plt.setp(xlabels, rotation=45, ha='right', size=20)
     plt.xlabel(None)
     ylocs, ylabels = plt.yticks()
-    plt.setp(ylabels, rotation=0, ha='right')
+    plt.setp(ylabels, rotation=0, ha='right', size=20)
     plt.ylabel(None)
     return ax
 
@@ -207,7 +206,7 @@ def plot_l0_heatmap(vectors, keys, levels, lang):
     l0_keys = [k for k, is_l0 in zip(keys, mask) if is_l0]
     l0_sim = sim_table(vectors, l0_keys, mask)
     plot_heatmap(l0_sim, annot=False)
-    set_title(f'Level-0 Field Similarities ({lang.upper()})')
+    # set_title(f'Level-0 Field Similarities ({lang.upper()})')
     plt.subplots_adjust(left=.22, bottom=.20)
     save(f'{lang}-heatmap-level-0.{FILE_TYPE}')
     plt.close()
@@ -222,7 +221,7 @@ def plot_stem_heatmap(vectors, keys, levels, lang):
     stem_keys = [k for k, include in zip(keys, mask) if include]
     stem_sim = sim_table(vectors, stem_keys, mask)
     plot_heatmap(stem_sim, annot=False)
-    set_title(f'STEM: Level-0 Field Similarities ({lang.upper()})')
+    # set_title(f'STEM: Level-0 Field Similarities ({lang.upper()})')
     plt.subplots_adjust(left=.22, bottom=.20)
     save(f'{lang}-heatmap-level-0-stem.{FILE_TYPE}')
     plt.close()
@@ -230,23 +229,23 @@ def plot_stem_heatmap(vectors, keys, levels, lang):
 
 def plot_l1_heatmaps(vectors, parents, keys, levels, lang):
     # Level 1 heatmaps by L0 parent
-    for parent_name, children in parents.groupby('display_name'):
+    for parent_name, children in parents.groupby('parent_name'):
         scale = min([1.5, max([.75, 15 / children.shape[0]])])
         if parent_name in ['Chemistry', 'Geology', 'Mathematics']:
             scale = .9
         sns.set_theme(font_scale=scale, font='Nunito Sans')
-        mask = [k in children['child_display_name'].values for k in keys]
+        mask = [k in children['child_name'].values for k in keys]
         child_keys = [k for k, include in zip(keys, mask) if include]
         child_sim = sim_table(vectors, child_keys, mask)
         plot_heatmap(child_sim, annot=False)
-        set_title(f'{parent_name}: Level-1 Field Similarities ({lang.upper()})')
+        # set_title(f'{parent_name}: Level-1 Field Similarities ({lang.upper()})')
         plt.subplots_adjust(left=.22, bottom=.20)
         save(f'{lang}-heatmap-level-1-{parent_name}.{FILE_TYPE}')
         plt.close()
 
 
 def set_title(title):
-    plt.title(title, fontdict={'size': 15})
+    plt.title(title, fontdict={'size': 20})
 
 
 def set_scale(scale):
