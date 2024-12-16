@@ -74,9 +74,9 @@ def rank(scores):
 def check_constraints(top_l0, top_l1, constraints):
     eligible = []
     constraint_keys = []
-    for (l0, l1), l2s in constraints.items():
+    for (l0, l1), l23s in constraints.items():
         if l0 in top_l0 and l1 in top_l1:
-            eligible.extend(l2s)
+            eligible.extend(l23s)
             constraint_keys.append((l0, l1))
     return eligible, constraint_keys
 
