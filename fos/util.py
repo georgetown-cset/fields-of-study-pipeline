@@ -1,4 +1,3 @@
-import csv
 import gzip
 import json
 import re
@@ -89,3 +88,53 @@ def read_go_output(path):
 
 
 run = partial(subprocess.run, cwd=str(PIPELINES_DIR), capture_output=True, text=True)
+
+
+def format_field_name(text):
+    """Format field name text by cleaning and casing it.
+    """
+    text = clean_field_name(text)
+    text = case_field_name(text)
+    return text
+
+
+def clean_field_name(text):
+    """Normalize field name text.
+    """
+    # Normalize hyphens
+    text = re.sub(r'[–—]', '-', text)
+    # Normalize whitespace
+    text = re.sub(r'\s+', ' ', text)
+    text = text.strip()
+    return text
+
+
+def case_field_name(text):
+    """Apply title casing rules to field name text.
+    """
+    # We assume all dashes are hyphens and each whitespace is a space
+    #   which requires clean_title_text first
+    tokens = re.split(r'([ \-\(\)])', text)
+    cased_tokens = []
+    for i, token in enumerate(tokens):
+        # Two split-pattern chars in a row yields an empty string between the matches
+        if len(token) == 0:
+            continue
+        # Don't change abbreviation casing
+        elif len(token) > 1 and token.isupper():
+            cased_tokens.append(token)
+        # Also don't change e.g. 'eWLB'
+        elif not token[0].isupper() and len(token) > 1 \
+                and any(c.isalpha() and c.isupper() for c in token[1:]):
+            cased_tokens.append(token)
+        # Lowercase prepositions, unless they're the first word
+        elif i > 0 and token.lower() in ['a', 'an', 'the', 'of', 'and', 'or', 'but', 'for', 'nor', 'on', 'at', 'to',
+                                         'from', 'by', 'with', 'in', 'through', 'via']:
+            cased_tokens.append(token.lower())
+        # Uppercase the first letter of other words
+        elif len(token) == 1:
+            cased_tokens.append(token[0].upper())
+        else:
+            cased_tokens.append(token[0].upper() + token[1:])
+    text = ''.join(cased_tokens)
+    return text
