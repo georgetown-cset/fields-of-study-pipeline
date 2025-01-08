@@ -1196,9 +1196,9 @@
 {"parent_name":"Medicine","child_name":"Anatomy"}
 {"parent_name":"Medicine","child_name":"Endocrinology"}
 {"parent_name":"Artificial Intelligence","child_name":"Mathematical Optimization"}
-{"parent_name":"Artificial Intelligence","child_name":"Computer Simulation"}
-{"parent_name":"Artificial Intelligence","child_name":"Human-Computer Interaction"}
+{"parent_name":"Computer Science","child_name":"Computer Simulation"}
+{"parent_name":"Computer Science","child_name":"Human-Computer Interaction"}
 {"parent_name":"Biotechnology","child_name":"Biomedical Engineering"}
-{"parent_name":"Biotechnology","child_name":"Synthetic Biology"}
-{"parent_name":"Bioinformatics","child_name":"Computational Biology"}
-{"parent_name":"Bioinformatics","child_name":"Systems Biology"}
+{"parent_name":"Biology","child_name":"Synthetic Biology"}
+{"parent_name":"Biology","child_name":"Computational Biology"}
+{"parent_name":"Biology","child_name":"Systems Biology"}
