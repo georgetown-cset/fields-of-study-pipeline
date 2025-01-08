@@ -4,9 +4,7 @@ Visualize field embeddings.
 import os
 from pathlib import Path
 
-import dataset
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import seaborn as sns
 from adjustText import adjust_text
@@ -34,9 +32,6 @@ def main(vectors, lang='en'):
     keys = load_field_keys(lang)
     levels = pd.read_json('../assets/fields/field_meta.jsonl', lines=True)
     levels = levels.rename(columns={'name': 'display_name'})
-    # levels = levels.loc[levels.level >= 1]
-    # keys = [x for x in keys if x in levels.display_name.values]
-    # vectors = vectors[:len(keys)]
 
     # Get the parent-child relations between fields
     children = pd.read_json('../assets/fields/field_children.jsonl', lines=True)
