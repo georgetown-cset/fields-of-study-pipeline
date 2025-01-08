@@ -35,7 +35,6 @@ def main(vectors, lang='en'):
 
     # Get the parent-child relations between fields
     children = pd.read_json('../assets/fields/field_children.jsonl', lines=True)
-    # children = children.loc[children.parent_name.isin(levels.loc[levels.level == 1, 'display_name'])]
 
     # Add Nunito Sans to matplotlib's font manager
     load_fonts()
