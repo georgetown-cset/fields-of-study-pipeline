@@ -1,0 +1,1203 @@
+{"parent_name":"Art","child_name":"Aesthetics"}
+{"parent_name":"Art","child_name":"Art History"}
+{"parent_name":"Art","child_name":"Classics"}
+{"parent_name":"Art","child_name":"Humanities"}
+{"parent_name":"Art","child_name":"Literature"}
+{"parent_name":"Art","child_name":"Visual Arts"}
+{"parent_name":"Business","child_name":"Accounting"}
+{"parent_name":"Business","child_name":"Actuarial Science"}
+{"parent_name":"Business","child_name":"Advertising"}
+{"parent_name":"Business","child_name":"Business Administration"}
+{"parent_name":"Business","child_name":"Commerce"}
+{"parent_name":"Business","child_name":"Economic Policy"}
+{"parent_name":"Business","child_name":"Finance"}
+{"parent_name":"Business","child_name":"Financial System"}
+{"parent_name":"Business","child_name":"Industrial Organization"}
+{"parent_name":"Business","child_name":"International Trade"}
+{"parent_name":"Business","child_name":"Marketing"}
+{"parent_name":"Business","child_name":"Process Management"}
+{"parent_name":"Business","child_name":"Risk Analysis (Engineering)"}
+{"parent_name":"Chemistry","child_name":"Analytical Chemistry"}
+{"parent_name":"Chemistry","child_name":"Biochemistry"}
+{"parent_name":"Chemistry","child_name":"Chemical Physics"}
+{"parent_name":"Chemistry","child_name":"Chromatography"}
+{"parent_name":"Chemistry","child_name":"Combinatorial Chemistry"}
+{"parent_name":"Chemistry","child_name":"Computational Chemistry"}
+{"parent_name":"Chemistry","child_name":"Crystallography"}
+{"parent_name":"Chemistry","child_name":"Environmental Chemistry"}
+{"parent_name":"Chemistry","child_name":"Inorganic Chemistry"}
+{"parent_name":"Chemistry","child_name":"Medicinal Chemistry"}
+{"parent_name":"Chemistry","child_name":"Mineralogy"}
+{"parent_name":"Chemistry","child_name":"Molecular Physics"}
+{"parent_name":"Chemistry","child_name":"Nuclear Chemistry"}
+{"parent_name":"Chemistry","child_name":"Organic Chemistry"}
+{"parent_name":"Chemistry","child_name":"Photochemistry"}
+{"parent_name":"Chemistry","child_name":"Physical Chemistry"}
+{"parent_name":"Chemistry","child_name":"Polymer Chemistry"}
+{"parent_name":"Chemistry","child_name":"Polymer Science"}
+{"parent_name":"Chemistry","child_name":"Radiochemistry"}
+{"parent_name":"Chemistry","child_name":"Stereochemistry"}
+{"parent_name":"Economics","child_name":"Accounting"}
+{"parent_name":"Economics","child_name":"Actuarial Science"}
+{"parent_name":"Economics","child_name":"Agricultural Economics"}
+{"parent_name":"Economics","child_name":"Classical Economics"}
+{"parent_name":"Economics","child_name":"Commerce"}
+{"parent_name":"Economics","child_name":"Demographic Economics"}
+{"parent_name":"Economics","child_name":"Development Economics"}
+{"parent_name":"Economics","child_name":"Econometrics"}
+{"parent_name":"Economics","child_name":"Economic Geography"}
+{"parent_name":"Economics","child_name":"Economic Growth"}
+{"parent_name":"Economics","child_name":"Economic History"}
+{"parent_name":"Economics","child_name":"Economic Policy"}
+{"parent_name":"Economics","child_name":"Economic System"}
+{"parent_name":"Economics","child_name":"Economy"}
+{"parent_name":"Economics","child_name":"Environmental Economics"}
+{"parent_name":"Economics","child_name":"Environmental Resource Management"}
+{"parent_name":"Economics","child_name":"Finance"}
+{"parent_name":"Economics","child_name":"Financial Economics"}
+{"parent_name":"Economics","child_name":"Financial System"}
+{"parent_name":"Economics","child_name":"Industrial Organization"}
+{"parent_name":"Economics","child_name":"International Economics"}
+{"parent_name":"Economics","child_name":"International Trade"}
+{"parent_name":"Economics","child_name":"Keynesian Economics"}
+{"parent_name":"Economics","child_name":"Labour Economics"}
+{"parent_name":"Economics","child_name":"Law and Economics"}
+{"parent_name":"Economics","child_name":"Macroeconomics"}
+{"parent_name":"Economics","child_name":"Management"}
+{"parent_name":"Economics","child_name":"Management Science"}
+{"parent_name":"Economics","child_name":"Market Economy"}
+{"parent_name":"Economics","child_name":"Mathematical Economics"}
+{"parent_name":"Economics","child_name":"Microeconomics"}
+{"parent_name":"Economics","child_name":"Monetary Economics"}
+{"parent_name":"Economics","child_name":"Natural Resource Economics"}
+{"parent_name":"Economics","child_name":"Neoclassical Economics"}
+{"parent_name":"Economics","child_name":"Operations Management"}
+{"parent_name":"Economics","child_name":"Political Economy"}
+{"parent_name":"Economics","child_name":"Positive Economics"}
+{"parent_name":"Economics","child_name":"Public Economics"}
+{"parent_name":"Economics","child_name":"Socioeconomics"}
+{"parent_name":"Economics","child_name":"Welfare Economics"}
+{"parent_name":"Engineering","child_name":"Aeronautics"}
+{"parent_name":"Engineering","child_name":"Aerospace Engineering"}
+{"parent_name":"Engineering","child_name":"Agricultural Engineering"}
+{"parent_name":"Engineering","child_name":"Architectural Engineering"}
+{"parent_name":"Engineering","child_name":"Automotive Engineering"}
+{"parent_name":"Engineering","child_name":"Biochemical Engineering"}
+{"parent_name":"Engineering","child_name":"Chemical Engineering"}
+{"parent_name":"Engineering","child_name":"Civil Engineering"}
+{"parent_name":"Engineering","child_name":"Construction Engineering"}
+{"parent_name":"Engineering","child_name":"Control Engineering"}
+{"parent_name":"Engineering","child_name":"Control Theory"}
+{"parent_name":"Engineering","child_name":"Electrical Engineering"}
+{"parent_name":"Engineering","child_name":"Electronic Engineering"}
+{"parent_name":"Engineering","child_name":"Engineering Drawing"}
+{"parent_name":"Engineering","child_name":"Engineering Ethics"}
+{"parent_name":"Engineering","child_name":"Engineering Management"}
+{"parent_name":"Engineering","child_name":"Engineering Physics"}
+{"parent_name":"Engineering","child_name":"Environmental Engineering"}
+{"parent_name":"Engineering","child_name":"Forensic Engineering"}
+{"parent_name":"Engineering","child_name":"Geotechnical Engineering"}
+{"parent_name":"Engineering","child_name":"Industrial Engineering"}
+{"parent_name":"Engineering","child_name":"Management Science"}
+{"parent_name":"Engineering","child_name":"Manufacturing Engineering"}
+{"parent_name":"Engineering","child_name":"Marine Engineering"}
+{"parent_name":"Engineering","child_name":"Mechanical Engineering"}
+{"parent_name":"Engineering","child_name":"Mining Engineering"}
+{"parent_name":"Engineering","child_name":"Nuclear Engineering"}
+{"parent_name":"Engineering","child_name":"Operations Management"}
+{"parent_name":"Engineering","child_name":"Operations Research"}
+{"parent_name":"Engineering","child_name":"Petroleum Engineering"}
+{"parent_name":"Engineering","child_name":"Process Engineering"}
+{"parent_name":"Engineering","child_name":"Process Management"}
+{"parent_name":"Engineering","child_name":"Pulp and Paper Industry"}
+{"parent_name":"Engineering","child_name":"Reliability Engineering"}
+{"parent_name":"Engineering","child_name":"Software Engineering"}
+{"parent_name":"Engineering","child_name":"Structural Engineering"}
+{"parent_name":"Engineering","child_name":"Systems Engineering"}
+{"parent_name":"Engineering","child_name":"Transport Engineering"}
+{"parent_name":"Engineering","child_name":"Waste Management"}
+{"parent_name":"Environmental Science","child_name":"Environmental Engineering"}
+{"parent_name":"Environmental Science","child_name":"Environmental Planning"}
+{"parent_name":"Environmental Science","child_name":"Environmental Protection"}
+{"parent_name":"Environmental Science","child_name":"Environmental Resource Management"}
+{"parent_name":"Environmental Science","child_name":"Soil Science"}
+{"parent_name":"Environmental Science","child_name":"Water Resource Management"}
+{"parent_name":"Geography","child_name":"Archaeology"}
+{"parent_name":"Geography","child_name":"Cartography"}
+{"parent_name":"Geography","child_name":"Economic Geography"}
+{"parent_name":"Geography","child_name":"Environmental Planning"}
+{"parent_name":"Geography","child_name":"Environmental Protection"}
+{"parent_name":"Geography","child_name":"Forestry"}
+{"parent_name":"Geography","child_name":"Geodesy"}
+{"parent_name":"Geography","child_name":"Meteorology"}
+{"parent_name":"Geography","child_name":"Physical Geography"}
+{"parent_name":"Geography","child_name":"Regional Science"}
+{"parent_name":"Geography","child_name":"Remote Sensing"}
+{"parent_name":"Geology","child_name":"Atmospheric Sciences"}
+{"parent_name":"Geology","child_name":"Climatology"}
+{"parent_name":"Geology","child_name":"Earth Science"}
+{"parent_name":"Geology","child_name":"Geochemistry"}
+{"parent_name":"Geology","child_name":"Geodesy"}
+{"parent_name":"Geology","child_name":"Geomorphology"}
+{"parent_name":"Geology","child_name":"Geophysics"}
+{"parent_name":"Geology","child_name":"Geotechnical Engineering"}
+{"parent_name":"Geology","child_name":"Hydrology"}
+{"parent_name":"Geology","child_name":"Mineralogy"}
+{"parent_name":"Geology","child_name":"Mining Engineering"}
+{"parent_name":"Geology","child_name":"Oceanography"}
+{"parent_name":"Geology","child_name":"Paleontology"}
+{"parent_name":"Geology","child_name":"Petroleum Engineering"}
+{"parent_name":"Geology","child_name":"Petrology"}
+{"parent_name":"Geology","child_name":"Remote Sensing"}
+{"parent_name":"Geology","child_name":"Seismology"}
+{"parent_name":"Geology","child_name":"Soil Science"}
+{"parent_name":"History","child_name":"Ancient History"}
+{"parent_name":"History","child_name":"Archaeology"}
+{"parent_name":"History","child_name":"Art History"}
+{"parent_name":"History","child_name":"Classics"}
+{"parent_name":"History","child_name":"Economic History"}
+{"parent_name":"History","child_name":"Ethnology"}
+{"parent_name":"History","child_name":"Genealogy"}
+{"parent_name":"Materials Science","child_name":"Ceramic Materials"}
+{"parent_name":"Materials Science","child_name":"Composite Material"}
+{"parent_name":"Materials Science","child_name":"Metallurgy"}
+{"parent_name":"Materials Science","child_name":"Nanotechnology"}
+{"parent_name":"Materials Science","child_name":"Optoelectronics"}
+{"parent_name":"Materials Science","child_name":"Polymer Chemistry"}
+{"parent_name":"Materials Science","child_name":"Polymer Science"}
+{"parent_name":"Mathematics","child_name":"Algebra"}
+{"parent_name":"Mathematics","child_name":"Applied Mathematics"}
+{"parent_name":"Mathematics","child_name":"Arithmetic"}
+{"parent_name":"Mathematics","child_name":"Calculus"}
+{"parent_name":"Mathematics","child_name":"Combinatorics"}
+{"parent_name":"Mathematics","child_name":"Computational Science"}
+{"parent_name":"Mathematics","child_name":"Control Theory"}
+{"parent_name":"Mathematics","child_name":"Discrete Mathematics"}
+{"parent_name":"Mathematics","child_name":"Econometrics"}
+{"parent_name":"Mathematics","child_name":"Geometry"}
+{"parent_name":"Mathematics","child_name":"Mathematical Analysis"}
+{"parent_name":"Mathematics","child_name":"Mathematical Economics"}
+{"parent_name":"Mathematics","child_name":"Mathematical Physics"}
+{"parent_name":"Mathematics","child_name":"Mathematics Education"}
+{"parent_name":"Mathematics","child_name":"Operations Research"}
+{"parent_name":"Mathematics","child_name":"Pure Mathematics"}
+{"parent_name":"Mathematics","child_name":"Statistics"}
+{"parent_name":"Mathematics","child_name":"Topology"}
+{"parent_name":"Medicine","child_name":"Andrology"}
+{"parent_name":"Medicine","child_name":"Anesthesia"}
+{"parent_name":"Medicine","child_name":"Audiology"}
+{"parent_name":"Medicine","child_name":"Cancer Research"}
+{"parent_name":"Medicine","child_name":"Cardiology"}
+{"parent_name":"Medicine","child_name":"Clinical Psychology"}
+{"parent_name":"Medicine","child_name":"Dentistry"}
+{"parent_name":"Medicine","child_name":"Dermatology"}
+{"parent_name":"Medicine","child_name":"Emergency Medicine"}
+{"parent_name":"Medicine","child_name":"Environmental Health"}
+{"parent_name":"Medicine","child_name":"Family Medicine"}
+{"parent_name":"Medicine","child_name":"Gastroenterology"}
+{"parent_name":"Medicine","child_name":"General Surgery"}
+{"parent_name":"Medicine","child_name":"Gerontology"}
+{"parent_name":"Medicine","child_name":"Gynecology"}
+{"parent_name":"Medicine","child_name":"Immunology"}
+{"parent_name":"Medicine","child_name":"Intensive Care Medicine"}
+{"parent_name":"Medicine","child_name":"Internal Medicine"}
+{"parent_name":"Medicine","child_name":"Medical Education"}
+{"parent_name":"Medicine","child_name":"Medical Emergency"}
+{"parent_name":"Medicine","child_name":"Medical Physics"}
+{"parent_name":"Medicine","child_name":"Nuclear Medicine"}
+{"parent_name":"Medicine","child_name":"Nursing"}
+{"parent_name":"Medicine","child_name":"Obstetrics"}
+{"parent_name":"Medicine","child_name":"Oncology"}
+{"parent_name":"Medicine","child_name":"Ophthalmology"}
+{"parent_name":"Medicine","child_name":"Optometry"}
+{"parent_name":"Medicine","child_name":"Orthodontics"}
+{"parent_name":"Medicine","child_name":"Pathology"}
+{"parent_name":"Medicine","child_name":"Pediatrics"}
+{"parent_name":"Medicine","child_name":"Pharmacology"}
+{"parent_name":"Medicine","child_name":"Physical Medicine and Rehabilitation"}
+{"parent_name":"Medicine","child_name":"Physical Therapy"}
+{"parent_name":"Medicine","child_name":"Physiology"}
+{"parent_name":"Medicine","child_name":"Psychiatry"}
+{"parent_name":"Medicine","child_name":"Radiology"}
+{"parent_name":"Medicine","child_name":"Risk Analysis (Engineering)"}
+{"parent_name":"Medicine","child_name":"Surgery"}
+{"parent_name":"Medicine","child_name":"Traditional Medicine"}
+{"parent_name":"Medicine","child_name":"Urology"}
+{"parent_name":"Medicine","child_name":"Veterinary Medicine"}
+{"parent_name":"Medicine","child_name":"Virology"}
+{"parent_name":"Philosophy","child_name":"Aesthetics"}
+{"parent_name":"Philosophy","child_name":"Environmental Ethics"}
+{"parent_name":"Philosophy","child_name":"Epistemology"}
+{"parent_name":"Philosophy","child_name":"Humanities"}
+{"parent_name":"Philosophy","child_name":"Linguistics"}
+{"parent_name":"Philosophy","child_name":"Religious Studies"}
+{"parent_name":"Philosophy","child_name":"Theology"}
+{"parent_name":"Physics","child_name":"Acoustics"}
+{"parent_name":"Physics","child_name":"Astrobiology"}
+{"parent_name":"Physics","child_name":"Astronomy"}
+{"parent_name":"Physics","child_name":"Astrophysics"}
+{"parent_name":"Physics","child_name":"Atmospheric Sciences"}
+{"parent_name":"Physics","child_name":"Atomic Physics"}
+{"parent_name":"Physics","child_name":"Chemical Physics"}
+{"parent_name":"Physics","child_name":"Classical Mechanics"}
+{"parent_name":"Physics","child_name":"Computational Physics"}
+{"parent_name":"Physics","child_name":"Condensed Matter Physics"}
+{"parent_name":"Physics","child_name":"Engineering Physics"}
+{"parent_name":"Physics","child_name":"Geophysics"}
+{"parent_name":"Physics","child_name":"Mathematical Physics"}
+{"parent_name":"Physics","child_name":"Mechanics"}
+{"parent_name":"Physics","child_name":"Medical Physics"}
+{"parent_name":"Physics","child_name":"Meteorology"}
+{"parent_name":"Physics","child_name":"Molecular Physics"}
+{"parent_name":"Physics","child_name":"Nuclear Magnetic Resonance"}
+{"parent_name":"Physics","child_name":"Nuclear Physics"}
+{"parent_name":"Physics","child_name":"Optics"}
+{"parent_name":"Physics","child_name":"Optoelectronics"}
+{"parent_name":"Physics","child_name":"Particle Physics"}
+{"parent_name":"Physics","child_name":"Quantum Electrodynamics"}
+{"parent_name":"Physics","child_name":"Quantum Mechanics"}
+{"parent_name":"Physics","child_name":"Statistical Physics"}
+{"parent_name":"Physics","child_name":"Theoretical Physics"}
+{"parent_name":"Physics","child_name":"Thermodynamics"}
+{"parent_name":"Political Science","child_name":"Law"}
+{"parent_name":"Political Science","child_name":"Public Administration"}
+{"parent_name":"Political Science","child_name":"Public Relations"}
+{"parent_name":"Psychology","child_name":"Applied Psychology"}
+{"parent_name":"Psychology","child_name":"Clinical Psychology"}
+{"parent_name":"Psychology","child_name":"Cognitive Psychology"}
+{"parent_name":"Psychology","child_name":"Cognitive Science"}
+{"parent_name":"Psychology","child_name":"Communication"}
+{"parent_name":"Psychology","child_name":"Criminology"}
+{"parent_name":"Psychology","child_name":"Developmental Psychology"}
+{"parent_name":"Psychology","child_name":"Mathematics Education"}
+{"parent_name":"Psychology","child_name":"Neuroscience"}
+{"parent_name":"Psychology","child_name":"Pedagogy"}
+{"parent_name":"Psychology","child_name":"Psychiatry"}
+{"parent_name":"Psychology","child_name":"Psychoanalysis"}
+{"parent_name":"Psychology","child_name":"Psychotherapist"}
+{"parent_name":"Psychology","child_name":"Social Psychology"}
+{"parent_name":"Sociology","child_name":"Anthropology"}
+{"parent_name":"Sociology","child_name":"Communication"}
+{"parent_name":"Sociology","child_name":"Criminology"}
+{"parent_name":"Sociology","child_name":"Demography"}
+{"parent_name":"Sociology","child_name":"Ethnology"}
+{"parent_name":"Sociology","child_name":"Gender Studies"}
+{"parent_name":"Sociology","child_name":"Law and Economics"}
+{"parent_name":"Sociology","child_name":"Media Studies"}
+{"parent_name":"Sociology","child_name":"Pedagogy"}
+{"parent_name":"Sociology","child_name":"Political Economy"}
+{"parent_name":"Sociology","child_name":"Regional Science"}
+{"parent_name":"Sociology","child_name":"Social Science"}
+{"parent_name":"Sociology","child_name":"Socioeconomics"}
+{"parent_name":"Computer Science","child_name":"Algorithms"}
+{"parent_name":"Computer Science","child_name":"Artificial Intelligence"}
+{"parent_name":"Computer Science","child_name":"Computational Science"}
+{"parent_name":"Computer Science","child_name":"Computer Architecture"}
+{"parent_name":"Computer Science","child_name":"Computer Graphics"}
+{"parent_name":"Computer Science","child_name":"Computer Hardware"}
+{"parent_name":"Computer Science","child_name":"Computer Networks"}
+{"parent_name":"Computer Science","child_name":"Computer Security"}
+{"parent_name":"Computer Science","child_name":"Databases"}
+{"parent_name":"Computer Science","child_name":"Library Science"}
+{"parent_name":"Computer Science","child_name":"Operating Systems"}
+{"parent_name":"Computer Science","child_name":"Programming Languages"}
+{"parent_name":"Computer Science","child_name":"Software Engineering"}
+{"parent_name":"Computer Science","child_name":"Theoretical Computer Science"}
+{"parent_name":"Computer Science","child_name":"High-Performance Computing"}
+{"parent_name":"Computer Science","child_name":"Quantum Computing"}
+{"parent_name":"Biology","child_name":"Astrobiology"}
+{"parent_name":"Biology","child_name":"Biochemistry"}
+{"parent_name":"Biology","child_name":"Bioinformatics"}
+{"parent_name":"Biology","child_name":"Biophysics"}
+{"parent_name":"Biology","child_name":"Biotechnology"}
+{"parent_name":"Biology","child_name":"Botany"}
+{"parent_name":"Biology","child_name":"Cancer Research"}
+{"parent_name":"Biology","child_name":"Cell Biology"}
+{"parent_name":"Biology","child_name":"Ecology"}
+{"parent_name":"Biology","child_name":"Evolutionary Biology"}
+{"parent_name":"Biology","child_name":"Genetics"}
+{"parent_name":"Biology","child_name":"Immunology"}
+{"parent_name":"Biology","child_name":"Microbiology"}
+{"parent_name":"Biology","child_name":"Molecular Biology"}
+{"parent_name":"Biology","child_name":"Neuroscience"}
+{"parent_name":"Biology","child_name":"Paleontology"}
+{"parent_name":"Biology","child_name":"Pharmacology"}
+{"parent_name":"Biology","child_name":"Physiology"}
+{"parent_name":"Biology","child_name":"Toxicology"}
+{"parent_name":"Biology","child_name":"Virology"}
+{"parent_name":"Biology","child_name":"Cryobiology"}
+{"parent_name":"Biology","child_name":"Developmental Biology"}
+{"parent_name":"Biology","child_name":"Natural History"}
+{"parent_name":"Biology","child_name":"Parasitology"}
+{"parent_name":"Biology","child_name":"Photobiology"}
+{"parent_name":"Biology","child_name":"Radiobiology"}
+{"parent_name":"Biology","child_name":"Sociobiology"}
+{"parent_name":"Biology","child_name":"Zoology"}
+{"parent_name":"Artificial Intelligence","child_name":"Computer Vision"}
+{"parent_name":"Artificial Intelligence","child_name":"Data Mining"}
+{"parent_name":"Artificial Intelligence","child_name":"Data Science"}
+{"parent_name":"Artificial Intelligence","child_name":"Information Retrieval"}
+{"parent_name":"Artificial Intelligence","child_name":"Knowledge Management"}
+{"parent_name":"Artificial Intelligence","child_name":"Machine Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Natural Language Processing"}
+{"parent_name":"Artificial Intelligence","child_name":"Speech Recognition"}
+{"parent_name":"Artificial Intelligence","child_name":"Robotics"}
+{"parent_name":"Artificial Intelligence","child_name":"Reinforcement Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Neuro-Symbolic AI"}
+{"parent_name":"Artificial Intelligence","child_name":"Game Theory"}
+{"parent_name":"Artificial Intelligence","child_name":"Agent Architectures"}
+{"parent_name":"Artificial Intelligence","child_name":"Bayesian Learning Mechanisms"}
+{"parent_name":"Artificial Intelligence","child_name":"Bayesian Inference"}
+{"parent_name":"Artificial Intelligence","child_name":"Cognitive Architectures"}
+{"parent_name":"Artificial Intelligence","child_name":"Computational Creativity"}
+{"parent_name":"Artificial Intelligence","child_name":"Neural Coding"}
+{"parent_name":"Artificial Intelligence","child_name":"Adversarial Machine Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Facial Recognition"}
+{"parent_name":"Artificial Intelligence","child_name":"Gesture Recognition"}
+{"parent_name":"Artificial Intelligence","child_name":"Pose Tracking"}
+{"parent_name":"Artificial Intelligence","child_name":"Computational Photography"}
+{"parent_name":"Artificial Intelligence","child_name":"Text-to-Image-Models"}
+{"parent_name":"Artificial Intelligence","child_name":"Synthetic Media"}
+{"parent_name":"Artificial Intelligence","child_name":"Image Retrieval"}
+{"parent_name":"Artificial Intelligence","child_name":"Program Optimization"}
+{"parent_name":"Artificial Intelligence","child_name":"Motion Analysis"}
+{"parent_name":"Artificial Intelligence","child_name":"Object Detection"}
+{"parent_name":"Artificial Intelligence","child_name":"Object Categorization from Image Search"}
+{"parent_name":"Artificial Intelligence","child_name":"Image Segmentation"}
+{"parent_name":"Artificial Intelligence","child_name":"Activity Recognition"}
+{"parent_name":"Artificial Intelligence","child_name":"Robotic Sensing"}
+{"parent_name":"Artificial Intelligence","child_name":"Self-Driving Cars"}
+{"parent_name":"Artificial Intelligence","child_name":"Vehicular Automation"}
+{"parent_name":"Artificial Intelligence","child_name":"Constraint Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Distributed Constraint Optimization"}
+{"parent_name":"Artificial Intelligence","child_name":"Discrete Optimization"}
+{"parent_name":"Artificial Intelligence","child_name":"Continuous Optimization"}
+{"parent_name":"Artificial Intelligence","child_name":"Satisfiability Modulo Theories"}
+{"parent_name":"Artificial Intelligence","child_name":"Anomaly Detection"}
+{"parent_name":"Artificial Intelligence","child_name":"Chatbots"}
+{"parent_name":"Artificial Intelligence","child_name":"Dialogue Systems"}
+{"parent_name":"Artificial Intelligence","child_name":"Recommender Systems"}
+{"parent_name":"Artificial Intelligence","child_name":"Data Stream Mining"}
+{"parent_name":"Artificial Intelligence","child_name":"Data and Information Visualization"}
+{"parent_name":"Artificial Intelligence","child_name":"Structure Mining"}
+{"parent_name":"Artificial Intelligence","child_name":"Social Network Analysis"}
+{"parent_name":"Artificial Intelligence","child_name":"Knowledge Graphs"}
+{"parent_name":"Artificial Intelligence","child_name":"Knowledge Bases"}
+{"parent_name":"Artificial Intelligence","child_name":"Collaborative Filtering"}
+{"parent_name":"Artificial Intelligence","child_name":"Auction Theory"}
+{"parent_name":"Artificial Intelligence","child_name":"Market Systems"}
+{"parent_name":"Artificial Intelligence","child_name":"Behavioral Game Theory"}
+{"parent_name":"Artificial Intelligence","child_name":"Cooperative Game Theory"}
+{"parent_name":"Artificial Intelligence","child_name":"Economic Equilibrium"}
+{"parent_name":"Artificial Intelligence","child_name":"Fair Division"}
+{"parent_name":"Artificial Intelligence","child_name":"General Game Playing"}
+{"parent_name":"Artificial Intelligence","child_name":"Mechanism Design"}
+{"parent_name":"Artificial Intelligence","child_name":"Negotiation Theory"}
+{"parent_name":"Artificial Intelligence","child_name":"Social Choice Theory"}
+{"parent_name":"Artificial Intelligence","child_name":"Voting Behavior"}
+{"parent_name":"Artificial Intelligence","child_name":"Human-Based Computation"}
+{"parent_name":"Artificial Intelligence","child_name":"Crowdsourcing"}
+{"parent_name":"Artificial Intelligence","child_name":"Human-Based Computation Game"}
+{"parent_name":"Artificial Intelligence","child_name":"Procedural Generation"}
+{"parent_name":"Artificial Intelligence","child_name":"Virtual Humans"}
+{"parent_name":"Artificial Intelligence","child_name":"Human-Agent Teaming"}
+{"parent_name":"Artificial Intelligence","child_name":"Intelligent User Interfaces"}
+{"parent_name":"Artificial Intelligence","child_name":"Preference Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Automated Reasoning"}
+{"parent_name":"Artificial Intelligence","child_name":"Automated Theorem Proving"}
+{"parent_name":"Artificial Intelligence","child_name":"Case-Based Reasoning"}
+{"parent_name":"Artificial Intelligence","child_name":"Commonsense Reasoning"}
+{"parent_name":"Artificial Intelligence","child_name":"Description Logic"}
+{"parent_name":"Artificial Intelligence","child_name":"Diagnosis"}
+{"parent_name":"Artificial Intelligence","child_name":"Abductive Reasoning"}
+{"parent_name":"Artificial Intelligence","child_name":"Spatial-Temporal Reasoning"}
+{"parent_name":"Artificial Intelligence","child_name":"Knowledge Acquisition"}
+{"parent_name":"Artificial Intelligence","child_name":"Knowledge Engineering"}
+{"parent_name":"Artificial Intelligence","child_name":"Knowledge Representation and Reasoning"}
+{"parent_name":"Artificial Intelligence","child_name":"Ontology Language"}
+{"parent_name":"Artificial Intelligence","child_name":"Logic Programming"}
+{"parent_name":"Artificial Intelligence","child_name":"Nonmonotonic Logic"}
+{"parent_name":"Artificial Intelligence","child_name":"Qualitative Reasoning"}
+{"parent_name":"Artificial Intelligence","child_name":"Active Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Robustness"}
+{"parent_name":"Artificial Intelligence","child_name":"Bio-Inspired Computing"}
+{"parent_name":"Artificial Intelligence","child_name":"Uncertainty Quantification"}
+{"parent_name":"Artificial Intelligence","child_name":"Statistical Classification"}
+{"parent_name":"Artificial Intelligence","child_name":"Regression Analysis"}
+{"parent_name":"Artificial Intelligence","child_name":"Cluster Analysis"}
+{"parent_name":"Artificial Intelligence","child_name":"Deep Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Neural Networks"}
+{"parent_name":"Artificial Intelligence","child_name":"Statistical Learning Theory"}
+{"parent_name":"Artificial Intelligence","child_name":"Dimensionality Reduction"}
+{"parent_name":"Artificial Intelligence","child_name":"Feature Selection"}
+{"parent_name":"Artificial Intelligence","child_name":"Distributed Artificial Intelligence"}
+{"parent_name":"Artificial Intelligence","child_name":"Federated Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Ethics of Artificial Intelligence"}
+{"parent_name":"Artificial Intelligence","child_name":"Algorithmic Bias"}
+{"parent_name":"Artificial Intelligence","child_name":"Fairness"}
+{"parent_name":"Artificial Intelligence","child_name":"Ensemble Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Evolutionary Computation"}
+{"parent_name":"Artificial Intelligence","child_name":"Hyperparameter Optimization"}
+{"parent_name":"Artificial Intelligence","child_name":"AI Alignment"}
+{"parent_name":"Artificial Intelligence","child_name":"Kernel Methods"}
+{"parent_name":"Artificial Intelligence","child_name":"Learning to Rank"}
+{"parent_name":"Artificial Intelligence","child_name":"Multiclass Classification"}
+{"parent_name":"Artificial Intelligence","child_name":"Multi-Label Classification"}
+{"parent_name":"Artificial Intelligence","child_name":"Multimodal Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Generative Models"}
+{"parent_name":"Artificial Intelligence","child_name":"Generative Artificial Intelligence"}
+{"parent_name":"Artificial Intelligence","child_name":"Autoencoders"}
+{"parent_name":"Artificial Intelligence","child_name":"Online Machine Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Multi-Armed Bandits"}
+{"parent_name":"Artificial Intelligence","child_name":"Graphical Models"}
+{"parent_name":"Artificial Intelligence","child_name":"Quantum Machine Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Weak Supervision"}
+{"parent_name":"Artificial Intelligence","child_name":"Structured Prediction"}
+{"parent_name":"Artificial Intelligence","child_name":"Transfer Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Multi-Task Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Meta-Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Unsupervised Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Self-Supervised Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Multi-Agent Systems"}
+{"parent_name":"Artificial Intelligence","child_name":"Agent-Based Social Simulation"}
+{"parent_name":"Artificial Intelligence","child_name":"Agent-Based Modeling"}
+{"parent_name":"Artificial Intelligence","child_name":"Emergent Algorithms"}
+{"parent_name":"Artificial Intelligence","child_name":"Multi-Agent Reinforcement Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Multi-Agent Planning"}
+{"parent_name":"Artificial Intelligence","child_name":"Explainable Artificial Intelligence"}
+{"parent_name":"Artificial Intelligence","child_name":"Artificial Intelligence in Government"}
+{"parent_name":"Artificial Intelligence","child_name":"Regulation of Artificial Intelligence"}
+{"parent_name":"Artificial Intelligence","child_name":"Artificial General Intelligence"}
+{"parent_name":"Artificial Intelligence","child_name":"AI Safety"}
+{"parent_name":"Artificial Intelligence","child_name":"Trustworthy Computing"}
+{"parent_name":"Artificial Intelligence","child_name":"Markov Decision Processes"}
+{"parent_name":"Artificial Intelligence","child_name":"Partially Observable Markov Decision Processes"}
+{"parent_name":"Artificial Intelligence","child_name":"Model-Based Reasoning"}
+{"parent_name":"Artificial Intelligence","child_name":"Automated Planning and Scheduling"}
+{"parent_name":"Artificial Intelligence","child_name":"Bayesian Networks"}
+{"parent_name":"Artificial Intelligence","child_name":"Probabilistic Programming"}
+{"parent_name":"Artificial Intelligence","child_name":"Sequential Decision Making"}
+{"parent_name":"Artificial Intelligence","child_name":"Stochastic Optimization"}
+{"parent_name":"Artificial Intelligence","child_name":"Robot Control"}
+{"parent_name":"Artificial Intelligence","child_name":"Robot Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Cognitive Robotics"}
+{"parent_name":"Artificial Intelligence","child_name":"Human-Robot Interaction"}
+{"parent_name":"Artificial Intelligence","child_name":"Robot Localization"}
+{"parent_name":"Artificial Intelligence","child_name":"Robotic Mapping"}
+{"parent_name":"Artificial Intelligence","child_name":"Robot Navigation"}
+{"parent_name":"Artificial Intelligence","child_name":"Motion Planning"}
+{"parent_name":"Artificial Intelligence","child_name":"Sensor Fusion"}
+{"parent_name":"Artificial Intelligence","child_name":"Distributed Search Engine"}
+{"parent_name":"Artificial Intelligence","child_name":"Metaheuristics"}
+{"parent_name":"Artificial Intelligence","child_name":"Argument Mining"}
+{"parent_name":"Artificial Intelligence","child_name":"Information Extraction"}
+{"parent_name":"Artificial Intelligence","child_name":"Language Model"}
+{"parent_name":"Artificial Intelligence","child_name":"Semantic Parsing"}
+{"parent_name":"Artificial Intelligence","child_name":"Machine Translation"}
+{"parent_name":"Artificial Intelligence","child_name":"Ontology Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Question Answering"}
+{"parent_name":"Artificial Intelligence","child_name":"Speech Processing"}
+{"parent_name":"Artificial Intelligence","child_name":"Signal Processing"}
+{"parent_name":"Artificial Intelligence","child_name":"Speech Synthesis"}
+{"parent_name":"Artificial Intelligence","child_name":"Text Mining"}
+{"parent_name":"Artificial Intelligence","child_name":"Automatic Summarization"}
+{"parent_name":"Artificial Intelligence","child_name":"Shallow Parsing"}
+{"parent_name":"Artificial Intelligence","child_name":"Parsing"}
+{"parent_name":"Artificial Intelligence","child_name":"Document Classification"}
+{"parent_name":"Artificial Intelligence","child_name":"Sentiment Analysis"}
+{"parent_name":"Artificial Intelligence","child_name":"Program Synthesis"}
+{"parent_name":"Artificial Intelligence","child_name":"Neuroevolution"}
+{"parent_name":"Artificial Intelligence","child_name":"Neural Architecture Search"}
+{"parent_name":"Artificial Intelligence","child_name":"Artificial Life"}
+{"parent_name":"Artificial Intelligence","child_name":"Genetic Programming"}
+{"parent_name":"Artificial Intelligence","child_name":"Model Predictive Control"}
+{"parent_name":"Artificial Intelligence","child_name":"Offline Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Deep Reinforcement Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Self-Play"}
+{"parent_name":"Artificial Intelligence","child_name":"Mutual Information"}
+{"parent_name":"Artificial Intelligence","child_name":"State Space Search"}
+{"parent_name":"Artificial Intelligence","child_name":"Regularization"}
+{"parent_name":"Artificial Intelligence","child_name":"Intrinsic Motivation"}
+{"parent_name":"Artificial Intelligence","child_name":"Empowerment"}
+{"parent_name":"Artificial Intelligence","child_name":"Generative Adversarial Networks"}
+{"parent_name":"Artificial Intelligence","child_name":"Data Augmentation"}
+{"parent_name":"Artificial Intelligence","child_name":"One-Shot Learning"}
+{"parent_name":"Artificial Intelligence","child_name":"Domain Adaptation"}
+{"parent_name":"Artificial Intelligence","child_name":"Knowledge Distillation"}
+{"parent_name":"Artificial Intelligence","child_name":"Conditional Random Fields"}
+{"parent_name":"Artificial Intelligence","child_name":"Active Contour Model"}
+{"parent_name":"Artificial Intelligence","child_name":"Autoregressive Model"}
+{"parent_name":"Artificial Intelligence","child_name":"Visual Servoing"}
+{"parent_name":"Artificial Intelligence","child_name":"Optimal Control"}
+{"parent_name":"Artificial Intelligence","child_name":"Robot Locomotion"}
+{"parent_name":"Artificial Intelligence","child_name":"Simultaneous Localization and Mapping"}
+{"parent_name":"Artificial Intelligence","child_name":"Trajectory Optimization"}
+{"parent_name":"Artificial Intelligence","child_name":"Collocation"}
+{"parent_name":"Artificial Intelligence","child_name":"Neuromorphic Engineering"}
+{"parent_name":"Artificial Intelligence","child_name":"Artificial Consciousness"}
+{"parent_name":"Artificial Intelligence","child_name":"Artificial Empathy"}
+{"parent_name":"Artificial Intelligence","child_name":"Weak Artificial Intelligence"}
+{"parent_name":"Engineering","child_name":"Semiconductors"}
+{"parent_name":"Semiconductors","child_name":"Integrated Circuit Packaging"}
+{"parent_name":"Semiconductors","child_name":"Die Preparation"}
+{"parent_name":"Semiconductors","child_name":"Wafer Testing"}
+{"parent_name":"Semiconductors","child_name":"Doping"}
+{"parent_name":"Semiconductors","child_name":"Etching"}
+{"parent_name":"Semiconductors","child_name":"Microlithography"}
+{"parent_name":"Semiconductors","child_name":"Photolithography"}
+{"parent_name":"Semiconductors","child_name":"Nanolithography"}
+{"parent_name":"Semiconductors","child_name":"Microfabrication"}
+{"parent_name":"Semiconductors","child_name":"3D Microfabrication"}
+{"parent_name":"Semiconductors","child_name":"Wafer Fabrication"}
+{"parent_name":"Semiconductors","child_name":"Semiconductor Device Fabrication"}
+{"parent_name":"Semiconductors","child_name":"Integrated Circuit Design"}
+{"parent_name":"Semiconductors","child_name":"Core IP"}
+{"parent_name":"Semiconductors","child_name":"EDA Software"}
+{"parent_name":"Semiconductors","child_name":"Chip-Scale Packaging"}
+{"parent_name":"Semiconductors","child_name":"Wafer Dicing"}
+{"parent_name":"Semiconductors","child_name":"Wafer Backgrinding"}
+{"parent_name":"Semiconductors","child_name":"Wire Bonding"}
+{"parent_name":"Semiconductors","child_name":"Transfer Molding"}
+{"parent_name":"Semiconductors","child_name":"Injection Moulding"}
+{"parent_name":"Semiconductors","child_name":"Wafer Bonding"}
+{"parent_name":"Semiconductors","child_name":"Ball Bonding"}
+{"parent_name":"Semiconductors","child_name":"Flip Chip"}
+{"parent_name":"Semiconductors","child_name":"Wedge Bonding"}
+{"parent_name":"Semiconductors","child_name":"Wafer-Level Packaging"}
+{"parent_name":"Semiconductors","child_name":"System in a Package"}
+{"parent_name":"Semiconductors","child_name":"System on a Chip"}
+{"parent_name":"Semiconductors","child_name":"Automatic Test Equipment"}
+{"parent_name":"Semiconductors","child_name":"Curve Tracer"}
+{"parent_name":"Semiconductors","child_name":"Burn-in"}
+{"parent_name":"Semiconductors","child_name":"Dielectric Withstand Test"}
+{"parent_name":"Semiconductors","child_name":"Chemical-Mechanical Polishing"}
+{"parent_name":"Semiconductors","child_name":"Vacuum Deposition"}
+{"parent_name":"Semiconductors","child_name":"Ion Beam Deposition"}
+{"parent_name":"Semiconductors","child_name":"Chemical Vapor Deposition"}
+{"parent_name":"Semiconductors","child_name":"Physical Vapor Deposition"}
+{"parent_name":"Semiconductors","child_name":"Atomic Layer Deposition"}
+{"parent_name":"Semiconductors","child_name":"Electroplating"}
+{"parent_name":"Semiconductors","child_name":"Metalorganic Vapour-Phase Epitaxy"}
+{"parent_name":"Semiconductors","child_name":"Molecular-Beam Epitaxy"}
+{"parent_name":"Semiconductors","child_name":"Plasma-Enhanced Chemical Vapor Deposition"}
+{"parent_name":"Semiconductors","child_name":"Ion Implantation"}
+{"parent_name":"Semiconductors","child_name":"Monolayer Doping"}
+{"parent_name":"Semiconductors","child_name":"RCA Clean"}
+{"parent_name":"Semiconductors","child_name":"Plasma Etching"}
+{"parent_name":"Semiconductors","child_name":"Photomask"}
+{"parent_name":"Semiconductors","child_name":"Computational Lithography"}
+{"parent_name":"Semiconductors","child_name":"Photoresist"}
+{"parent_name":"Semiconductors","child_name":"Mask Inspection"}
+{"parent_name":"Semiconductors","child_name":"Lithography Stepper"}
+{"parent_name":"Semiconductors","child_name":"Electron-Beam Lithography"}
+{"parent_name":"Semiconductors","child_name":"Ion Milling Machine"}
+{"parent_name":"Semiconductors","child_name":"Ellipsometry"}
+{"parent_name":"Semiconductors","child_name":"Atomic Force Microscopy"}
+{"parent_name":"Semiconductors","child_name":"Shallow Trench Isolation"}
+{"parent_name":"Semiconductors","child_name":"Rapid Thermal Processing"}
+{"parent_name":"Semiconductors","child_name":"IC Interconnect"}
+{"parent_name":"Semiconductors","child_name":"MEMS"}
+{"parent_name":"Semiconductors","child_name":"DRAM"}
+{"parent_name":"Semiconductors","child_name":"Flash Memory"}
+{"parent_name":"Semiconductors","child_name":"Active-Pixel Sensor"}
+{"parent_name":"Semiconductors","child_name":"Atomic Layer Etching"}
+{"parent_name":"Semiconductors","child_name":"Reactive-Ion Etching"}
+{"parent_name":"Semiconductors","child_name":"Deep Reactive-Ion Etching"}
+{"parent_name":"Semiconductors","child_name":"BGA Packaging"}
+{"parent_name":"Semiconductors","child_name":"Multi-Chip Module"}
+{"parent_name":"Semiconductors","child_name":"Package on a Package"}
+{"parent_name":"Semiconductors","child_name":"Through-Silicon via"}
+{"parent_name":"Semiconductors","child_name":"Fan-Out Packaging"}
+{"parent_name":"Semiconductors","child_name":"eWLB Packaging"}
+{"parent_name":"Semiconductors","child_name":"3D Integrated Circuit"}
+{"parent_name":"Semiconductors","child_name":"Interposer"}
+{"parent_name":"Semiconductors","child_name":"Dry Etching"}
+{"parent_name":"Semiconductors","child_name":"EUV Lithography"}
+{"parent_name":"Semiconductors","child_name":"Immersion Lithography"}
+{"parent_name":"Semiconductors","child_name":"Multiple Patterning"}
+{"parent_name":"Semiconductors","child_name":"Maskless Lithography"}
+{"parent_name":"Semiconductors","child_name":"Resolution Enhancement Technologies"}
+{"parent_name":"Semiconductors","child_name":"Design Rule Checking"}
+{"parent_name":"Semiconductors","child_name":"Next-Generation Lithography"}
+{"parent_name":"Semiconductors","child_name":"Phase-Shift Mask"}
+{"parent_name":"Semiconductors","child_name":"Off-Axis Illumination"}
+{"parent_name":"Semiconductors","child_name":"Optical Proximity Correction"}
+{"parent_name":"Semiconductors","child_name":"Inverse Lithography"}
+{"parent_name":"Semiconductors","child_name":"X-Ray Lithography"}
+{"parent_name":"Semiconductors","child_name":"Quantum Lithography"}
+{"parent_name":"Semiconductors","child_name":"Ion Beam Lithography"}
+{"parent_name":"Semiconductors","child_name":"CMOS"}
+{"parent_name":"Semiconductors","child_name":"MOSFET"}
+{"parent_name":"Semiconductors","child_name":"Field-Effect Transistor"}
+{"parent_name":"Semiconductors","child_name":"Processor Design"}
+{"parent_name":"Semiconductors","child_name":"ASIC"}
+{"parent_name":"Semiconductors","child_name":"FPGA"}
+{"parent_name":"Semiconductors","child_name":"CPU"}
+{"parent_name":"Semiconductors","child_name":"GPU"}
+{"parent_name":"Biotechnology","child_name":"Agricultural Biotechnology"}
+{"parent_name":"Biotechnology","child_name":"Environmental Biotechnology"}
+{"parent_name":"Biotechnology","child_name":"Medical Biotechnology"}
+{"parent_name":"Biotechnology","child_name":"Biochemical and Bioproducts Engineering"}
+{"parent_name":"Biotechnology","child_name":"Biological Systems Engineering"}
+{"parent_name":"Biotechnology","child_name":"Biomolecular Engineering"}
+{"parent_name":"Biotechnology","child_name":"Sustainable Agriculture"}
+{"parent_name":"Biotechnology","child_name":"Genetically Modified Crops"}
+{"parent_name":"Biotechnology","child_name":"Animal Vaccine Development"}
+{"parent_name":"Biotechnology","child_name":"Biofertilizer"}
+{"parent_name":"Biotechnology","child_name":"Cellular Agriculture"}
+{"parent_name":"Biotechnology","child_name":"Bioremediation"}
+{"parent_name":"Biotechnology","child_name":"Renewable Energy"}
+{"parent_name":"Biotechnology","child_name":"Bioenergy"}
+{"parent_name":"Biotechnology","child_name":"Biomass"}
+{"parent_name":"Biotechnology","child_name":"Microbial Biodegradation"}
+{"parent_name":"Biotechnology","child_name":"Drug Discovery"}
+{"parent_name":"Biotechnology","child_name":"Drug Development"}
+{"parent_name":"Biotechnology","child_name":"Biopharmaceutical"}
+{"parent_name":"Biotechnology","child_name":"Pharmaceutical Manufacturing"}
+{"parent_name":"Biotechnology","child_name":"Pharmaceutical Engineering"}
+{"parent_name":"Biotechnology","child_name":"Molecular Diagnostics"}
+{"parent_name":"Biotechnology","child_name":"Genetic Testing"}
+{"parent_name":"Biotechnology","child_name":"Pharmacogenomics"}
+{"parent_name":"Biotechnology","child_name":"Personalized Medicine"}
+{"parent_name":"Biotechnology","child_name":"Cell Therapy"}
+{"parent_name":"Biotechnology","child_name":"Gene Therapy"}
+{"parent_name":"Biotechnology","child_name":"Biosensors"}
+{"parent_name":"Biotechnology","child_name":"Fermentation in Food Processing"}
+{"parent_name":"Biotechnology","child_name":"Genetically Modified Food"}
+{"parent_name":"Biotechnology","child_name":"Food Engineering"}
+{"parent_name":"Biotechnology","child_name":"Food Microbiology"}
+{"parent_name":"Biotechnology","child_name":"Microbial Food Cultures"}
+{"parent_name":"Biotechnology","child_name":"Neural Engineering"}
+{"parent_name":"Biotechnology","child_name":"Bionanotechnology"}
+{"parent_name":"Biotechnology","child_name":"Clinical Engineering"}
+{"parent_name":"Biotechnology","child_name":"Biomechanical Engineering"}
+{"parent_name":"Biotechnology","child_name":"Genetic Engineering"}
+{"parent_name":"Biotechnology","child_name":"Tissue Engineering"}
+{"parent_name":"Biotechnology","child_name":"Cell Engineering"}
+{"parent_name":"Biotechnology","child_name":"Medical Imaging"}
+{"parent_name":"Biotechnology","child_name":"Rehabilitation Engineering"}
+{"parent_name":"Biotechnology","child_name":"Biomedical Instrumentation"}
+{"parent_name":"Biotechnology","child_name":"Biomaterials"}
+{"parent_name":"Biotechnology","child_name":"Industrial Fermentation"}
+{"parent_name":"Biotechnology","child_name":"Feed Manufacturing"}
+{"parent_name":"Biotechnology","child_name":"Industrial Enzymes"}
+{"parent_name":"Biotechnology","child_name":"Biofabrication"}
+{"parent_name":"Biotechnology","child_name":"Biofuel"}
+{"parent_name":"Biotechnology","child_name":"Bioplastics"}
+{"parent_name":"Genetics","child_name":"Quantitative Genetics"}
+{"parent_name":"Genetics","child_name":"Classical Genetics"}
+{"parent_name":"Genetics","child_name":"Behavioural Genetics"}
+{"parent_name":"Genetics","child_name":"Molecular Genetics"}
+{"parent_name":"Genetics","child_name":"Population Genetics"}
+{"parent_name":"Genetics","child_name":"Medical Genetics"}
+{"parent_name":"Genetics","child_name":"Epigenetics"}
+{"parent_name":"Genetics","child_name":"Genomics"}
+{"parent_name":"Genetics","child_name":"Genetic Engineering"}
+{"parent_name":"Genetics","child_name":"Microbial Genetics"}
+{"parent_name":"Genetics","child_name":"Plant Genetics"}
+{"parent_name":"Genetics","child_name":"Anagenesis"}
+{"parent_name":"Genetics","child_name":"Antimicrobial Resistance"}
+{"parent_name":"Genetics","child_name":"Archaeogenetics"}
+{"parent_name":"Genetics","child_name":"Artificial Gene Synthesis"}
+{"parent_name":"Genetics","child_name":"Bacterial Genetics"}
+{"parent_name":"Genetics","child_name":"Behavioral Epigenetics"}
+{"parent_name":"Genetics","child_name":"Cancer Epigenetics"}
+{"parent_name":"Genetics","child_name":"Cassette Mutagenesis"}
+{"parent_name":"Genetics","child_name":"Chemogenomics"}
+{"parent_name":"Genetics","child_name":"Clinical Metagenomic Sequencing"}
+{"parent_name":"Genetics","child_name":"Clinicogenomics"}
+{"parent_name":"Genetics","child_name":"Cognitive Genomics"}
+{"parent_name":"Genetics","child_name":"Comparative Genomics"}
+{"parent_name":"Genetics","child_name":"Computational Epigenetics"}
+{"parent_name":"Genetics","child_name":"Computational Genomics"}
+{"parent_name":"Genetics","child_name":"Conservation Genetics"}
+{"parent_name":"Genetics","child_name":"Cytogenetics"}
+{"parent_name":"Genetics","child_name":"Deletion Mapping"}
+{"parent_name":"Genetics","child_name":"Directed Evolution"}
+{"parent_name":"Genetics","child_name":"Dynamical Genetics"}
+{"parent_name":"Genetics","child_name":"Ecological Genetics"}
+{"parent_name":"Genetics","child_name":"Epigenetic Therapy"}
+{"parent_name":"Genetics","child_name":"Epigenetics of Human Development"}
+{"parent_name":"Genetics","child_name":"Epigenome Editing"}
+{"parent_name":"Genetics","child_name":"Epigenomics"}
+{"parent_name":"Genetics","child_name":"Functional Genomics"}
+{"parent_name":"Genetics","child_name":"Gene Expression"}
+{"parent_name":"Genetics","child_name":"Gene Mapping"}
+{"parent_name":"Genetics","child_name":"Gene Targeting"}
+{"parent_name":"Genetics","child_name":"Gene Therapy"}
+{"parent_name":"Genetics","child_name":"Genetic Analysis"}
+{"parent_name":"Genetics","child_name":"Genetic Architecture"}
+{"parent_name":"Genetics","child_name":"Genetic Epidemiology"}
+{"parent_name":"Genetics","child_name":"Genetic Genealogy"}
+{"parent_name":"Genetics","child_name":"Genetic Testing"}
+{"parent_name":"Genetics","child_name":"Genome Architecture Mapping"}
+{"parent_name":"Genetics","child_name":"Genome Informatics"}
+{"parent_name":"Genetics","child_name":"Hologenomics"}
+{"parent_name":"Genetics","child_name":"Human Germline Engineering"}
+{"parent_name":"Genetics","child_name":"Human Mitochondrial Genetics"}
+{"parent_name":"Genetics","child_name":"Imaging Genetics"}
+{"parent_name":"Genetics","child_name":"Immunogenetics"}
+{"parent_name":"Genetics","child_name":"Landscape Genetics"}
+{"parent_name":"Genetics","child_name":"Metagenomics"}
+{"parent_name":"Genetics","child_name":"Metatranscriptomics"}
+{"parent_name":"Genetics","child_name":"Microevolution"}
+{"parent_name":"Genetics","child_name":"Molecular Cytogenetics"}
+{"parent_name":"Genetics","child_name":"Neurogenetics"}
+{"parent_name":"Genetics","child_name":"Neurogenomics"}
+{"parent_name":"Genetics","child_name":"Noninvasive Genotyping"}
+{"parent_name":"Genetics","child_name":"Nutriepigenomics"}
+{"parent_name":"Genetics","child_name":"Nutritional Genomics"}
+{"parent_name":"Genetics","child_name":"Oncogenomics"}
+{"parent_name":"Genetics","child_name":"Paleogenetics"}
+{"parent_name":"Genetics","child_name":"Paleogenomics"}
+{"parent_name":"Genetics","child_name":"Parthenogenesis"}
+{"parent_name":"Genetics","child_name":"Pathogenomics"}
+{"parent_name":"Genetics","child_name":"Personal Genomics"}
+{"parent_name":"Genetics","child_name":"Personalized Genomics"}
+{"parent_name":"Genetics","child_name":"Personalized Medicine"}
+{"parent_name":"Genetics","child_name":"Pharmacoepigenetics"}
+{"parent_name":"Genetics","child_name":"Pharmacogenomics"}
+{"parent_name":"Genetics","child_name":"Phylogenetics"}
+{"parent_name":"Genetics","child_name":"Phylogenomics"}
+{"parent_name":"Genetics","child_name":"Phylogeography"}
+{"parent_name":"Genetics","child_name":"Population Genomics"}
+{"parent_name":"Genetics","child_name":"Predictive Medicine"}
+{"parent_name":"Genetics","child_name":"Prime Editing"}
+{"parent_name":"Genetics","child_name":"Proteogenomics"}
+{"parent_name":"Genetics","child_name":"Psychiatric Genetics"}
+{"parent_name":"Genetics","child_name":"Public Health Genomics"}
+{"parent_name":"Genetics","child_name":"Radiogenomics"}
+{"parent_name":"Genetics","child_name":"Ribonomics"}
+{"parent_name":"Genetics","child_name":"Ribotyping"}
+{"parent_name":"Genetics","child_name":"Single Cell Epigenomics"}
+{"parent_name":"Genetics","child_name":"Sleep Epigenetics"}
+{"parent_name":"Genetics","child_name":"Spermatogenesis"}
+{"parent_name":"Genetics","child_name":"Structural Genomics"}
+{"parent_name":"Genetics","child_name":"Structural Inheritance"}
+{"parent_name":"Genetics","child_name":"Toxicogenomics"}
+{"parent_name":"Genetics","child_name":"Transcriptomics"}
+{"parent_name":"Genetics","child_name":"Transgenerational Epigenetic Inheritance"}
+{"parent_name":"Genetics","child_name":"Translatomics"}
+{"parent_name":"Genetics","child_name":"Transplant Engineering"}
+{"parent_name":"Genetics","child_name":"Transposon Mutagenesis"}
+{"parent_name":"Genetics","child_name":"Viral Metagenomics"}
+{"parent_name":"Immunology","child_name":"Cancer Imunology"}
+{"parent_name":"Immunology","child_name":"Immunomics"}
+{"parent_name":"Immunology","child_name":"Immunopathology"}
+{"parent_name":"Immunology","child_name":"Immunotherapy"}
+{"parent_name":"Immunology","child_name":"Developmental Immunology"}
+{"parent_name":"Immunology","child_name":"Synthetic Immunology"}
+{"parent_name":"Immunology","child_name":"Viral Dynamics"}
+{"parent_name":"Immunology","child_name":"Clinical Immunology"}
+{"parent_name":"Immunology","child_name":"Immunochemistry"}
+{"parent_name":"Immunology","child_name":"Immunotoxicology"}
+{"parent_name":"Immunology","child_name":"Classical Immunology"}
+{"parent_name":"Immunology","child_name":"Immunogenetics"}
+{"parent_name":"Immunology","child_name":"Immunoediting"}
+{"parent_name":"Immunology","child_name":"Cancer Vaccine"}
+{"parent_name":"Immunology","child_name":"Cancer Immunotherapy"}
+{"parent_name":"Immunology","child_name":"Immunoproteomics"}
+{"parent_name":"Immunology","child_name":"Systems Immunology"}
+{"parent_name":"Immunology","child_name":"Autoimmunity"}
+{"parent_name":"Immunology","child_name":"Immunodeficiency"}
+{"parent_name":"Immunology","child_name":"Hypersensitivity"}
+{"parent_name":"Immunology","child_name":"Immune Dysregulation"}
+{"parent_name":"Immunology","child_name":"Allergen Immunotherapy"}
+{"parent_name":"Immunology","child_name":"Testicular Immunology"}
+{"parent_name":"Immunology","child_name":"Immunodermatology"}
+{"parent_name":"Immunology","child_name":"Intravascular Immunology"}
+{"parent_name":"Immunology","child_name":"Osteoimmunology"}
+{"parent_name":"Immunology","child_name":"Mucosal Immunology"}
+{"parent_name":"Immunology","child_name":"Neuroimmunology"}
+{"parent_name":"Immunology","child_name":"Immunohaematology"}
+{"parent_name":"Immunology","child_name":"Ecoimmunology"}
+{"parent_name":"Immunology","child_name":"Computational Immunology"}
+{"parent_name":"Immunology","child_name":"Nutritional Immunology"}
+{"parent_name":"Immunology","child_name":"Humoral Immunology"}
+{"parent_name":"Immunology","child_name":"Cell-Mediated Immunity"}
+{"parent_name":"Immunology","child_name":"Reproductive Immunology"}
+{"parent_name":"Immunology","child_name":"Immunophysics"}
+{"parent_name":"Immunology","child_name":"Psychoneuroimmunology"}
+{"parent_name":"Immunology","child_name":"Immune Tolerance"}
+{"parent_name":"Immunology","child_name":"Immunocompetence"}
+{"parent_name":"Immunology","child_name":"Allergy"}
+{"parent_name":"Immunology","child_name":"Microbial Symbiosis and Immunity"}
+{"parent_name":"Immunology","child_name":"Viral Phylodynamics"}
+{"parent_name":"Immunology","child_name":"Immunometabolism"}
+{"parent_name":"Immunology","child_name":"Immuno-Psychiatry"}
+{"parent_name":"Immunology","child_name":"Cytotoxicity"}
+{"parent_name":"Immunology","child_name":"Host-Directed Therapeutics"}
+{"parent_name":"Neuroscience","child_name":"Affective Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Behavioral Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Cellular Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Clinical Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Cognitive Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Computational Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Dynamical Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Evolutionary Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Molecular Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Network Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Neuroanatomy"}
+{"parent_name":"Neuroscience","child_name":"Neurochemistry"}
+{"parent_name":"Neuroscience","child_name":"Neuroendocrinology"}
+{"parent_name":"Neuroscience","child_name":"Neurogenetics"}
+{"parent_name":"Neuroscience","child_name":"Neuropathology"}
+{"parent_name":"Neuroscience","child_name":"Neuropharmacology"}
+{"parent_name":"Neuroscience","child_name":"Neurophysiology"}
+{"parent_name":"Neuroscience","child_name":"Sensory Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Systems Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Electrophysiology"}
+{"parent_name":"Neuroscience","child_name":"Psychoneuroendocrinology"}
+{"parent_name":"Neuroscience","child_name":"Clinical Neurochemistry"}
+{"parent_name":"Neuroscience","child_name":"Neuroproteomics"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience of Sleep"}
+{"parent_name":"Neuroscience","child_name":"Clinical Neurophysiology"}
+{"parent_name":"Neuroscience","child_name":"Quantum Cognition"}
+{"parent_name":"Neuroscience","child_name":"Neuroethology"}
+{"parent_name":"Neuroscience","child_name":"Neuromorphology"}
+{"parent_name":"Neuroscience","child_name":"Neuroanatomy of Intimacy"}
+{"parent_name":"Neuroscience","child_name":"Neuroanatomy of Handedness"}
+{"parent_name":"Neuroscience","child_name":"Memory and Aging"}
+{"parent_name":"Neuroscience","child_name":"Neurolinguistics"}
+{"parent_name":"Neuroscience","child_name":"Neuroimaging"}
+{"parent_name":"Neuroscience","child_name":"Nutritional Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Neuroinformatics"}
+{"parent_name":"Neuroscience","child_name":"Neural Engineering"}
+{"parent_name":"Neuroscience","child_name":"Biocybernetics"}
+{"parent_name":"Neuroscience","child_name":"Neurophilosophy"}
+{"parent_name":"Neuroscience","child_name":"Neuroethics"}
+{"parent_name":"Neuroscience","child_name":"Neuroradiology"}
+{"parent_name":"Neuroscience","child_name":"Integrative Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Psychosurgery"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience and Intelligence"}
+{"parent_name":"Neuroscience","child_name":"Cultural Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience and Race"}
+{"parent_name":"Neuroscience","child_name":"Neuroanthropology"}
+{"parent_name":"Neuroscience","child_name":"Neurocinema"}
+{"parent_name":"Neuroscience","child_name":"Neurohistory"}
+{"parent_name":"Neuroscience","child_name":"Evolution of Nervous Systems"}
+{"parent_name":"Neuroscience","child_name":"Evolution of the Brain"}
+{"parent_name":"Neuroscience","child_name":"Neurobiological Origins of Language"}
+{"parent_name":"Neuroscience","child_name":"Neuroeconomics"}
+{"parent_name":"Neuroscience","child_name":"Consumer Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Neuromanagement"}
+{"parent_name":"Neuroscience","child_name":"Neuromarketing"}
+{"parent_name":"Neuroscience","child_name":"Neuroepistemology"}
+{"parent_name":"Neuroscience","child_name":"Neuroesthetics"}
+{"parent_name":"Neuroscience","child_name":"Neurophenomenology"}
+{"parent_name":"Neuroscience","child_name":"Educational Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Interpersonal Neurobiology"}
+{"parent_name":"Neuroscience","child_name":"Neurocriminology"}
+{"parent_name":"Neuroscience","child_name":"Neuromechanics"}
+{"parent_name":"Neuroscience","child_name":"Neurorobotics"}
+{"parent_name":"Neuroscience","child_name":"Paleoneurobiology"}
+{"parent_name":"Neuroscience","child_name":"Neuropsychopharmacology"}
+{"parent_name":"Neuroscience","child_name":"Developmental Neuropsychology"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience of Music"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience of Sex Differences"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience of Multilingualism"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience of Religion"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience of Rhythm"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience of Aging"}
+{"parent_name":"Neuroscience","child_name":"Neuroepigenetics"}
+{"parent_name":"Neuroscience","child_name":"Cognitive Biology"}
+{"parent_name":"Neuroscience","child_name":"Cognitive Neuropsychology"}
+{"parent_name":"Neuroscience","child_name":"Comparative Cognition"}
+{"parent_name":"Neuroscience","child_name":"Molecular Cellular Cognition"}
+{"parent_name":"Neuroscience","child_name":"Neurocognition"}
+{"parent_name":"Neuroscience","child_name":"Neuroenhancement"}
+{"parent_name":"Neuroscience","child_name":"Neuroheuristics"}
+{"parent_name":"Neuroscience","child_name":"Spatial Cognition"}
+{"parent_name":"Neuroscience","child_name":"Brain Morphometry"}
+{"parent_name":"Neuroscience","child_name":"Behavioral Epigenetics"}
+{"parent_name":"Neuroscience","child_name":"Chronobiology"}
+{"parent_name":"Neuroscience","child_name":"Cognitive Development"}
+{"parent_name":"Neuroscience","child_name":"Numerical Cognition"}
+{"parent_name":"Neuroscience","child_name":"Neuropsychoanalysis"}
+{"parent_name":"Neuroscience","child_name":"Neuropolitics"}
+{"parent_name":"Neuroscience","child_name":"Neuromorality"}
+{"parent_name":"Neuroscience","child_name":"Neuroarchaeology"}
+{"parent_name":"Neuroscience","child_name":"Neurogastronomy"}
+{"parent_name":"Neuroscience","child_name":"Connectomics"}
+{"parent_name":"Neuroscience","child_name":"Functional Integration"}
+{"parent_name":"Neuroscience","child_name":"Neuro-Ophthalmology"}
+{"parent_name":"Neuroscience","child_name":"Neurosecurity"}
+{"parent_name":"Neuroscience","child_name":"Neurolaw"}
+{"parent_name":"Neuroscience","child_name":"Positive Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Visual Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Neurometrics"}
+{"parent_name":"Neuroscience","child_name":"Neurophysics"}
+{"parent_name":"Neuroscience","child_name":"Neurogenomics"}
+{"parent_name":"Neuroscience","child_name":"Biological Psychopathology"}
+{"parent_name":"Neuroscience","child_name":"Developmental Psychobiology"}
+{"parent_name":"Neuroscience","child_name":"Neuroecology"}
+{"parent_name":"Neuroscience","child_name":"Cognitive Hearing Science"}
+{"parent_name":"Neuroscience","child_name":"Cognitive Neuroscience of Dreams"}
+{"parent_name":"Neuroscience","child_name":"Developmental Cognitive Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Neurovirology"}
+{"parent_name":"Neuroscience","child_name":"Translational Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Synaptic Pharmacology"}
+{"parent_name":"Neuroscience","child_name":"Social Cognitive Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Social Neuroscience"}
+{"parent_name":"Neuroscience","child_name":"Neurocardiology"}
+{"parent_name":"Neuroscience","child_name":"Neuroepidemiology"}
+{"parent_name":"Neuroscience","child_name":"Neuroimmunology"}
+{"parent_name":"Neuroscience","child_name":"Neurotology"}
+{"parent_name":"Neuroscience","child_name":"Physiological Psychology"}
+{"parent_name":"Neuroscience","child_name":"Psychoneuroimmunology"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience in Space"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience and Sexual Orientation"}
+{"parent_name":"Neuroscience","child_name":"Brain-Computer Interfacing"}
+{"parent_name":"Neuroscience","child_name":"Brain-Brain Interface"}
+{"parent_name":"Neuroscience","child_name":"Interventional Neuroradiology"}
+{"parent_name":"Neuroscience","child_name":"Augmented Cognition"}
+{"parent_name":"Neuroscience","child_name":"Computational Anatomy"}
+{"parent_name":"Neuroscience","child_name":"Neurohydrodynamics"}
+{"parent_name":"Neuroscience","child_name":"Artificial Brain"}
+{"parent_name":"Neuroscience","child_name":"Brain Simulation"}
+{"parent_name":"Neuroscience","child_name":"Neuroanatomy of Memory"}
+{"parent_name":"Neuroscience","child_name":"Diffeomorphometry"}
+{"parent_name":"Neuroscience","child_name":"Neuroscience of Free Will"}
+{"parent_name":"Virology","child_name":"Viral Pathogenesis"}
+{"parent_name":"Virology","child_name":"Viral Genetics"}
+{"parent_name":"Virology","child_name":"Mycovirology"}
+{"parent_name":"Virology","child_name":"Plant Virology"}
+{"parent_name":"Virology","child_name":"Animal Virology"}
+{"parent_name":"Virology","child_name":"Marine Virology"}
+{"parent_name":"Virology","child_name":"Archael Virology"}
+{"parent_name":"Virology","child_name":"Phage Virology"}
+{"parent_name":"Virology","child_name":"Synthetic Virology"}
+{"parent_name":"Virology","child_name":"Viral Life Cycle and Processes"}
+{"parent_name":"Virology","child_name":"Virus Structure"}
+{"parent_name":"Virology","child_name":"Viral Evolution"}
+{"parent_name":"Virology","child_name":"Viral Classification"}
+{"parent_name":"Virology","child_name":"Virotherapy"}
+{"parent_name":"Virology","child_name":"Virulence"}
+{"parent_name":"Virology","child_name":"Immune Evasion"}
+{"parent_name":"Virology","child_name":"Pathogen Transmission"}
+{"parent_name":"Virology","child_name":"Viral Entry"}
+{"parent_name":"Virology","child_name":"Cytopathic Effect"}
+{"parent_name":"Virology","child_name":"Viral Disease"}
+{"parent_name":"Virology","child_name":"Host Defense"}
+{"parent_name":"Virology","child_name":"Viral Oncogenesis"}
+{"parent_name":"Virology","child_name":"Viral Transformation"}
+{"parent_name":"Virology","child_name":"Viral Genome"}
+{"parent_name":"Virology","child_name":"Antigenic Drift"}
+{"parent_name":"Virology","child_name":"Antigenic Shift"}
+{"parent_name":"Virology","child_name":"Phenotype Mixing"}
+{"parent_name":"Virology","child_name":"Viral Reassortment"}
+{"parent_name":"Virology","child_name":"Viral Recombination"}
+{"parent_name":"Virology","child_name":"Viral Phylodynamics"}
+{"parent_name":"Virology","child_name":"Virome"}
+{"parent_name":"Virology","child_name":"Viriome"}
+{"parent_name":"Virology","child_name":"Veterinary Virology"}
+{"parent_name":"Virology","child_name":"Zoonosis"}
+{"parent_name":"Virology","child_name":"Phage Therapy"}
+{"parent_name":"Virology","child_name":"Phage Display"}
+{"parent_name":"Virology","child_name":"Phage-Ligand Technology"}
+{"parent_name":"Virology","child_name":"Phage Ecology"}
+{"parent_name":"Virology","child_name":"Phageome"}
+{"parent_name":"Virology","child_name":"Viroplasm"}
+{"parent_name":"Virology","child_name":"Viral Replication"}
+{"parent_name":"Virology","child_name":"Virus Latency"}
+{"parent_name":"Virology","child_name":"Viral Shedding"}
+{"parent_name":"Virology","child_name":"Lytic Cycle"}
+{"parent_name":"Virology","child_name":"Lysogenic Cycle"}
+{"parent_name":"Virology","child_name":"Viral Proteins"}
+{"parent_name":"Virology","child_name":"Viral Envelope"}
+{"parent_name":"Virology","child_name":"Viral Capsid"}
+{"parent_name":"Virology","child_name":"Virulence Factors"}
+{"parent_name":"Virology","child_name":"Virophysics"}
+{"parent_name":"Virology","child_name":"Viral Emergence"}
+{"parent_name":"Virology","child_name":"Paleovirology"}
+{"parent_name":"Virology","child_name":"Viral Vectors"}
+{"parent_name":"Virology","child_name":"Viral Gene Therapy"}
+{"parent_name":"Virology","child_name":"Oncolytic Virus"}
+{"parent_name":"Virology","child_name":"Virosomes"}
+{"parent_name":"Virology","child_name":"Immunization"}
+{"parent_name":"Virology","child_name":"Virophage"}
+{"parent_name":"Virology","child_name":"Vaccine Development"}
+{"parent_name":"Virology","child_name":"Antiviral Drug Development"}
+{"parent_name":"Virology","child_name":"Viral Epidemiology"}
+{"parent_name":"Virology","child_name":"Human Virome"}
+{"parent_name":"Bioinformatics","child_name":"Lipidomics"}
+{"parent_name":"Bioinformatics","child_name":"Proteomics"}
+{"parent_name":"Bioinformatics","child_name":"Glycomics"}
+{"parent_name":"Bioinformatics","child_name":"Transcriptomics"}
+{"parent_name":"Bioinformatics","child_name":"Translatomics"}
+{"parent_name":"Bioinformatics","child_name":"Metabolomics"}
+{"parent_name":"Bioinformatics","child_name":"Interactomics"}
+{"parent_name":"Bioinformatics","child_name":"Structural Bioinformatics"}
+{"parent_name":"Bioinformatics","child_name":"Health Informatics"}
+{"parent_name":"Bioinformatics","child_name":"Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Computational Anatomy"}
+{"parent_name":"Bioinformatics","child_name":"Biostatistics"}
+{"parent_name":"Bioinformatics","child_name":"Protein Function Prediction"}
+{"parent_name":"Bioinformatics","child_name":"Protein Structure Prediction"}
+{"parent_name":"Bioinformatics","child_name":"Protein-Protein Interaction Prediction"}
+{"parent_name":"Bioinformatics","child_name":"Protein-Protein Interactions"}
+{"parent_name":"Bioinformatics","child_name":"Biomarker"}
+{"parent_name":"Bioinformatics","child_name":"Proteogenomics"}
+{"parent_name":"Bioinformatics","child_name":"Post-Translational Modifications"}
+{"parent_name":"Bioinformatics","child_name":"Immunoproteomics"}
+{"parent_name":"Bioinformatics","child_name":"Phosphoproteomics"}
+{"parent_name":"Bioinformatics","child_name":"Secretomics"}
+{"parent_name":"Bioinformatics","child_name":"Chemoproteomics"}
+{"parent_name":"Bioinformatics","child_name":"Metaproteomics"}
+{"parent_name":"Bioinformatics","child_name":"Gene Expression Profiling"}
+{"parent_name":"Bioinformatics","child_name":"Single-Cell Transcriptomics"}
+{"parent_name":"Bioinformatics","child_name":"Metabolic Network Modelling"}
+{"parent_name":"Bioinformatics","child_name":"Exometabolomics"}
+{"parent_name":"Bioinformatics","child_name":"Metabolic Network"}
+{"parent_name":"Bioinformatics","child_name":"Genetic Interaction Network"}
+{"parent_name":"Bioinformatics","child_name":"Virtual Screening"}
+{"parent_name":"Bioinformatics","child_name":"Molecular Dynamics"}
+{"parent_name":"Bioinformatics","child_name":"Molecular Modeling"}
+{"parent_name":"Bioinformatics","child_name":"Biosimulation"}
+{"parent_name":"Bioinformatics","child_name":"Cellular Model"}
+{"parent_name":"Bioinformatics","child_name":"Modelling Biological Systems"}
+{"parent_name":"Bioinformatics","child_name":"Cancer Systems Biology"}
+{"parent_name":"Bioinformatics","child_name":"Systems Immunology"}
+{"parent_name":"Bioinformatics","child_name":"Systems Biomedicine"}
+{"parent_name":"Bioinformatics","child_name":"Biomedical Text Mining"}
+{"parent_name":"Bioinformatics","child_name":"Clinical Decision Support System"}
+{"parent_name":"Bioinformatics","child_name":"Imaging Informatics"}
+{"parent_name":"Bioinformatics","child_name":"Digital Pathology"}
+{"parent_name":"Bioinformatics","child_name":"Bioimage Informatics"}
+{"parent_name":"Bioinformatics","child_name":"Sequence Alignment"}
+{"parent_name":"Bioinformatics","child_name":"Alignment-Free Sequence Analysis"}
+{"parent_name":"Bioinformatics","child_name":"Sequence Assembly"}
+{"parent_name":"Bioinformatics","child_name":"Gene Prediction"}
+{"parent_name":"Bioinformatics","child_name":"Comparative Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Computational Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Functional Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Cognitive Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Metagenomics"}
+{"parent_name":"Bioinformatics","child_name":"Neurogenomics"}
+{"parent_name":"Bioinformatics","child_name":"Personal Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Epigenomics"}
+{"parent_name":"Bioinformatics","child_name":"Pharmacogenomics"}
+{"parent_name":"Bioinformatics","child_name":"Toxicogenomics"}
+{"parent_name":"Bioinformatics","child_name":"Population Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Nutritional Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Structural Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Hologenomics"}
+{"parent_name":"Bioinformatics","child_name":"Metatranscriptomics"}
+{"parent_name":"Bioinformatics","child_name":"Paleogenomics"}
+{"parent_name":"Bioinformatics","child_name":"Phylogenomics"}
+{"parent_name":"Bioinformatics","child_name":"Radiogenomics"}
+{"parent_name":"Bioinformatics","child_name":"Ribonomics"}
+{"parent_name":"Bioinformatics","child_name":"Nutriepigenomics"}
+{"parent_name":"Bioinformatics","child_name":"Single Cell Epigenomics"}
+{"parent_name":"Bioinformatics","child_name":"Chemogenomics"}
+{"parent_name":"Bioinformatics","child_name":"Viral Metagenomics"}
+{"parent_name":"Bioinformatics","child_name":"Public Health Genomics"}
+{"parent_name":"Bioinformatics","child_name":"Clinicogenomics"}
+{"parent_name":"Bioinformatics","child_name":"Personalized Genomics"}
+{"parent_name":"Computer Security","child_name":"Application Security"}
+{"parent_name":"Computer Security","child_name":"Internet Security"}
+{"parent_name":"Computer Security","child_name":"Network Security"}
+{"parent_name":"Computer Security","child_name":"Language-Based Security"}
+{"parent_name":"Computer Security","child_name":"Hardware Security"}
+{"parent_name":"Computer Security","child_name":"Cryptography"}
+{"parent_name":"Computer Security","child_name":"Decentralized Computing"}
+{"parent_name":"Computer Security","child_name":"Information Privacy"}
+{"parent_name":"Computer Security","child_name":"Threat Analysis"}
+{"parent_name":"Computer Security","child_name":"Vulnerability Assessment"}
+{"parent_name":"Computer Security","child_name":"Social Engineering"}
+{"parent_name":"Computer Security","child_name":"Brute-Force Attacks"}
+{"parent_name":"Computer Security","child_name":"Mobile Security"}
+{"parent_name":"Computer Security","child_name":"Wireless Security"}
+{"parent_name":"Computer Security","child_name":"Browser Security"}
+{"parent_name":"Computer Security","child_name":"Control System Security"}
+{"parent_name":"Computer Security","child_name":"Access Control"}
+{"parent_name":"Computer Security","child_name":"Data Center Security"}
+{"parent_name":"Computer Security","child_name":"Security Information and Event Management"}
+{"parent_name":"Computer Security","child_name":"Digital Forensics"}
+{"parent_name":"Computer Security","child_name":"Spyware"}
+{"parent_name":"Computer Security","child_name":"Malware Analysis"}
+{"parent_name":"Computer Security","child_name":"Hardening"}
+{"parent_name":"Computer Security","child_name":"File Verification"}
+{"parent_name":"Computer Security","child_name":"File Integrity Monitoring"}
+{"parent_name":"Computer Security","child_name":"Control-Flow Integrity"}
+{"parent_name":"Computer Security","child_name":"Arbitrary Code Execution"}
+{"parent_name":"Computer Security","child_name":"SQL Injection Attacks"}
+{"parent_name":"Computer Security","child_name":"Web Tracking"}
+{"parent_name":"Computer Security","child_name":"Code Injection"}
+{"parent_name":"Computer Security","child_name":"Watering Hole Attacks"}
+{"parent_name":"Computer Security","child_name":"Drive-by Dowloads"}
+{"parent_name":"Computer Security","child_name":"Browser Exploitation"}
+{"parent_name":"Computer Security","child_name":"Certificate Transparency"}
+{"parent_name":"Computer Security","child_name":"Certificate Revocation"}
+{"parent_name":"Computer Security","child_name":"DNS Analytics"}
+{"parent_name":"Computer Security","child_name":"Email Filtering"}
+{"parent_name":"Computer Security","child_name":"Cross-Site Scripting"}
+{"parent_name":"Computer Security","child_name":"Network Assurance"}
+{"parent_name":"Computer Security","child_name":"Traffic Analysis"}
+{"parent_name":"Computer Security","child_name":"Network Behavior Anomaly Detection"}
+{"parent_name":"Computer Security","child_name":"User Behavior Analytics"}
+{"parent_name":"Computer Security","child_name":"Man-in-the-Middle Attacks"}
+{"parent_name":"Computer Security","child_name":"Sniffing Attacks"}
+{"parent_name":"Computer Security","child_name":"Session Hijacking"}
+{"parent_name":"Computer Security","child_name":"Denial-of-Service Attacks"}
+{"parent_name":"Computer Security","child_name":"Allowlisting"}
+{"parent_name":"Computer Security","child_name":"Denylisting"}
+{"parent_name":"Computer Security","child_name":"Sandboxing"}
+{"parent_name":"Computer Security","child_name":"Firewalls"}
+{"parent_name":"Computer Security","child_name":"Honeypots and Honeynets"}
+{"parent_name":"Computer Security","child_name":"Intrusion Detection"}
+{"parent_name":"Computer Security","child_name":"Evasion"}
+{"parent_name":"Computer Security","child_name":"Program Analysis"}
+{"parent_name":"Computer Security","child_name":"Reverse Engineering"}
+{"parent_name":"Computer Security","child_name":"Buffer Overflow Protection"}
+{"parent_name":"Computer Security","child_name":"Proof-Carrying Code"}
+{"parent_name":"Computer Security","child_name":"Static Program Analysis"}
+{"parent_name":"Computer Security","child_name":"Dynamic Program Analysis"}
+{"parent_name":"Computer Security","child_name":"Fuzzing"}
+{"parent_name":"Computer Security","child_name":"Symbolic Execution"}
+{"parent_name":"Computer Security","child_name":"Side-Channel Attacks"}
+{"parent_name":"Computer Security","child_name":"Digital Supply Chain Security"}
+{"parent_name":"Computer Security","child_name":"Supply Chain Attacks"}
+{"parent_name":"Computer Security","child_name":"Backdooring"}
+{"parent_name":"Computer Security","child_name":"Secure Cryptoprocessors"}
+{"parent_name":"Computer Security","child_name":"Digital Signatures"}
+{"parent_name":"Computer Security","child_name":"Post-Quantum Cryptography"}
+{"parent_name":"Computer Security","child_name":"Public-Key Cryptography"}
+{"parent_name":"Computer Security","child_name":"Cryptographic Protocols"}
+{"parent_name":"Computer Security","child_name":"Zero-Knowledge Proofs"}
+{"parent_name":"Computer Security","child_name":"Information Flow"}
+{"parent_name":"Computer Security","child_name":"Secure Multi-Party Computation"}
+{"parent_name":"Computer Security","child_name":"Steganography"}
+{"parent_name":"Computer Security","child_name":"Certificate-Based Encryption"}
+{"parent_name":"Computer Security","child_name":"Encryption"}
+{"parent_name":"Computer Security","child_name":"Consensus Protocols"}
+{"parent_name":"Computer Security","child_name":"Smart Contracts"}
+{"parent_name":"Computer Security","child_name":"Blockchain Analysis"}
+{"parent_name":"Computer Security","child_name":"Distributed Databases"}
+{"parent_name":"Computer Security","child_name":"Blockchain Ledgers"}
+{"parent_name":"Computer Security","child_name":"Data Anonymization"}
+{"parent_name":"Computer Security","child_name":"Differential Privacy"}
+{"parent_name":"Computer Security","child_name":"Authentication"}
+{"parent_name":"Computer Security","child_name":"Biometrics"}
+{"parent_name":"Computer Security","child_name":"Credential Stuffing"}
+{"parent_name":"Computer Security","child_name":"Homomorphic Encryption"}
+{"parent_name":"Computer Security","child_name":"Multi-Factor Authentication"}
+{"parent_name":"Computer Security","child_name":"Message Authentication"}
+{"parent_name":"Computer Security","child_name":"Internet Censorship Circumvention"}
+{"parent_name":"Computer Security","child_name":"Onion Routing"}
+{"parent_name":"Chemistry","child_name":"Food Science"}
+{"parent_name":"Engineering","child_name":"Computer Engineering"}
+{"parent_name":"Engineering","child_name":"Embedded System"}
+{"parent_name":"Engineering","child_name":"Telecommunications"}
+{"parent_name":"Environmental Science","child_name":"Agricultural Science"}
+{"parent_name":"Environmental Science","child_name":"Agroforestry"}
+{"parent_name":"Mathematics","child_name":"Algorithms"}
+{"parent_name":"Medicine","child_name":"Anatomy"}
+{"parent_name":"Medicine","child_name":"Endocrinology"}
+{"parent_name":"Artificial Intelligence","child_name":"Mathematical Optimization"}
+{"parent_name":"Computer Science","child_name":"Computer Simulation"}
+{"parent_name":"Computer Science","child_name":"Human-Computer Interaction"}
+{"parent_name":"Biotechnology","child_name":"Biomedical Engineering"}
+{"parent_name":"Biology","child_name":"Synthetic Biology"}
+{"parent_name":"Biology","child_name":"Computational Biology"}
+{"parent_name":"Biology","child_name":"Systems Biology"}

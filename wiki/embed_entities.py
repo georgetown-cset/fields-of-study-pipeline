@@ -12,10 +12,12 @@ from collections import Counter
 
 import dataset
 import numpy as np
+import pandas as pd
 from gensim.similarities import MatrixSimilarity
 
 from fos.entity import create_automaton, find_keywords
 from fos.settings import ASSETS_DIR, EN_ENTITY_PATH, ZH_ENTITY_PATH, ZH_FIELD_ENTITY_PATH, EN_FIELD_ENTITY_PATH
+from fos.util import format_field_name
 from fos.vectors import load_field_fasttext, load_field_keys
 
 VECTOR_DIM = 250
@@ -29,6 +31,12 @@ def main(lang='en', exclude_self_mentions=False):
         # Fail early if output path won't be writable
         raise NotADirectoryError(ASSETS_DIR)
 
+    # Read table of field metadata: this is just the name and level of each final field.
+    # Our wiki.db has a couple of fields that we don't want to include.
+    meta = pd.read_json(ASSETS_DIR / "fields/field_meta.jsonl", lines=True)
+    meta = meta.sort_values(['level', 'name'])
+    meta = meta.set_index('name')
+
     # Create an automaton for searching field text for mentions of fields
     field_matcher = create_field_matcher(lang)
     # We'll be using the FastText field embeddings, so load that matrix and the index mapping row -> field ID
@@ -41,7 +49,9 @@ def main(lang='en', exclude_self_mentions=False):
 
     # Iterate over each field ...
     for field in table:
-        field_id = field['display_name']
+        field_id = format_field_name(field['display_name'])
+        if field_id not in meta.index:
+            print('Skipping', field_id, 'not in field metadata table (field_meta.jsonl)')
         text = field[f'{lang}_text']
         titles = [field[f'en_title_{i}'] for i in range(1, 4)]
         entity_vector = np.zeros((VECTOR_DIM,), dtype=np.float32)
@@ -78,7 +88,7 @@ def main(lang='en', exclude_self_mentions=False):
             or lower(en_title_2) = "{mention.lower()}" or lower(en_title_3) = "{mention.lower()}" LIMIT 1'''
             mention_id = None
             for row in db.query(statement):
-                mention_id = row["display_name"]
+                mention_id = format_field_name(row["display_name"])
             # Here `field_index == mention_id` gives us the single vector that corresponds to the mentioned field ID
             for _ in range(count):
                 # We weight the vector by mention count. This is an IndexError if we don't find `mention_id` in
