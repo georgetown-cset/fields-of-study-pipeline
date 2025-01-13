@@ -1031,7 +1031,6 @@
 {"parent_name":"Bioinformatics","child_name":"Health Informatics"}
 {"parent_name":"Bioinformatics","child_name":"Genomics"}
 {"parent_name":"Bioinformatics","child_name":"Computational Anatomy"}
-{"parent_name":"Bioinformatics","child_name":"Computational Neuroscience"}
 {"parent_name":"Bioinformatics","child_name":"Biostatistics"}
 {"parent_name":"Bioinformatics","child_name":"Protein Function Prediction"}
 {"parent_name":"Bioinformatics","child_name":"Protein Structure Prediction"}
