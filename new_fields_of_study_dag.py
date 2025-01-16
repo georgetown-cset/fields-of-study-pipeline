@@ -34,7 +34,7 @@ pipeline_args["retries"] = 1
 
 def mk_command_seq(cmds: list) -> str:
     scripts = " && ".join(cmds)
-    return (f"gcloud compute ssh jm3312@{gce_resource_id} --zone {GCP_ZONE} "
+    return (f"gcloud compute ssh airflow@{gce_resource_id} --zone {GCP_ZONE} "
                 f"--command \"{scripts}\"")
 
 
