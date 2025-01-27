@@ -1,5 +1,5 @@
 """
-Fetch English and Chinese Wikipedia page content.
+Fetch English Wikipedia page content.
 
 We read from the disk (``field_pages.json``) the page titles (if available) for each field. Using the Mediawiki API,
 we retrieve their content. This requires a lot of API calls, one per field, and may periodically fail. For
@@ -61,7 +61,6 @@ def read_field_meta(upsert: bool = False) -> tuple:
             if existing is not None:
                 # We don't have a page title so there's nothing to do, or we do but already have the page HTML:
                 en_done = [f"en_title_{i}" not in existing or f"en_html_{i}" in existing for i in range(1, 4)]
-                # zh_done = 'zh_title' not in existing or 'zh_html' in existing
                 # If we have all possible HTML and we aren't trying to update it, continue
                 if en_done[0] and en_done[1] and en_done[2] and not upsert:
                     continue
@@ -69,7 +68,7 @@ def read_field_meta(upsert: bool = False) -> tuple:
 
 
 def get_wiki_content(field: dict) -> dict:
-    """Retrieve EN and ZH (if available) wiki content for a page, given its EN and ZH (if available) page titles.
+    """Retrieve EN wiki content for a page, given its EN page titles.
 
     :param field: Field record.
     :return: Field record, updated to include keys 'en_html', 'zh_html' (if available), 'en_text', and 'zh_text'

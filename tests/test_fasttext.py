@@ -4,7 +4,7 @@ import numpy as np
 from fasttext.FastText import _FastText, load_model
 
 from fos.model import FieldModel
-from fos.settings import EN_FASTTEXT_PATH, EN_FIELD_TEXT, ZH_FASTTEXT_PATH
+from fos.settings import EN_FASTTEXT_PATH, EN_FIELD_TEXT
 from fos.vectors import load_fasttext, norm, embed_fasttext
 
 
@@ -46,11 +46,11 @@ def test_fasttext_similarity(texts):
     """Similarities for FT vectors from the FieldModel via gensim's MatrixSimilarity should be the same as via numpy."""
     # We don't get *exactly* the same similarities, I think because
     eps = 1e-6
-    for lang in ['en', 'zh']:
+    for lang in ['en']:
         if lang == 'en':
             ft = load_model(str(EN_FASTTEXT_PATH))
         else:
-            ft = load_model(str(ZH_FASTTEXT_PATH))
+            raise ValueError(lang)
         fields = FieldModel(lang)
         for text in texts.values():
             # Embed via the fasttext model that the FieldModel loaded

@@ -113,12 +113,12 @@ in `assets/scientific-lit-embeddings`.
 
 Outputs (annually):
 
-- FastText vectors: `assets/{en,zh}_merged_fasttext.bin`
-- tf-idf vectors and vocab: `assets/{en,zh}_merged_tfidf.bin` and TODO
+- FastText vectors: `assets/en_merged_fasttext.bin`
+- tf-idf vectors and vocab: `assets/en_merged_tfidf.bin` and TODO
 
 Outputs (~weekly):
 
-- Preprocessed corpus: `assets/corpus/{lang}_corpus-*.jsonl.gz`
+- Preprocessed corpus: `assets/corpus/en_corpus-*.jsonl.gz`
 
 ### 2. Field taxonomy
 
@@ -138,8 +138,8 @@ created embeddings for each field.
 
 Outputs (annually):
 
-- FastText field embeddings: `assets/{en,zh}_field_fasttext.bin`
-- tf-idf field embeddings: `assets/{en,zh}_field_tfidf.bin`
+- FastText field embeddings: `assets/en_field_fasttext.bin`
+- tf-idf field embeddings: `assets/en_field_tfidf.bin`
 
 ### 4. Entity embeddings
 
@@ -149,7 +149,7 @@ generate FastText _entity embeddings_. This is documented in the `wiki-field-tex
 
 Outputs (annually):
 
-- FastText entity embeddings: `assets/{en,zh}_field_mention_fasttext.bin`
+- FastText entity embeddings: `assets/en_field_mention_fasttext.bin`
 
 ### 5. Publication embedding
 

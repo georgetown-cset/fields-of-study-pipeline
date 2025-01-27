@@ -108,7 +108,7 @@ def main(lang="en",
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Score merged corpus text')
-    parser.add_argument('lang', choices=('en', 'zh'), help='Language')
+    parser.add_argument('lang', choices=('en',), help='Language')
     parser.add_argument('--limit', type=int, default=10000, help='Record limit')
     parser.add_argument('--corpus', default=CORPUS_DIR, help='Directory where corpus to run over exists')
     parser.add_argument('--bq_format', action='store_true', help='If specified, will output nested field scores')

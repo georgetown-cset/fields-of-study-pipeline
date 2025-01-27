@@ -25,11 +25,6 @@ def en_model() -> FieldModel:
 
 
 @pytest.fixture
-def zh_model() -> FieldModel:
-    return FieldModel("zh")
-
-
-@pytest.fixture
 def mag_texts() -> pd.DataFrame:
     """Load texts from MAG meant to be L0 field exemplars."""
     return pd.read_pickle(ASSETS_DIR / 'fields/example_text.pkl.gz')
