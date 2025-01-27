@@ -1,13 +1,12 @@
 """
 Fetch English and Chinese Wikipedia page content.
 
-We read from the disk (``field_pages.json``) the page titles (if available) for each field, identified in the previous
-step (``fetch_page_titles.py``). Using the Mediawiki API, we retrieve their content. This requires a lot of API calls,
-one per field, and may periodically fail. For persistence (resume after failure), we use SQLite. (Reliable and
-straightforward.) Before each API request, we check whether we already have the response in the DB, and if so skip. The
-database 'id' is MAG's int field ID.
+We read from the disk (``field_pages.json``) the page titles (if available) for each field. Using the Mediawiki API,
+we retrieve their content. This requires a lot of API calls, one per field, and may periodically fail. For
+persistence (resume after failure), we use SQLite. (Reliable and straightforward.) Before each API request,
+we check whether we already have the response in the DB, and if so skip. The database 'id' is MAG's int field ID.
 
-Takes as input ``field_pages.json`` (see ``fetch_page_titles.py``).
+Takes as input ``field_pages.json``.
 Writes to ``wiki.db``.
 """
 import argparse
