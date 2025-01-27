@@ -1,29 +1,34 @@
 ## Overview
 
-This repo contains materials for the fields of study project (as described in "Multi-Label Field Classification for Scientific Documents using Expert and
-Crowd-sourced Knowledge"). This involves the following:
+This repo contains materials for CSET's fields of study pipeline, which predicts the relevance of scientific documents 
+to research concepts. For more background, see:
 
-1. Our starting point is our merged corpus of publications, specifically its English-language text. We use it to learn _FastText_ and _tf-idf
-   word vectors_.
+- ["Multi-label Classification of Scientific Research Documents Across Domains and Languages"](https://aclanthology.org/2022.sdp-1.12/)
+- ["Multi-Label Field Classification for Scientific Documents using Expert and Crowd-sourced Knowledge"](https://aclanthology.org/2024.wikinlp-1.7/)
+
+This involves the following:
+
+1. Our starting point is our merged corpus of publications, specifically its English-language text. We use it to learn 
+   _FastText_ and _tf-idf word vectors_.
 
 2. The second fundamental input is a taxonomy that defines fields of study, in a hierarchy of broad areas like
-   "computer science" and more granular subfields like "machine learning". We derived the top level of this taxonomy from the taxonomy previously used by MAG,
-   and create the lower layers ourselves (as described in the paper). For
+   "computer science" and more granular subfields like "machine learning". We derived the top level of this taxonomy 
+   from the taxonomy previously used by MAG, and create the lower layers ourselves (as described in the paper). For 
    current purposes it's static. We call this the _field taxonomy_.
 
-4. For each field in the taxonomy, we have various associated text extracted from Wikipedia (pages and their references).
-   Using this _field content_ and the word vectors learned from the merged corpus, we create embeddings for each
-   field. We refer to these as FastText and tf-idf _field embeddings_.
+3. For each field in the taxonomy, we have various associated text extracted from Wikipedia (pages and their 
+   references). Using this _field content_ and the word vectors learned from the merged corpus, we create embeddings for 
+   each field. We refer to these as FastText and tf-idf _field embeddings_.
 
-5. We then identify in the field content every mention of another field. (For instance, the "computer science" content
+4. We then identify in the field content every mention of another field. (For instance, the "computer science" content
    mentions "artificial intelligence," "machine learning," and many other fields.) The averages of the FastText field 
    embeddings for these mentioned fields are the _entity embeddings_ for each field.
 
-6. Next, for each English publication in the merged corpus we create _publication embeddings_. Specifically, for each
+5. Next, for each English publication in the merged corpus we create _publication embeddings_. Specifically, for each
    publication a _FastText embedding_, _tf-idf embedding_, and _FastText field mention embedding_ (as immediately above,
    but for fields mentioned in the publication text).
 
-7. Lastly, scoring: we compute the cosine similarities of the embeddings for publications and fields. This yields up to
+6. Lastly, scoring: we compute the cosine similarities of the embeddings for publications and fields. This yields up to
    three cosine similarity (FastText, tf-idf, and mention FastText) for a publication-field pair. We average them to get
    a publication's field score.
 
