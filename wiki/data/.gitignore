@@ -1,11 +1,3 @@
-/en_field_entity_similarity.pkl
-/en_field_fasttext_similarity.pkl
-/en_field_tfidf_similarity.pkl
 /wiki.db
-/en_field_fasttext.npz
-/en_field_tfidf.npz
-/en_vectors.npz
-/zh_field_fasttext.npz
-/zh_field_tfidf.npz
 /field_pages.json
 /all_fields.tsv
