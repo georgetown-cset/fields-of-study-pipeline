@@ -1,5 +1,5 @@
 outs:
-- md5: c5d05e2c8ffcea66e88e35ea0287b98a
-  size: 1691940
+- md5: a8590a3f7295c2910abd12b3cb7f88ab
+  size: 1692246
   path: en_entity_trie.pkl
   hash: md5

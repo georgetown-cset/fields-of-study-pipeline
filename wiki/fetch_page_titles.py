@@ -46,7 +46,7 @@ def main() -> None:
                     # fill value of grouper is None
                     continue
                 for index, title_val in enumerate(["wiki_title_1", "wiki_title_2", "wiki_title_3"]):
-                    if field[title_val] != "":
+                    if field[title_val] and field[title_val] != "":
                         try:
                             if "#" in field[title_val]:
                                 field.update({f"{title_val}_section": field[title_val].split("#")[1]})
