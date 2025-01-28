@@ -16,12 +16,6 @@ from fos.vectors import load_field_fasttext, load_field_keys, load_field_entitie
 
 
 FIG_DIR = 'field_embeddings'
-L0_FIELDS = {
-    'humanities': ['Art', 'History', 'Philosophy'],
-    'social_sciences': ['Business', 'Economics', 'Geography', 'Political science', 'Psychology', 'Sociology'],
-    'stem': ['Biology', 'Chemistry', 'Computer science', 'Engineering', 'Environmental science', 'Geology',
-             'Materials science', 'Mathematics', 'Medicine', 'Physics']
-}
 FONT_PATH = 'fonts/NunitoSans-Black.ttf'
 FONT_NAME = 'Nunito Sans'
 FILE_TYPE = 'png'

@@ -28,7 +28,4 @@ EN_FIELD_FASTTEXT_CSV = ASSETS_DIR / 'en_field_fasttext_vectors.csv'
 EN_FIELD_TFIDF_JSON = ASSETS_DIR / 'en_field_tfidf_vectors.json'
 EN_FIELD_ENTITY_CSV = ASSETS_DIR / 'en_field_entity_vectors.csv'
 
-# For debugging, field content ...
-EN_FIELD_TEXT = ASSETS_DIR / 'en_field_text.json'
-
 BIN_PATH = PIPELINES_DIR / 'fields'
