@@ -12,17 +12,17 @@ import numpy as np
 from numpy.linalg import norm
 
 from fos.model import FieldModel
-from fos.settings import EN_FIELD_FASTTEXT_PATH, ZH_FIELD_FASTTEXT_PATH
+from fos.settings import EN_FIELD_FASTTEXT_PATH
 
 
 def main():
-    for lang in ["en", "zh"]:
+    for lang in ["en"]:
         model = FieldModel(lang)
 
         norms = norm(model.field_fasttext.index, 2, axis=1)
         normalized_index = model.field_fasttext.index / norms[:, None]
 
-        # ZH field vectors include some zeroed rows for missing fields
+        # Field vectors could include some zeroed rows for missing fields
         normalized_index = np.nan_to_num(normalized_index)
 
         assert model.field_fasttext.index.shape == normalized_index.shape
@@ -30,8 +30,8 @@ def main():
 
         if lang == "en":
             output_path = EN_FIELD_FASTTEXT_PATH
-        elif lang == "zh":
-            output_path = ZH_FIELD_FASTTEXT_PATH
+        else:
+            raise ValueError(lang)
         with open(output_path, 'wb') as f:
             pickle.dump(model.field_fasttext, f)
 

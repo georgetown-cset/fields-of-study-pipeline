@@ -11,7 +11,6 @@ def test_replace():
 
 def test_preprocess():
     assert preprocess(' QUICK BROWN FOX?', 'en') == 'quick brown fox'
-    assert preprocess('产业组织理论', 'zh') == '产业组织理论'
 
 
 def test_case_field_name():

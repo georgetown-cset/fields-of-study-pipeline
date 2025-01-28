@@ -12,7 +12,7 @@ def download(lang='en', output_dir=CORPUS_DIR, query_path=QUERY_PATH, limit=1000
              extract_prefix=None):
     """Download a preprocessed corpus.
 
-    :param lang: Language code, 'en' or 'zh'.
+    :param lang: Language code, 'en'.
     :param output_dir: Directory for extract files.
     :param query_path: Path to SQL file.
     :param limit: Record limit.

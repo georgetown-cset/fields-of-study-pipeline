@@ -15,7 +15,7 @@ except FileNotFoundError:
 
 
 def main():
-    meta = pd.read_pickle(ASSETS_DIR / "fields/fos.pkl.gz")
+    meta = pd.read_pickle("fos.pkl.gz")
     meta.index = meta.index.astype(int)
     id_to_name = meta.query("level == 0")["display_name"].to_dict()
 

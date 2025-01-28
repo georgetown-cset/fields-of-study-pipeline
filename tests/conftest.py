@@ -1,8 +1,6 @@
 import contextlib
-import gzip
 import json
 import os
-import pickle
 from pathlib import Path
 
 import fasttext
@@ -12,7 +10,7 @@ import pandas as pd
 import pytest
 
 from fos.model import FieldModel
-from fos.settings import CORPUS_DIR, ASSETS_DIR
+from fos.settings import ASSETS_DIR
 from fos.util import read_go_output, run
 
 TEST_ASSETS_DIR = Path(__file__).parent.absolute() / 'assets'
@@ -25,17 +23,6 @@ def en_model() -> FieldModel:
 
 
 @pytest.fixture
-def zh_model() -> FieldModel:
-    return FieldModel("zh")
-
-
-@pytest.fixture
-def mag_texts() -> pd.DataFrame:
-    """Load texts from MAG meant to be L0 field exemplars."""
-    return pd.read_pickle(ASSETS_DIR / 'fields/example_text.pkl.gz')
-
-
-@pytest.fixture
 def texts():
     """Load example texts."""
     with open(TEST_ASSETS_DIR / 'texts.json', 'rt') as f:
@@ -45,16 +32,7 @@ def texts():
 @pytest.fixture
 def meta() -> pd.DataFrame:
     """Load field metadata."""
-    with gzip.open(ASSETS_DIR / 'fields/fos.pkl.gz', 'rb') as f:
-        df = pickle.load(f)
-    return df
-
-
-@pytest.fixture
-def mag_outputs():
-    """Load MAG outputs."""
-    with open(CORPUS_DIR / 'mag-output.jsonl', 'rt') as f:
-        return [json.loads(line) for line in f]
+    return pd.read_json(ASSETS_DIR / 'fields/field_meta.jsonl', lines=True)
 
 
 @pytest.fixture

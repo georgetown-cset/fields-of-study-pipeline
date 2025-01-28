@@ -1,5 +1,5 @@
 """
-Download EN or ZH merged corpus text.
+Download EN merged corpus text.
 """
 import argparse
 import os
@@ -12,7 +12,7 @@ if Path.cwd().name == 'scripts':
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Download merged corpus text')
-    parser.add_argument('lang', choices=('en', 'zh'), help='Language')
+    parser.add_argument('lang', choices=('en',), help='Language')
     parser.add_argument('--output', type=Path, default=CORPUS_DIR, help='Output directory')
     parser.add_argument('--limit', type=int, default=0, help='Record limit')
     parser.add_argument('--skip_prev', action='store_true', help='If true, skips unchanged records')
