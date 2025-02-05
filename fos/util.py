@@ -32,9 +32,6 @@ def preprocess(text, lang='en'):
         # We now have lowercase text without punctuation but may have non-ascii chars; map where possible otherwise drop
         text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
         text = LONE_NUMBERS.sub('', text.lower())
-    elif lang == 'zh':
-        # For Chinese, only remove punctuation
-        text = text.translate(TO_CLEAN_LOWER)
     else:
         raise ValueError(lang)
     # normalizing whitespace ('   ' -> ' ') doesn't make a difference after tokenization but it's tidier when reviewing

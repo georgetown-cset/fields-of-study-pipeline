@@ -80,7 +80,7 @@ class FieldModel(object):
     def __init__(self, lang="en"):
         """A 'model' for field scoring.
 
-        :param lang: Language, 'en' or 'zh'.
+        :param lang: Language, 'en'.
         """
         logger.debug('Loading FieldModel assets')
 

@@ -16,7 +16,7 @@ import pandas as pd
 from gensim.similarities import MatrixSimilarity
 
 from fos.entity import create_automaton, find_keywords
-from fos.settings import ASSETS_DIR, EN_ENTITY_PATH, ZH_ENTITY_PATH, ZH_FIELD_ENTITY_PATH, EN_FIELD_ENTITY_PATH
+from fos.settings import ASSETS_DIR, EN_ENTITY_PATH, EN_FIELD_ENTITY_PATH
 from fos.util import format_field_name
 from fos.vectors import load_field_fasttext, load_field_keys
 
@@ -56,8 +56,7 @@ def main(lang='en', exclude_self_mentions=False):
         titles = [field[f'en_title_{i}'] for i in range(1, 4)]
         entity_vector = np.zeros((VECTOR_DIM,), dtype=np.float32)
 
-        # In English at L2+ and in Chinese starting with some fields in L1, we don't always have field text; these
-        # entity embeddings will be zeroed
+        # In English at L2+ we don't always have field text; these entity embeddings will be zeroed
         if titles[0] is None and titles[1] is None and titles[2] is None:
             print(f'No {lang} page for {field["display_name"]}')
             entity_vectors[field_id] = entity_vector
@@ -131,8 +130,6 @@ def write_entity_matcher(entity_vectors, id_to_title, lang):
     })
     if lang == 'en':
         output_path = EN_ENTITY_PATH
-    # elif lang == 'zh':
-    #     output_path = ZH_ENTITY_PATH
     else:
         raise ValueError(lang)
     with open(output_path, 'wb') as f:
@@ -148,8 +145,6 @@ def write_entity_similarity(entity_vectors, field_index, lang):
     entity_similarity = MatrixSimilarity(indexed_vectors, num_features=VECTOR_DIM, dtype=np.float32)
     if lang == 'en':
         output_path = EN_FIELD_ENTITY_PATH
-    # elif lang == 'zh':
-    #     output_path = ZH_FIELD_ENTITY_PATH
     else:
         raise ValueError(lang)
     with open(output_path, 'wb') as f:

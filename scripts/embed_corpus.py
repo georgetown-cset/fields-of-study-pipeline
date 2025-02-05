@@ -40,7 +40,7 @@ def main(lang="en", limit=0):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Embed merged corpus text')
-    parser.add_argument('lang', choices=('en', 'zh'), help='Language')
+    parser.add_argument('lang', choices=('en',), help='Language')
     parser.add_argument('--limit', type=int, default=0, help='Record limit')
     args = parser.parse_args()
     main(lang=args.lang, limit=args.limit)

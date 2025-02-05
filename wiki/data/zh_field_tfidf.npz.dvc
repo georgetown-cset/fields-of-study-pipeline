@@ -1,4 +1,0 @@
-outs:
-- md5: dc0466acc7ed6088c2d17b1073eae27b
-  size: 9414233
-  path: zh_field_tfidf.npz

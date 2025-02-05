@@ -1,4 +1,0 @@
-outs:
-- md5: 2a455ff0450435523beeb7e258a3eb46
-  size: 367363
-  path: en_field_fasttext.npz

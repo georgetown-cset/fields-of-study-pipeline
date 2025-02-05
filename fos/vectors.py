@@ -13,9 +13,9 @@ from gensim.corpora import Dictionary
 from gensim.similarities import MatrixSimilarity, SparseMatrixSimilarity
 from gensim.sklearn_api import TfIdfTransformer
 
-from fos.settings import EN_TFIDF_PATH, ZH_TFIDF_PATH, EN_FASTTEXT_PATH, ZH_FASTTEXT_PATH, EN_FIELD_FASTTEXT_PATH, \
-    ZH_FIELD_FASTTEXT_PATH, EN_FIELD_TFIDF_PATH, ZH_FIELD_TFIDF_PATH, EN_DICT_PATH, ZH_DICT_PATH, EN_FIELD_KEY_PATH, \
-    EN_FIELD_ENTITY_PATH, ZH_FIELD_ENTITY_PATH, ZH_FIELD_KEY_PATH
+from fos.settings import EN_TFIDF_PATH, EN_FASTTEXT_PATH, EN_FIELD_FASTTEXT_PATH, \
+    EN_FIELD_TFIDF_PATH, EN_DICT_PATH, EN_FIELD_KEY_PATH, \
+    EN_FIELD_ENTITY_PATH
 
 ASSETS_DIR = Path(__file__).parent.parent / 'assets'
 
@@ -39,10 +39,6 @@ def load_tfidf(lang="en") -> Tuple[TfIdfTransformer, Dictionary]:
         with open(EN_TFIDF_PATH, 'rb') as f:
             tfidf = pickle.load(f)
         dictionary = Dictionary.load_from_text(str(EN_DICT_PATH))
-    elif lang == "zh":
-        with open(ZH_TFIDF_PATH, 'rb') as f:
-            tfidf = pickle.load(f)
-        dictionary = Dictionary.load_from_text(str(ZH_DICT_PATH))
     else:
         raise ValueError(lang)
     return tfidf, dictionary
@@ -51,8 +47,6 @@ def load_tfidf(lang="en") -> Tuple[TfIdfTransformer, Dictionary]:
 def load_fasttext(lang="en") -> _FastText:
     if lang == "en":
         path = EN_FASTTEXT_PATH
-    elif lang == "zh":
-        path = ZH_FASTTEXT_PATH
     else:
         raise ValueError(lang)
     # skip the warning that load_model prints
@@ -62,8 +56,6 @@ def load_fasttext(lang="en") -> _FastText:
 def load_field_fasttext(lang="en") -> MatrixSimilarity:
     if lang == "en":
         path = EN_FIELD_FASTTEXT_PATH
-    elif lang == "zh":
-        path = ZH_FIELD_FASTTEXT_PATH
     else:
         raise ValueError(lang)
     with open(path, 'rb') as f:
@@ -73,8 +65,6 @@ def load_field_fasttext(lang="en") -> MatrixSimilarity:
 def load_field_entities(lang="en") -> MatrixSimilarity:
     if lang == "en":
         path = EN_FIELD_ENTITY_PATH
-    elif lang == "zh":
-        path = ZH_FIELD_ENTITY_PATH
     else:
         raise ValueError(lang)
     with open(path, 'rb') as f:
@@ -84,8 +74,6 @@ def load_field_entities(lang="en") -> MatrixSimilarity:
 def load_field_keys(lang="en") -> List[str]:
     if lang == "en":
         path = EN_FIELD_KEY_PATH
-    elif lang == "zh":
-        path = ZH_FIELD_KEY_PATH
     else:
         raise ValueError(lang)
     with open(path, 'rt') as f:
@@ -95,8 +83,6 @@ def load_field_keys(lang="en") -> List[str]:
 def load_field_tfidf(lang="en") -> SparseMatrixSimilarity:
     if lang == "en":
         path = EN_FIELD_TFIDF_PATH
-    elif lang == "zh":
-        path = ZH_FIELD_TFIDF_PATH
     else:
         raise ValueError(lang)
     with open(path, 'rb') as f:
