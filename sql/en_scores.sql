@@ -1,5 +1,5 @@
 -- Merge any new scores with the old ones in the production dataset; if we have scores for
--- an id in both tables (which can happen if the text for that id changed), take the new --score
+-- an id in both tables (which can happen if the text for that id changed), take the new score
 with in_lang_ids as (
   select
     merged_id,
@@ -66,6 +66,6 @@ select
       field.score
     from unnest(fields) AS field
     -- Exclude fields we aren't satisfied with, after review
-    where field.name not in ('Process management', 'Access control', 'Social engineering')
+    where field.name not in ('Process Management', 'Access Control')
   ) as fields
 from combined_scores
