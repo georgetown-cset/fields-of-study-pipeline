@@ -31,6 +31,7 @@ with meta as (
       and lower(abstract_cld2_lid_first_result_short_code) = @lang) is true
   )
 ),
+
 meta_ranks as (
   select
     *,
@@ -43,6 +44,7 @@ meta_ranks as (
     row_number() over (partition by merged_id, has_abstract order by char_length(trim(abstract)) desc) as abstract_length_rank,
   from meta
 ),
+
 best_text as (
   -- From the 1+ orig_id records for each merged_id, get the longest @lang title and longest @lang abstract
   select
@@ -52,6 +54,7 @@ best_text as (
   from meta_ranks
   group by merged_id
 ),
+
 clean_text as (
   select
     merged_id,
@@ -73,9 +76,9 @@ clean_text as (
       '[\\r\\n\\v\\t]+', ' '))) as text
   from best_text
 )
+
 select *
 from clean_text
 where 
   text is not null
   and char_length(text) > 0
-

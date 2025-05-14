@@ -10,8 +10,12 @@ import os
 from airflow import DAG
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator, BigQueryCheckOperator
 from airflow.providers.google.cloud.transfers.bigquery_to_bigquery import BigQueryToBigQueryOperator
-from airflow.providers.google.cloud.operators.compute import ComputeEngineStartInstanceOperator, \
+from airflow.providers.google.cloud.operators.compute import (
+    ComputeEngineDeleteInstanceOperator,
+    ComputeEngineInsertInstanceOperator,
+    ComputeEngineStartInstanceOperator,
     ComputeEngineStopInstanceOperator
+)
 from airflow.providers.google.cloud.operators.gcs import GCSDeleteObjectsOperator
 from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQueryOperator
 from airflow.operators.bash import BashOperator
@@ -54,6 +58,8 @@ with DAG("new_fields_of_study",
     backups_dataset = f"{production_dataset}_backups"
     gce_resource_id = "fos-runner"
     bq_labels = {"dataset": "fields_of_study_v2"}
+    service_account = "fields-of-study@gcp-cset-projects.iam.gserviceaccount.com"
+    disk_image = "projects/ml-images/global/images/c0-deeplearning-common-cpu-v20250310-debian-11"  # noqa
 
     # We keep script inputs and outputs in a tmp dir on gcs, so clean it out at the start of each run. We clean at
     # the start of the run so if the run fails we can examine the failed data
@@ -61,6 +67,52 @@ with DAG("new_fields_of_study",
         task_id="clear_tmp_gcs_dir",
         bucket_name=bucket,
         prefix=tmp_dir + "/"
+    )
+
+    create_instance = ComputeEngineInsertInstanceOperator(
+        task_id="create-"+gce_resource_id,
+        resource_id=gce_resource_id,
+        project_id=PROJECT_ID,
+        zone=GCP_ZONE,
+        # See https://cloud.google.com/compute/docs/reference/rest/v1/instances/insert
+        body={
+            "name": gce_resource_id,
+            "machine_type": "n2-standard-8",
+            "service_accounts": [{
+                "email": service_account,
+                "scopes": [
+                    "https://www.googleapis.com/auth/bigquery",
+                    "https://www.googleapis.com/auth/devstorage.read_write",
+                    "https://www.googleapis.com/auth/logging.write",
+                    "https://www.googleapis.com/auth/monitoring.write",
+                    "https://www.googleapis.com/auth/service.management.readonly",
+                    "https://www.googleapis.com/auth/servicecontrol",
+                    "https://www.googleapis.com/auth/trace.append",
+                ],
+            }],
+            "disks": [{
+                "boot": True,
+                "mode": "rw",
+
+                "initialize_params": {
+                    "disk_name": "fos-runner",
+                    "source_image": disk_image,
+                    "disk_type": "pd-standard",
+                    "disk_size_gb": 1_000,
+                },
+                "auto_delete": True,
+                "disk_size_gb": 1_000,
+
+            }],
+            "network_interfaces": [{
+                "stack_type": "IPV4_ONLY",
+                "access_configs": [{
+                    "network_tier": "STANDARD",
+                }],
+                "subnetwork": "auto",
+            }]
+
+        },
     )
 
     # start the instance where we'll run the download and scoring scripts
@@ -76,18 +128,12 @@ with DAG("new_fields_of_study",
     refresh_artifacts = BashOperator(
         task_id=f"refresh_artifacts",
         bash_command=mk_command_seq([
-            "cd /mnt/disks/data",
-            f"rm -rf fields-of-study-pipeline || true",
-            f"gsutil -m cp -r gs://{bucket}/{production_dataset}/fields-of-study-pipeline .",
-            "cd fields-of-study-pipeline",
-            "pip install -r requirements.txt",
-            "python3 -m dvc pull",
-            "cd assets/scientific-lit-embeddings/",
-            "python3 -m dvc pull"
+            f"gsutil -m cp -r gs://{bucket}/{production_dataset}/fields-of-study-pipeline/scripts/setup-vm.sh .",
+            "bash setup-vm.sh",
         ])
     )
 
-    clear_tmp_dir >> gce_instance_start >> refresh_artifacts
+    clear_tmp_dir >> create_instance >> gce_instance_start >> refresh_artifacts
 
     prev_op = refresh_artifacts
 
@@ -98,11 +144,11 @@ with DAG("new_fields_of_study",
         download = BashOperator(
             task_id=f"download_{lang}",
             bash_command = mk_command_seq([
-                "cd /mnt/disks/data",
                 # make sure the corpus dir is clean
-                f"rm -r fields-of-study-pipeline/assets/corpus/* || true",
-                "cd fields-of-study-pipeline",
-                (f"PYTHONPATH=. python3 scripts/download_corpus.py {lang} "
+                f"rm -r assets/corpus/* || true",
+                'export PATH="/opt/conda/bin:$PATH"',
+                (f"PYTHONPATH=. conda run -n fos python scripts/download_corpus.py"
+                 f" {lang} "
                  "{{'' if dag_run and dag_run.conf.get('rerun') else '--skip_prev'}} "
                     f"--use_default_clients --bq_dest {staging_dataset} --extract_bucket {bucket} "
                     f"--extract_prefix {tmp_dir}/inputs/{lang}_corpus-")
@@ -112,13 +158,14 @@ with DAG("new_fields_of_study",
         score_corpus = BashOperator(
             task_id=f"score_corpus_{lang}",
             bash_command=mk_command_seq([
-                "cd /mnt/disks/data/fields-of-study-pipeline",
-                f"PYTHONPATH=. python3 scripts/batch_score_corpus.py {lang} --limit 0",
+                'export PATH="/opt/conda/bin:$PATH"',
+                f"PYTHONPATH=. conda run -n fos python "
+                f"scripts/batch_score_corpus_constrained.py --limit 0",
                 f"gsutil cp assets/corpus/{lang}_scores.jsonl gs://{bucket}/{outputs_dir}/"
             ])
         )
 
-        load_to_gcs = GCSToBigQueryOperator(
+        load = GCSToBigQueryOperator(
             task_id=f"import_{lang}",
             bucket=bucket,
             source_objects=[f"{outputs_dir}/{lang}_scores.jsonl"],
@@ -130,8 +177,8 @@ with DAG("new_fields_of_study",
             labels=bq_labels,
         )
 
-        prev_op >> download >> score_corpus >> load_to_gcs
-        prev_op = load_to_gcs
+        prev_op >> download >> score_corpus >> load
+        prev_op = load
 
     # stop the instance
     gce_instance_stop = ComputeEngineStopInstanceOperator(
@@ -187,13 +234,20 @@ with DAG("new_fields_of_study",
         )
         prev_op >> check >> wait_for_checks
 
+    delete_instance = ComputeEngineDeleteInstanceOperator(
+        task_id=f"delete-{gce_resource_id}",
+        resource_id=gce_resource_id,
+        zone=GCP_ZONE,
+    )
+    wait_for_checks >> delete_instance
+
     wait_for_backup = DummyOperator(task_id="wait_for_backup")
 
     curr_date = datetime.now().strftime('%Y%m%d')
     # copy to production, populate table descriptions, backup tables
     with open(f"{DAGS_DIR}/schemas/{production_dataset}/tables.json") as f:
         table_desc = json.loads(f.read())
-    for table in ["field_scores", "field_meta", "field_hierarchy", "top_fields"]:
+    for table in ["field_scores", "top_fields"]:
         prod_table_name = f"{production_dataset}.{table}"
         table_copy = BigQueryToBigQueryOperator(
             task_id=f"copy_{table}_to_production",
@@ -221,7 +275,7 @@ with DAG("new_fields_of_study",
             labels=bq_labels,
         )
 
-        wait_for_checks >> table_copy >> pop_descriptions >> table_backup >> wait_for_backup
+        delete_instance >> table_copy >> pop_descriptions >> table_backup >> wait_for_backup
 
     update_archive = PythonOperator(
         task_id="update_archive",
