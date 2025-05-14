@@ -21,7 +21,7 @@ observed_fields as (
   from {{staging_dataset}}.neighbor_scores, unnest(fields) as field
   group by
     merged_id,
-    field.id
+    field.name
 ),
 
 unnested_imputations as (
