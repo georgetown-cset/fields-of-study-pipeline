@@ -112,9 +112,11 @@ def load_constraints() -> Dict[Tuple[int, int], List[int]]:
     constraints['child_idx'] = constraints['child_name'].apply(to_indices)
     constraints['l0_idx'] = to_indices(constraints['l0'])
     constraints['l1_idx'] = to_indices(constraints['l1'])
+
     # Return a mapping that looks like (8, 1) => [755, 756, 757]
     constraints.set_index(['l0_idx', 'l1_idx'], inplace=True)
     return constraints['child_idx'].to_dict()
+
 
 def to_score_records(indices, scores, index):
     records = []
@@ -128,7 +130,7 @@ def to_score_records(indices, scores, index):
         })
     return records
 
-def main(chunk_size=1_000, limit=1_000):
+def main(chunk_size=100_000, limit=100_000, output_path=CORPUS_DIR / "en_scores.jsonl"):
     print(f'[{dt.now().isoformat()}] Loading assets')
 
     # Load vectors for fields + models for embedding publications
@@ -158,7 +160,7 @@ def main(chunk_size=1_000, limit=1_000):
     start_time = timeit.default_timer()
     print(f'[{dt.now().isoformat()}] Starting job')
 
-    with open(CORPUS_DIR / f'en_scores.jsonl', 'wt') as f:
+    with open(output_path, 'wt') as f:
         for batch in chunked(iter_bq_extract('en_'), chunk_size):
             batch_start_time = timeit.default_timer()
 
@@ -179,7 +181,6 @@ def main(chunk_size=1_000, limit=1_000):
             # We'll store L2/3 scores in an N x F array because the indexing is convenient
             l23_scores = np.full((len(batch), len(index)), np.nan)
             for constraint_key, descendants in constraints.items():
-                #
                 eligible_mask = np.array([constraint_key in row_keys for row_keys in constraint_keys])
                 if not any(eligible_mask):
                     continue
@@ -226,7 +227,8 @@ def main(chunk_size=1_000, limit=1_000):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Score merged corpus text')
-    parser.add_argument('--batch', type=int, default=10_000, help='Batch size')
+    parser.add_argument('--batch', type=int, default=100_000, help='Batch size')
     parser.add_argument('--limit', type=int, default=100_000, help='Record limit')
+    parser.add_argument('--output', type=str, default=CORPUS_DIR / f'en_scores.jsonl', help='Output path')
     args = parser.parse_args()
-    main(chunk_size=args.batch, limit=args.limit)
+    main(chunk_size=args.batch, limit=args.limit, output_path=args.output)
