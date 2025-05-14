@@ -120,7 +120,7 @@ def to_score_records(indices, scores, index):
     records = []
     # The indices and scores are sorted ascending
     for field_id, score in zip(reversed(indices), reversed(scores)):
-        if np.isnan(score):
+        if np.isnan(score) or score == 0.0:
             continue
         records.append({
             'name': index[field_id],
