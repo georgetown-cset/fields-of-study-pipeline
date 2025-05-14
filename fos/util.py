@@ -43,12 +43,17 @@ def iter_bq_extract(prefix, corpus_dir=CORPUS_DIR):
     files = list(Path(corpus_dir).glob(f'{prefix}*.jsonl.gz'))
     if not files:
         raise FileNotFoundError(f"No files found in {corpus_dir} match glob '{prefix}*.jsonl.gz'")
-    for file in files:
+    print(f"Found {len(files):,} files in {corpus_dir} matching glob '{prefix}*.jsonl.gz'")
+    for file in sorted(files):
         with gzip.open(file, 'rb') as infile:
+            print(f"Opened {file}")
+            i = 0
             for line in infile:
                 if not line:
                     continue
                 yield json.loads(line)
+                i += 1
+            print(f"Read {i:,} records from {file}")
 
 
 def preprocess_text(record, lang="en"):
