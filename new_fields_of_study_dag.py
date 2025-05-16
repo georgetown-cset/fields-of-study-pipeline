@@ -34,9 +34,7 @@ production_dataset = "fields_of_study_v2"
 staging_dataset = f"staging_{production_dataset}"
 
 pipeline_args = get_default_args(pocs=["James"])
-# pipeline_args["retries"] = 1
-pipeline_args["retries"] = 0
-pipeline_args.pop("on_failure_callback")
+pipeline_args["retries"] = 1
 
 def mk_command_seq(cmds: list) -> str:
     scripts = " && ".join(cmds)
