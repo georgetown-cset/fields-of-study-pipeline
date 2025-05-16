@@ -1,9 +1,9 @@
 with counts as (
   select count(*) as n
-  from staging_fields_of_study_v2.field_children
+  from {{staging_dataset}}.field_children
   union all
   select count(*) as n
-  from staging_fields_of_study_v2.field_hierarchy
+  from {{staging_dataset}}.field_hierarchy
 )
 
 select

@@ -1,4 +1,4 @@
-create or replace table staging_fields_of_study_v2.top_fields
+create or replace table {{staging_dataset}}.top_fields
 
 cluster by
   top_l0,
@@ -13,7 +13,7 @@ as (
       merged_id,
       field.name,
       field.score,
-    from staging_fields_of_study_v2.field_scores, unnest(fields) as field
+    from {{staging_dataset}}.field_scores, unnest(fields) as field
     where
       -- Omit zero scores
       field.score > 0.0
@@ -27,7 +27,7 @@ as (
       score,
       row_number() over (partition by merged_id, level order by score desc) as field_rank
     from unnested
-    inner join staging_fields_of_study_v2.field_meta using(name)
+    inner join {{staging_dataset}}.field_meta using(name)
   )
 
   select

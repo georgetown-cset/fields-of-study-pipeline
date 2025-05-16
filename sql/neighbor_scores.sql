@@ -24,7 +24,7 @@ unscored_neighbors as (
   from neighbors
   where neighbors.merged_id not in (
     select en_scores.merged_id
-    from staging_fields_of_study_v2.en_scores
+    from {{staging_dataset}}.en_scores
   )
 )
 
@@ -36,7 +36,7 @@ select
   en_scores.fields
 from unscored_neighbors
 -- The inner join drops any pubs whose neighbors don't have field scores
-inner join staging_fields_of_study_v2.en_scores
+inner join {{staging_dataset}}.en_scores
   on unscored_neighbors.neighbor_id = en_scores.merged_id
 where
   -- A small number of papers that go through the field model don't receive any non-negative scores; exclude these

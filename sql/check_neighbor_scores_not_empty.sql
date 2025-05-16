@@ -1,3 +1,3 @@
 select
   count(*) > 0
-from staging_fields_of_study_v2.neighbor_scores
+from {{staging_dataset}}.neighbor_scores

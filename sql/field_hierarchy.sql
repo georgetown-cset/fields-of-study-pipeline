@@ -6,8 +6,8 @@ select
   field_children.child_name as child_normalized_name,
   field_children.child_name as child_display_name,
   child_meta.level as child_level,
-from staging_fields_of_study_v2.field_children
-inner join staging_fields_of_study_v2.field_meta as parent_meta
+from {{staging_dataset}}.field_children
+inner join {{staging_dataset}}.field_meta as parent_meta
   on field_children.parent_name = parent_meta.name
-inner join staging_fields_of_study_v2.field_meta as child_meta
+inner join {{staging_dataset}}.field_meta as child_meta
   on field_children.child_name = child_meta.name
