@@ -1,10 +1,14 @@
--- All the fields in the field_hierarchy table should also appear in the field_meta table
+-- All the fields in the field_children table should also appear in the field_meta table
 select
-    count(display_name) = 0
+  count(*) = 0
 from
-  {{staging_dataset}}.field_hierarchy
+  {{staging_dataset}}.field_children
 where
-  display_name not in (
+  parent_name not in (
     select name
     from {{staging_dataset}}.field_meta
-)
+  )
+  or child_name not in (
+    select name
+    from {{staging_dataset}}.field_meta
+  )

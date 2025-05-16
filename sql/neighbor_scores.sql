@@ -1,35 +1,43 @@
-with no_pre_scored_neighbors as (
+-- This query identifies publications that (1) didn't receive field scores and (2) have citation-network neighbors that
+-- did receive field scores. It joins this set of papers with the field scores of their neighbors.
+
+with neighbors as (
+  -- This CTE gives the citation-network neighbors of every publication
+  select
+    merged_id,
+    ref_id as neighbor_id
+  from literature.references
+  -- Neighbors are defined by having either an in-citation or out-citation relation
+  union distinct
+  select
+    ref_id as merged_id,
+    merged_id as neighbor_id
+  from literature.references
+),
+
+unscored_neighbors as (
+  -- This CTE identifies the publications that have 1+ citation neighbor, and didn't receive field scores. These are
+  -- papers that don't have EN title text and don't have EN abstract text.
   select
     neighbors.merged_id,
-    neighbor_id
-  from {{staging_dataset}}.neighbors
-  left join (
-    select merged_id
-    from {{staging_dataset}}.en_scores
-  ) as en_scores using (merged_id)
-  where en_scores.merged_id is null
+    neighbors.neighbor_id
+  from neighbors
+  where neighbors.merged_id not in (
+    select en_scores.merged_id
+    from staging_fields_of_study_v2.en_scores
+  )
 )
 
--- The papers without scores are non-EN or don't have title/abstract.
--- Our approach is to find any neighbors of theirs in the citation
--- graph that do have scores
+-- We join the unscored publications with their scored neighbors, if any. Aggregation over these scores happens in
+-- imputed_scores.sql.
 select
-  no_pre_scored_neighbors.merged_id,
-  neighbor_id,
-  fields
--- For publications without field scores (see WHERE)
-from (
-  select distinct
-    merged_id,
-    neighbor_id
-  from no_pre_scored_neighbors
-) as no_pre_scored_neighbors
--- And get any scores associated (at this point any pubs
--- whose neighbors don''t have scores drop out)
-inner join {{staging_dataset}}.en_scores neighbor_scores
-  on neighbor_scores.merged_id = neighbor_id
+  unscored_neighbors.merged_id,
+  unscored_neighbors.neighbor_id,
+  en_scores.fields
+from unscored_neighbors
+-- The inner join drops any pubs whose neighbors don't have field scores
+inner join staging_fields_of_study_v2.en_scores
+  on unscored_neighbors.neighbor_id = en_scores.merged_id
 where
-  -- A small number of papers that go through the field model don''t
-  -- receive any non-negative scores, and these may appear in the
-  -- en_zh_scores table, so exclude them here
-  neighbor_scores.fields is not null
+  -- A small number of papers that go through the field model don't receive any non-negative scores; exclude these
+  en_scores.fields is not null

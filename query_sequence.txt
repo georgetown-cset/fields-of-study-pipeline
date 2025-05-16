@@ -2,5 +2,4 @@ en_scores
 neighbor_scores
 imputed_scores
 field_scores
-field_meta
-top_fields
+field_hierarchy

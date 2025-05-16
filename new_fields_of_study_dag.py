@@ -34,7 +34,9 @@ production_dataset = "fields_of_study_v2"
 staging_dataset = f"staging_{production_dataset}"
 
 pipeline_args = get_default_args(pocs=["James"])
-pipeline_args["retries"] = 1
+# pipeline_args["retries"] = 1
+pipeline_args["retries"] = 0
+pipeline_args.pop("on_failure_callback")
 
 def mk_command_seq(cmds: list) -> str:
     scripts = " && ".join(cmds)
@@ -217,6 +219,20 @@ with DAG("new_fields_of_study",
             )
             prev_op >> query
             prev_op = query
+
+    # Run this query separately because it's a DDL query specifying clustering fields
+    query = BigQueryInsertJobOperator(
+        task_id=f"run_top_fields",
+        configuration={
+            "query": {
+                "query": "{% include '" + f"{sql_dir}/top_fields.sql" + "' %}",
+                "useLegacySql": False,
+                "labels": bq_labels,
+            }
+        }
+    )
+    prev_op >> query
+    prev_op = query
 
     wait_for_checks = DummyOperator(task_id="wait_for_checks")
 

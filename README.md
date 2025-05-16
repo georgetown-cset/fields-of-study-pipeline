@@ -194,6 +194,6 @@ reference the staging dataset.
 
 To update the artifacts used by airflow, run `bash push_to_airflow.sh`.
 
-To view the dag, visit [this link](https://sc8c690a9f43753bep-tp.appspot.com/graph?dag_id=new_fields_of_study). To
+To view the dag, visit [this link](https://d7c5f2369fea46beb8ec7a3532550598-dot-us-east1.composer.googleusercontent.com/dags/new_fields_of_study/grid?tab=details). To
 trigger a run on only new or modified data, trigger the dag without configuration parameters. To rerun on all data, 
 trigger the dag with the configuration `{"rerun": true}`.

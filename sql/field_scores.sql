@@ -12,8 +12,8 @@ with merged as (
     merged_id,
     -- We unnest and nest again so that the structs match; imputed_scores has more nested fields
     array_agg(struct(
-      field.score,
-      field.name
+      field.name,
+      field.score
       )) as fields,
     true as is_imputed
   from {{staging_dataset}}.imputed_scores, unnest(fields) as field
