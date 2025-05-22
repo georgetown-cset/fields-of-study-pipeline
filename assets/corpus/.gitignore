@@ -4,3 +4,5 @@
 *_scores.tsv
 /con_scores.pkl
 /scores.pkl
+en_corpus_example.jsonl.gz
+
