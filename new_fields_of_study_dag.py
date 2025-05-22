@@ -147,8 +147,8 @@ with DAG("new_fields_of_study",
             task_id=f"download_{lang}",
             bash_command = mk_command_seq([
                 # make sure the corpus dir is clean
-                f"rm -r assets/corpus/* || true",
-                'export PATH="/opt/conda/bin:$PATH"',
+                f"rm -rf assets/corpus/* || true",
+                "source ~/miniconda3/bin/activate",
                 (f"PYTHONPATH=. conda run -n fos python scripts/download_corpus.py"
                  f" {lang} "
                  "{{'' if dag_run and dag_run.conf.get('rerun') else '--skip_prev'}} "

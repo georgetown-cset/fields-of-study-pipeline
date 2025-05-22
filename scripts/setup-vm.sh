@@ -9,11 +9,14 @@ gcloud storage rsync gs://airflow-data-exchange/fields_of_study_v2/fields-of-stu
 rm -rf assets/corpus || true
 mkdir assets/corpus
 
-export PATH="/opt/conda/bin:$PATH"
-conda create -n fos python=3.8 -y
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+source ~/miniconda3/bin/activate
+conda init --all
 
-conda init bash
-source activate base
+conda create -n fos python=3.8 -y
 conda activate fos
 
 python3 -m pip install -r requirements.txt
