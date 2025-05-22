@@ -6,6 +6,7 @@ trigger the dag with the configuration {"rerun": true}
 
 import json
 import os
+import re
 
 from airflow import DAG
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator, BigQueryCheckOperator
@@ -29,6 +30,8 @@ from dataloader.airflow_utils.defaults import DATA_BUCKET, PROJECT_ID, GCP_ZONE,
 from dataloader.scripts.populate_documentation import update_table_descriptions
 from dataloader.scripts.clean_backups import clean_backups
 
+
+GCP_REGION = re.sub(r'-[a-f]$', '', GCP_ZONE)
 
 production_dataset = "fields_of_study_v2"
 staging_dataset = f"staging_{production_dataset}"
@@ -71,13 +74,12 @@ with DAG("new_fields_of_study",
 
     create_instance = ComputeEngineInsertInstanceOperator(
         task_id="create-"+gce_resource_id,
-        resource_id=gce_resource_id,
         project_id=PROJECT_ID,
         zone=GCP_ZONE,
         # See https://cloud.google.com/compute/docs/reference/rest/v1/instances/insert
         body={
             "name": gce_resource_id,
-            "machine_type": "n2-standard-8",
+            "machine_type": f"zones/{GCP_ZONE}/machineTypes/n2-standard-8",
             "service_accounts": [{
                 "email": service_account,
                 "scopes": [
@@ -97,7 +99,7 @@ with DAG("new_fields_of_study",
                 "initialize_params": {
                     "disk_name": "fos-runner",
                     "source_image": disk_image,
-                    "disk_type": "pd-standard",
+                    "disk_type": f"zones/{GCP_ZONE}/diskTypes/pd-standard",
                     "disk_size_gb": 1_000,
                 },
                 "auto_delete": True,
@@ -109,7 +111,7 @@ with DAG("new_fields_of_study",
                 "access_configs": [{
                     "network_tier": "STANDARD",
                 }],
-                "subnetwork": "auto",
+                "subnetwork": f"regions/{GCP_REGION}/subnetworks/default",
             }]
 
         },
