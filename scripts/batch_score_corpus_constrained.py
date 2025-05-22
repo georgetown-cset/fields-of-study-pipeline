@@ -192,7 +192,7 @@ def main(chunk_size=100_000, limit=100_000, output_path=CORPUS_DIR / "en_scores.
     l1_offset = np.argmax(levels == 1).astype(int)
     l2_offset = np.argmax(levels == 2).astype(int)
     l3_offset = np.argmax(levels == 3).astype(int)
-    assert 0 < l1_offset < l2_offset  < l3_offset
+    assert 0 < l1_offset < l2_offset < l3_offset
 
     # We use the L0-L1 slices of all the assets repeatedly on each batch, so copy them out
     l0l1_levels = levels[levels <= 1]
