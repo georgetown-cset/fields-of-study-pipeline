@@ -160,7 +160,7 @@ with DAG("new_fields_of_study",
         score_corpus = BashOperator(
             task_id=f"score_corpus_{lang}",
             bash_command=mk_command_seq([
-                'export PATH="/opt/conda/bin:$PATH"',
+                "source ~/miniconda3/bin/activate",
                 f"PYTHONPATH=. conda run -n fos python "
                 f"scripts/batch_score_corpus_constrained.py --limit 0",
                 f"gsutil cp assets/corpus/{lang}_scores.jsonl gs://{bucket}/{outputs_dir}/"
