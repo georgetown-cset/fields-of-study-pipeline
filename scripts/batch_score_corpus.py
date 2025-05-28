@@ -20,7 +20,7 @@ def row_norm(vectors):
     return np.divide(vectors, norms, where=norms != 0.0)
 
 
-def main(lang='en', chunk_size=1_000, limit=1_000):
+def main(lang='en', chunk_size=100_000, limit=100_000):
     print(f'[{dt.now().isoformat()}] Loading assets')
     # Vectors for embedding publications
     fasttext = load_fasttext(lang)
@@ -86,7 +86,7 @@ def main(lang='en', chunk_size=1_000, limit=1_000):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Score merged corpus text')
-    parser.add_argument('lang', choices=('en', 'zh'), help='Language')
-    parser.add_argument('--limit', type=int, default=10000, help='Record limit')
+    parser.add_argument('lang', choices=('en',), help='Language')
+    parser.add_argument('--limit', type=int, default=100_000, help='Record limit')
     args = parser.parse_args()
     main(lang=args.lang, limit=args.limit)

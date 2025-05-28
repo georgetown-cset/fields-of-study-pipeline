@@ -1,14 +1,14 @@
 [
   {
+    "name": "parent_name",
+    "type": "STRING",
     "mode": "REQUIRED",
-    "name": "field_id",
-    "type": "INTEGER",
-    "description": "Parent field of study ID. For field names and other metadata, see the field_meta table."
+    "description": "Parent field of study name."
   },
   {
+    "name": "child_name",
+    "type": "STRING",
     "mode": "REQUIRED",
-    "name": "child_field_id",
-    "type": "INTEGER",
-    "description": "Child field of study ID"
+    "description": "Child field of study name."
   }
 ]

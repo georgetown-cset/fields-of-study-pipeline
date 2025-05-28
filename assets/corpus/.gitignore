@@ -2,3 +2,7 @@
 *_embeddings.jsonl
 *_scores.jsonl
 *_scores.tsv
+/con_scores.pkl
+/scores.pkl
+en_corpus_example.jsonl.gz
+

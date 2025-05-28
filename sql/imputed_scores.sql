@@ -1,6 +1,6 @@
 with n_neighbors as (
   -- How many neighbors with 1+ field score (any field) does each of these papers have?
-  select distinct
+  select
     merged_id,
     count(distinct neighbor_id) as n
   from {{staging_dataset}}.neighbor_scores
@@ -8,9 +8,8 @@ with n_neighbors as (
 ),
 
 observed_fields as (
-  -- Summarize neighbors' observed field scores. This is
-  -- the first step in imputation. Below we weight the
-  -- resulting averages
+  -- Summarize neighbors' observed field scores. This is the first step in imputation. Below we weight the resulting
+  -- averages.
   select
     merged_id,
     field.name,
@@ -21,7 +20,7 @@ observed_fields as (
   from {{staging_dataset}}.neighbor_scores, unnest(fields) as field
   group by
     merged_id,
-    field.id
+    field.name
 ),
 
 unnested_imputations as (

@@ -1,26 +1,26 @@
 [
   {
     "mode": "REQUIRED",
-    "name": "field_id",
-    "type": "INTEGER",
-    "description": "Field of study ID"
+    "name": "name",
+    "type": "STRING",
+    "description": "Field of study name."
   },
   {
     "mode": "REQUIRED",
-    "name": "name",
+    "name": "normalized_name",
     "type": "STRING",
-    "description": "Field of study name"
+    "description": "Deprecated: Lowercased field of study name. Use `name` instead."
   },
   {
     "mode": "REQUIRED",
     "name": "level",
     "type": "INTEGER",
-    "description": "Level of field in the six-level field taxonomy. Ranges from 0-5, in which level 0 is the highest level of aggregation (comprising 19 disciplines) and level 5 is the lowest (basically keywords)."
+    "description": "Level of field in the four-level field taxonomy. Ranges from 0-4, in which level 0 is the highest level of aggregation and level 3 is the lowest. Only publications within selected level-0 and level-1 fields have level-2 or level-3 fields."
   },
   {
     "mode": "REQUIRED",
-    "name": "created_date",
-    "type": "DATE",
-    "description": "Date of field's creation in the field taxonomy"
+    "name": "index",
+    "type": "INTEGER",
+    "description": "Field identifier used as an index during inference. Don't query this value; use `name` instead."
   }
 ]

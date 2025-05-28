@@ -3,15 +3,15 @@
     "mode": "REQUIRED",
     "name": "merged_id",
     "type": "STRING",
-    "description": "Merged-corpus publication ID (as in gcp_cset_links_v2)"
+    "description": "Merged-corpus publication ID"
   },
     {
     "fields": [
       {
         "mode": "REQUIRED",
-        "name": "id",
-        "type": "INTEGER",
-        "description": "Field ID. For field names and other metadata, see the field_meta table."
+        "name": "name",
+        "type": "STRING",
+        "description": "Field name."
       },
       {
         "mode": "REQUIRED",

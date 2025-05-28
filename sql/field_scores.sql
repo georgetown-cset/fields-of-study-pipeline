@@ -20,9 +20,9 @@ with merged as (
   group by merged_id
 )
 
-select
-  *
-from
-  merged
-where
-  merged_id in (select merged_id from literature.sources)
+select *
+from merged
+where merged_id in (
+  select merged_id
+  from literature.sources
+)
