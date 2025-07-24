@@ -1,6 +1,7 @@
 {
     "fields_of_study_v2.field_hierarchy": "Field relations as (parent, child) pairs. Fields form a taxonomy; under CS we can find AI, algorithms, etc. There are four levels numbered from '0' (19 broad disciplines) to '3' (more specific topics). For details, see 'Project Summary: Field of Study Prediction' on Drive.",
     "fields_of_study_v2.field_meta": "Field metadata (names, levels)",
+    "fields_of_study_v2.field_children": "Field relations as (parent, child) pairs. Fields form a taxonomy; under CS we can find AI, algorithms, etc. There are four levels numbered from '0' (19 broad disciplines) to '3' (more specific topics). For details, see 'Project Summary: Field of Study Prediction' on Drive.",
     "fields_of_study_v2.field_scores": "Field scores for publications in the merged corpus. Publications are in some proximity to fields. We call the measure of this a field score. We observe the top field scores for each publication. For details, see 'Project Summary: Field of Study Prediction' on Drive.",
     "fields_of_study_v2.top_fields": "Top-scoring fields by level for publications in the merged corpus"
 }

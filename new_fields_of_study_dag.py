@@ -263,7 +263,8 @@ with DAG("new_fields_of_study",
     # copy to production, populate table descriptions, backup tables
     with open(f"{DAGS_DIR}/schemas/{production_dataset}/tables.json") as f:
         table_desc = json.loads(f.read())
-    for table in ["field_scores", "top_fields"]:
+    for table in ["field_scores", "top_fields", "field_meta", "field_hierarchy",
+                  "field_children"]:
         prod_table_name = f"{production_dataset}.{table}"
         table_copy = BigQueryToBigQueryOperator(
             task_id=f"copy_{table}_to_production",
