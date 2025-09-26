@@ -15,6 +15,8 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 conda init --all
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
 
 conda create -n fos python=3.8 -y
 conda activate fos
