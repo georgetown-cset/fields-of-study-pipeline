@@ -10,3 +10,6 @@
 /zh_field_tfidf_vectors.json
 /zh_fasttext.bin
 /en_field_keys.txt
+/en_merged_model_120221.bin
+/id2word_dict_en_merged_sample.txt
+/tfidf_model_en_merged_sample.pkl
