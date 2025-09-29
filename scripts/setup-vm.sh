@@ -16,6 +16,14 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 conda init --all
 
+# Definitely accept any TOS (https://github.com/georgetown-cset/fields-of-study-pipeline/issues/67)
+# https://www.anaconda.com/docs/getting-started/tos-plugin#solution
+conda config --set plugins.auto_accept_tos yes
+# https://www.anaconda.com/docs/getting-started/tos-plugin#managing-tos-for-all-channels
+conda tos accept
+# https://www.anaconda.com/docs/getting-started/tos-plugin#installing-conda-anaconda-tos
+conda install -y --name base conda-anaconda-tos
+
 conda create -n fos python=3.8 -y
 conda activate fos
 

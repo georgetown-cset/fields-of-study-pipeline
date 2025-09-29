@@ -1,19 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+set -x
+
 AIRFLOW_PREFIX="gs://us-east1-production-cc2-202-b42a7a54-bucket/dags"
 DATA_PREFIX="gs://airflow-data-exchange/fields_of_study_v2"
+ROOT_PREFIX="$DATA_PREFIX/fields-of-study-pipeline"
+ASSET_PREFIX="$DATA_PREFIX/fields-of-study-pipeline/assets/"
 
-gsutil -m cp new_fields_of_study_dag.py $AIRFLOW_PREFIX/
-gsutil -m rm -r $DATA_PREFIX/*
-gsutil -m cp -r ./{fos,scripts,sql,requirements.txt} $DATA_PREFIX/fields-of-study-pipeline/
-gsutil -m cp schemas/* $DATA_PREFIX/fields-of-study-pipeline/schemas/
+gsutil -m cp new_fields_of_study_dag.py "$AIRFLOW_PREFIX"/
 
-gsutil -m rm $AIRFLOW_PREFIX/sql/fields_of_study_v2/*
-gsutil -m cp sql/* $AIRFLOW_PREFIX/sql/fields_of_study_v2/
+gcloud storage rm --recursive $DATA_PREFIX
+gcloud storage cp "schemas/*" $DATA_PREFIX/fields-of-study-pipeline/schemas/
 
-gsutil -m cp schemas/* $AIRFLOW_PREFIX/schemas/fields_of_study_v2/
-gsutil -m cp query_sequence.txt $AIRFLOW_PREFIX/sequences/fields_of_study_v2/
+gcloud storage rm "$AIRFLOW_PREFIX/sql/fields_of_study_v2/*"
+gcloud storage cp "sql/*" $AIRFLOW_PREFIX/sql/fields_of_study_v2/
 
-# Files directly under the assets directory
-gsutil -m cp assets/* $DATA_PREFIX/fields-of-study-pipeline/assets/
+gsutil -m cp -r ./{fos,scripts,sql,requirements.txt} $ROOT_PREFIX/
+gcloud storage cp "schemas/*" $AIRFLOW_PREFIX/schemas/fields_of_study_v2/
+gcloud storage cp query_sequence.txt $AIRFLOW_PREFIX/sequences/fields_of_study_v2/
 
-# And also those in assets/fields, but not e.g. assets/corpus etc
-gsutil -m cp -r assets/{fields,scientific-lit-embeddings} $DATA_PREFIX/fields-of-study-pipeline/assets/
+## Top-level assets that we need in ./assets/
+gsutil -m cp "assets/*" $ASSET_PREFIX
+
+# Field metadata we need in ./assets/fields/
+gsutil cp -r assets/fields $ASSET_PREFIX
+

@@ -1,0 +1,4 @@
+outs:
+- md5: 37e05e681b5e67f121918018ca3efbc0
+  size: 199171820
+  path: tfidf_model_en_merged_sample.pkl

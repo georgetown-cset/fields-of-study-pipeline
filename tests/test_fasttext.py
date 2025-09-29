@@ -4,7 +4,7 @@ import numpy as np
 from fasttext.FastText import _FastText, load_model
 
 from fos.model import FieldModel
-from fos.settings import EN_FASTTEXT_PATH, EN_FIELD_TEXT
+from fos.settings import EN_FASTTEXT_PATH
 from fos.vectors import load_fasttext, norm, embed_fasttext
 
 
