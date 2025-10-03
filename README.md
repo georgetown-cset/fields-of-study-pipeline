@@ -51,7 +51,7 @@ sudo apt-get install build-essential -y
 pip install -r requirements.txt
 ```
 
-Some assets are large, so we're using [dvc](https://dvc.org/doc/start). 
+Some assets are large, so we're using [dvc](https://dvc.org/doc/start).
 GitHub is responsible for tracking the asset metadata in `.dvc` files and DVC stores the assets themselves in GCS.
 Retrieve them with `dvc pull`.
 
@@ -60,10 +60,11 @@ dvc pull
 cd assets/scientific-lit-embeddings/ && dvc pull && cd ../..
 ```
 
+You can also find assets backed up to `gs://fields-of-study/assets`, as a result of running `copy_assets_to_gcs.sh`.
+
 ## GCP
 
-We have an [instance](https://console.cloud.google.com/compute/instancesDetail/zones/us-east1-c/instances/fields?project=gcp-cset-projects)
-named `fields` in us-east1-c. It's set up as above.
+The pipeline creates and tears down an instance `fos-runner` for inference.
 
 DVC is backed by storage in the `gs://fields-of-study-model` bucket. 
 When retrieving the merged corpus (`fos/corpus.py`) we use the 
@@ -116,12 +117,12 @@ PYTHONPATH=. python scripts/download_corpus.py en
 We learned English FastText and tf-idf vectors from these corpora. Documentation for this is
 in `assets/scientific-lit-embeddings`.
 
-Outputs (annually):
+Outputs (training):
 
-- FastText vectors: `assets/en_merged_fasttext.bin`
-- tf-idf vectors and vocab: `assets/en_merged_tfidf.bin` and TODO
+- FastText vectors: `assets/en_merged_model_120221.bin`
+- tf-idf vectors and vocab: `assets/tfidf_model_en_merged_sample.pkl` and `en_vocab.txt`
 
-Outputs (~weekly):
+Outputs (inference):
 
 - Preprocessed corpus: `assets/corpus/en_corpus-*.jsonl.gz`
 
@@ -133,7 +134,7 @@ taxonomy.
 
 Outputs (static):
 
-- `wiki-field-text/fields.tsv`
+- `wiki-field-text/data/all_fields.tsv`
 
 ### 3. Field content and embeddings
 
@@ -141,10 +142,10 @@ For each field in the field taxonomy, we identified associated text (page conten
 documented in the `wiki-field-text` repo. Using this content and the word vectors learned from the merged corpus, we
 created embeddings for each field.
 
-Outputs (annually):
+Outputs (training):
 
-- FastText field embeddings: `assets/en_field_fasttext.bin`
-- tf-idf field embeddings: `assets/en_field_tfidf.bin`
+- FastText field embeddings: `assets/en_field_fasttext_similarity.pkl`
+- tf-idf field embeddings: `assets/en_field_tfidf_similarity.pkl`
 
 ### 4. Entity embeddings
 
@@ -152,9 +153,9 @@ We identify in the field content every mention of another field. For instance, t
 "artificial intelligence," "machine learning," etc. We average over the FastText embeddings for mentioned fields to
 generate FastText _entity embeddings_. This is documented in the `wiki-field-text` repo.
 
-Outputs (annually):
+Outputs (training):
 
-- FastText entity embeddings: `assets/en_field_mention_fasttext.bin`
+- FastText entity embeddings: `assets/en_field_entity_similarity.pkl`
 
 ### 5. Publication embedding
 
@@ -165,7 +166,7 @@ averaging the entity embeddings (3) for each field mentioned in the publication 
 PYTHONPATH=. python scripts/embed_corpus.py en
 ```
 
-Outputs (~weekly):
+Outputs (inference):
 
 - Publication embeddings: `assets/corpus/{lang}_embeddings.jsonl`
 
@@ -178,7 +179,7 @@ over these cosine similarities yielding field scores.
 PYTHONPATH=. python scripts/score_embeddings.py en
 ```
 
-Outputs (~weekly):
+Outputs (inference):
 
 - Publication field scores: `assets/corpus/{lang}_scores.jsonl`
 
